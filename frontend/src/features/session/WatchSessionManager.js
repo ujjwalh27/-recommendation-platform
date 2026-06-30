@@ -1,14 +1,41 @@
 class WatchSessionManager {
   constructor() {
     this.session = null;
+    this.listeners = [];
   }
+
+  // --------------------------
+  // Observer Pattern
+  // --------------------------
+
+  subscribe(listener) {
+    this.listeners.push(listener);
+  }
+
+  unsubscribe(listener) {
+    this.listeners = this.listeners.filter(
+      (l) => l !== listener
+    );
+  }
+
+  notify() {
+    this.listeners.forEach((listener) => {
+      listener(this.session);
+    });
+  }
+
+  // --------------------------
+  // Session Management
+  // --------------------------
 
   start(userId, video) {
     if (this.session) return;
 
     this.session = {
       sessionId: crypto.randomUUID(),
+
       userId,
+
       videoId: video.id,
       title: video.title,
       creator: video.creator,
@@ -38,6 +65,8 @@ class WatchSessionManager {
 
     console.log("🟢 Session Started");
     console.table(this.session);
+
+    this.notify();
   }
 
   processEvent(event) {
@@ -67,11 +96,13 @@ class WatchSessionManager {
 
       case "ENDED":
         this.end();
-        break;
+        return;
 
       default:
         break;
     }
+
+    this.notify();
   }
 
   end() {
@@ -82,10 +113,17 @@ class WatchSessionManager {
 
     console.log("🏁 Session Finished");
     console.log(this.session);
+
+    this.notify();
   }
 
   getSession() {
     return this.session;
+  }
+
+  clearSession() {
+    this.session = null;
+    this.notify();
   }
 }
 

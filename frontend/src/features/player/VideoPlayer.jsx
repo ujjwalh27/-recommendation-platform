@@ -1,29 +1,19 @@
 import BehaviourTracker from "../analytics/BehaviourTracker";
 import WatchSessionManager from "../session/WatchSessionManager";
 
-const USER_ID = 1;
-
-const VIDEO = {
-  id: 1,
-  title: "Morning Yoga",
-  creator: "DAIV Health",
-  category: "Health",
-};
-
-function VideoPlayer() {
-  /**
-   * Sends an event to the BehaviourTracker
-   * and WatchSessionManager
-   */
-  const track = (eventName, currentTime = 0, extra = {}) => {
+function VideoPlayer({ video }) {
+  const track = (eventName, currentTime = 0, percentage = 0) => {
     const event = {
       event: eventName,
-      currentTime: Number(currentTime.toFixed(2)),
+      currentTime,
+      percentage,
       time: new Date().toLocaleTimeString(),
-      ...extra,
     };
 
+    // Store raw behaviour event
     BehaviourTracker.record(event);
+
+    // Update session
     WatchSessionManager.processEvent(event);
   };
 
@@ -37,71 +27,38 @@ function VideoPlayer() {
         background: "black",
         objectFit: "cover",
       }}
-
-      /* -------------------------------
-         Video Loaded
-      -------------------------------- */
       onLoadedMetadata={(e) => {
-        track("LOADED", 0, {
-          duration: Number(e.target.duration.toFixed(2)),
-        });
+        track("LOADED", e.target.duration);
       }}
-
-      /* -------------------------------
-         Play
-      -------------------------------- */
       onPlay={(e) => {
+        // Start session only once
         if (!WatchSessionManager.getSession()) {
-          WatchSessionManager.start(USER_ID, VIDEO);
+          WatchSessionManager.start(1, video);
         }
 
         track("PLAY", e.target.currentTime);
       }}
-
-      /* -------------------------------
-         Pause
-      -------------------------------- */
       onPause={(e) => {
         track("PAUSE", e.target.currentTime);
       }}
-
-      /* -------------------------------
-         User Starts Seeking
-      -------------------------------- */
       onSeeking={(e) => {
         track("SEEKING", e.target.currentTime);
       }}
-
-      /* -------------------------------
-         User Finished Seeking
-      -------------------------------- */
       onSeeked={(e) => {
         track("SEEKED", e.target.currentTime);
       }}
-
-      /* -------------------------------
-         Video Progress
-      -------------------------------- */
+      onEnded={(e) => {
+        track("ENDED", e.target.currentTime);
+      }}
       onTimeUpdate={(e) => {
-        if (!e.target.duration) return;
-
         const percentage =
           (e.target.currentTime / e.target.duration) * 100;
 
         track(
           "WATCH_PROGRESS",
           e.target.currentTime,
-          {
-            percentage: Number(percentage.toFixed(1)),
-          }
+          percentage
         );
-      }}
-
-      /* -------------------------------
-         Video Finished
-      -------------------------------- */
-      onEnded={(e) => {
-        track("ENDED", e.target.currentTime);
       }}
     />
   );

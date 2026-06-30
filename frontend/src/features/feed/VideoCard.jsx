@@ -20,15 +20,15 @@ function VideoCard({ video }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          fontSize: "32px",
         }}
       >
-        <VideoPlayer />
+        {/* Pass video to VideoPlayer */}
+        <VideoPlayer video={video} />
       </div>
 
       <VideoInfo video={video} />
 
-<ActionButtons />
+      <ActionButtons />
     </div>
   );
 }
