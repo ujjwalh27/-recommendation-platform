@@ -1,3 +1,4 @@
+import InterestProfileManager from "../recommendation/InterestProfileManager";
 class WatchSessionManager {
   constructor() {
     this.session = null;
@@ -106,25 +107,47 @@ class WatchSessionManager {
   }
 
   end() {
-    if (!this.session) return;
+  if (!this.session) return;
 
-    this.session.state = "ENDED";
-    this.session.endedAt = new Date();
+  this.session.state = "ENDED";
+  this.session.endedAt = new Date();
 
-    console.log("🏁 Session Finished");
-    console.log(this.session);
+  console.log("🏁 Session Finished");
+  console.log(this.session);
 
-    this.notify();
+  // --------------------------
+  // Update Interest Profile
+  // --------------------------
+
+  const completion = this.session.completion;
+
+  if (completion >= 80) {
+    InterestProfileManager.updateInterest(
+      this.session.category,
+      10
+    );
+  } else if (completion >= 50) {
+    InterestProfileManager.updateInterest(
+      this.session.category,
+      5
+    );
+  } else if (completion >= 20) {
+    InterestProfileManager.updateInterest(
+      this.session.category,
+      2
+    );
+  } else {
+    InterestProfileManager.decreaseInterest(
+      this.session.category,
+      2
+    );
   }
 
-  getSession() {
-    return this.session;
-  }
+  console.log("📈 Interest Profile");
+  console.table(
+    InterestProfileManager.getProfile()
+  );
 
-  clearSession() {
-    this.session = null;
-    this.notify();
-  }
+  this.notify();
 }
-
-export default new WatchSessionManager();
+}
