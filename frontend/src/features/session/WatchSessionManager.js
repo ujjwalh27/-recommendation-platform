@@ -1,5 +1,7 @@
-import InterestProfileManager from "../recommendation/InterestProfileManager";
+import FeedbackManager from "../recommendation/FeedbackManager";
+
 class WatchSessionManager {
+
   constructor() {
     this.session = null;
     this.listeners = [];
@@ -30,9 +32,11 @@ class WatchSessionManager {
   // --------------------------
 
   start(userId, video) {
+
     if (this.session) return;
 
     this.session = {
+
       sessionId: crypto.randomUUID(),
 
       userId,
@@ -60,22 +64,27 @@ class WatchSessionManager {
       liked: false,
       saved: false,
       shared: false,
+      commented: false,
 
-      events: [],
+      events: []
+
     };
 
     console.log("🟢 Session Started");
     console.table(this.session);
 
     this.notify();
+
   }
 
   processEvent(event) {
+
     if (!this.session) return;
 
     this.session.events.push(event);
 
     switch (event.event) {
+
       case "PLAY":
         this.session.state = "PLAYING";
         this.session.playCount++;
@@ -104,50 +113,131 @@ class WatchSessionManager {
     }
 
     this.notify();
+
   }
+
+  // --------------------------
+  // User Actions
+  // --------------------------
+
+  like() {
+
+    if (!this.session) return;
+
+    this.session.liked = true;
+
+    console.log("❤️ Liked");
+
+    this.notify();
+
+  }
+
+  unlike() {
+
+    if (!this.session) return;
+
+    this.session.liked = false;
+
+    console.log("💔 Unliked");
+
+    this.notify();
+
+  }
+
+  save() {
+
+    if (!this.session) return;
+
+    this.session.saved = true;
+
+    console.log("💾 Saved");
+
+    this.notify();
+
+  }
+
+  unsave() {
+
+    if (!this.session) return;
+
+    this.session.saved = false;
+
+    console.log("🗑️ Unsaved");
+
+    this.notify();
+
+  }
+
+  share() {
+
+    if (!this.session) return;
+
+    this.session.shared = true;
+
+    console.log("📤 Shared");
+
+    this.notify();
+
+  }
+
+  comment() {
+
+    if (!this.session) return;
+
+    this.session.commented = true;
+
+    console.log("💬 Commented");
+
+    this.notify();
+
+  }
+
+  replay() {
+
+    if (!this.session) return;
+
+    this.session.replayCount++;
+
+    console.log(
+      "🔁 Replay Count:",
+      this.session.replayCount
+    );
+
+    this.notify();
+
+  }
+
+  // --------------------------
+  // End Session
+  // --------------------------
 
   end() {
-  if (!this.session) return;
 
-  this.session.state = "ENDED";
-  this.session.endedAt = new Date();
+    if (!this.session) return;
 
-  console.log("🏁 Session Finished");
-  console.log(this.session);
+    this.session.state = "ENDED";
+    this.session.endedAt = new Date();
 
-  // --------------------------
-  // Update Interest Profile
-  // --------------------------
+    console.log("🏁 Session Finished");
+    console.table(this.session);
 
-  const completion = this.session.completion;
+    // Process the entire session
+    FeedbackManager.process(this.session);
 
-  if (completion >= 80) {
-    InterestProfileManager.updateInterest(
-      this.session.category,
-      10
-    );
-  } else if (completion >= 50) {
-    InterestProfileManager.updateInterest(
-      this.session.category,
-      5
-    );
-  } else if (completion >= 20) {
-    InterestProfileManager.updateInterest(
-      this.session.category,
-      2
-    );
-  } else {
-    InterestProfileManager.decreaseInterest(
-      this.session.category,
-      2
-    );
+    this.notify();
+
+    this.session = null;
+
   }
 
-  console.log("📈 Interest Profile");
-  console.table(
-    InterestProfileManager.getProfile()
-  );
+  // --------------------------
+  // Getter
+  // --------------------------
 
-  this.notify();
+  getSession() {
+    return this.session;
+  }
+
 }
-}
+
+export default new WatchSessionManager();

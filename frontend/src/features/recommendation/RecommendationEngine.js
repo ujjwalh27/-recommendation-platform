@@ -1,4 +1,12 @@
+import DiversityEngine from "./DiversityEngine";
+import CreatorAffinityManager from "./CreatorAffinityManager";
 import InterestProfileManager from "./InterestProfileManager";
+import ExplorationEngine from "./ExplorationEngine";
+import CandidateGenerator from "./CandidateGenerator";
+import FeedRefreshManager from "./FeedRefreshManager";
+import ContextManager from "./ContextManager";
+import SessionManager from "./SessionManager";
+import RecentCategoryManager from "./RecentCategoryManager";
 
 class RecommendationEngine {
 
@@ -10,20 +18,41 @@ class RecommendationEngine {
     return popularity;
   }
 
-  calculateCreatorScore() {
-    // Placeholder
-    return 50;
+  calculateCreatorScore(creator) {
+    return CreatorAffinityManager.getCreatorScore(creator);
   }
 
-  calculateExplorationBonus() {
-    // Placeholder
-    return 20;
-  }
+  calculateExplorationBonus(category) {
+    return ExplorationEngine.getBonus(category);
+}
 
+calculateSessionScore() {
+    return SessionManager.getSessionScore();
+}
+
+calculateRecentCategoryPenalty(category) {
+
+    return RecentCategoryManager.getPenalty(category);
+
+}
+
+calculateContextScore(category) {
+  return ContextManager.calculateContextScore(category);
+}
   scoreVideo(video) {
 
-    const profile =
-      InterestProfileManager.getProfile();
+    const profile = InterestProfileManager.getProfile();
+
+    const context =
+  this.calculateContextScore(video.category);
+
+  const session =
+    this.calculateSessionScore();
+
+    const recentPenalty =
+    this.calculateRecentCategoryPenalty(
+        video.category
+    );
 
     const interest =
       profile[video.category] || 0;
@@ -34,62 +63,124 @@ class RecommendationEngine {
     const popularity =
       this.calculatePopularity(video.popularity);
 
-    const creator =
-      this.calculateCreatorScore(video.creator);
+    const creatorScore =
+    this.calculateCreatorScore(video.creator);
 
     const exploration =
-      this.calculateExplorationBonus();
+    this.calculateExplorationBonus(
+        video.category
+    );
 
-    const score =
+    const diversityPenalty =
+    DiversityEngine.getPenalty(video.category);  
 
-      interest * 0.40 +
+   const score =
 
-      freshness * 0.10 +
+  interest * 0.35 +
 
-      popularity * 0.10 +
+  freshness * 0.10 +
 
-      creator * 0.15 +
+  popularity * 0.10 +
 
-      exploration * 0.05;
+  creatorScore * 0.15 +
 
+  exploration * 0.05 +
+
+  context * 0.15 +
+
+  session * 0.10 -
+
+  recentPenalty;
     return {
 
-      ...video,
+    ...video,
 
-      interest,
+    interest,
 
-      freshness,
+    freshness,
 
-      popularity,
+    popularity,
 
-      creator,
+    creatorScore,
 
-      exploration,
+    exploration,
 
-      recommendationScore: Number(score.toFixed(2))
+    context,
 
-    };
+    session,
 
+    recentPenalty,
+
+    diversityPenalty,
+
+    recommendationScore:
+        Number(score.toFixed(2))
+
+};
   }
 
   rankVideos(videos) {
 
-    return videos
+   DiversityEngine.reset();
+ExplorationEngine.reset();
+RecentCategoryManager.reset();
 
-      .map(video => this.scoreVideo(video))
+    const profile =
+        InterestProfileManager.getProfile();
 
-      .sort(
+    const candidates =
+        CandidateGenerator.generate(
+            videos,
+            profile
+        );
 
-        (a,b)=>
+    const ranked = candidates
+        .map(video => this.scoreVideo(video))
+        .sort(
+            (a, b) =>
+                b.recommendationScore -
+                a.recommendationScore
+        );
 
-          b.recommendationScore -
+    ranked.forEach(video => {
 
-          a.recommendationScore
+    DiversityEngine.registerRecommendation(
+        video.category
+    );
 
-      );
+    ExplorationEngine.registerRecommendation(
+        video.category
+    );
+
+    RecentCategoryManager.registerCategory(
+        video.category
+    );
+
+});
+
+    FeedRefreshManager.initialize(ranked);
+
+return FeedRefreshManager.getFeed();
+
+}
+refreshFeed(watchedVideoId, videos) {
+
+    FeedRefreshManager.consumeVideo(
+        watchedVideoId
+    );
+
+    const refreshed =
+        this.rankVideos(videos);
+
+    FeedRefreshManager.appendRecommendations(
+        refreshed
+    );
+
+    return FeedRefreshManager.getFeed();
+
+}
 
   }
 
-}
 
 export default new RecommendationEngine();

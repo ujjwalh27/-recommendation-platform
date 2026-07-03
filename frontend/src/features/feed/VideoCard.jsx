@@ -28,7 +28,7 @@ function VideoCard({ video }) {
 
       <VideoInfo video={video} />
 
-      <ActionButtons />
+      <ActionButtons video={video} />
     </div>
   );
 }

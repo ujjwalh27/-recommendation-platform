@@ -1,116 +1,132 @@
-import RecommendationEngine from "./RecommendationEngine";
-import videos from "../../data/videos";
+import ContextManager from "./ContextManager";
 
-function RecommendationPanel() {
+function RecommendationPanel({ rankedVideos }) {
 
-  const rankedVideos =
-    RecommendationEngine.rankVideos(videos);
+  if (!rankedVideos || rankedVideos.length === 0) {
 
-  const topVideo =
-    rankedVideos[0];
+    return (
+
+      <div
+        style={{
+          width: 320,
+          height: "90vh",
+          background: "#121212",
+          color: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "10px"
+        }}
+      >
+        Loading Recommendations...
+      </div>
+
+    );
+
+  }
+
+  const topVideo = rankedVideos[0];
 
   return (
 
     <div
       style={{
-        width:320,
-        height:"90vh",
-        background:"#121212",
-        color:"white",
-        padding:"20px",
-        borderRadius:"10px",
-        overflowY:"auto"
+        width: 320,
+        height: "90vh",
+        background: "#121212",
+        color: "white",
+        padding: "20px",
+        borderRadius: "10px",
+        overflowY: "auto"
       }}
     >
 
       <h2>🎯 Recommendation</h2>
 
-      <hr/>
+      <hr />
 
       <p>
+        <strong>Time Context</strong>
+        <br />
+        {ContextManager.getTimeContext()}
+      </p>
 
+      <hr />
+
+      <p>
         <strong>Video</strong>
-
-        <br/>
-
+        <br />
         {topVideo.title}
-
       </p>
 
       <p>
-
         <strong>Category</strong>
-
-        <br/>
-
+        <br />
         {topVideo.category}
-
       </p>
 
-      <hr/>
+      <hr />
 
       <p>
-
         Interest
-
-        <br/>
-
+        <br />
         {topVideo.interest}
-
       </p>
 
       <p>
-
         Freshness
-
-        <br/>
-
+        <br />
         {topVideo.freshness}
-
       </p>
 
       <p>
-
         Popularity
-
-        <br/>
-
+        <br />
         {topVideo.popularity}
-
       </p>
 
       <p>
-
-        Creator
-
-        <br/>
-
-        {topVideo.creator}
-
+        Creator Score
+        <br />
+        {topVideo.creatorScore}
       </p>
 
       <p>
-
         Exploration
-
-        <br/>
-
+        <br />
         {topVideo.exploration}
-
       </p>
 
-      <hr/>
+      <p>
+        Context
+        <br />
+        {topVideo.context}
+      </p>
 
-      <h2>
+      <p>
+        Session
+        <br />
+        {topVideo.session}
+      </p>
 
-        Final Score
+      <p>
+        Recent Penalty
+        <br />
+        {topVideo.recentPenalty}
+      </p>
 
-      </h2>
+      <p>
+        Diversity Penalty
+        <br />
+        {topVideo.diversityPenalty}
+      </p>
+
+      <hr />
+
+      <h2>Final Score</h2>
 
       <h1>
-
         {topVideo.recommendationScore}
-
       </h1>
 
     </div>

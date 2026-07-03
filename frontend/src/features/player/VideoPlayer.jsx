@@ -48,8 +48,9 @@ function VideoPlayer({ video }) {
         track("SEEKED", e.target.currentTime);
       }}
       onEnded={(e) => {
-        track("ENDED", e.target.currentTime);
-      }}
+  console.log("VIDEO ENDED");
+  track("ENDED", e.target.currentTime);
+}}
       onTimeUpdate={(e) => {
         const percentage =
           (e.target.currentTime / e.target.duration) * 100;
