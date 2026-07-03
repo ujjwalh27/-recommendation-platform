@@ -3,7 +3,6 @@ import pandas as pd
 
 from backend.recommendation.vector_search import VectorSearch
 
-
 BASE_URL = "http://127.0.0.1:8000"
 
 
@@ -24,6 +23,10 @@ class RecommendationService:
 
         self.metadata = pd.read_csv(
             "datasets/processed/video_metadata.csv"
+        )
+
+        self.metadata["video_id"] = (
+            self.metadata["video_id"].astype(str)
         )
 
         self.metadata = self.metadata.set_index("video_id")
@@ -50,15 +53,15 @@ class RecommendationService:
 
             vid = item["video_id"]
 
-            meta = self.metadata.loc[int(vid)]
+            meta = self.metadata.loc[vid]
 
             enriched.append({
 
                 "video_id": vid,
 
-                "title": vid,
+                "title": vid,          # Temporary
 
-                "duration": meta["duration_seconds"],
+                "duration": float(meta["duration_seconds"]),
 
                 "thumbnail_url":
                     f"{BASE_URL}/thumbnails/{vid}.jpg",
