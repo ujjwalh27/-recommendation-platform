@@ -1,64 +1,141 @@
+import { useEffect, useRef } from "react";
 import BehaviourTracker from "../analytics/BehaviourTracker";
 import WatchSessionManager from "../session/WatchSessionManager";
 
-function VideoPlayer({ video }) {
-  const track = (eventName, currentTime = 0, percentage = 0) => {
-    const event = {
-      event: eventName,
+function VideoPlayer({
+  video,
+  isActive,
+  isMuted,
+  onProgress,
+  onWaiting,
+  onPlaying,
+  videoRef,
+}) {
+  const localRef = useRef(null);
+  const playerRef = videoRef || localRef;
+
+  const track = (event, currentTime = 0, percentage = 0) => {
+    const behaviour = {
+      event,
       currentTime,
       percentage,
       time: new Date().toLocaleTimeString(),
     };
 
-    // Store raw behaviour event
-    BehaviourTracker.record(event);
-
-    // Update session
-    WatchSessionManager.processEvent(event);
+    BehaviourTracker.record(behaviour);
+    WatchSessionManager.processEvent(behaviour);
   };
+
+  // Handle active video
+  useEffect(() => {
+    const player = playerRef.current;
+
+    if (!player) return;
+
+    if (isActive) {
+      if (!WatchSessionManager.getSession()) {
+        WatchSessionManager.start(1, video);
+      }
+
+      player
+        .play()
+        .then(() => {
+          track("PLAY", player.currentTime);
+        })
+        .catch((err) => {
+          console.warn("Autoplay blocked:", err);
+        });
+    } else {
+      player.pause();
+      player.currentTime = 0;
+
+      const session = WatchSessionManager.getSession();
+
+      if (
+        session &&
+        session.videoId === video.video_id
+      ) {
+        WatchSessionManager.end();
+      }
+    }
+  }, [isActive]);
+
+  // Handle mute
+  useEffect(() => {
+    if (playerRef.current) {
+      playerRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
 
   return (
     <video
-      src="/videos/sample.mp4"
-      controls
-      width="100%"
-      height="100%"
-      style={{
-        background: "black",
-        objectFit: "cover",
-      }}
-      onLoadedMetadata={(e) => {
-        track("LOADED", e.target.duration);
-      }}
-      onPlay={(e) => {
-        // Start session only once
-        if (!WatchSessionManager.getSession()) {
-          WatchSessionManager.start(1, video);
-        }
+      ref={playerRef}
+      src={video.video_url}
+      className="video-element"
+      playsInline
+      loop
+      preload="metadata"
 
-        track("PLAY", e.target.currentTime);
+      onWaiting={() => {
+        if (onWaiting) onWaiting();
       }}
+
+      onPlaying={() => {
+        if (onPlaying) onPlaying();
+      }}
+
+      onLoadedMetadata={(e) => {
+        track(
+          "LOADED",
+          e.target.duration
+        );
+      }}
+
       onPause={(e) => {
-        track("PAUSE", e.target.currentTime);
+        track(
+          "PAUSE",
+          e.target.currentTime
+        );
       }}
+
       onSeeking={(e) => {
-        track("SEEKING", e.target.currentTime);
+        track(
+          "SEEKING",
+          e.target.currentTime
+        );
       }}
+
       onSeeked={(e) => {
-        track("SEEKED", e.target.currentTime);
+        track(
+          "SEEKED",
+          e.target.currentTime
+        );
       }}
+
       onEnded={(e) => {
-  console.log("VIDEO ENDED");
-  track("ENDED", e.target.currentTime);
-}}
+        track(
+          "ENDED",
+          e.target.currentTime,
+          100
+        );
+      }}
+
       onTimeUpdate={(e) => {
-        const percentage =
-          (e.target.currentTime / e.target.duration) * 100;
+        const duration = e.target.duration;
+
+        const percent =
+          duration > 0
+            ? (e.target.currentTime / duration) * 100
+            : 0;
+
+        if (onProgress) {
+          onProgress(percent);
+        }
 
         track(
           "WATCH_PROGRESS",
           e.target.currentTime,
-          percentage
+          percent
         );
       }}
     />

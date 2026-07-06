@@ -1,17 +1,10 @@
-import InterestProfileManager from "./InterestProfileManager";
-import CreatorAffinityManager from "./CreatorAffinityManager";
 import EngagementScorer from "./EngagementScorer";
-import EventBus from "../event/EventBus";
 
 class FeedbackManager {
 
     process(session) {
 
         console.log("📩 Processing User Session");
-
-        // --------------------------
-        // Calculate Engagement Score
-        // --------------------------
 
         const engagementScore =
             EngagementScorer.calculate(session);
@@ -21,94 +14,46 @@ class FeedbackManager {
             engagementScore
         );
 
-        // --------------------------
-        // Update Interest Profile
-        // --------------------------
+        console.log("📊 Session Summary");
 
-        if (engagementScore >= 80) {
+        console.table({
 
-            InterestProfileManager.updateInterest(
-                session.category,
-                15
-            );
+            Video: session.title,
 
-        }
-        else if (engagementScore >= 60) {
+            Creator: session.creator,
 
-            InterestProfileManager.updateInterest(
-                session.category,
-                10
-            );
+            Category: session.category,
 
-        }
-        else if (engagementScore >= 30) {
+            WatchTime: session.watchTime,
 
-            InterestProfileManager.updateInterest(
-                session.category,
-                5
-            );
+            Completion:
+                `${session.completion.toFixed(1)} %`,
 
-        }
-        else if (engagementScore > 0) {
+            Liked: session.liked,
 
-            InterestProfileManager.updateInterest(
-                session.category,
-                2
-            );
+            Saved: session.saved,
 
-        }
-        else {
+            Shared: session.shared,
 
-            InterestProfileManager.decreaseInterest(
-                session.category,
-                5
-            );
+            Commented: session.commented,
 
-        }
+            Replay: session.replayCount,
 
-        // --------------------------
-        // Update Creator Affinity
-        // --------------------------
+            Score: engagementScore
 
-        CreatorAffinityManager.updateCreatorAffinity(
-            session,
-            engagementScore
-        );
+        });
 
-        // --------------------------
-        // Debug Logs
-        // --------------------------
+        // -------------------------
+        // Future
+        // -------------------------
+        //
+        // POST /events
+        //
+        // fetch(...)
+        //
+        // -------------------------
 
-        console.log("📈 Interest Profile");
-        console.table(
-            InterestProfileManager.getProfile()
-        );
-
-        console.log("👤 Creator Affinity");
-        console.table(
-            CreatorAffinityManager.getAllCreatorAffinities()
-        );
-
-        // --------------------------
-        // Notify Recommendation Engine
-        // --------------------------
-
-        EventBus.publish(
-            "PROFILE_UPDATED",
-            {
-
-                engagementScore,
-
-                session,
-
-                interests:
-                    InterestProfileManager.getProfile(),
-
-                creators:
-                    CreatorAffinityManager.getAllCreatorAffinities()
-
-            }
-        );
+        return engagementScore;
 
     }
 

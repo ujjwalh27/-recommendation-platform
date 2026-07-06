@@ -41,7 +41,7 @@ class WatchSessionManager {
 
       userId,
 
-      videoId: video.id,
+     videoId: video.video_id,
       title: video.title,
       creator: video.creator,
       category: video.category,

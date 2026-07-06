@@ -1,178 +1,603 @@
-import { useEffect, useState } from "react";
-
-import videos from "../../data/videos";
-
-import RecommendationEngine from "../recommendation/RecommendationEngine";
-import InterestProfileManager from "../recommendation/InterestProfileManager";
-import CreatorAffinityManager from "../recommendation/CreatorAffinityManager";
-import SessionManager from "../recommendation/SessionManager";
+import { useEffect, useState, useRef } from "react";
+import { Search, User, X } from "lucide-react";
 
 import VideoCard from "./VideoCard";
+
+import {
+  getFeed,
+  getRecommendations
+} from "../../services/api";
 
 function FeedController({ onFeedUpdated }) {
 
   const [feed, setFeed] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [isGlobalMuted, setIsGlobalMuted] = useState(true);
+
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+  const [activeModal, setActiveModal] = useState(null);
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const onFeedUpdatedRef = useRef(onFeedUpdated);
+
   useEffect(() => {
 
-    const refreshFeed = () => {
-
-      console.log("🔄 Recommendation Refresh Triggered");
-
-      const rankedFeed =
-        RecommendationEngine.rankVideos(videos);
-
-      console.log("🆕 New Ranking");
-      console.table(
-        rankedFeed.map(video => ({
-          Title: video.title,
-          Score: video.recommendationScore
-        }))
-      );
-
-      setFeed(rankedFeed);
-
-      // Notify parent (App.jsx)
-      if (onFeedUpdated) {
-        onFeedUpdated(rankedFeed);
-      }
-
-      // If current index becomes invalid after refresh
-      setCurrentIndex(prev =>
-        prev >= rankedFeed.length ? 0 : prev
-      );
-
-    };
-
-    // Initial recommendation generation
-    refreshFeed();
-
-    // Subscribe for live updates
-    InterestProfileManager.subscribe(
-      refreshFeed
-    );
-
-    CreatorAffinityManager.subscribe(
-      refreshFeed
-    );
-
-    return () => {
-
-      InterestProfileManager.unsubscribe(
-        refreshFeed
-      );
-
-      CreatorAffinityManager.unsubscribe(
-        refreshFeed
-      );
-
-    };
+    onFeedUpdatedRef.current = onFeedUpdated;
 
   }, [onFeedUpdated]);
 
-  // --------------------------
-  // Navigation
-  // --------------------------
+  // ----------------------------
+  // Initial Feed Load
+  // ----------------------------
 
-  const nextVideo = () => {
+  useEffect(() => {
+
+    loadFeed();
+
+  }, []);
+
+  const loadFeed = async () => {
+
+    try {
+
+      console.log("Loading Feed...");
+
+      const data = await getFeed();
+
+      console.log(data);
+
+      setFeed(data);
+
+      if (onFeedUpdatedRef.current) {
+
+        onFeedUpdatedRef.current(data);
+
+      }
+
+    } catch (err) {
+
+      console.error(err);
+
+    }
+
+  };
+
+  // ----------------------------
+  // Infinite Recommendations
+  // ----------------------------
+
+  useEffect(() => {
 
     if (feed.length === 0) return;
 
-    SessionManager.incrementSession();
+    if (currentIndex >= feed.length - 2) {
 
-    if (currentIndex < feed.length - 1) {
+      loadMoreRecommendations();
 
-      setCurrentIndex(currentIndex + 1);
+    }
 
-    } else {
+  }, [currentIndex]);
 
-      console.log("📺 End of Feed");
+  const loadMoreRecommendations = async () => {
+
+    if (isLoadingMore) return;
+
+    setIsLoadingMore(true);
+
+    try {
+
+      const currentVideo = feed[currentIndex];
+
+      if (!currentVideo) {
+
+        setIsLoadingMore(false);
+
+        return;
+
+      }
+
+      const recommendations =
+        await getRecommendations(
+          currentVideo.video_id
+        );
+
+      if (
+        recommendations &&
+        !recommendations.error &&
+        recommendations.length > 0
+      ) {
+
+        setFeed(previous => [
+
+          ...previous,
+
+          ...recommendations
+
+        ]);
+
+      }
+
+    } catch (err) {
+
+      console.error(err);
+
+    }
+
+    setIsLoadingMore(false);
+
+  };
+
+  // ----------------------------
+  // Scroll
+  // ----------------------------
+
+  const handleScroll = (e) => {
+
+    const {
+
+      scrollTop,
+
+      clientHeight
+
+    } = e.currentTarget;
+
+    if (clientHeight === 0) return;
+
+    const index = Math.round(
+
+      scrollTop /
+
+      clientHeight
+
+    );
+
+    if (
+
+      index >= 0 &&
+
+      index < feed.length
+
+    ) {
+
+      setCurrentIndex(index);
 
     }
 
   };
 
-  const previousVideo = () => {
+  // ----------------------------
+  // Search
+  // ----------------------------
 
-    if (currentIndex > 0) {
+  const filteredFeed =
 
-      setCurrentIndex(currentIndex - 1);
+    searchQuery.trim() === ""
 
-    }
+      ? feed
+
+      : feed.filter(video => {
+
+          const query =
+
+            searchQuery.toLowerCase();
+
+          return (
+
+            (video.title || "")
+              .toLowerCase()
+              .includes(query)
+
+            ||
+
+            (video.creator || "")
+              .toLowerCase()
+              .includes(query)
+
+            ||
+
+            (video.description || "")
+              .toLowerCase()
+              .includes(query)
+
+            ||
+
+            (video.music || "")
+              .toLowerCase()
+              .includes(query)
+
+          );
+
+        });
+
+  // ----------------------------
+  // Mute
+  // ----------------------------
+
+  const handleMuteToggle = () => {
+
+    setIsGlobalMuted(
+
+      previous => !previous
+
+    );
 
   };
-
-  // --------------------------
-  // Loading
-  // --------------------------
 
   if (feed.length === 0) {
 
     return (
 
-      <div
-        style={{
-          width: 400,
-          height: "90vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: 20
-        }}
-      >
-        Loading Recommendations...
+      <div className="loading-container">
+
+        <div className="spinner"></div>
+
+        <p>
+
+          Loading Feed...
+
+        </p>
+
       </div>
 
     );
 
   }
 
-  // --------------------------
-  // UI
-  // --------------------------
+    return (
 
-  return (
+    <div className="app-container">
 
-    <div>
+      {/* Header */}
 
-      <VideoCard
-        video={feed[currentIndex]}
-      />
+      <div className="app-header">
 
-      <div
-        style={{
-          marginTop: 20,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center"
-        }}
-      >
+        <div className="logo-text">
 
-        <button onClick={previousVideo}>
-          ⬅ Previous
-        </button>
+          AI Reels
 
-        <span>
+        </div>
 
-          {currentIndex + 1}
+        <div className="header-actions">
 
-          {" / "}
+          <button
+            className="icon-btn"
+            onClick={() =>
+              setActiveModal(
+                activeModal === "search"
+                  ? null
+                  : "search"
+              )
+            }
+          >
 
-          {feed.length}
+            <Search size={18} />
 
-        </span>
+          </button>
 
-        <button onClick={nextVideo}>
-          Next ➡
-        </button>
+          <button
+            className="icon-btn"
+            onClick={() =>
+              setActiveModal(
+                activeModal === "profile"
+                  ? null
+                  : "profile"
+              )
+            }
+          >
+
+            <User size={18} />
+
+          </button>
+
+        </div>
 
       </div>
+
+      {/* Feed */}
+
+      <div
+        className="feed-container no-scrollbar"
+        onScroll={handleScroll}
+      >
+
+        {
+
+          filteredFeed.map((video, index) => (
+
+            <VideoCard
+
+              key={video.video_id}
+
+              video={video}
+
+              isActive={
+                index === currentIndex
+              }
+
+              isGlobalMuted={
+                isGlobalMuted
+              }
+
+              onMuteToggle={
+                handleMuteToggle
+              }
+
+            />
+
+          ))
+
+        }
+
+        {
+
+          isLoadingMore && (
+
+            <div
+              style={{
+                height: 80,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+
+              <div className="spinner" />
+
+            </div>
+
+          )
+
+        }
+
+      </div>
+
+      {/* Search */}
+
+      {
+
+        activeModal === "search" && (
+
+          <div
+            style={modalOverlayStyle}
+            onClick={() =>
+              setActiveModal(null)
+            }
+          >
+
+            <div
+              style={modalContentStyle}
+              onClick={(e) =>
+                e.stopPropagation()
+              }
+            >
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent:
+                    "space-between",
+                  width: "100%",
+                  marginBottom: 15
+                }}
+              >
+
+                <h3>
+
+                  Search
+
+                </h3>
+
+                <button
+                  className="icon-btn"
+                  onClick={() =>
+                    setActiveModal(null)
+                  }
+                >
+
+                  <X size={16} />
+
+                </button>
+
+              </div>
+
+              <input
+
+                value={searchQuery}
+
+                onChange={(e) =>
+                  setSearchQuery(
+                    e.target.value
+                  )
+                }
+
+                placeholder="Search..."
+
+                style={inputStyle}
+
+              />
+
+            </div>
+
+          </div>
+
+        )
+
+      }
+
+      {/* Profile */}
+
+      {
+
+        activeModal === "profile" && (
+
+          <div
+            style={modalOverlayStyle}
+            onClick={() =>
+              setActiveModal(null)
+            }
+          >
+
+            <div
+              style={modalContentStyle}
+              onClick={(e) =>
+                e.stopPropagation()
+              }
+            >
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent:
+                    "space-between",
+                  width: "100%",
+                  marginBottom: 15
+                }}
+              >
+
+                <h3>
+
+                  My Profile
+
+                </h3>
+
+                <button
+                  className="icon-btn"
+                  onClick={() =>
+                    setActiveModal(null)
+                  }
+                >
+
+                  <X size={16} />
+
+                </button>
+
+              </div>
+
+              <div style={avatarStyle}>
+
+                V
+
+              </div>
+
+              <h4>
+
+                @you_viewer
+
+              </h4>
+
+              <p>
+
+                Videos Loaded :
+
+                {" "}
+
+                {feed.length}
+
+              </p>
+
+              <p>
+
+                Current Video :
+
+                {" "}
+
+                {currentIndex + 1}
+
+              </p>
+
+            </div>
+
+          </div>
+
+        )
+
+      }
 
     </div>
 
   );
 
 }
+
+const modalOverlayStyle = {
+
+  position: "absolute",
+
+  inset: 0,
+
+  background: "rgba(0,0,0,.8)",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  zIndex: 20
+
+};
+
+const modalContentStyle = {
+
+  background: "#121214",
+
+  padding: 20,
+
+  borderRadius: 12,
+
+  width: 340,
+
+  display: "flex",
+
+  flexDirection: "column",
+
+  alignItems: "center"
+
+};
+
+const inputStyle = {
+
+  width: "100%",
+
+  padding: 10,
+
+  borderRadius: 8,
+
+  background: "#222",
+
+  color: "#fff",
+
+  border: "1px solid #333"
+
+};
+
+const avatarStyle = {
+
+  width: 60,
+
+  height: 60,
+
+  borderRadius: "50%",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  background: "#ff3366",
+
+  color: "#fff",
+
+  fontWeight: "bold",
+
+  fontSize: 22,
+
+  marginBottom: 15
+
+};
 
 export default FeedController;
