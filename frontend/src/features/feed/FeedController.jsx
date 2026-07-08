@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 
-import videos from "../../data/videos";
-
-import RecommendationEngine from "../recommendation/RecommendationEngine";
-import InterestProfileManager from "../recommendation/InterestProfileManager";
-import CreatorAffinityManager from "../recommendation/CreatorAffinityManager";
-import SessionManager from "../recommendation/SessionManager";
+import { getFeed, getRecommendations } from "../../services/api";
 
 import VideoCard from "./VideoCard";
 
@@ -13,81 +8,92 @@ function FeedController({ onFeedUpdated }) {
 
   const [feed, setFeed] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  // --------------------------
+  // Initial Feed
+  // --------------------------
 
   useEffect(() => {
 
-    const refreshFeed = () => {
+    async function loadFeed() {
 
-      console.log("🔄 Recommendation Refresh Triggered");
+      try {
 
-      const rankedFeed =
-        RecommendationEngine.rankVideos(videos);
+        const data = await getFeed();
 
-      console.log("🆕 New Ranking");
-      console.table(
-        rankedFeed.map(video => ({
-          Title: video.title,
-          Score: video.recommendationScore
-        }))
-      );
+        setFeed(data);
 
-      setFeed(rankedFeed);
+        if (onFeedUpdated) {
+          onFeedUpdated(data);
+        }
 
-      // Notify parent (App.jsx)
-      if (onFeedUpdated) {
-        onFeedUpdated(rankedFeed);
+      } catch (err) {
+
+        console.error(err);
+
+      } finally {
+
+        setLoading(false);
+
       }
 
-      // If current index becomes invalid after refresh
-      setCurrentIndex(prev =>
-        prev >= rankedFeed.length ? 0 : prev
-      );
+    }
 
-    };
+    loadFeed();
 
-    // Initial recommendation generation
-    refreshFeed();
-
-    // Subscribe for live updates
-    InterestProfileManager.subscribe(
-      refreshFeed
-    );
-
-    CreatorAffinityManager.subscribe(
-      refreshFeed
-    );
-
-    return () => {
-
-      InterestProfileManager.unsubscribe(
-        refreshFeed
-      );
-
-      CreatorAffinityManager.unsubscribe(
-        refreshFeed
-      );
-
-    };
-
-  }, [onFeedUpdated]);
+  }, []);
 
   // --------------------------
   // Navigation
   // --------------------------
 
-  const nextVideo = () => {
+  const nextVideo = async () => {
 
     if (feed.length === 0) return;
 
-    SessionManager.incrementSession();
-
+    // Normal next video
     if (currentIndex < feed.length - 1) {
 
       setCurrentIndex(currentIndex + 1);
 
-    } else {
+      return;
 
-      console.log("📺 End of Feed");
+    }
+
+    // End of feed
+    console.log("Loading more recommendations...");
+
+    try {
+
+      const currentVideo = feed[currentIndex];
+
+      const recommendations =
+        await getRecommendations(currentVideo.video_id);
+
+      if (recommendations.length > 0) {
+
+        const updatedFeed = [
+
+          ...feed,
+
+          ...recommendations
+
+        ];
+
+        setFeed(updatedFeed);
+
+        if (onFeedUpdated) {
+          onFeedUpdated(updatedFeed);
+        }
+
+        setCurrentIndex(currentIndex + 1);
+
+      }
+
+    } catch (err) {
+
+      console.error(err);
 
     }
 
@@ -107,7 +113,7 @@ function FeedController({ onFeedUpdated }) {
   // Loading
   // --------------------------
 
-  if (feed.length === 0) {
+  if (loading) {
 
     return (
 
@@ -121,7 +127,7 @@ function FeedController({ onFeedUpdated }) {
           fontSize: 20
         }}
       >
-        Loading Recommendations...
+        Loading Feed...
       </div>
 
     );
@@ -155,11 +161,7 @@ function FeedController({ onFeedUpdated }) {
 
         <span>
 
-          {currentIndex + 1}
-
-          {" / "}
-
-          {feed.length}
+          {currentIndex + 1} / {feed.length}
 
         </span>
 

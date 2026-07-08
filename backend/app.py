@@ -1,18 +1,23 @@
-from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
-
+import sys
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+from typing import Dict, Any
 
-from backend.recommendation.recommendation_service import RecommendationService
+# Ensure the project root is in the python path
+BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(BASE_DIR))
+
+from src.recommender.service import RecommenderService
+from src.indexing.faiss_service import FaissSearchService
 
 # --------------------------------------------------
 # Project Paths
 # --------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-VIDEOS_DIR = BASE_DIR / "datasets" / "raw" / "videos"
+VIDEOS_DIR = BASE_DIR / "datasets" / "raw" / "msrvtt"
 THUMBNAILS_DIR = BASE_DIR / "datasets" / "thumbnails"
 
 # --------------------------------------------------
@@ -20,9 +25,11 @@ THUMBNAILS_DIR = BASE_DIR / "datasets" / "thumbnails"
 # --------------------------------------------------
 
 app = FastAPI(
-    title="Recommendation Engine",
-    version="1.0"
+    title="Daiv Clips Recommendation Platform API",
+    version="2.0",
+    description="Production-grade rule-based recommendation platform for Daiv ecosystem clips."
 )
+
 # -------------------------------
 # CORS
 # -------------------------------
@@ -31,11 +38,17 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:3000",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:5174",
+        "http://127.0.0.1:3000",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 # --------------------------------------------------
 # Static Files
 # --------------------------------------------------
@@ -53,10 +66,26 @@ app.mount(
 )
 
 # --------------------------------------------------
-# Recommendation Service
+# Recommender Services
 # --------------------------------------------------
 
-service = RecommendationService()
+service = RecommenderService()
+faiss_service = FaissSearchService()
+
+# --------------------------------------------------
+# Schemas
+# --------------------------------------------------
+
+class FeedbackPayload(BaseModel):
+    user_id: str
+    video_id: str
+    watch_completion_rate: float
+    watch_time_seconds: float = 0.0
+    replay_count: int = 0
+    is_liked: bool = False
+    is_saved: bool = False
+    is_shared: bool = False
+    is_commented: bool = False
 
 # --------------------------------------------------
 # Routes
@@ -66,28 +95,87 @@ service = RecommendationService()
 def home():
     return {
         "status": "running",
-        "message": "Recommendation Engine is running"
+        "message": "Daiv Recommendation Engine is running",
+        "version": "2.0"
     }
 
 
 @app.get("/feed")
-def feed():
+def feed(user_id: str = "user_1", limit: int = 10):
     """
-    Temporary feed endpoint.
-    Uses one seed video until
-    user-specific recommendation
-    is implemented.
+    Returns personalized recommendation feed with scoring details and natural explanations.
+    Accepts user_id (e.g. 'user_1') or persona name (e.g. 'Gamer', 'Traveler', 'Automobile Enthusiast').
     """
-
-    seed_video = "6875317312082201857"
-
-    return service.recommend(seed_video)
+    return service.get_recommendations(user_id, limit=limit)
 
 
 @app.get("/recommend/{video_id}")
-def recommend(video_id: str):
+def recommend(video_id: str, limit: int = 10):
     """
-    Returns videos similar to the given video.
+    Returns items semantically similar to the given video_id using FAISS search.
     """
+    results = faiss_service.search_by_id(video_id, top_k=limit)
+    
+    enriched = []
+    video_lookup = service.candidate_generator.video_lookup
+    
+    for item in results:
+        vid = item["video_id"]
+        meta = video_lookup.get(vid)
+        if not meta:
+            continue
+            
+        enriched.append({
+            "video_id": vid,
+            "title": meta.get("caption") or f"Clip {vid}",
+            "duration": float(meta.get("duration", 0.0)),
+            "category": meta.get("category", "Entertainment"),
+            "thumbnail_url": f"http://127.0.0.1:8000/thumbnails/{vid}.jpg",
+            "video_url": f"http://127.0.0.1:8000/videos/{vid}.mp4",
+            "score": item["score"]
+        })
+        
+    return enriched
 
-    return service.recommend(video_id)
+
+@app.post("/feedback")
+def feedback(payload: FeedbackPayload):
+    """
+    Submits user interaction feedback (watch time, like, save, etc.)
+    and recalculates user interest profile/creator affinities.
+    """
+    return service.submit_feedback(
+        user_id=payload.user_id,
+        video_id=payload.video_id,
+        engagement={
+            "watch_completion_rate": payload.watch_completion_rate,
+            "watch_time_seconds": payload.watch_time_seconds,
+            "replay_count": payload.replay_count,
+            "is_liked": payload.is_liked,
+            "is_saved": payload.is_saved,
+            "is_shared": payload.is_shared,
+            "is_commented": payload.is_commented
+        }
+    )
+
+
+@app.get("/profile/{user_id}")
+def get_user_profile(user_id: str):
+    """
+    Returns current interest profile, creator affinities, and watch statistics for a user.
+    """
+    user = service.find_user_by_id_or_persona(user_id)
+    uid = user["user_id"]
+    
+    interest_profile = service.interest_profiles.get(uid, {})
+    creator_affinities = service.user_creator_affinities.get(uid, {})
+    watch_history = service.user_watch_histories.get(uid, [])
+    
+    return {
+        "user_id": uid,
+        "username": user["username"],
+        "persona": user["persona"],
+        "interests": interest_profile.get("interests", {}),
+        "creator_affinities": creator_affinities,
+        "total_watched": len(watch_history)
+    }

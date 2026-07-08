@@ -1,36 +1,381 @@
+import { useEffect, useState, useRef } from "react";
+import { getFeed, getUserProfile } from "../../services/api";
+import VideoCard from "./VideoCard";
 
-import RecommendationPanel from "../recommendation/RecommendationPanel";
-import FeedController from "./FeedController";
-import AnalyticsPanel from "../analytics/AnalyticsPanel";
+const ACTIVE_USER_ID = "user_1";
 
 function VideoFeed() {
+    const [videos, setVideos] = useState([]);
+    const [profile, setProfile] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [logs, setLogs] = useState([]);
+    const consoleEndRef = useRef(null);
 
-  const rankedVideos =
-    RecommendationEngine.rankVideos(videos);
+    // Helper to add terminal console logs
+    const addLog = (message, type = "info") => {
+        const timestamp = new Date().toLocaleTimeString();
+        setLogs(prev => [...prev, { timestamp, message, type }]);
+    };
 
-  return (
+    // Auto scroll the console terminal
+    useEffect(() => {
+        if (consoleEndRef.current) {
+            consoleEndRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [logs]);
 
-    <div
-      style={{
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center",
-        gap:"30px",
-        height:"100vh",
-        background:"#000"
-      }}
-    >
+    // Fetch feed and user profile stats on mount
+    useEffect(() => {
+        async function initLoad() {
+            setLoading(true);
+            setLogs([]);
+            setActiveIndex(0);
+            
+            addLog(`SESSION_START: Initialized guest session for ${ACTIVE_USER_ID}`, "info");
+            
+            try {
+                // Fetch initial user profile stats
+                const profileData = await getUserProfile(ACTIVE_USER_ID);
+                setProfile(profileData);
+                addLog(`PROFILE_LOADED: Loaded initial interests & creator affinities from backend`, "info");
 
-      <FeedController />
+                // Fetch personalized recommendations feed
+                const feedData = await getFeed(ACTIVE_USER_ID);
+                setVideos(feedData);
+                addLog(`RETRIEVAL: Retrieved ${feedData.length} personalized candidates from FAISS vector search, collaborative filters, and trending pools`, "info");
+            } catch (err) {
+                console.error(err);
+                addLog(`ERROR: Failed to fetch backend data. Verify server status`, "event");
+            } finally {
+                setLoading(false);
+            }
+        }
+        initLoad();
+    }, []);
 
-      <AnalyticsPanel />
+    // Callback when feedback is successfully posted to backend
+    const handleFeedbackSubmitted = async (res) => {
+        try {
+            // Re-load profile stats
+            const profileData = await getUserProfile(ACTIVE_USER_ID);
+            setProfile(profileData);
 
-      <RecommendationPanel />
+            // Re-load feed dynamically to see re-ranking
+            const feedData = await getFeed(ACTIVE_USER_ID);
+            
+            // Preserve all videos up to the current activeIndex (so the active video doesn't change)
+            // And merge the new recommended videos (filtering out duplicates of already watched ones)
+            setVideos(prevVideos => {
+                const watched = prevVideos.slice(0, activeIndex + 1);
+                const lastCategory = watched[watched.length - 1]?.category;
+                const watchedIds = new Set(watched.map(v => v.video_id));
+                
+                // Filter out watched IDs
+                let newCands = feedData.filter(v => !watchedIds.has(v.video_id));
+                
+                // Enforce category alternation at the boundary
+                if (newCands.length > 0 && newCands[0].category === lastCategory && lastCategory) {
+                    const diffCatIdx = newCands.findIndex(v => v.category !== lastCategory);
+                    if (diffCatIdx !== -1) {
+                        const [item] = newCands.splice(diffCatIdx, 1);
+                        newCands.unshift(item);
+                    }
+                }
+                
+                return [...watched, ...newCands];
+            });
+            
+            addLog(`RE-RANKING: Recommender weights updated. Next videos in feed adjusted in real-time!`, "info");
+        } catch (err) {
+            console.error("Reload after feedback failed:", err);
+        }
+    };
 
-    </div>
+    // Navigate slides in Reels mode
+    const handleNextSlide = () => {
+        if (activeIndex < videos.length - 1) {
+            setActiveIndex(prev => prev + 1);
+        }
+    };
 
-  );
+    const handlePrevSlide = () => {
+        if (activeIndex > 0) {
+            setActiveIndex(prev => prev - 1);
+        }
+    };
 
+    // Active video details for scoring breakdown
+    const activeVideo = videos[activeIndex];
+
+    return (
+        <div className="dashboard-container">
+            {/* Left Panel: Immersive Reels Player Column */}
+            <div className="feed-column">
+                <div className="feed-header-row">
+                    <div className="feed-title">
+                        <h1>Daiv Clips Feed</h1>
+                        <p>Personalized Recommendations Playground (MSR-VTT Dataset)</p>
+                    </div>
+                </div>
+
+                {loading ? (
+                    <div className="loading-state">
+                        <div style={{ fontSize: "24px", marginBottom: "10px" }}>⚡</div>
+                        Running candidate generation and multi-objective ranking...
+                    </div>
+                ) : videos.length === 0 ? (
+                    <div className="loading-state">No videos found.</div>
+                ) : (
+                    <div className="reels-wrapper">
+                        {/* Up button */}
+                        {activeIndex > 0 && (
+                            <button className="reels-nav-btn reels-nav-up" onClick={handlePrevSlide}>
+                                ▲
+                            </button>
+                        )}
+
+                        <div className="reels-viewport">
+                            {videos.map((vid, idx) => (
+                                <div 
+                                    key={vid.video_id} 
+                                    className="reels-slide"
+                                    style={{ display: idx === activeIndex ? "block" : "none" }}
+                                >
+                                    <VideoCard
+                                        video={vid}
+                                        isActive={idx === activeIndex}
+                                        layoutMode="reels"
+                                        userId={ACTIVE_USER_ID}
+                                        onFeedbackSubmitted={handleFeedbackSubmitted}
+                                        addLog={addLog}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Down button */}
+                        {activeIndex < videos.length - 1 && (
+                            <button className="reels-nav-btn reels-nav-down" onClick={handleNextSlide}>
+                                ▼
+                            </button>
+                        )}
+                    </div>
+                )}
+            </div>
+
+            {/* Right Panel: Algorithmic Dashboard */}
+            <div className="dashboard-column">
+                <div style={{ textAlign: "left" }}>
+                    <h2 style={{ color: "var(--accent)" }}>🧠 Recommender Dashboard</h2>
+                    <span style={{ fontSize: "12px", color: "#8b9bb4" }}>Real-Time Personalization Stats</span>
+                </div>
+
+                <div className="divider"></div>
+
+                {/* User Stats Card */}
+                {profile && (
+                    <div className="dashboard-widget-card">
+                        <h3>👤 Session Profile</h3>
+                        <div style={{ fontSize: "13px", display: "flex", flexDirection: "column", gap: "6px" }}>
+                            <div><strong>Username:</strong> {profile.username}</div>
+                            <div><strong>User ID:</strong> {profile.user_id}</div>
+                            <div><strong>Watched Count:</strong> {profile.total_watched} clips</div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Interest Profile Card */}
+                {profile && (
+                    <div className="dashboard-widget-card">
+                        <h3>📊 Interest Profile Vector</h3>
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            {Object.entries(profile.interests).length === 0 ? (
+                                <span style={{ fontSize: "12px", fontStyle: "italic", color: "#64748b" }}>Empty vector (Cold Start)</span>
+                            ) : (
+                                Object.entries(profile.interests)
+                                    .sort((a,b) => b[1] - a[1])
+                                    .map(([cat, pct]) => (
+                                        <div key={cat} className="interest-row">
+                                            <div className="interest-info">
+                                                <span>{cat}</span>
+                                                <span>{pct}%</span>
+                                            </div>
+                                            <div className="bar-bg">
+                                                <div 
+                                                    className="bar-fill" 
+                                                    style={{ 
+                                                        width: `${pct}%`, 
+                                                        background: cat === "Automobile" || cat === "Auto" ? "#ff3b5c" : 
+                                                                    cat === "Tech" || cat === "Science" ? "#00e676" : 
+                                                                    cat === "Food" ? "#ffeb3b" : 
+                                                                    cat === "Travel" ? "#38bdf8" : 
+                                                                    cat === "Animal" ? "#ec4899" : "#bb86fc"
+                                                    }}
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    ))
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {/* Creator Affinity Card */}
+                {profile && (
+                    <div className="dashboard-widget-card">
+                        <h3>👤 Creator Affinity Index</h3>
+                        <div className="affinity-list">
+                            {Object.entries(profile.creator_affinities).length === 0 ? (
+                                <span style={{ fontSize: "12px", fontStyle: "italic", color: "#64748b", padding: "10px 0" }}>No creator interaction data</span>
+                            ) : (
+                                Object.entries(profile.creator_affinities)
+                                    .sort((a,b) => b[1] - a[1])
+                                    .map(([creator, score]) => (
+                                        <div key={creator} className="affinity-item">
+                                            <span className="affinity-creator">@{creator}</span>
+                                            <span className="affinity-score">Affinity: {score.toFixed(0)}</span>
+                                        </div>
+                                    ))
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {/* Algorithmic Score Breakdown Card */}
+                {activeVideo && activeVideo.score_breakdown && (
+                    <div className="dashboard-widget-card">
+                        <h3>🎯 Explanation & Ranking Breakdown</h3>
+                        
+                        <div style={{ fontSize: "12px", background: "rgba(255,255,255,0.03)", padding: "10px", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.05)", marginBottom: "14px", lineHeight: "1.4" }}>
+                            <strong>Decision:</strong> "{activeVideo.explanation}"
+                        </div>
+                        
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            {/* Interest match (Weight: 35%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    📂 Category Interest <span style={{ color: "#64748b" }}>(35%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.interest * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.interest * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            {/* Creator Affinity (Weight: 20%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    👤 Creator Affinity <span style={{ color: "#64748b" }}>(20%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.creator_affinity * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.creator_affinity * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            {/* Vector Similarity (Weight: 15%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    🧬 Vector Similarity <span style={{ color: "#64748b" }}>(15%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.similarity * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.similarity * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            {/* Collaborative filtering (Weight: 10%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    🤝 Taste Similarity <span style={{ color: "#64748b" }}>(10%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.collaborative_filtering * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.collaborative_filtering * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            {/* Popularity (Weight: 10%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    📈 Popularity / Views <span style={{ color: "#64748b" }}>(10%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.popularity * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.popularity * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            {/* Freshness (Weight: 5%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    ✨ Content Freshness <span style={{ color: "#64748b" }}>(5%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.freshness * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.freshness * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            {/* Exploration (Weight: 5%) */}
+                            <div className="breakdown-row">
+                                <span className="breakdown-label">
+                                    🧭 Exploration Bonus <span style={{ color: "#64748b" }}>(5%)</span>
+                                </span>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <div className="breakdown-bar-bg">
+                                        <div className="breakdown-bar-fill" style={{ width: `${activeVideo.score_breakdown.exploration * 100}%` }}></div>
+                                    </div>
+                                    <span className="breakdown-value">{(activeVideo.score_breakdown.exploration * 100).toFixed(0)}%</span>
+                                </div>
+                            </div>
+
+                            <div className="divider" style={{ margin: "10px 0" }}></div>
+
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontWeight: "700" }}>
+                                <span style={{ color: "var(--text-bright)" }}>Final Matching Score</span>
+                                <span style={{ color: "var(--success)", fontSize: "16px" }}>{(activeVideo.score * 100).toFixed(1)}% Match</span>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Scrollable live event logs */}
+                <div className="dashboard-widget-card" style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: "180px" }}>
+                    <h3>💻 Real-Time Pipeline Logs</h3>
+                    <div className="console-box">
+                        {logs.length === 0 ? (
+                            <div className="empty-console">Terminal active. Awaiting logs...</div>
+                        ) : (
+                            logs.map((log, index) => (
+                                <div key={index} className="console-line">
+                                    <span className="console-time">[{log.timestamp}]</span>
+                                    {log.type === "event" && <span className="console-tag-event">[EVENT]</span>}
+                                    {log.type === "feedback" && <span className="console-tag-feedback">[FEEDBACK]</span>}
+                                    {log.type === "info" && <span className="console-tag-info">[SYSTEM]</span>}
+                                    <span style={{ color: log.type === "feedback" ? "#10b981" : log.type === "event" ? "#a855f7" : "#e2e8f0" }}>{log.message}</span>
+                                </div>
+                            ))
+                        )}
+                        <div ref={consoleEndRef}></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default VideoFeed;
