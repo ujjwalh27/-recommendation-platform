@@ -110,7 +110,30 @@ def build_msrvtt_database():
         "Gamer", "People", "Advertisement", "How-to", "Music", 
         "News", "Fashion", "Travel", "Documentary"
     ]
-    category_embeddings = model.encode(categories, normalize_embeddings=True)
+    
+    category_prompts = [
+        "cars, trucks, motorcycles, vehicles, driving on the road, engines, or automobile racing",  # Automobile
+        "cooking, baking, preparing food, eating, delicious recipes, kitchen, or tasting meals",  # Food
+        "cartoons, animated clips, anime, CGI, drawing animation, or 3D animations",  # Animation
+        "children playing, toys, kids cartoons, stroller reviews, baby items, or family games",  # Kids/Family
+        "cats, dogs, animals, wildlife, pets, birds, zoo, or veterinary clinics",  # Animal
+        "soccer, basketball, football, running, sports games, gymnastics, or athletics",  # Sports
+        "science tutorials, math lessons, classrooms, learning concepts, or educational lectures",  # Education
+        "clips from television shows, soap operas, reality TV, drama series, or TV episodes",  # TV Shows
+        "funny pranks, stand-up comedy, jokes, people laughing, or humorous clips",  # Comedy
+        "smartphones, computers, gadgets, electronics reviews, or technology hardware",  # Tech
+        "playing video games, gaming console, minecraft, gameplay walkthroughs, or computer games",  # Gamer
+        "vlogging, friends talking, interviews, public gatherings, family activities, or human interactions",  # People
+        "commercial advertisements, product showcase, marketing promotions, brand sponsors, or ads",  # Advertisement
+        "tutorials, DIY guides, step by step instructions, how to build or fix something",  # How-to
+        "singing, musical instruments, playing piano, guitar solos, music videos, or concerts",  # Music
+        "news reports, interviews with politicians, news anchors talking, speeches, or current events",  # News
+        "clothing models, fashion shows, makeup tutorials, outfits, modeling, or styling garments",  # Fashion
+        "travel vlogs, visiting sights, hotels, airports, exploring cities, scenery, or vacations",  # Travel
+        "nature documentaries, historical events, archives, narrator explaining history or science"  # Documentary
+    ]
+    
+    category_embeddings = model.encode(category_prompts, normalize_embeddings=True)
 
     print("Collecting and preparing captions list for all videos...")
     all_captions = []

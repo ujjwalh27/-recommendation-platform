@@ -166,6 +166,19 @@ class RuleBasedScorer:
             total_score += weight * sig_score
 
         normalized_score = round(total_score / total_weight, 4)
+        
+        # Category Interest Gate: Completely suppress category if user's interest score is <= 1.5%
+        # (Strictly explore items are exempt to allow discovery and building of new interests)
+        category = candidate.get("matched_category", "Entertainment")
+        interests = user_profile.get("interests", {})
+        interest_pct = interests.get(category, 0.0)
+        
+        retrieval_sources = candidate.get("retrieval_sources", [])
+        is_strictly_explore = (retrieval_sources == ["exploration"])
+        
+        if not is_strictly_explore and interest_pct <= 1.5:
+            normalized_score = 0.0
+
         return normalized_score, scores_breakdown
 
     def rank(self, candidates: List[Dict[str, Any]], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> List[Dict[str, Any]]:

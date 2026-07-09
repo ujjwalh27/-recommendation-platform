@@ -156,23 +156,31 @@ class RecommenderService:
         is_shared = bool(engagement.get("is_shared", False))
         is_commented = bool(engagement.get("is_commented", False))
         
-        # Score engagement events:
-        # Completed (+10), Skip (-8), Replay (+8 per count), Like (+7), Save (+9), Share (+10), Comment (+8)
+        # Engagement event weights – tuned down to reduce their impact on the interest profile
+        WATCH_COMPLETE_WEIGHT = 6   # previously +10
+        SKIP_WEIGHT = -5            # previously -8
+        REPLAY_WEIGHT = 5           # previously +8 per replay
+        LIKE_WEIGHT = 3             # previously +7
+        SAVE_WEIGHT = 4             # previously +9
+        SHARE_WEIGHT = 5            # previously +10
+        COMMENT_WEIGHT = 4          # previously +8
+        
+        # Score engagement events using the new weights
         event_score = 0
         if watch_completion_rate >= 0.85:
-            event_score += 10
+            event_score += WATCH_COMPLETE_WEIGHT
         elif watch_completion_rate < 0.2:
-            event_score += -8
-            
-        event_score += replay_count * 8
+            event_score += SKIP_WEIGHT
+        
+        event_score += replay_count * REPLAY_WEIGHT
         if is_liked:
-            event_score += 7
+            event_score += LIKE_WEIGHT
         if is_saved:
-            event_score += 9
+            event_score += SAVE_WEIGHT
         if is_shared:
-            event_score += 10
+            event_score += SHARE_WEIGHT
         if is_commented:
-            event_score += 8
+            event_score += COMMENT_WEIGHT
             
         # 3. Append to watch history
         new_event = {
@@ -203,9 +211,9 @@ class RecommenderService:
         if not raw_scores and profile.get("interests"):
             raw_scores.update({cat: float(pct) for cat, pct in profile["interests"].items()})
             
-        # Decay all raw scores slightly (0.95 factor) to favor recent interactions and make profile highly adaptive
+        # Decay all raw scores slightly toward the baseline of 15.0 to prevent draining to zero
         for cat in raw_scores:
-            raw_scores[cat] = max(0.0, raw_scores[cat] * 0.95)
+            raw_scores[cat] = max(0.0, 15.0 + (raw_scores[cat] - 15.0) * 0.95)
             
         raw_scores[category] = max(0.0, raw_scores.get(category, 0.0) + event_score)
         
@@ -220,6 +228,20 @@ class RecommenderService:
         affinities = self.user_creator_affinities.setdefault(resolved_uid, {})
         if creator:
             affinities[creator] = max(0.0, affinities.get(creator, 0.0) + event_score)
+            
+        # 6. Persist updated watch history and interest profiles to disk
+        try:
+            with open(self.interest_profiles_path, "w", encoding="utf-8") as f:
+                json.dump(self.interest_profiles, f, indent=4)
+            
+            # Flatten user watch histories back into a list to save to watch_history.json
+            all_history_events = []
+            for uid, events in self.user_watch_histories.items():
+                all_history_events.extend(events)
+            with open(self.watch_history_path, "w", encoding="utf-8") as f:
+                json.dump(all_history_events, f, indent=4)
+        except Exception as e:
+            print(f"Error persisting updated profile state to disk: {e}")
             
         return {
             "status": "success",

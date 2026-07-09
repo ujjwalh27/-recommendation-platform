@@ -24,55 +24,58 @@ class DiversityFilter:
         # Calculate maximum allowed videos per category globally based on the requested feed limit
         max_allowed_per_category = max(1, int(limit * self.max_category_ratio))
         
-        # Dedicated slots to inject fresh and exploration candidates to guarantee impressions
-        fresh_slots = {2, 6}
-        explore_slots = {4, 8}
+        # Strict slot pattern to guarantee a perfect interleaving mix of feed types
+        slot_pattern = [
+            "personal",      # Slot 0
+            "freshness",     # Slot 1
+            "exploration",   # Slot 2
+            "personal",      # Slot 3
+            "freshness",     # Slot 4
+            "exploration",   # Slot 5
+            "personal",      # Slot 6
+            "freshness",     # Slot 7
+            "exploration",   # Slot 8
+            "trending"       # Slot 9
+        ]
 
         while len(selected) < limit and remaining:
             candidate_index_to_pick = -1
             current_slot = len(selected)
+            pattern_source = slot_pattern[current_slot % len(slot_pattern)]
 
-            # If this is a dedicated freshness slot, prioritize picking a fresh candidate first
-            if current_slot in fresh_slots:
-                for idx, cand in enumerate(remaining):
-                    if "freshness" in cand.get("retrieval_sources", []):
-                        category = cand.get("matched_category", "Entertainment")
-                        category_violates = False
-                        if len(consecutive_categories) >= self.max_consecutive_category:
-                            last_categories = consecutive_categories[-self.max_consecutive_category:]
-                            if all(c == category for c in last_categories):
-                                category_violates = True
-                        
-                        # Enforce category ratio cap inside freshness slots
-                        category_count = sum(1 for v in selected if v.get("matched_category") == category)
-                        ratio_violates = category_count >= max_allowed_per_category
-                        
-                        if not category_violates and not ratio_violates:
-                            candidate_index_to_pick = idx
-                            break
+            # 1. Prioritize picking a candidate matching the slot pattern source
+            for idx, cand in enumerate(remaining):
+                sources = cand.get("retrieval_sources", [])
+                
+                # Check if candidate matches the target pattern source
+                matches = False
+                if pattern_source == "personal":
+                    matches = any(s in ["similarity", "collaborative_filtering", "creator_affinity", "category"] for s in sources)
+                elif pattern_source == "freshness":
+                    matches = "freshness" in sources
+                elif pattern_source == "exploration":
+                    matches = "exploration" in sources
+                elif pattern_source == "trending":
+                    matches = "trending" in sources
+                
+                if matches:
+                    category = cand.get("matched_category", "Entertainment")
+                    category_violates = False
+                    if len(consecutive_categories) >= self.max_consecutive_category:
+                        last_categories = consecutive_categories[-self.max_consecutive_category:]
+                        if all(c == category for c in last_categories):
+                            category_violates = True
+                    
+                    # Check ratio limit
+                    category_count = sum(1 for v in selected if v.get("matched_category") == category)
+                    ratio_violates = category_count >= max_allowed_per_category
+                    
+                    if not category_violates and not ratio_violates:
+                        candidate_index_to_pick = idx
+                        break
 
-            # If this is a dedicated exploration slot, prioritize picking an exploration candidate first
-            elif current_slot in explore_slots:
-                for idx, cand in enumerate(remaining):
-                    if "exploration" in cand.get("retrieval_sources", []):
-                        category = cand.get("matched_category", "Entertainment")
-                        category_violates = False
-                        if len(consecutive_categories) >= self.max_consecutive_category:
-                            last_categories = consecutive_categories[-self.max_consecutive_category:]
-                            if all(c == category for c in last_categories):
-                                category_violates = True
-                        
-                        # Enforce category ratio cap inside exploration slots
-                        category_count = sum(1 for v in selected if v.get("matched_category") == category)
-                        ratio_violates = category_count >= max_allowed_per_category
-                        
-                        if not category_violates and not ratio_violates:
-                            candidate_index_to_pick = idx
-                            break
-
-            # If not a fresh slot, or no valid fresh candidate was found, perform normal scoring select
+            # 2. Fallback to normal scoring selection if no valid candidate matches the slot pattern source
             if candidate_index_to_pick == -1:
-                # Look for the first candidate that doesn't violate consecutive limits or ratio limits
                 for idx, cand in enumerate(remaining):
                     meta = cand.get("metadata", {})
                     category = cand.get("matched_category", "Entertainment")

@@ -8,13 +8,13 @@ from src.users.personas import PERSONAS, get_persona_preferred_categories
 
 # Engagement weights for interest profile builder
 ENGAGEMENT_WEIGHTS = {
-    "completed": 10,
-    "replay": 8,
-    "like": 7,
-    "save": 9,
-    "share": 10,
-    "comment": 8,
-    "skip": -8
+    "completed": 6,
+    "replay": 5,
+    "like": 1,
+    "save": 1,
+    "share": 2,
+    "comment": 1,
+    "skip": -5
 }
 
 MOCK_USERNAMES = [

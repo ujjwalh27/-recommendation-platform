@@ -187,7 +187,7 @@ class CandidateGenerator:
         """Retrieves random videos from across the entire catalog to ensure variety."""
         return random.sample(self.videos, min(limit, len(self.videos)))
 
-    def retrieve_fresh(self, limit: int = 30) -> List[Dict[str, Any]]:
+    def retrieve_fresh(self, limit: int = 150) -> List[Dict[str, Any]]:
         """Retrieves the most recently uploaded videos from the catalog."""
         # Sort videos by created_time descending
         sorted_videos = sorted(self.videos, key=lambda x: x.get("created_time", 0), reverse=True)
@@ -196,7 +196,7 @@ class CandidateGenerator:
     def generate_candidates(self, interest_profile: Dict[str, Any], watch_history: List[Dict[str, Any]], creator_affinities: Dict[str, float] = None, all_interest_profiles: Dict[str, Any] = None, all_watch_histories: Dict[str, List[Dict[str, Any]]] = None) -> List[Dict[str, Any]]:
         """Generates and merges candidates from all channels."""
         # 1. Retrieve candidates from each channel
-        trending_pool = self.retrieve_trending(limit=30)
+        trending_pool = self.retrieve_trending(limit=100)
         category_pool = self.retrieve_by_categories(interest_profile, limit_per_category=15)
         similarity_pool = self.retrieve_similar_to_watch_history(watch_history, limit_per_video=10)
         
@@ -213,10 +213,10 @@ class CandidateGenerator:
         creator_affinity_pool = self.retrieve_by_creator_affinity(creator_affinities, limit_per_creator=10)
 
         # Exploration variety pool
-        exploration_pool = self.retrieve_exploration(limit=30)
+        exploration_pool = self.retrieve_exploration(limit=100)
 
         # Freshness pool
-        fresh_pool = self.retrieve_fresh(limit=30)
+        fresh_pool = self.retrieve_fresh(limit=150)
 
         # 2. Merge candidates and tag with their retrieval channels (deduplication)
         merged_candidates: Dict[str, Dict[str, Any]] = {}
