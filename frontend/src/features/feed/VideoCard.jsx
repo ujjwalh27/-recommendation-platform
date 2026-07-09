@@ -259,7 +259,16 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
             {showIndicator && (
                 <div className="video-custom-controls">
                     <div className="play-pause-indicator">
-                        {showIndicator === "play" ? "▶" : "⏸"}
+                        {showIndicator === "play" ? (
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: "2px" }}>
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                        ) : (
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="6" y="4" width="4" height="16" />
+                                <rect x="14" y="4" width="4" height="16" />
+                            </svg>
+                        )}
                     </div>
                 </div>
             )}
@@ -268,28 +277,37 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
             <div className="reels-sidebar">
                 <div className="reels-action-item" onClick={handleLikeClick}>
                     <button className={`reels-action-btn ${liked ? "active-like" : ""}`}>
-                        ❤
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill={liked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
                     </button>
                     <span className="reels-action-label">{liked ? "Liked" : "Like"}</span>
                 </div>
 
                 <div className="reels-action-item" onClick={handleSaveClick}>
                     <button className={`reels-action-btn ${saved ? "active-save" : ""}`}>
-                        ★
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
                     </button>
                     <span className="reels-action-label">{saved ? "Saved" : "Save"}</span>
                 </div>
 
                 <div className="reels-action-item" onClick={handleCommentClick}>
-                    <button className={`reels-action-btn ${commented ? "active-save" : ""}`} style={{ color: commented ? "#38bdf8" : "#ffffff" }}>
-                        💬
+                    <button className="reels-action-btn" style={{ color: commented ? "#38bdf8" : "#ffffff", borderColor: commented ? "#38bdf8" : "rgba(255,255,255,0.15)" }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill={commented ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
                     </button>
                     <span className="reels-action-label">{commented ? "Commented" : "Comment"}</span>
                 </div>
 
                 <div className="reels-action-item" onClick={handleShareClick}>
                     <button className="reels-action-btn">
-                        📤
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
                     </button>
                     <span className="reels-action-label">Share</span>
                 </div>
