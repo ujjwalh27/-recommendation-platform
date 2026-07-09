@@ -4,6 +4,15 @@ import VideoCard from "./VideoCard";
 
 const ACTIVE_USER_ID = "user_1";
 
+const PERSONA_DESCRIPTIONS = {
+    "Automobile Enthusiast": "Fascinated by cars, motorbikes, engines, and racing.",
+    "Tech Enthusiast": "Interested in gadgets, computers, programming, and specs.",
+    "Food Lover": "Loves recipes, cooking, restaurants, and eating.",
+    "Animal Lover": "Enjoys pets, cute animal clips, and wildlife.",
+    "Traveler": "Passionate about vacations, nature, and exploring.",
+    "Gamer": "Watches gameplay, game highlights, and gaming hacks."
+};
+
 function VideoFeed() {
     const [videos, setVideos] = useState([]);
     const [profile, setProfile] = useState(null);
@@ -192,7 +201,37 @@ function VideoFeed() {
                         <div style={{ fontSize: "13px", display: "flex", flexDirection: "column", gap: "6px" }}>
                             <div><strong>Username:</strong> {profile.username}</div>
                             <div><strong>User ID:</strong> {profile.user_id}</div>
-                            <div><strong>Watched Count:</strong> {profile.total_watched} clips</div>
+                            <div>
+                                <strong>Active Persona:</strong>{" "}
+                                <span style={{ 
+                                    background: "rgba(56, 189, 248, 0.15)", 
+                                    color: "#38bdf8", 
+                                    padding: "2px 8px", 
+                                    borderRadius: "4px", 
+                                    fontSize: "11px",
+                                    fontWeight: "bold",
+                                    marginLeft: "4px",
+                                    display: "inline-block"
+                                }}>
+                                    {profile.persona || "Standard"}
+                                </span>
+                            </div>
+                            {profile.persona && PERSONA_DESCRIPTIONS[profile.persona] && (
+                                <div style={{ 
+                                    marginTop: "4px", 
+                                    fontSize: "11px", 
+                                    color: "#94a3b8", 
+                                    background: "rgba(255,255,255,0.02)", 
+                                    padding: "6px 8px", 
+                                    borderRadius: "6px", 
+                                    borderLeft: "2px solid #38bdf8",
+                                    fontStyle: "italic",
+                                    lineHeight: "1.4"
+                                }}>
+                                    {PERSONA_DESCRIPTIONS[profile.persona]}
+                                </div>
+                            )}
+                            <div style={{ marginTop: "4px" }}><strong>Watched Count:</strong> {profile.total_watched} clips</div>
                         </div>
                     </div>
                 )}
