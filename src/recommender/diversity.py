@@ -24,8 +24,9 @@ class DiversityFilter:
         # Calculate maximum allowed videos per category globally based on the requested feed limit
         max_allowed_per_category = max(1, int(limit * self.max_category_ratio))
         
-        # Dedicated slots to inject fresh candidates to guarantee impressions (Index 2 and 6)
+        # Dedicated slots to inject fresh and exploration candidates to guarantee impressions
         fresh_slots = {2, 6}
+        explore_slots = {4, 8}
 
         while len(selected) < limit and remaining:
             candidate_index_to_pick = -1
@@ -43,6 +44,25 @@ class DiversityFilter:
                                 category_violates = True
                         
                         # Enforce category ratio cap inside freshness slots
+                        category_count = sum(1 for v in selected if v.get("matched_category") == category)
+                        ratio_violates = category_count >= max_allowed_per_category
+                        
+                        if not category_violates and not ratio_violates:
+                            candidate_index_to_pick = idx
+                            break
+
+            # If this is a dedicated exploration slot, prioritize picking an exploration candidate first
+            elif current_slot in explore_slots:
+                for idx, cand in enumerate(remaining):
+                    if "exploration" in cand.get("retrieval_sources", []):
+                        category = cand.get("matched_category", "Entertainment")
+                        category_violates = False
+                        if len(consecutive_categories) >= self.max_consecutive_category:
+                            last_categories = consecutive_categories[-self.max_consecutive_category:]
+                            if all(c == category for c in last_categories):
+                                category_violates = True
+                        
+                        # Enforce category ratio cap inside exploration slots
                         category_count = sum(1 for v in selected if v.get("matched_category") == category)
                         ratio_violates = category_count >= max_allowed_per_category
                         

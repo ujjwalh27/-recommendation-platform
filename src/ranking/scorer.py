@@ -115,13 +115,13 @@ class RuleBasedScorer:
     def __init__(self, weights: Dict[str, float] = None):
         # Default weights: sum is 1.0
         self.weights = weights or {
-            "interest": 0.20,
-            "creator_affinity": 0.15,
-            "similarity": 0.10,
-            "collaborative_filtering": 0.10,
+            "interest": 0.10,
+            "creator_affinity": 0.05,
+            "similarity": 0.05,
+            "collaborative_filtering": 0.05,
             "popularity": 0.15,
-            "freshness": 0.15,
-            "exploration": 0.15
+            "freshness": 0.30,
+            "exploration": 0.30
         }
 
         # Registered signals
