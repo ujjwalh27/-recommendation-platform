@@ -203,6 +203,10 @@ class RecommenderService:
         if not raw_scores and profile.get("interests"):
             raw_scores.update({cat: float(pct) for cat, pct in profile["interests"].items()})
             
+        # Decay all raw scores slightly (0.95 factor) to favor recent interactions and make profile highly adaptive
+        for cat in raw_scores:
+            raw_scores[cat] = max(0.0, raw_scores[cat] * 0.95)
+            
         raw_scores[category] = max(0.0, raw_scores.get(category, 0.0) + event_score)
         
         # Normalize interests to sum to 100

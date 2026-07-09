@@ -87,8 +87,8 @@ class MockDataGenerator:
             user_events = []
             
             for _ in range(num_events):
-                # 80% preferred category, 20% random exploration
-                if random.random() < 0.8 and preferred_cats:
+                # 40% preferred category, 60% random exploration to make watch history diverse
+                if random.random() < 0.4 and preferred_cats:
                     category = random.choice(preferred_cats)
                 else:
                     category = random.choice(self.categories)
@@ -171,11 +171,11 @@ class MockDataGenerator:
             df_events = pd.DataFrame(user_events)
             cat_scores = df_events.groupby("category")["engagement_score"].sum().to_dict()
 
-            # Clean and keep non-negative scores
+            # Clean and keep non-negative scores, adding a baseline of 15.0 to prevent 0% inertia
             cleaned_scores = {}
             for cat in self.categories:
                 score = cat_scores.get(cat, 0.0)
-                cleaned_scores[cat] = max(0.0, float(score))
+                cleaned_scores[cat] = max(0.0, float(score)) + 15.0
 
             # Normalize to sum up to 100
             total_score = sum(cleaned_scores.values())
