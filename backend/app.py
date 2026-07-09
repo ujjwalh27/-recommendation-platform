@@ -20,6 +20,10 @@ from src.indexing.faiss_service import FaissSearchService
 VIDEOS_DIR = BASE_DIR / "datasets" / "raw" / "msrvtt"
 THUMBNAILS_DIR = BASE_DIR / "datasets" / "thumbnails"
 
+# Ensure directories exist to prevent StaticFiles RuntimeError
+VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
+THUMBNAILS_DIR.mkdir(parents=True, exist_ok=True)
+
 # --------------------------------------------------
 # FastAPI App
 # --------------------------------------------------

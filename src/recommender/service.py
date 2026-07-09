@@ -107,6 +107,17 @@ class RecommenderService:
         diverse_candidates = self.diversity_filter.filter(ranked_candidates, limit=limit)
 
         # 5. Format response and generate explanations
+        # Create a mapping of video_id to user interaction states
+        user_interactions = {}
+        for ev in watch_history:
+            vid = ev["video_id"]
+            user_interactions[vid] = {
+                "is_liked": ev.get("is_liked", False),
+                "is_saved": ev.get("is_saved", False),
+                "is_commented": ev.get("is_commented", False)
+            }
+
+        # 5. Format response and generate explanations
         feed = []
         for item in diverse_candidates:
             vid = item["video_id"]
@@ -114,6 +125,9 @@ class RecommenderService:
             
             # Generate explanation
             explanation = self.explainer.generate_explanation(item, interest_profile)
+
+            # Retrieve user's historical interaction state
+            interaction = user_interactions.get(vid, {"is_liked": False, "is_saved": False, "is_commented": False})
 
             # Build production response payload
             feed.append({
@@ -126,7 +140,10 @@ class RecommenderService:
                 "score": float(item["final_score"]),
                 "explanation": explanation,
                 "score_breakdown": item["score_breakdown"],
-                "retrieval_sources": item["retrieval_sources"]
+                "retrieval_sources": item["retrieval_sources"],
+                "is_liked": interaction["is_liked"],
+                "is_saved": interaction["is_saved"],
+                "is_commented": interaction["is_commented"]
             })
 
         return feed
@@ -182,21 +199,43 @@ class RecommenderService:
         if is_commented:
             event_score += COMMENT_WEIGHT
             
-        # 3. Append to watch history
-        new_event = {
-            "user_id": resolved_uid,
-            "video_id": video_id,
-            "category": category,
-            "watch_completion_rate": watch_completion_rate,
-            "watch_time_seconds": float(engagement.get("watch_time_seconds", 0.0)),
-            "replay_count": replay_count,
-            "is_liked": is_liked,
-            "is_saved": is_saved,
-            "is_shared": is_shared,
-            "is_commented": is_commented,
-            "engagement_score": event_score
-        }
-        self.user_watch_histories.setdefault(resolved_uid, []).append(new_event)
+        # 3. Resolve previous event for delta calculation and update watch history
+        history = self.user_watch_histories.setdefault(resolved_uid, [])
+        prev_event = None
+        for ev in history:
+            if ev["video_id"] == video_id:
+                prev_event = ev
+                break
+                
+        if prev_event:
+            score_delta = event_score - prev_event["engagement_score"]
+            # Update existing event state in watch history
+            prev_event.update({
+                "watch_completion_rate": watch_completion_rate,
+                "watch_time_seconds": float(engagement.get("watch_time_seconds", 0.0)),
+                "replay_count": replay_count,
+                "is_liked": is_liked,
+                "is_saved": is_saved,
+                "is_shared": is_shared,
+                "is_commented": is_commented,
+                "engagement_score": event_score
+            })
+        else:
+            score_delta = event_score
+            new_event = {
+                "user_id": resolved_uid,
+                "video_id": video_id,
+                "category": category,
+                "watch_completion_rate": watch_completion_rate,
+                "watch_time_seconds": float(engagement.get("watch_time_seconds", 0.0)),
+                "replay_count": replay_count,
+                "is_liked": is_liked,
+                "is_saved": is_saved,
+                "is_shared": is_shared,
+                "is_commented": is_commented,
+                "engagement_score": event_score
+            }
+            history.append(new_event)
         
         # 4. Update Interest Profile raw score
         profile = self.interest_profiles.setdefault(resolved_uid, {
@@ -211,11 +250,12 @@ class RecommenderService:
         if not raw_scores and profile.get("interests"):
             raw_scores.update({cat: float(pct) for cat, pct in profile["interests"].items()})
             
-        # Decay all raw scores slightly toward the baseline of 15.0 to prevent draining to zero
-        for cat in raw_scores:
-            raw_scores[cat] = max(0.0, 15.0 + (raw_scores[cat] - 15.0) * 0.95)
+        # Decay other categories ONLY on a fresh new video interaction to avoid over-decay from button clicks
+        if not prev_event:
+            for cat in raw_scores:
+                raw_scores[cat] = max(0.0, 15.0 + (raw_scores[cat] - 15.0) * 0.95)
             
-        raw_scores[category] = max(0.0, raw_scores.get(category, 0.0) + event_score)
+        raw_scores[category] = max(0.0, raw_scores.get(category, 0.0) + score_delta)
         
         # Normalize interests to sum to 100
         total_score = sum(raw_scores.values())
@@ -227,7 +267,7 @@ class RecommenderService:
         # 5. Update Creator Affinity
         affinities = self.user_creator_affinities.setdefault(resolved_uid, {})
         if creator:
-            affinities[creator] = max(0.0, affinities.get(creator, 0.0) + event_score)
+            affinities[creator] = max(0.0, affinities.get(creator, 0.0) + score_delta)
             
         # 6. Persist updated watch history and interest profiles to disk
         try:
@@ -248,5 +288,5 @@ class RecommenderService:
             "user_id": resolved_uid,
             "interests": profile["interests"],
             "creator_affinities": affinities,
-            "added_event": new_event
+            "added_event": prev_event if prev_event else new_event
         }
