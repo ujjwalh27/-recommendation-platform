@@ -25,7 +25,8 @@ export async function submitFeedback(userId, videoId, engagement) {
             is_liked: engagement.isLiked || false,
             is_saved: engagement.isSaved || false,
             is_shared: engagement.isShared || false,
-            is_commented: engagement.isCommented || false
+            is_commented: engagement.isCommented || false,
+            is_final: engagement.isFinal || false
         })
     });
     return await response.json();

@@ -76,7 +76,8 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
             isLiked: liked,
             isSaved: saved,
             isShared: false,
-            isCommented: commented
+            isCommented: commented,
+            isFinal: true
         };
 
         addLog(`SESSION_END: Finished watching clip ${video.video_id} (Watch Time: ${engagement.watchTimeSeconds}s, Completion: ${Math.round(engagement.watchCompletionRate * 100)}%, Replays: ${engagement.replayCount})`, "feedback");

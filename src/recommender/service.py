@@ -172,6 +172,7 @@ class RecommenderService:
         is_saved = bool(engagement.get("is_saved", False))
         is_shared = bool(engagement.get("is_shared", False))
         is_commented = bool(engagement.get("is_commented", False))
+        is_final = bool(engagement.get("is_final", False))
         
         # Engagement event weights – tuned down to reduce their impact on the interest profile
         WATCH_COMPLETE_WEIGHT = 6   # previously +10
@@ -184,12 +185,15 @@ class RecommenderService:
         
         # Score engagement events using the new weights
         event_score = 0
-        if watch_completion_rate >= 0.85:
-            event_score += WATCH_COMPLETE_WEIGHT
-        elif watch_completion_rate < 0.2:
-            event_score += SKIP_WEIGHT
         
-        event_score += replay_count * REPLAY_WEIGHT
+        # Only apply completion, skip, and replay score weights on the final session end event
+        if is_final:
+            if watch_completion_rate >= 0.85:
+                event_score += WATCH_COMPLETE_WEIGHT
+            elif watch_completion_rate < 0.2:
+                event_score += SKIP_WEIGHT
+            event_score += replay_count * REPLAY_WEIGHT
+            
         if is_liked:
             event_score += LIKE_WEIGHT
         if is_saved:

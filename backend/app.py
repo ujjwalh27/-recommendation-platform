@@ -90,6 +90,7 @@ class FeedbackPayload(BaseModel):
     is_saved: bool = False
     is_shared: bool = False
     is_commented: bool = False
+    is_final: bool = False
 
 # --------------------------------------------------
 # Routes
@@ -158,7 +159,8 @@ def feedback(payload: FeedbackPayload):
             "is_liked": payload.is_liked,
             "is_saved": payload.is_saved,
             "is_shared": payload.is_shared,
-            "is_commented": payload.is_commented
+            "is_commented": payload.is_commented,
+            "is_final": payload.is_final
         }
     )
 
