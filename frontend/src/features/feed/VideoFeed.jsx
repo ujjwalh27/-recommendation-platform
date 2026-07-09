@@ -19,20 +19,20 @@ function VideoFeed() {
     const [loading, setLoading] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const [logs, setLogs] = useState([]);
-    const consoleEndRef = useRef(null);
+    const consoleRef = useRef(null);
+
+    // Auto scroll the console terminal container internally (prevents page jump scroll)
+    useEffect(() => {
+        if (consoleRef.current) {
+            consoleRef.current.scrollTop = consoleRef.current.scrollHeight;
+        }
+    }, [logs]);
 
     // Helper to add terminal console logs
     const addLog = (message, type = "info") => {
         const timestamp = new Date().toLocaleTimeString();
         setLogs(prev => [...prev, { timestamp, message, type }]);
     };
-
-    // Auto scroll the console terminal
-    useEffect(() => {
-        if (consoleEndRef.current) {
-            consoleEndRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [logs]);
 
     // Fetch feed and user profile stats on mount
     useEffect(() => {
@@ -137,6 +137,29 @@ function VideoFeed() {
                     <div className="loading-state">No videos found.</div>
                 ) : (
                     <div className="reels-wrapper">
+                        {/* Floating live event logs on the left of the player mockup */}
+                        <div className="floating-console-widget">
+                            <h3 style={{ display: "flex", alignItems: "center", margin: "0 0 10px 0", fontSize: "13px", color: "var(--accent)" }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: "15px", height: "15px", marginRight: "6px" }}><polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" /></svg>
+                                Real-Time Pipeline Logs
+                            </h3>
+                            <div className="floating-console-box" ref={consoleRef}>
+                                {logs.length === 0 ? (
+                                    <div className="empty-console">Terminal active. Awaiting logs...</div>
+                                ) : (
+                                    logs.map((log, index) => (
+                                        <div key={index} className="console-line">
+                                            <span className="console-time">[{log.timestamp}]</span>
+                                            {log.type === "event" && <span className="console-tag-event" style={{ color: "#c084fc", marginRight: "4px" }}>[EVENT]</span>}
+                                            {log.type === "feedback" && <span className="console-tag-feedback" style={{ color: "#34d399", marginRight: "4px" }}>[FEEDBACK]</span>}
+                                            {log.type === "info" && <span className="console-tag-info" style={{ color: "#60a5fa", marginRight: "4px" }}>[SYSTEM]</span>}
+                                            <span style={{ color: log.type === "feedback" ? "#34d399" : log.type === "event" ? "#c084fc" : "#e2e8f0" }}>{log.message}</span>
+                                        </div>
+                                    ))
+                                )}
+                            </div>
+                        </div>
+
                         {/* Up button */}
                         {activeIndex > 0 && (
                             <button className="reels-nav-btn reels-nav-up" onClick={handlePrevSlide}>
@@ -430,29 +453,7 @@ function VideoFeed() {
                     </div>
                 )}
 
-                {/* Scrollable live event logs */}
-                <div className="dashboard-widget-card" style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: "180px" }}>
-                    <h3 style={{ display: "flex", alignItems: "center" }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: "16px", height: "16px", marginRight: "6px", color: "var(--accent)" }}><polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" /></svg>
-                        Real-Time Pipeline Logs
-                    </h3>
-                    <div className="console-box">
-                        {logs.length === 0 ? (
-                            <div className="empty-console">Terminal active. Awaiting logs...</div>
-                        ) : (
-                            logs.map((log, index) => (
-                                <div key={index} className="console-line">
-                                    <span className="console-time">[{log.timestamp}]</span>
-                                    {log.type === "event" && <span className="console-tag-event">[EVENT]</span>}
-                                    {log.type === "feedback" && <span className="console-tag-feedback">[FEEDBACK]</span>}
-                                    {log.type === "info" && <span className="console-tag-info">[SYSTEM]</span>}
-                                    <span style={{ color: log.type === "feedback" ? "#10b981" : log.type === "event" ? "#a855f7" : "#e2e8f0" }}>{log.message}</span>
-                                </div>
-                            ))
-                        )}
-                        <div ref={consoleEndRef}></div>
-                    </div>
-                </div>
+
             </div>
         </div>
     );

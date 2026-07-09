@@ -715,3 +715,45 @@ body {
     opacity: 0;
   }
 }
+
+/* Floating Live Event Console next to Reels player */
+.floating-console-widget {
+  position: absolute;
+  right: calc(100% + 40px);
+  top: 60px;
+  width: 320px;
+  height: 480px;
+  background: rgba(10, 15, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.floating-console-box {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 1200px) {
+  .floating-console-widget {
+    position: static;
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+}
