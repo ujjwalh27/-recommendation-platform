@@ -253,7 +253,8 @@ class RecommenderService:
         # Decay other categories ONLY on a fresh new video interaction to avoid over-decay from button clicks
         if not prev_event:
             for cat in raw_scores:
-                raw_scores[cat] = max(0.0, 15.0 + (raw_scores[cat] - 15.0) * 0.95)
+                if cat != category:
+                    raw_scores[cat] = max(0.0, 15.0 + (raw_scores[cat] - 15.0) * 0.95)
             
         raw_scores[category] = max(0.0, raw_scores.get(category, 0.0) + score_delta)
         
