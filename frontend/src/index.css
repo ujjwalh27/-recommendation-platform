@@ -189,6 +189,7 @@ body {
   flex: 1;
   position: relative;
   width: 100%;
+  gap: 30px;
 }
 
 .reels-viewport {
@@ -718,9 +719,6 @@ body {
 
 /* Floating Live Event Console next to Reels player */
 .floating-console-widget {
-  position: absolute;
-  right: calc(100% + 40px);
-  top: 60px;
   width: 320px;
   height: 480px;
   background: rgba(10, 15, 26, 0.75);
@@ -732,7 +730,6 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  z-index: 10;
 }
 
 .floating-console-box {
