@@ -302,6 +302,20 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
                     </div>
                     <span className="category-tag">{video.category}</span>
                     <span className="match-badge">{matchPercentage}% Match</span>
+                    {video.retrieval_sources && video.retrieval_sources.includes("freshness") && (
+                        <span className="badge-retrieval badge-fresh">✨ Fresh</span>
+                    )}
+                    {video.retrieval_sources && video.retrieval_sources.includes("exploration") && (
+                        <span className="badge-retrieval badge-explore">🎲 Explore</span>
+                    )}
+                    {video.retrieval_sources && (
+                        video.retrieval_sources.includes("similarity") ||
+                        video.retrieval_sources.includes("creator_affinity") ||
+                        video.retrieval_sources.includes("collaborative_filtering") ||
+                        video.retrieval_sources.includes("category")
+                    ) && (
+                        <span className="badge-retrieval badge-personal">❤️ Personal</span>
+                    )}
                 </div>
 
                 <p className="reels-caption">{video.title}</p>
