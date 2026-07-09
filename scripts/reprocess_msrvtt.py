@@ -99,12 +99,24 @@ def build_msrvtt_database():
     video_files = sorted(list(MSRVTT_DIR.glob("*.mp4")), key=lambda x: int(x.stem.replace("video", "")))
     max_videos = len(video_files)
     video_files = video_files[:max_videos]
-    print(f"Processing all {max_videos} video files.")
+    print(f"Scanning complete. Found {max_videos} video files.")
     
-    videos_metadata = []
-    captions_to_encode = []
+    print("Loading pre-trained SentenceTransformer model...")
+    model = SentenceTransformer("all-MiniLM-L6-v2")
     
-    for idx, video_path in enumerate(tqdm(video_files, desc="Parsing video metadata")):
+    categories = [
+        "Automobile", "Food", "Animation", "Kids/Family", "Animal", 
+        "Sports", "Education", "TV Shows", "Comedy", "Tech", 
+        "Gamer", "People", "Advertisement", "How-to", "Music", 
+        "News", "Fashion", "Travel", "Documentary"
+    ]
+    category_embeddings = model.encode(categories, normalize_embeddings=True)
+
+    print("Collecting and preparing captions list for all videos...")
+    all_captions = []
+    videos_durations = []
+    
+    for idx, video_path in enumerate(video_files):
         video_id = video_path.stem  # e.g., "video0"
         
         # Read duration with OpenCV
@@ -116,25 +128,57 @@ def build_msrvtt_database():
             if fps > 0:
                 duration = frame_count / fps
             cap.release()
+        videos_durations.append(round(duration, 2))
             
-        # Get ground truth annotation
+        # Get ground truth annotation list
         ann = annotations_by_video.get(video_id)
-        if ann:
-            # Use the first caption from ground truth list
-            caption = ann["caption"][0].strip()
-            # Map category ID to persona category name
-            cat_id = ann.get("category", 19)
-            category = MSRVTT_CATEGORIES_MAPPING.get(cat_id, "Entertainment")
+        if ann and isinstance(ann.get("caption"), list) and len(ann["caption"]) > 0:
+            captions = [c.strip() for c in ann["caption"]]
+            # If less than 20, pad it
+            if len(captions) < 20:
+                captions = captions * 20
+            captions = captions[:20]
         else:
-            caption = f"A video clip of MSRVTT dataset labeled {video_id}."
-            category = "Entertainment"
-            
+            fallback = f"A video clip of MSRVTT dataset labeled {video_id}."
+            captions = [fallback] * 20
+        all_captions.extend(captions)
+        
+    print(f"Encoding all {len(all_captions)} captions in batches (CPU-optimized)...")
+    all_embeddings = model.encode(all_captions, batch_size=512, show_progress_bar=True, normalize_embeddings=True)
+    
+    print("Performing semantic consensus filtering and zero-shot category classification...")
+    videos_metadata = []
+    consensus_embeddings = []
+    
+    for i, video_path in enumerate(tqdm(video_files, desc="Processing videos")):
+        video_id = video_path.stem
+        duration = videos_durations[i]
+        
+        # Slice the 20 captions and their corresponding embeddings
+        slice_embeddings = all_embeddings[i*20 : (i+1)*20]
+        slice_captions = all_captions[i*20 : (i+1)*20]
+        
+        # 1. Consensus Caption: Find the caption closest to the centroid of all 20 captions
+        centroid = np.mean(slice_embeddings, axis=0)
+        centroid_norm = np.linalg.norm(centroid)
+        if centroid_norm > 0:
+            centroid = centroid / centroid_norm
+        similarities = np.dot(slice_embeddings, centroid)
+        best_idx = np.argmax(similarities)
+        consensus_caption = slice_captions[best_idx]
+        consensus_emb = slice_embeddings[best_idx]
+        
+        # 2. Category Classification: Match consensus embedding with target category name embeddings
+        cat_similarities = np.dot(category_embeddings, consensus_emb)
+        best_cat_idx = np.argmax(cat_similarities)
+        category = categories[best_cat_idx]
+        
         # Creator handle sampling
         creators = CREATORS_BY_CATEGORY.get(category, CREATORS_BY_CATEGORY["Entertainment"])
-        creator = creators[idx % len(creators)]
+        creator = creators[i % len(creators)]
         
-        # Generate clean statistics
-        np.random.seed(idx)
+        # Generate statistics
+        np.random.seed(i)
         views = int(np.random.randint(5000, 200000))
         likes = int(views * np.random.uniform(0.04, 0.15))
         comments = int(likes * np.random.uniform(0.01, 0.05))
@@ -142,23 +186,23 @@ def build_msrvtt_database():
         
         engagement_score = likes + comments * 2 + shares * 3
         engagement_rate = round(engagement_score / views, 5)
-        created_time = 1600000000 + idx * 86400
+        created_time = 1600000000 + i * 86400
         
         # Keywords
-        words = caption.lower().replace("a ", "").replace("an ", "").replace("on ", "").replace("the ", "").split()
+        words = consensus_caption.lower().replace("a ", "").replace("an ", "").replace("on ", "").replace("the ", "").split()
         keywords = [w for w in words if len(w) > 2]
         
         metadata = {
             "video_id": video_id,
-            "caption": caption,
+            "caption": consensus_caption,
             "hashtags": f"#{category.lower()} #msrvtt",
             "mentions": "nan",
             "creator": creator,
             "creator_name": creator.replace("_", " ").title(),
-            "verified": (idx % 7 == 0),
+            "verified": (i % 7 == 0),
             "music_name": f"Track_{video_id}",
             "music_author": f"Artist_{creator}",
-            "duration": round(duration, 2),
+            "duration": duration,
             "views": views,
             "likes": likes,
             "comments": comments,
@@ -172,15 +216,9 @@ def build_msrvtt_database():
         }
         
         videos_metadata.append(metadata)
-        captions_to_encode.append(caption)
+        consensus_embeddings.append(consensus_emb)
         
-    print("Loading pre-trained SentenceTransformer model...")
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    
-    print("Generating real semantic text embeddings...")
-    embeddings = model.encode(captions_to_encode, show_progress_bar=True, normalize_embeddings=True)
-    embeddings = embeddings.astype("float32")
-    
+    embeddings = np.vstack(consensus_embeddings).astype("float32")
     video_ids = np.array([v["video_id"] for v in videos_metadata])
     
     # Save processed JSON metadata
@@ -188,7 +226,7 @@ def build_msrvtt_database():
         json.dump(videos_metadata, f, indent=4)
     print(f"Saved metadata JSON to {PROCESSED_DIR / 'enriched_videos.json'}")
     
-    # Save CSV for compatibility
+    # Save CSV
     pd.DataFrame(videos_metadata).to_csv(PROCESSED_DIR / "enriched_videos.csv", index=False)
     print(f"Saved metadata CSV to {PROCESSED_DIR / 'enriched_videos.csv'}")
     
