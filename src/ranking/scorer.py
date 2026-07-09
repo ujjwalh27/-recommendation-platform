@@ -44,6 +44,15 @@ class PopularitySignal(RankingSignal):
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
         metadata = candidate.get("metadata", {})
+        
+        # Cold-start boost: if the video is fresh (less than 30 days old),
+        # give it a high baseline popularity score so it doesn't get out-ranked
+        created_time = metadata.get("created_time", 0)
+        reference_time = 2205577600
+        age_days = (reference_time - created_time) / (3600.0 * 24.0)
+        if age_days < 30:
+            return 0.8  # High baseline popularity for fresh/cold-start videos
+            
         engagement_rate = metadata.get("engagement_rate", 0.0)
         
         # Normalize engagement rate: typically between 0.0 and 0.2
@@ -82,14 +91,14 @@ class FreshnessSignal(RankingSignal):
         if created_time == 0:
             return 0.5 # Default middle score
             
-        # The maximum created_time for 7010 videos is 1600000000 + 7010 * 86400 = 2205664000
-        # We can calculate freshness relative to 2210000000.
-        reference_time = 2210000000
+        # The maximum created_time for 7010 videos is 1600000000 + 7009 * 86400 = 2205577600
+        # We can calculate freshness relative to 2205577600.
+        reference_time = 2205577600
         age_seconds = max(0, reference_time - created_time)
         age_days = age_seconds / (3600.0 * 24.0)
         
-        # Slower decay factor (half-life of 90 days, lambda = 0.0077) to space out 7000 days of video age.
-        decay_factor = math.exp(-0.0077 * age_days)
+        # Slower decay factor (half-life of 30 days, lambda = 0.0231) to prioritize fresh videos.
+        decay_factor = math.exp(-0.0231 * age_days)
         return round(decay_factor, 4)
 
 

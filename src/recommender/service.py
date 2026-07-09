@@ -59,7 +59,7 @@ class RecommenderService:
 
         # Other pipeline components
         self.scorer = RuleBasedScorer()
-        self.diversity_filter = DiversityFilter(max_consecutive_category=1)
+        self.diversity_filter = DiversityFilter(max_consecutive_category=1, max_category_ratio=0.3)
         self.explainer = RecommendationExplainer()
 
     def find_user_by_id_or_persona(self, query: str) -> Dict[str, Any]:
