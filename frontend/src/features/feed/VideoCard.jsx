@@ -9,7 +9,7 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
     const [isPlaying, setIsPlaying] = useState(false);
     const [showIndicator, setShowIndicator] = useState(null); // 'play' or 'pause'
     const [progress, setProgress] = useState(0);
-    
+
     // Watch statistics refs to avoid React re-render loops during continuous updates
     const watchStartTimeRef = useRef(null);
     const totalWatchTimeRef = useRef(0);
@@ -129,13 +129,13 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
     const handleVideoEnded = (e) => {
         replayCountRef.current += 1;
         addLog(`LOOP: Clip ${video.video_id} replayed (${replayCountRef.current}x)`, "event");
-        
+
         // Accumulate watch time for the full loop
         if (watchStartTimeRef.current) {
             totalWatchTimeRef.current += (Date.now() - watchStartTimeRef.current) / 1000.0;
             watchStartTimeRef.current = Date.now(); // reset start time for next loop
         }
-        
+
         const videoEl = e.target;
         videoEl.currentTime = 0;
         videoEl.play().catch(err => console.log(err));
@@ -146,12 +146,12 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         const nextLiked = !liked;
         setLiked(nextLiked);
         addLog(`LIKE: ${nextLiked ? "Liked" : "Unliked"} clip ${video.video_id}`, "event");
-        
+
         // Send immediate interactive update to backend
         const duration = durationRef.current || 15.0;
         const currentSessionTime = watchStartTimeRef.current ? (Date.now() - watchStartTimeRef.current) / 1000.0 : 0;
         const totalTime = totalWatchTimeRef.current + currentSessionTime;
-        
+
         submitFeedback(userId, video.video_id, {
             watchCompletionRate: Number((totalTime / duration).toFixed(2)),
             watchTimeSeconds: Number(totalTime.toFixed(2)),
@@ -194,7 +194,7 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         e.stopPropagation();
         const commentText = prompt("Add a comment to this clip:");
         if (commentText === null) return; // User cancelled
-        
+
         const text = commentText.trim() || "Awesome clip!";
         setCommented(true);
         addLog(`COMMENT: Posted comment "${text}" on clip ${video.video_id}`, "event");
@@ -220,7 +220,7 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
     const handleShareClick = (e) => {
         e.stopPropagation();
         addLog(`SHARE: Shared clip ${video.video_id}`, "event");
-        
+
         // Share has +10 score weight
         const duration = durationRef.current || 15.0;
         const currentSessionTime = watchStartTimeRef.current ? (Date.now() - watchStartTimeRef.current) / 1000.0 : 0;
@@ -333,12 +333,12 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
                         video.retrieval_sources.includes("collaborative_filtering") ||
                         video.retrieval_sources.includes("category")
                     ) && (
-                        <span className="badge-retrieval badge-personal">❤️ Personal</span>
-                    )}
+                            <span className="badge-retrieval badge-personal">❤️ Personal</span>
+                        )}
                 </div>
 
                 <p className="reels-caption">{video.title}</p>
-                
+
                 {video.explanation && (
                     <div className="explanation-banner">
                         ✨ {video.explanation}
