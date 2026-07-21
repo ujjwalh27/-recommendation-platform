@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <!-- Mermaid.js for Diagrams -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
@@ -28,58 +31,79 @@
             background-color: #0b0f19;
             color: #f1f5f9;
         }
-        code, pre {
+
+        code,
+        pre {
             font-family: 'JetBrains Mono', monospace !important;
         }
+
         .glow-accent {
             text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
         }
+
         .border-glow {
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
             border: 1px solid rgba(56, 189, 248, 0.15);
         }
+
         @media print {
             body {
                 background-color: #ffffff;
                 color: #000000;
             }
+
             .no-print {
                 display: none !important;
             }
+
             .print-content {
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
-            pre, code {
+
+            pre,
+            code {
                 background-color: #f8fafc !important;
                 color: #0f172a !important;
                 border: 1px solid #cbd5e1 !important;
             }
+
             .border-glow {
                 box-shadow: none !important;
                 border: 1px solid #94a3b8 !important;
             }
-            h1, h2, h3, h4 {
+
+            h1,
+            h2,
+            h3,
+            h4 {
                 color: #0f172a !important;
             }
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col">
 
     <!-- Top Header -->
     <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50 no-print">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2Z" />
-                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sky-400" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2Z" />
+                    <path
+                        d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2Z" />
                 </svg>
-                <span class="font-extrabold text-lg text-slate-100 tracking-tight glow-accent">Daiv Clips Tech Docs</span>
+                <span class="font-extrabold text-lg text-slate-100 tracking-tight glow-accent">Daiv Clips Tech
+                    Docs</span>
             </div>
-            <button onclick="window.print()" class="px-4 py-2 bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-slate-950 font-bold rounded-lg shadow-md transition-all hover:scale-105 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <button onclick="window.print()"
+                class="px-4 py-2 bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-slate-950 font-bold rounded-lg shadow-md transition-all hover:scale-105 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
                     <polyline points="6 9 6 2 18 2 18 9" />
                     <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
                     <rect x="6" y="14" width="12" height="8" />
@@ -96,12 +120,18 @@
             <div class="sticky top-24 space-y-4">
                 <h3 class="font-bold text-xs uppercase tracking-wider text-slate-500">Navigation</h3>
                 <nav class="flex flex-col gap-2 text-sm font-medium text-slate-400">
-                    <a href="#1-system-overview" class="hover:text-sky-400 py-1 transition-all">1. System Architecture</a>
-                    <a href="#2-ai-model--indexing" class="hover:text-sky-400 py-1 transition-all">2. AI Model & Indexing</a>
-                    <a href="#3-recommendation-pipeline" class="hover:text-sky-400 py-1 transition-all">3. Recommendation Pipeline</a>
-                    <a href="#4-real-time-feedback-loop" class="hover:text-sky-400 py-1 transition-all">4. Real-Time Feedback Loop</a>
-                    <a href="#5-frontend-telemetry" class="hover:text-sky-400 py-1 transition-all">5. Frontend Telemetry</a>
-                    <a href="#6-git-repository-branches" class="hover:text-sky-400 py-1 transition-all">6. Git Repository Branches</a>
+                    <a href="#1-system-overview" class="hover:text-sky-400 py-1 transition-all">1. System
+                        Architecture</a>
+                    <a href="#2-ai-model--indexing" class="hover:text-sky-400 py-1 transition-all">2. AI Model &
+                        Indexing</a>
+                    <a href="#3-recommendation-pipeline" class="hover:text-sky-400 py-1 transition-all">3.
+                        Recommendation Pipeline</a>
+                    <a href="#4-real-time-feedback-loop" class="hover:text-sky-400 py-1 transition-all">4. Real-Time
+                        Feedback Loop</a>
+                    <a href="#5-frontend-telemetry" class="hover:text-sky-400 py-1 transition-all">5. Frontend
+                        Telemetry</a>
+                    <a href="#6-git-repository-branches" class="hover:text-sky-400 py-1 transition-all">6. Git
+                        Repository Branches</a>
                 </nav>
             </div>
         </aside>
@@ -110,7 +140,8 @@
         <main class="flex-1 space-y-16 max-w-4xl min-w-0">
             <!-- Title -->
             <section class="border-b border-slate-800 pb-8">
-                <h1 class="text-4xl font-extrabold tracking-tight text-slate-100 mb-3 font-semibold glow-accent">Recommendation Platform</h1>
+                <h1 class="text-4xl font-extrabold tracking-tight text-slate-100 mb-3 font-semibold glow-accent">
+                    Recommendation Platform</h1>
                 <p class="text-slate-400 text-lg">Comprehensive System Technical & Architectural Reference Document.</p>
             </section>
 
@@ -120,26 +151,28 @@
                     <span class="text-sky-400">1.</span> System Architecture
                 </h2>
                 <p class="text-slate-300 leading-relaxed text-sm">
-                    The platform separates heavy mathematical vector preprocessing from fast real-time serving pipelines. 
-                    This ensures sub-100ms response times by loading indices into memory and lazily writing user profile updates to storage.
+                    The platform separates heavy mathematical vector preprocessing from fast real-time serving
+                    pipelines.
+                    This ensures sub-100ms response times by loading indices into memory and lazily writing user profile
+                    updates to storage.
                 </p>
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 border-glow">
                     <h3 class="font-bold text-slate-400 text-sm mb-4">Static Architecture Diagram</h3>
                     <div class="mermaid">
                         graph TD
-                            Raw[MSR-VTT Dataset] --> Embedder[SentenceTransformer all-MiniLM-L6-v2]
-                            Embedder --> Vectors[video_embeddings.npy]
-                            Embedder --> IDs[video_ids.npy]
-                            
-                            Router[backend/app.py FastAPI] --> Service[src/recommender/service.py]
-                            Service --> Generator[src/candidate_generation/candidate_generator.py]
-                            Service --> Scorer[src/ranking/scorer.py]
-                            Service --> Diversity[src/recommender/diversity.py]
-                            Service --> Explainer[src/recommender/explainer.py]
-                            
-                            UI[VideoFeed.jsx Page] --> Card[VideoCard.jsx Player]
-                            UI -.-> |"GET /feed"| Router
-                            Card -.-> |"POST /feedback"| Router
+                        Raw[MSR-VTT Dataset] --> Embedder[SentenceTransformer all-MiniLM-L6-v2]
+                        Embedder --> Vectors[video_embeddings.npy]
+                        Embedder --> IDs[video_ids.npy]
+
+                        Router[backend/app.py FastAPI] --> Service[src/recommender/service.py]
+                        Service --> Generator[src/candidate_generation/candidate_generator.py]
+                        Service --> Scorer[src/ranking/scorer.py]
+                        Service --> Diversity[src/recommender/diversity.py]
+                        Service --> Explainer[src/recommender/explainer.py]
+
+                        UI[VideoFeed.jsx Page] --> Card[VideoCard.jsx Player]
+                        UI -.-> |"GET /feed"| Router
+                        Card -.-> |"POST /feedback"| Router
                     </div>
                 </div>
             </section>
@@ -150,20 +183,27 @@
                     <span class="text-sky-400">2.</span> AI Model & Indexing
                 </h2>
                 <p class="text-slate-300 leading-relaxed text-sm">
-                    Rather than building or training a custom machine learning model from scratch, we leverage a pre-trained language model 
-                    that already maps English sentences to rich semantic representations. We couple this with a vector search engine to find matches.
+                    Rather than building or training a custom machine learning model from scratch, we leverage a
+                    pre-trained language model
+                    that already maps English sentences to rich semantic representations. We couple this with a vector
+                    search engine to find matches.
                 </p>
                 <div class="space-y-4">
                     <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
                         <h4 class="font-bold text-slate-200 mb-2">Sentence Transformers</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            We use Hugging Face's <strong><code class="text-sky-300">all-MiniLM-L6-v2</code></strong>. It takes descriptions of what happens in video clips and encodes them into a <strong>384-dimensional vector space</strong>. Captions with similar concepts occupy nearby coordinates.
+                            We use Hugging Face's <strong><code class="text-sky-300">all-MiniLM-L6-v2</code></strong>.
+                            It takes descriptions of what happens in video clips and encodes them into a
+                            <strong>384-dimensional vector space</strong>. Captions with similar concepts occupy nearby
+                            coordinates.
                         </p>
                     </div>
                     <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
                         <h4 class="font-bold text-slate-200 mb-2">FAISS Vector Search</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Facebook AI Similarity Search (FAISS) is loaded at startup. When a user interacts with a video, we fetch its precomputed 384-d vector and run a <strong>K-Nearest Neighbors (KNN) search</strong> to retrieve similar videos, ranked by Cosine Similarity.
+                            Facebook AI Similarity Search (FAISS) is loaded at startup. When a user interacts with a
+                            video, we fetch its precomputed 384-d vector and run a <strong>K-Nearest Neighbors (KNN)
+                                search</strong> to retrieve similar videos, ranked by Cosine Similarity.
                         </p>
                     </div>
                 </div>
@@ -178,11 +218,11 @@
                     <h3 class="font-bold text-slate-400 text-sm mb-4">Pipeline Execution Flow</h3>
                     <div class="mermaid">
                         flowchart TD
-                            Start(["GET /feed Request"]) --> ReadUser["1. Load user profile vector"]
-                            ReadUser --> Gen["2. Stage 1: Candidate Generation (~50 candidates)"]
-                            Gen --> Score["3. Stage 2: Signal Scorer (Weighted Scoring)"]
-                            Score --> Gate{"4. Is Category Interest <= 1.5%?"}
-                            Gate -- Yes --> Suppress["5. Suppression Gate: Override Score to 0.0"]
+                        Start(["GET /feed Request"]) --> ReadUser["1. Load user profile vector"]
+                        ReadUser --> Gen["2. Stage 1: Candidate Generation (~50 candidates)"]
+                        Gen --> Score["3. Stage 2: Signal Scorer (Weighted Scoring)"]
+                        Score --> Gate{"4. Is Category Interest <= 1.5%?"} Gate -- Yes --> Suppress["5. Suppression
+                            Gate: Override Score to 0.0"]
                             Gate -- No --> Diversity["6. Stage 3: Diversity Filter (Interleave slots)"]
                             Suppress --> Diversity
                             Diversity --> Explainer["7. Stage 4: Explainer (Attach explanations)"]
@@ -195,8 +235,10 @@
                     The Rule-Based Scorer ranks candidate videos by summing seven distinct signal scores:
                 </p>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left text-slate-400 border border-slate-800 rounded-lg overflow-hidden">
-                        <thead class="bg-slate-900 text-slate-200 uppercase font-semibold text-xs border-b border-slate-800">
+                    <table
+                        class="w-full text-sm text-left text-slate-400 border border-slate-800 rounded-lg overflow-hidden">
+                        <thead
+                            class="bg-slate-900 text-slate-200 uppercase font-semibold text-xs border-b border-slate-800">
                             <tr>
                                 <th class="px-6 py-3">Signal</th>
                                 <th class="px-6 py-3">Weight</th>
@@ -222,7 +264,8 @@
                             <tr>
                                 <td class="px-6 py-4 font-bold text-slate-300">Category Interest</td>
                                 <td class="px-6 py-4 text-sky-400 font-bold">10%</td>
-                                <td class="px-6 py-4">Matches user's category score normalized to a 0.0 - 1.0 range.</td>
+                                <td class="px-6 py-4">Matches user's category score normalized to a 0.0 - 1.0 range.
+                                </td>
                             </tr>
                             <tr>
                                 <td class="px-6 py-4 font-bold text-slate-300">Creator Affinity</td>
@@ -250,7 +293,8 @@
                     <span class="text-sky-400">4.</span> Real-Time Feedback Loop
                 </h2>
                 <p class="text-slate-300 leading-relaxed text-sm">
-                    Every like, save, scroll, or loop triggers an immediate update to the interest vector database on the backend.
+                    Every like, save, scroll, or loop triggers an immediate update to the interest vector database on
+                    the backend.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -260,20 +304,24 @@
 score_delta = new_score - prev_score
 raw_scores[category] += score_delta</code></pre>
                         <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                            Liking a video adds `+3`. Unliking it sets like score to `0`, causing the subtraction `0 - 3 = -3`, which perfectly resets the score vector to its pre-liked state.
+                            Liking a video adds `+3`. Unliking it sets like score to `0`, causing the subtraction `0 - 3
+                            = -3`, which perfectly resets the score vector to its pre-liked state.
                         </p>
                     </div>
 
                     <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
                         <h4 class="font-bold text-slate-200 mb-2 text-sm">Baseline-Gravitating Decay</h4>
                         <p class="text-slate-400 text-xs leading-relaxed">
-                            When swiping, categories that are inactive decay by a factor of <strong>`0.95`</strong>, gravitating toward a default neutral baseline score of <strong>`15.0`</strong>:
+                            When swiping, categories that are inactive decay by a factor of <strong>`0.95`</strong>,
+                            gravitating toward a default neutral baseline score of <strong>`15.0`</strong>:
                         </p>
-                        <div class="bg-slate-950 px-4 py-3 rounded-lg text-sm text-sky-400 font-mono text-center my-3 border border-slate-800/80">
+                        <div
+                            class="bg-slate-950 px-4 py-3 rounded-lg text-sm text-sky-400 font-mono text-center my-3 border border-slate-800/80">
                             raw = 15.0 + 0.95 * (raw - 15.0)
                         </div>
                         <p class="text-slate-400 text-xs leading-relaxed">
-                            The category of the active video is excluded from decay, ensuring interaction actions are net-positive.
+                            The category of the active video is excluded from decay, ensuring interaction actions are
+                            net-positive.
                         </p>
                     </div>
                 </div>
@@ -285,13 +333,18 @@ raw_scores[category] += score_delta</code></pre>
                     <span class="text-sky-400">5.</span> Frontend Telemetry
                 </h2>
                 <p class="text-slate-300 leading-relaxed text-sm">
-                    The frontend interface visualizes the recommendation pipeline state in real time for absolute algorithmic transparency:
+                    The frontend interface visualizes the recommendation pipeline state in real time for absolute
+                    algorithmic transparency:
                 </p>
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
                     <ul class="list-disc pl-5 text-sm text-slate-400 space-y-2">
-                        <li><strong>Active Persona Badge</strong>: Exposes the cold-start configuration (e.g. `Tech Enthusiast`) and details the user's base interests.</li>
-                        <li><strong>Interest Profile Vector Gauges</strong>: Displays real-time progress bars for category weights which update instantly on interaction clicks.</li>
-                        <li><strong>Floating Console Logs</strong>: Placed next to the Reels swiper. Autoscrolls internally by modifying `.scrollTop` directly, eliminating standard viewport jump scroll bugs.</li>
+                        <li><strong>Active Persona Badge</strong>: Exposes the cold-start configuration (e.g. `Tech
+                            Enthusiast`) and details the user's base interests.</li>
+                        <li><strong>Interest Profile Vector Gauges</strong>: Displays real-time progress bars for
+                            category weights which update instantly on interaction clicks.</li>
+                        <li><strong>Floating Console Logs</strong>: Placed next to the Reels swiper. Autoscrolls
+                            internally by modifying `.scrollTop` directly, eliminating standard viewport jump scroll
+                            bugs.</li>
                     </ul>
                 </div>
             </section>
@@ -302,7 +355,8 @@ raw_scores[category] += score_delta</code></pre>
                     <span class="text-sky-400">6.</span> Git Repository Branches
                 </h2>
                 <p class="text-slate-300 text-sm">
-                    To maintain separate code states and baseline stability, the platform uses separate feature branches:
+                    To maintain separate code states and baseline stability, the platform uses separate feature
+                    branches:
                 </p>
                 <div class="space-y-3 font-mono text-xs">
                     <div class="flex items-center gap-4 bg-slate-950 p-3 rounded-lg border border-slate-850">
@@ -311,19 +365,23 @@ raw_scores[category] += score_delta</code></pre>
                     </div>
                     <div class="flex items-center gap-4 bg-slate-950 p-3 rounded-lg border border-slate-850">
                         <span class="text-sky-400 font-bold w-48 shrink-0">delta-decay-fix</span>
-                        <span class="text-slate-400">Excludes target categories from the decay loop to prevent score drop.</span>
+                        <span class="text-slate-400">Excludes target categories from the decay loop to prevent score
+                            drop.</span>
                     </div>
                     <div class="flex items-center gap-4 bg-slate-950 p-3 rounded-lg border border-slate-850">
                         <span class="text-sky-400 font-bold w-48 shrink-0">interactive-session-scoring</span>
-                        <span class="text-slate-400">Implements the is_final parameter to isolate button clicks from loops.</span>
+                        <span class="text-slate-400">Implements the is_final parameter to isolate button clicks from
+                            loops.</span>
                     </div>
                     <div class="flex items-center gap-4 bg-slate-950 p-3 rounded-lg border border-slate-850">
                         <span class="text-pink-400 font-bold w-48 shrink-0">ui-icon-upgrade</span>
-                        <span class="text-slate-400">Replaces heavy emojis in the swiper and sidebar with SVG icons.</span>
+                        <span class="text-slate-400">Replaces heavy emojis in the swiper and sidebar with SVG
+                            icons.</span>
                     </div>
                     <div class="flex items-center gap-4 bg-slate-950 p-3 rounded-lg border border-slate-850">
                         <span class="text-pink-400 font-bold w-48 shrink-0">ui-floating-logs</span>
-                        <span class="text-slate-400">Moves real-time logs to a side-by-side flex layout and fixes page jumps.</span>
+                        <span class="text-slate-400">Moves real-time logs to a side-by-side flex layout and fixes page
+                            jumps.</span>
                     </div>
                 </div>
             </section>
@@ -336,4 +394,5 @@ raw_scores[category] += score_delta</code></pre>
     </footer>
 
 </body>
+
 </html>
