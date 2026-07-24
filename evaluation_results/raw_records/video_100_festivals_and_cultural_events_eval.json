@@ -1,0 +1,40 @@
+{
+  "video_id": "video_100_festivals_and_cultural_events",
+  "ground_truth": {
+    "video_id": "video_100_festivals_and_cultural_events",
+    "category": "Festivals & Cultural Events",
+    "title": "Dragon Dance Clip #10",
+    "expected_summary": "Performers holding poles to manipulate lion dragon costume in street.",
+    "primary_focus": "Dragon Costume",
+    "objects": [
+      "Dragon head",
+      "poles",
+      "drums",
+      "street crowd"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Dragon Dance"
+    ],
+    "environment": "Festivals & Cultural Events Setting",
+    "overall_context": "Festivals & Cultural Events",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Festivals & Cultural Events",
+    "primary_focus": "Dragon Costume",
+    "activities": [
+      "Dragon Dance"
+    ],
+    "precision": 0.75,
+    "recall": 0.75,
+    "latency_sec": 16.02
+  }
+}

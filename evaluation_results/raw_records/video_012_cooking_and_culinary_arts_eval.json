@@ -1,0 +1,40 @@
+{
+  "video_id": "video_012_cooking_and_culinary_arts",
+  "ground_truth": {
+    "video_id": "video_012_cooking_and_culinary_arts",
+    "category": "Cooking & Culinary Arts",
+    "title": "Cake Decoration Clip #2",
+    "expected_summary": "Baker piping chocolate frosting onto layered birthday cake.",
+    "primary_focus": "Cake Stand",
+    "objects": [
+      "Cake stand",
+      "piping bag",
+      "chocolate frosting",
+      "spatula"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Cake Decorating"
+    ],
+    "environment": "Cooking & Culinary Arts Setting",
+    "overall_context": "Cooking & Culinary Arts",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Cooking & Culinary Arts",
+    "primary_focus": "Cake Stand",
+    "activities": [
+      "Cake Decorating"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 18.7
+  }
+}

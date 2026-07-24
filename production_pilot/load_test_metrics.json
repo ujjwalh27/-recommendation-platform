@@ -1,0 +1,56 @@
+{
+  "1_user": {
+    "avg_latency_sec": 18.2,
+    "p95_latency_sec": 19.5,
+    "p99_latency_sec": 20.8,
+    "throughput_qps": 0.055,
+    "cpu_percent": 24.5,
+    "ram_mb": 4200,
+    "failure_rate": "0.0%"
+  },
+  "5_users": {
+    "avg_latency_sec": 19.4,
+    "p95_latency_sec": 22.1,
+    "p99_latency_sec": 24.5,
+    "throughput_qps": 0.258,
+    "cpu_percent": 48.2,
+    "ram_mb": 5100,
+    "failure_rate": "0.0%"
+  },
+  "10_users": {
+    "avg_latency_sec": 21.8,
+    "p95_latency_sec": 26.4,
+    "p99_latency_sec": 31.0,
+    "throughput_qps": 0.458,
+    "cpu_percent": 74.0,
+    "ram_mb": 5800,
+    "failure_rate": "0.0%"
+  },
+  "25_users": {
+    "avg_latency_sec": 28.5,
+    "p95_latency_sec": 38.2,
+    "p99_latency_sec": 46.1,
+    "throughput_qps": 0.877,
+    "cpu_percent": 88.5,
+    "ram_mb": 6900,
+    "failure_rate": "0.0%"
+  },
+  "50_users": {
+    "avg_latency_sec": 44.2,
+    "p95_latency_sec": 62.0,
+    "p99_latency_sec": 78.5,
+    "throughput_qps": 1.13,
+    "cpu_percent": 96.2,
+    "ram_mb": 7800,
+    "failure_rate": "0.4%"
+  },
+  "100_users": {
+    "avg_latency_sec": 89.5,
+    "p95_latency_sec": 125.0,
+    "p99_latency_sec": 160.0,
+    "throughput_qps": 1.117,
+    "cpu_percent": 99.8,
+    "ram_mb": 8400,
+    "failure_rate": "3.2%"
+  }
+}

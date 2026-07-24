@@ -1,0 +1,44 @@
+{
+  "empty_file_upload": {
+    "status": "HANDLED",
+    "response_code": 400,
+    "message": "File is empty",
+    "system_crashed": false
+  },
+  "corrupted_video_codec": {
+    "status": "HANDLED",
+    "response_code": 422,
+    "message": "OpenCV unable to parse video header",
+    "system_crashed": false
+  },
+  "unsupported_format_avi": {
+    "status": "HANDLED",
+    "response_code": 415,
+    "message": "Unsupported media type. MP4/WebM required",
+    "system_crashed": false
+  },
+  "oversized_payload_2GB": {
+    "status": "HANDLED",
+    "response_code": 413,
+    "message": "Payload exceeds 500MB max limit",
+    "system_crashed": false
+  },
+  "ollama_service_down": {
+    "status": "GRACEFUL FALLBACK",
+    "response_code": 200,
+    "message": "Fell back to Vision-rule heuristics",
+    "system_crashed": false
+  },
+  "whisper_asr_down": {
+    "status": "GRACEFUL FALLBACK",
+    "response_code": 200,
+    "message": "Proceeded with Vision + OCR evidence",
+    "system_crashed": false
+  },
+  "disk_space_exhaustion": {
+    "status": "HANDLED",
+    "response_code": 507,
+    "message": "Storage quota reached",
+    "system_crashed": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "video_id": "video_070_entertainment_and_comedy",
+  "category": "Entertainment & Comedy",
+  "title": "Music Concert Clip #10",
+  "expected_summary": "Singer performing live into mic with stadium crowd cheering.",
+  "primary_focus": "Lead Singer & Mic",
+  "objects": [
+    "Microphone",
+    "stadium stage",
+    "crowd lightsticks"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Live Concert"
+  ],
+  "environment": "Entertainment & Comedy Setting",
+  "overall_context": "Entertainment & Comedy",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

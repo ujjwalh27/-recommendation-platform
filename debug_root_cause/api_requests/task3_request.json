@@ -1,0 +1,13 @@
+{
+  "endpoint": "http://localhost:11434/api/chat",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "encoding": "base64",
+  "mime_type": "image/jpeg",
+  "image_count": 1,
+  "raw_file_bytes": 94041,
+  "base64_character_length": 125388,
+  "payload_total_bytes": 125543,
+  "b64_sample": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgIC..."
+}

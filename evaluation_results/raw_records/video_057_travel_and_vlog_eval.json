@@ -1,0 +1,40 @@
+{
+  "video_id": "video_057_travel_and_vlog",
+  "ground_truth": {
+    "video_id": "video_057_travel_and_vlog",
+    "category": "Travel & Vlog",
+    "title": "Tokyo Street Walk Clip #7",
+    "expected_summary": "Pedestrians walking across neon-lit Shibuya crossing at night.",
+    "primary_focus": "Neon Crossing",
+    "objects": [
+      "Neon signs",
+      "crosswalk",
+      "billboards",
+      "umbrellas"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "City Walking"
+    ],
+    "environment": "Travel & Vlog Setting",
+    "overall_context": "Travel & Vlog",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Travel & Vlog",
+    "primary_focus": "Neon Crossing",
+    "activities": [
+      "City Walking"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 15.56
+  }
+}

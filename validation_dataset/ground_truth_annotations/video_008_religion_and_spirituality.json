@@ -1,0 +1,27 @@
+{
+  "video_id": "video_008_religion_and_spirituality",
+  "category": "Religion & Spirituality",
+  "title": "Christian Prayer Clip #8",
+  "expected_summary": "Devotees reciting prayers inside church sanctuary.",
+  "primary_focus": "Altar Cross",
+  "objects": [
+    "Cross",
+    "candles",
+    "bible",
+    "wooden pews"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Church Worship"
+  ],
+  "environment": "Religion & Spirituality Setting",
+  "overall_context": "Religion & Spirituality",
+  "religious_context": "Hindu Worship / Shrine Ritual",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "video_id": "video_009_religion_and_spirituality",
+  "category": "Religion & Spirituality",
+  "title": "Islamic Namaz Clip #9",
+  "expected_summary": "Worshippers bowing in congregational prayer at mosque.",
+  "primary_focus": "Mihrab",
+  "objects": [
+    "Prayer mat",
+    "quran",
+    "dome pillar"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Namaz"
+  ],
+  "environment": "Religion & Spirituality Setting",
+  "overall_context": "Religion & Spirituality",
+  "religious_context": "Hindu Worship / Shrine Ritual",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

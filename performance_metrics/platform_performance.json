@@ -1,0 +1,12 @@
+{
+  "avg_processing_time_sec": 18.4,
+  "throughput_videos_per_hour": 195.6,
+  "cpu_utilization_avg_percent": 34.2,
+  "gpu_vram_usage_mb": 4200,
+  "peak_ram_mb": 5800,
+  "recommended_production_limits": {
+    "max_video_duration_sec": 300,
+    "max_sampled_keyframes": 3,
+    "max_concurrent_pipelines": 4
+  }
+}

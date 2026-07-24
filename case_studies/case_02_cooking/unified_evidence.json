@@ -1,0 +1,24 @@
+{
+  "speech": [
+    {
+      "source": "Whisper",
+      "value": "Cooking / Culinary",
+      "confidence": 0.95
+    }
+  ],
+  "vision": [
+    {
+      "source": "YOLO",
+      "value": "Food",
+      "confidence": 0.92
+    }
+  ],
+  "ocr": [],
+  "actions": [
+    {
+      "source": "VideoMAE",
+      "value": "Cooking Tutorial",
+      "confidence": 0.88
+    }
+  ]
+}

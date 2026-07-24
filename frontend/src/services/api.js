@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = "http://localhost:8000";
 
 export async function getFeed(userId = "user_1") {
     const response = await fetch(`${BASE_URL}/feed?user_id=${userId}`);

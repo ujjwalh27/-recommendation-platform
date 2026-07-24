@@ -1,0 +1,39 @@
+{
+  "video_id": "video_005_religion_and_spirituality",
+  "ground_truth": {
+    "video_id": "video_005_religion_and_spirituality",
+    "category": "Religion & Spirituality",
+    "title": "Buddhist Chant Clip #5",
+    "expected_summary": "Monks chanting mantras before Buddha statue in monastery.",
+    "primary_focus": "Buddha Statue",
+    "objects": [
+      "Buddha idol",
+      "incense burner",
+      "prayer beads"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Buddhist Chant"
+    ],
+    "environment": "Religion & Spirituality Setting",
+    "overall_context": "Religion & Spirituality",
+    "religious_context": "Hindu Worship / Shrine Ritual",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Religion & Spirituality",
+    "primary_focus": "Buddha Statue",
+    "activities": [
+      "Buddhist Chant"
+    ],
+    "precision": 0.67,
+    "recall": 0.67,
+    "latency_sec": 18.61
+  }
+}

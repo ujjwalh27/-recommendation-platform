@@ -1,0 +1,122 @@
+{
+  "Religion & Spirituality": {
+    "Religion & Spirituality": 9,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 1,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Cooking & Culinary Arts": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 10,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 0,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Education & Tutorials": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 9,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 1,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Sports & Athletics": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 10,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 0,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Nature & Wildlife": {
+    "Religion & Spirituality": 1,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 1,
+    "Sports & Athletics": 1,
+    "Nature & Wildlife": 7,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 0,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Travel & Vlog": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 10,
+    "Entertainment & Comedy": 0,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Entertainment & Comedy": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 10,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "News & Documentaries": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 1,
+    "News & Documentaries": 9,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 0
+  },
+  "Daily Activities & Vlogs": {
+    "Religion & Spirituality": 1,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 0,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 0,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 9,
+    "Festivals & Cultural Events": 0
+  },
+  "Festivals & Cultural Events": {
+    "Religion & Spirituality": 0,
+    "Cooking & Culinary Arts": 0,
+    "Education & Tutorials": 0,
+    "Sports & Athletics": 1,
+    "Nature & Wildlife": 0,
+    "Travel & Vlog": 0,
+    "Entertainment & Comedy": 0,
+    "News & Documentaries": 0,
+    "Daily Activities & Vlogs": 0,
+    "Festivals & Cultural Events": 9
+  }
+}

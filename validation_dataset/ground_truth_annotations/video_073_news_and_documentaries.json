@@ -1,0 +1,27 @@
+{
+  "video_id": "video_073_news_and_documentaries",
+  "category": "News & Documentaries",
+  "title": "Climate Documentary Clip #3",
+  "expected_summary": "Narrator highlighting glacier melting in Arctic region.",
+  "primary_focus": "Glacier Ice Berg",
+  "objects": [
+    "Glacier",
+    "icebergs",
+    "ocean water",
+    "boat"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Documentary Narrative"
+  ],
+  "environment": "News & Documentaries Setting",
+  "overall_context": "News & Documentaries",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

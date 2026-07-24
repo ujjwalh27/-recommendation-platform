@@ -1,0 +1,30 @@
+[
+  {
+    "user_id": "usr_01",
+    "video_id": "vid_religious_01",
+    "rating": 5,
+    "accuracy_score": "10/10",
+    "comment": "Perfect identification of Sai Baba puja and deepa lighting."
+  },
+  {
+    "user_id": "usr_02",
+    "video_id": "vid_cooking_04",
+    "rating": 5,
+    "accuracy_score": "9/10",
+    "comment": "Accurately recognized pasta stir-frying."
+  },
+  {
+    "user_id": "usr_03",
+    "video_id": "vid_nature_07",
+    "rating": 3,
+    "accuracy_score": "6/10",
+    "comment": "Misclassified tiger safari as general news documentary."
+  },
+  {
+    "user_id": "usr_04",
+    "video_id": "vid_news_02",
+    "rating": 4,
+    "accuracy_score": "7/10",
+    "comment": "Good summary but missed press conference details."
+  }
+]

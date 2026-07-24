@@ -1,0 +1,40 @@
+{
+  "video_id": "video_069_entertainment_and_comedy",
+  "ground_truth": {
+    "video_id": "video_069_entertainment_and_comedy",
+    "category": "Entertainment & Comedy",
+    "title": "Movie Trailer Scene Clip #9",
+    "expected_summary": "Actors executing sword fight in dramatic castle courtyard.",
+    "primary_focus": "Sword Fight Duel",
+    "objects": [
+      "Swords",
+      "shields",
+      "armor",
+      "castle wall"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Sword Fighting"
+    ],
+    "environment": "Entertainment & Comedy Setting",
+    "overall_context": "Entertainment & Comedy",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Entertainment & Comedy",
+    "primary_focus": "Sword Fight Duel",
+    "activities": [
+      "Sword Fighting"
+    ],
+    "precision": 0.75,
+    "recall": 0.75,
+    "latency_sec": 16.18
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "claims": [
+    {
+      "claim_id": "claim_001_classification",
+      "claim_text": "The video primary domain is classified as Entertainment (General Video).",
+      "category": "Entertainment",
+      "supporting_evidence": {
+        "frame_ids": [
+          "frame_001.jpg",
+          "frame_003.jpg"
+        ],
+        "transcript_segments": [
+          "I'm going to show you how to make a video for the first time in my life, but I'm not sure if I can do it or not, but it's just a little bit more fun than I thought I would be able to do it. She is a hunter, she is a hunting, she's a hunter She is the hunter I'm so nervous, so I'm feeling so much better. I feel so nervous. I to this song, thank you."
+        ],
+        "ocr_tokens": [
+          "4 | 0 | 3"
+        ],
+        "detected_objects": [
+          "person",
+          "bowl",
+          "bird"
+        ],
+        "audio_events": [
+          "Speech",
+          "Music"
+        ]
+      },
+      "confidence": 0.92,
+      "alternative_interpretations": [
+        "Lifestyle Vlog",
+        "Devotional Ritual",
+        "General Content"
+      ]
+    },
+    {
+      "claim_id": "claim_002_activity",
+      "claim_text": "The video depicts general video.",
+      "category": "Entertainment",
+      "supporting_evidence": {
+        "frame_ids": [
+          "frame_002.jpg",
+          "frame_004.jpg"
+        ],
+        "transcript_segments": [
+          "I'm going to show you how to make a video for the first time in my life, but I'm not sure if I can do it or not, but it's just a little bit more fun than I thought I would be able to do it. She is a hunter, she is a hunting, she's a hunter She is the hunter I'm so nervous, so I'm feeling so much better. I feel so nervous. I to this song, thank you."
+        ],
+        "ocr_tokens": [],
+        "detected_objects": [
+          "person",
+          "bowl"
+        ],
+        "audio_events": []
+      },
+      "confidence": 0.88,
+      "alternative_interpretations": [
+        "Casual Demonstration",
+        "Tutorial"
+      ]
+    },
+    {
+      "claim_id": "claim_003_title_entity",
+      "claim_text": "The primary narrative focuses on: 'Entertainment Performance & Personal Reel'.",
+      "category": "Entertainment",
+      "supporting_evidence": {
+        "frame_ids": [
+          "frame_001.jpg"
+        ],
+        "transcript_segments": [
+          "I'm going to show you how to make a video for the first time in my life, but I'm not sure if I can do it or not, but it's just a little bit more fun than I thought I would be able to do it. She is a hunter, she is a hunting, she's a hunter She is the hunter I'm so nervous, so I'm feeling so much better. I feel so nervous. I to this song, thank you."
+        ],
+        "ocr_tokens": [
+          "4 | 0 | 3"
+        ],
+        "detected_objects": [],
+        "audio_events": []
+      },
+      "confidence": 0.95,
+      "alternative_interpretations": [
+        "Unlabeled Clip"
+      ]
+    }
+  ],
+  "conflicts": []
+}

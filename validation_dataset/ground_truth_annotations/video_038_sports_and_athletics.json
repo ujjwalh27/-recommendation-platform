@@ -1,0 +1,27 @@
+{
+  "video_id": "video_038_sports_and_athletics",
+  "category": "Sports & Athletics",
+  "title": "Tennis Serve Clip #8",
+  "expected_summary": "Tennis player tossing ball and serving across court.",
+  "primary_focus": "Tennis Racket & Ball",
+  "objects": [
+    "Racket",
+    "net",
+    "tennis ball",
+    "court line"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Tennis Serve"
+  ],
+  "environment": "Sports & Athletics Setting",
+  "overall_context": "Sports & Athletics",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "video_id": "video_097_festivals_and_cultural_events",
+  "category": "Festivals & Cultural Events",
+  "title": "Holi Color Festival Clip #7",
+  "expected_summary": "Crowd throwing bright pink and yellow powder colors in air.",
+  "primary_focus": "Color Powder Cloud",
+  "objects": [
+    "Gulal powder",
+    "white clothes",
+    "crowd"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Holi Celebration"
+  ],
+  "environment": "Festivals & Cultural Events Setting",
+  "overall_context": "Festivals & Cultural Events",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

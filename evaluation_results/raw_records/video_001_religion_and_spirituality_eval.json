@@ -1,0 +1,40 @@
+{
+  "video_id": "video_001_religion_and_spirituality",
+  "ground_truth": {
+    "video_id": "video_001_religion_and_spirituality",
+    "category": "Religion & Spirituality",
+    "title": "Sai Baba Puja Clip #1",
+    "expected_summary": "A woman performs devotional Sai Baba Puja in a home prayer shrine, lighting an oil lamp (deepa), chanting 'Sri Sai Samartha', and offering aarti.",
+    "primary_focus": "Sai Baba shrine & altar",
+    "objects": [
+      "Ganesha",
+      "Sai Baba",
+      "lamp",
+      "flowers"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Puja"
+    ],
+    "environment": "Religion & Spirituality Setting",
+    "overall_context": "Religion & Spirituality",
+    "religious_context": "Hindu Worship / Shrine Ritual",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Religion & Spirituality",
+    "primary_focus": "Sai Baba shrine & altar",
+    "activities": [
+      "Puja"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 20.27
+  }
+}

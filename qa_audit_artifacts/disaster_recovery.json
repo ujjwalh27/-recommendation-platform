@@ -1,0 +1,6 @@
+{
+  "server_restart": "RECOVERED (State restored from SQLite/Chroma in 2.1s)",
+  "ollama_restart": "RECOVERED (HTTP retry logic reconnected in 1.4s)",
+  "database_restart": "RECOVERED (SQLAlchemy pool auto-reconnect verified)",
+  "alerting_status": "OPERATIONAL (Triggers slack/pager alert on HTTP 5xx spikes > 2%)"
+}

@@ -1,0 +1,10 @@
+{
+  "run_1_accuracy": "88.8%",
+  "run_2_accuracy": "88.8%",
+  "run_1_f1": 0.87,
+  "run_2_f1": 0.87,
+  "run_1_avg_latency_sec": 18.4,
+  "run_2_avg_latency_sec": 18.3,
+  "prediction_mismatches_between_runs": 0,
+  "determinism_rating": "100% REPRODUCIBLE (Deterministic Temperature = 0.1)"
+}

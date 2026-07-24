@@ -1,0 +1,26 @@
+{
+  "video_id": "video_027_education_and_tutorials",
+  "category": "Education & Tutorials",
+  "title": "Python Coding Clip #7",
+  "expected_summary": "Instructor explaining async loop in IDE on laptop screen.",
+  "primary_focus": "Code Editor Window",
+  "objects": [
+    "Laptop screen",
+    "IDE window",
+    "keyboard"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Coding Tutorial"
+  ],
+  "environment": "Education & Tutorials Setting",
+  "overall_context": "Education & Tutorials",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

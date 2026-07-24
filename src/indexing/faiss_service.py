@@ -68,3 +68,31 @@ class FaissSearchService:
             })
 
         return results[:top_k]
+
+    def add_video(self, video_id: str, embedding: np.ndarray) -> None:
+        """Dynamically registers a new video embedding into the FAISS index and disk files."""
+        video_id = str(video_id)
+        if video_id in self.video_id_to_index:
+            print(f"[FaissSearchService] Video {video_id} already indexed. Skipping.")
+            return
+
+        embedding_vector = np.array(embedding, dtype="float32").reshape(1, -1)
+        faiss.normalize_L2(embedding_vector)
+
+        # 1. Add to FAISS index and save index
+        self.index.add(embedding_vector)
+        index_path = os.path.join(self.models_dir, "video.index")
+        faiss.write_index(self.index, index_path)
+
+        # 2. Append to video_ids array and save
+        self.video_ids = np.append(self.video_ids, video_id)
+        np.save(os.path.join(self.embeddings_dir, "video_ids.npy"), self.video_ids)
+        np.save(os.path.join(self.models_dir, "video_ids.npy"), self.video_ids)
+
+        # 3. Append to embeddings matrix and save
+        self.embeddings = np.vstack([self.embeddings, embedding_vector]).astype("float32")
+        np.save(os.path.join(self.embeddings_dir, "video_embeddings.npy"), self.embeddings)
+
+        # 4. Update memory lookup map
+        self.video_id_to_index[video_id] = len(self.video_ids) - 1
+        print(f"[FaissSearchService] Dynamic indexing successful for video {video_id}.")

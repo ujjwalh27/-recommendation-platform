@@ -1,0 +1,13 @@
+{
+  "folder": "case_04_travel",
+  "domain": "Travel / Vlog",
+  "video_name": "travel_vlog.mp4",
+  "ground_truth_desc": "A travel vlog exploring outdoor natural landscapes and landmark architecture.",
+  "category": "Travel",
+  "subcategory": "Destination Vlog",
+  "personas": [
+    "Travelers",
+    "Vacation Seekers",
+    "Explorers"
+  ]
+}

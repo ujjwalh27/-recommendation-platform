@@ -1,0 +1,27 @@
+{
+  "video_id": "video_019_cooking_and_culinary_arts",
+  "category": "Cooking & Culinary Arts",
+  "title": "Sushi Rolling Clip #9",
+  "expected_summary": "Chef rolling tuna and rice in seaweed mat.",
+  "primary_focus": "Bamboo Mat",
+  "objects": [
+    "Seaweed",
+    "sushi rice",
+    "tuna slice",
+    "knife"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Sushi Rolling"
+  ],
+  "environment": "Cooking & Culinary Arts Setting",
+  "overall_context": "Cooking & Culinary Arts",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

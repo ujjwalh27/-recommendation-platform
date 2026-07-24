@@ -1,0 +1,40 @@
+{
+  "video_id": "video_036_sports_and_athletics",
+  "ground_truth": {
+    "video_id": "video_036_sports_and_athletics",
+    "category": "Sports & Athletics",
+    "title": "Football Goal Clip #6",
+    "expected_summary": "Striker kicking ball into top corner of football net.",
+    "primary_focus": "Football Net & Ball",
+    "objects": [
+      "Ball",
+      "goalposts",
+      "turf grass",
+      "jersey"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Scoring Goal"
+    ],
+    "environment": "Sports & Athletics Setting",
+    "overall_context": "Sports & Athletics",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Sports & Athletics",
+    "primary_focus": "Football Net & Ball",
+    "activities": [
+      "Scoring Goal"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 14.65
+  }
+}

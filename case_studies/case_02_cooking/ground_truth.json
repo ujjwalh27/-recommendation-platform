@@ -1,0 +1,13 @@
+{
+  "folder": "case_02_cooking",
+  "domain": "Cooking / Culinary",
+  "video_name": "recipe_cooking.mp4",
+  "ground_truth_desc": "A culinary video demonstrating food preparation, vegetable chopping, and recipe cooking in a kitchen environment.",
+  "category": "Food",
+  "subcategory": "Cooking Tutorial",
+  "personas": [
+    "Home Chefs",
+    "Recipe Viewers",
+    "Food Enthusiasts"
+  ]
+}

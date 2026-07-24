@@ -1,0 +1,26 @@
+{
+  "video_id": "video_060_travel_and_vlog",
+  "category": "Travel & Vlog",
+  "title": "Beach Sunset Clip #10",
+  "expected_summary": "Traveler walking along palm tree beach during golden sunset.",
+  "primary_focus": "Sunset Horizon",
+  "objects": [
+    "Palm trees",
+    "ocean waves",
+    "sand beach"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Walking Beach"
+  ],
+  "environment": "Travel & Vlog Setting",
+  "overall_context": "Travel & Vlog",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

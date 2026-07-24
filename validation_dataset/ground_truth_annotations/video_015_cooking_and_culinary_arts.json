@@ -1,0 +1,27 @@
+{
+  "video_id": "video_015_cooking_and_culinary_arts",
+  "category": "Cooking & Culinary Arts",
+  "title": "Curry Cooking Clip #5",
+  "expected_summary": "Chef simmering chicken tikka masala in copper kadai.",
+  "primary_focus": "Copper Kadai",
+  "objects": [
+    "Kadai",
+    "spices",
+    "chicken",
+    "gravy bowl"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Simmering Curry"
+  ],
+  "environment": "Cooking & Culinary Arts Setting",
+  "overall_context": "Cooking & Culinary Arts",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

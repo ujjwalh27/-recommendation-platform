@@ -1,0 +1,27 @@
+{
+  "video_id": "video_044_nature_and_wildlife",
+  "category": "Nature & Wildlife",
+  "title": "Waterfall Cascade Clip #4",
+  "expected_summary": "Cascading water falling over mossy forest cliffs.",
+  "primary_focus": "Waterfall Basin",
+  "objects": [
+    "Waterfall",
+    "rocks",
+    "green moss",
+    "trees"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Water Flowing"
+  ],
+  "environment": "Nature & Wildlife Setting",
+  "overall_context": "Nature & Wildlife",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

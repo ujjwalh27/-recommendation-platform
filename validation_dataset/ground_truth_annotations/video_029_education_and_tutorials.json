@@ -1,0 +1,26 @@
+{
+  "video_id": "video_029_education_and_tutorials",
+  "category": "Education & Tutorials",
+  "title": "Physics Pendulum Clip #9",
+  "expected_summary": "Demonstrator swinging brass pendulum to illustrate gravity.",
+  "primary_focus": "Pendulum Stand",
+  "objects": [
+    "Pendulum",
+    "stopwatch",
+    "metal stand"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Physics Demo"
+  ],
+  "environment": "Education & Tutorials Setting",
+  "overall_context": "Education & Tutorials",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

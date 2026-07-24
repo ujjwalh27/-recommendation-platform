@@ -1,0 +1,26 @@
+{
+  "video_id": "video_040_sports_and_athletics",
+  "category": "Sports & Athletics",
+  "title": "Swimming Lap Clip #10",
+  "expected_summary": "Swimmer performing butterfly stroke in Olympic pool.",
+  "primary_focus": "Pool Lane",
+  "objects": [
+    "Pool lane rope",
+    "goggles",
+    "swim cap"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Swimming"
+  ],
+  "environment": "Sports & Athletics Setting",
+  "overall_context": "Sports & Athletics",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

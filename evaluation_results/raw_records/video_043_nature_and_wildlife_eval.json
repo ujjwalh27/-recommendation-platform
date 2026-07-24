@@ -1,0 +1,40 @@
+{
+  "video_id": "video_043_nature_and_wildlife",
+  "ground_truth": {
+    "video_id": "video_043_nature_and_wildlife",
+    "category": "Nature & Wildlife",
+    "title": "Coral Reef Clip #3",
+    "expected_summary": "Clownfish swimming through colorful sea anemone.",
+    "primary_focus": "Sea Anemone & Fish",
+    "objects": [
+      "Corals",
+      "anemone",
+      "clownfish",
+      "ocean water"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Underwater Swimming"
+    ],
+    "environment": "Nature & Wildlife Setting",
+    "overall_context": "Nature & Wildlife",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Religion & Spirituality",
+    "primary_focus": "Unclear Background Item",
+    "activities": [
+      "General Action"
+    ],
+    "precision": 0.67,
+    "recall": 0.5,
+    "latency_sec": 19.67
+  }
+}

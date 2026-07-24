@@ -1,0 +1,26 @@
+{
+  "video_id": "video_041_nature_and_wildlife",
+  "category": "Nature & Wildlife",
+  "title": "Tiger Safari Clip #1",
+  "expected_summary": "Bengal tiger drinking water at forest river edge.",
+  "primary_focus": "Bengal Tiger",
+  "objects": [
+    "Tiger",
+    "forest trees",
+    "water stream"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Wildlife Drinking"
+  ],
+  "environment": "Nature & Wildlife Setting",
+  "overall_context": "Nature & Wildlife",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

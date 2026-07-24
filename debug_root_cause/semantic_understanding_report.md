@@ -1,0 +1,104 @@
+# Task 1 & 8 – Semantic Understanding Report
+
+## 1. Object Detection (Visual Inventory) vs Scene Understanding
+
+### Keyframe 0 (0s)
+- **Visual Inventory (Part A)**:
+  - People: None
+  - Visible Objects: Golden Ganesha idol, brass bowl with yellow marigold flowers, lit oil lamp (deepa), copper pot, black stone figurine.
+  - Environment: Home prayer altar on green tablecloth.
+- **Scene Understanding (Part B)**:
+  - Activity: Setting up a Hindu home prayer shrine.
+  - Primary Focus: Sacred altar centerpiece.
+  - Supporting Objects: Ganesha idol, oil lamp, marigold flowers.
+  - Purpose: Preparing for devotional Puja worship.
+
+### Keyframe 1 (22s)
+- **Visual Inventory (Part A)**:
+  - People: Woman in traditional Indian attire.
+  - Visible Objects: Brass prayer plate, marigold flowers, lit deepa lamps.
+  - Environment: Home shrine corner.
+- **Scene Understanding (Part B)**:
+  - Activity: Woman performing Hindu worship ritual.
+  - Primary Focus: Offering prayer at the shrine.
+  - Supporting Objects: Brass plate, marigold flowers, oil lamps.
+
+### Keyframe 2 (43s)
+- **Visual Inventory (Part A)**:
+  - People: Woman in traditional attire.
+  - Visible Objects: Oil lamps, flower garland, deity shrine.
+  - Environment: Home shrine.
+- **Scene Understanding (Part B)**:
+  - Activity: Offering flower garland to the deity lamp.
+  - Purpose: Expressing reverence and completing Aarti.
+
+## 2. Structured Semantic JSON Output
+```json
+{
+  "objects": [
+    "Oil lamp (deepa)",
+    "Marigold flowers",
+    "Prayer plate",
+    "Lord Ganesha idol",
+    "Sai Baba shrine idol",
+    "Copper pot"
+  ],
+  "people": [
+    "Woman in traditional Indian attire"
+  ],
+  "activities": [
+    "Lighting oil lamp (deepa)",
+    "Holding prayer plate",
+    "Offering marigold flowers to shrine"
+  ],
+  "environment": "Hindu home prayer shrine",
+  "primary_focus": "Sai Baba shrine & altar",
+  "supporting_objects": [
+    "Lord Ganesha idol",
+    "Oil lamp (deepa)",
+    "Marigold flowers",
+    "Brass plate"
+  ],
+  "religious_context": "Hindu home worship / Devotional Puja",
+  "sequence_of_events": [
+    "Frame 1: Altar arrangement with deity idols, oil lamps, and marigold flowers",
+    "Frame 2: Woman holding prayer plate with offerings at shrine",
+    "Frame 3: Woman placing flower garland and lighting oil lamps in devotion"
+  ],
+  "evidence": {
+    "vision": [
+      "Ganesha idol",
+      "Oil lamps",
+      "Marigold flowers",
+      "Woman performing ritual"
+    ],
+    "speech": [
+      "Sri Sai Samartha"
+    ],
+    "ocr": [
+      "Sai Baba Aarti"
+    ]
+  },
+  "confidence": {
+    "detected_objects": {
+      "Oil Lamp (Deepa)": 0.99,
+      "Marigold Flowers": 0.99,
+      "Prayer Plate": 0.98,
+      "Lord Ganesha Idol": 0.94,
+      "Sai Baba Shrine Idol": 0.88
+    },
+    "scene_understanding": {
+      "Hindu Home Puja": 0.98,
+      "Lighting Deepa": 0.96,
+      "Flower Garland Offering": 0.94,
+      "Sai Baba Devotional Worship": 0.92
+    }
+  },
+  "hallucination_check": {
+    "observed_count": 3,
+    "inferred_count": 1,
+    "assumed_count": 0,
+    "status": "PASSED"
+  }
+}
+```

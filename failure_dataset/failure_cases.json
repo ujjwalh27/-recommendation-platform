@@ -1,0 +1,18 @@
+[
+  {
+    "failure_id": "FAIL_001",
+    "video_id": "video_041_nature",
+    "category": "Nature & Wildlife",
+    "predicted_category": "News & Documentaries",
+    "root_cause": "Narrator voiceover audio triggered News anchor speech heuristic in classifier.",
+    "corrective_action": "Increase visual weight over voiceover speech in documentary classification rules."
+  },
+  {
+    "failure_id": "FAIL_002",
+    "video_id": "video_072_news",
+    "category": "News & Documentaries",
+    "predicted_category": "Entertainment & Comedy",
+    "root_cause": "Bright stage lighting and podium mics confused with music concert stage.",
+    "corrective_action": "Add OCR headline parsing to boost news domain classification."
+  }
+]

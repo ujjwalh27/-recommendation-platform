@@ -1,0 +1,26 @@
+{
+  "video_id": "video_039_sports_and_athletics",
+  "category": "Sports & Athletics",
+  "title": "Sprint Finish Clip #9",
+  "expected_summary": "Athletes sprinting across 100m track finish line.",
+  "primary_focus": "Finish Line",
+  "objects": [
+    "Track lanes",
+    "finish ribbon",
+    "running shoes"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Sprinting"
+  ],
+  "environment": "Sports & Athletics Setting",
+  "overall_context": "Sports & Athletics",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

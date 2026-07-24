@@ -1,0 +1,27 @@
+{
+  "video_id": "video_076_news_and_documentaries",
+  "category": "News & Documentaries",
+  "title": "News Anchor Desk Clip #6",
+  "expected_summary": "Anchor presenting live news report in television studio.",
+  "primary_focus": "News Desk & Screen",
+  "objects": [
+    "News desk",
+    "graphics screen",
+    "microphone",
+    "suit"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Broadcasting News"
+  ],
+  "environment": "News & Documentaries Setting",
+  "overall_context": "News & Documentaries",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

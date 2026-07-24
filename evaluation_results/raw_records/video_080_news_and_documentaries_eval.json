@@ -1,0 +1,39 @@
+{
+  "video_id": "video_080_news_and_documentaries",
+  "ground_truth": {
+    "video_id": "video_080_news_and_documentaries",
+    "category": "News & Documentaries",
+    "title": "Stock Exchange Clip #10",
+    "expected_summary": "Traders working on floor of stock exchange in front of ticker screens.",
+    "primary_focus": "Trading Screen Ticker",
+    "objects": [
+      "Monitors",
+      "ticker board",
+      "floor desks"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Stock Trading"
+    ],
+    "environment": "News & Documentaries Setting",
+    "overall_context": "News & Documentaries",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Entertainment & Comedy",
+    "primary_focus": "Unclear Background Item",
+    "activities": [
+      "General Action"
+    ],
+    "precision": 1.0,
+    "recall": 0.33,
+    "latency_sec": 21.65
+  }
+}

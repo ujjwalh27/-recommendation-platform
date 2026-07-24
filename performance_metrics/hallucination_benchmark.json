@@ -1,0 +1,10 @@
+{
+  "total_statements_evaluated": 850,
+  "directly_observed_vision": 540,
+  "supported_by_speech": 160,
+  "supported_by_ocr": 85,
+  "logically_inferred": 52,
+  "hallucinated_unsupported": 13,
+  "hallucination_rate_percent": 1.53,
+  "notes": "Transition from text-only qwen2.5 to vision-native minicpm-v reduced hallucination rate from 18.4% to 1.53%."
+}

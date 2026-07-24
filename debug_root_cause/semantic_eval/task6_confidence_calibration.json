@@ -1,0 +1,15 @@
+{
+  "detected_objects": {
+    "Oil Lamp (Deepa)": 0.99,
+    "Marigold Flowers": 0.99,
+    "Prayer Plate": 0.98,
+    "Lord Ganesha Idol": 0.94,
+    "Sai Baba Shrine Idol": 0.88
+  },
+  "scene_understanding": {
+    "Hindu Home Puja": 0.98,
+    "Lighting Deepa": 0.96,
+    "Flower Garland Offering": 0.94,
+    "Sai Baba Devotional Worship": 0.92
+  }
+}

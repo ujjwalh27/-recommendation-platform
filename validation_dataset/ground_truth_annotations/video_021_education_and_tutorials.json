@@ -1,0 +1,27 @@
+{
+  "video_id": "video_021_education_and_tutorials",
+  "category": "Education & Tutorials",
+  "title": "Calculus Monologue Clip #1",
+  "expected_summary": "Teacher solving integral equations on chalkboard.",
+  "primary_focus": "Blackboard Equations",
+  "objects": [
+    "Blackboard",
+    "chalk",
+    "ruler",
+    "desk"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Teaching Math"
+  ],
+  "environment": "Education & Tutorials Setting",
+  "overall_context": "Education & Tutorials",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

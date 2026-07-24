@@ -1,0 +1,12 @@
+{
+  "folder": "case_05_entertainment",
+  "domain": "Entertainment / Performance",
+  "video_name": "acting_reel.mp4",
+  "ground_truth_desc": "A video performance featuring personal reel speaking or audition monologue in a studio setting.",
+  "category": "Entertainment",
+  "subcategory": "Audition Monologue / Personal Reel",
+  "personas": [
+    "Entertainment Viewers",
+    "Drama Enthusiasts"
+  ]
+}

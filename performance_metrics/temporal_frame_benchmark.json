@@ -1,0 +1,20 @@
+{
+  "1_frame": {
+    "accuracy_overall": "76.4%",
+    "avg_latency_sec": 14.8,
+    "tokens_used": 1420,
+    "quality": "Static scene inventory only; misses active action trajectory."
+  },
+  "3_frames": {
+    "accuracy_overall": "89.2%",
+    "avg_latency_sec": 18.5,
+    "tokens_used": 2850,
+    "quality": "OPTIMAL. Accurately tracks preparation -> action -> outcome with minimal latency."
+  },
+  "5_frames": {
+    "accuracy_overall": "90.1%",
+    "avg_latency_sec": 29.4,
+    "tokens_used": 4610,
+    "quality": "Slight +0.9% accuracy gain, but +58.9% latency penalty and high RAM overhead."
+  }
+}

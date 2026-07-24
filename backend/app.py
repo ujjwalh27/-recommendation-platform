@@ -1,6 +1,31 @@
+import os
+# ── Python 3.13 / Apple-MPS crash prevention ──────────────────────────────────
+# Must be done BEFORE any torch/transformers/easyocr/joblib imports.
+# HuggingFace pipelines create DataLoaders with pin_memory=True which causes
+# loky semaphore leaks on Python 3.13 that kill the uvicorn worker process.
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+
+import torch
+import torch.utils.data
+_OrigDataLoader = torch.utils.data.DataLoader
+class _SafeDataLoader(_OrigDataLoader):
+    def __init__(self, *args, **kwargs):
+        kwargs["pin_memory"] = False
+        kwargs["num_workers"] = 0
+        super().__init__(*args, **kwargs)
+torch.utils.data.DataLoader = _SafeDataLoader
+# ──────────────────────────────────────────────────────────────────────────────
+
 from pathlib import Path
 import sys
-from fastapi import FastAPI
+import shutil
+import json
+import time
+import cv2
+import numpy as np
+from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -12,6 +37,7 @@ sys.path.append(str(BASE_DIR))
 
 from src.recommender.service import RecommenderService
 from src.indexing.faiss_service import FaissSearchService
+from src.content_intelligence.pipeline import ContentIntelligencePipeline
 
 # --------------------------------------------------
 # Project Paths
@@ -35,19 +61,20 @@ app = FastAPI(
 )
 
 # -------------------------------
-# CORS
+# Health Check Endpoint
 # -------------------------------
+@app.get("/health")
+def health_check():
+    return {
+        "status": "HEALTHY",
+        "api_version": "2.0-enterprise",
+        "pipeline_status": "READY",
+        "timestamp": time.time()
+    }
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:3000",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:5174",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -75,6 +102,21 @@ app.mount(
 
 service = RecommenderService()
 faiss_service = FaissSearchService()
+ci_pipeline = ContentIntelligencePipeline()
+
+@app.on_event("startup")
+def preload_ci_models():
+    print("[Startup] Eagerly loading Content Intelligence models into RAM...")
+    # Force access to the properties to trigger loading of lazy instances
+    _ = ci_pipeline.speech_rec
+    _ = ci_pipeline.ocr_det
+    _ = ci_pipeline.obj_det
+    _ = ci_pipeline.scene_und
+    _ = ci_pipeline.act_rec
+    _ = ci_pipeline.aud_det
+    _ = ci_pipeline.embedding_model
+    _ = ci_pipeline.intelligence_engine
+    print("[Startup] Eager loading complete! All CI models are pre-loaded in memory.")
 
 # --------------------------------------------------
 # Schemas
@@ -135,8 +177,8 @@ def recommend(video_id: str, limit: int = 10):
             "title": meta.get("caption") or f"Clip {vid}",
             "duration": float(meta.get("duration", 0.0)),
             "category": meta.get("category", "Entertainment"),
-            "thumbnail_url": f"http://127.0.0.1:8000/thumbnails/{vid}.jpg",
-            "video_url": f"http://127.0.0.1:8000/videos/{vid}.mp4",
+            "thumbnail_url": f"http://localhost:8000/thumbnails/{vid}.jpg",
+            "video_url": f"http://localhost:8000/videos/{vid}.mp4",
             "score": item["score"]
         })
         
@@ -185,3 +227,130 @@ def get_user_profile(user_id: str):
         "creator_affinities": creator_affinities,
         "total_watched": len(watch_history)
     }
+
+
+# --------------------------------------------------
+# Content Intelligence Routes
+# --------------------------------------------------
+
+@app.post("/content-intelligence/analyze")
+def analyze_video(file: UploadFile = File(...)):
+    """
+    Uploads a raw video file, executes the Content Intelligence Pipeline,
+    dynamically embeds metadata, updates FAISS index, and registers it in the recommender feed catalog.
+    """
+    # 1. Generate unique video ID
+    timestamp = int(time.time())
+    video_id = f"video_ci_{timestamp}"
+    
+    # 2. Save video file to static mount directory
+    video_filename = f"{video_id}.mp4"
+    video_path = VIDEOS_DIR / video_filename
+    
+    with open(video_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+        
+    # 3. Extract thumbnail frame 0
+    thumbnail_path = THUMBNAILS_DIR / f"{video_id}.jpg"
+    cap = cv2.VideoCapture(str(video_path))
+    ret, frame = cap.read()
+    if ret:
+        cv2.imwrite(str(thumbnail_path), frame)
+    else:
+        # Save placeholder black thumbnail
+        black_img = np.zeros((360, 640, 3), dtype=np.uint8)
+        cv2.imwrite(str(thumbnail_path), black_img)
+    cap.release()
+    
+    # 4. Execute Content Intelligence Pipeline
+    record = ci_pipeline.analyze_video(str(video_path), video_id, force_reanalyze=True)
+    
+    # 5. Dynamic FAISS Vector Indexing
+    faiss_service.add_video(video_id, record["embedding"])
+    
+    # 6. Map Category safely matching platform personas
+    category_label = record.get("category", "Entertainment")
+    known_categories = [
+        "Automobile", "Food", "Animation", "Kids/Family", "Animal", 
+        "Sports", "Education", "TV Shows", "Comedy", "Tech", 
+        "Gamer", "People", "Advertisement", "How-to", "Music", 
+        "News", "Fashion", "Travel", "Documentary"
+    ]
+    matched_category = "Entertainment"
+    for cat in known_categories:
+        if cat.lower() in category_label.lower():
+            matched_category = cat
+            break
+            
+    # 7. Compile video metadata to append to enriched_videos.json
+    duration = 15.0
+    cap = cv2.VideoCapture(str(video_path))
+    if cap.isOpened():
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        frame_count = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+        if fps > 0:
+            duration = frame_count / fps
+        cap.release()
+
+    video_meta = {
+        "video_id": video_id,
+        "caption": f"{record['title']} - {record['summary']}",
+        "hashtags": " ".join([f"#{t.lower()}" for t in record["tags"]]),
+        "mentions": "nan",
+        "creator": "ai_intelligence",
+        "creator_name": "AI Intelligence Core",
+        "verified": True,
+        "music_name": f"Synthesis_{video_id}",
+        "music_author": "AI Synthesizer",
+        "duration": round(duration, 2),
+        "views": 100,
+        "likes": 10,
+        "comments": 2,
+        "shares": 1,
+        "engagement_score": 15.0,
+        "engagement_rate": 0.15,
+        "created_time": timestamp,
+        "video_url": f"http://localhost:8000/videos/{video_filename}",
+        "category": matched_category,
+        "keywords": record["keywords"]
+    }
+    
+    # Load and append to enriched_videos.json
+    enriched_path = BASE_DIR / "datasets" / "processed" / "enriched_videos.json"
+    existing_meta = []
+    if enriched_path.exists():
+        try:
+            with open(enriched_path, "r", encoding="utf-8") as f:
+                existing_meta = json.load(f)
+        except Exception:
+            pass
+            
+    existing_meta.append(video_meta)
+    
+    with open(enriched_path, "w", encoding="utf-8") as f:
+        json.dump(existing_meta, f, indent=4)
+        
+    # 8. Register in recommender service catalog in memory
+    service.candidate_generator.video_lookup[video_id] = video_meta
+    
+    # 9. Return JSON intelligence report
+    return record
+
+
+@app.get("/content-intelligence/videos")
+def list_analyzed_videos():
+    """
+    Lists all videos that have been analyzed by the content intelligence layer.
+    """
+    return ci_pipeline.db.list_records()
+
+
+@app.get("/content-intelligence/video/{video_id}")
+def get_analyzed_video(video_id: str):
+    """
+    Retrieves the complete intelligence report for a given video ID.
+    """
+    record = ci_pipeline.db.get_record(video_id)
+    if not record:
+        return {"status": "error", "message": f"Analysis for video {video_id} not found."}
+    return record

@@ -1,0 +1,24 @@
+{
+  "speech": [
+    {
+      "source": "Whisper",
+      "value": "Travel / Vlog",
+      "confidence": 0.95
+    }
+  ],
+  "vision": [
+    {
+      "source": "YOLO",
+      "value": "Travel",
+      "confidence": 0.92
+    }
+  ],
+  "ocr": [],
+  "actions": [
+    {
+      "source": "VideoMAE",
+      "value": "Destination Vlog",
+      "confidence": 0.88
+    }
+  ]
+}

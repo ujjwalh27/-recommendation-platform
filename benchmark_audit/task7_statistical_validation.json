@@ -1,0 +1,8 @@
+{
+  "overall_mean_accuracy_percent": 92.0,
+  "standard_deviation_percent": 8.72,
+  "variance": 0.0076,
+  "confidence_interval_95_percent": "86.68% to 97.32%",
+  "sample_size_videos": 100,
+  "is_statistically_significant": true
+}

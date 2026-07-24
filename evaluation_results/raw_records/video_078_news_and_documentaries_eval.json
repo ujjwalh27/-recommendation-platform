@@ -1,0 +1,40 @@
+{
+  "video_id": "video_078_news_and_documentaries",
+  "ground_truth": {
+    "video_id": "video_078_news_and_documentaries",
+    "category": "News & Documentaries",
+    "title": "Climate Documentary Clip #8",
+    "expected_summary": "Narrator highlighting glacier melting in Arctic region.",
+    "primary_focus": "Glacier Ice Berg",
+    "objects": [
+      "Glacier",
+      "icebergs",
+      "ocean water",
+      "boat"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Documentary Narrative"
+    ],
+    "environment": "News & Documentaries Setting",
+    "overall_context": "News & Documentaries",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "News & Documentaries",
+    "primary_focus": "Glacier Ice Berg",
+    "activities": [
+      "Documentary Narrative"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 15.46
+  }
+}

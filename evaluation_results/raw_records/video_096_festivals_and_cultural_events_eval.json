@@ -1,0 +1,40 @@
+{
+  "video_id": "video_096_festivals_and_cultural_events",
+  "ground_truth": {
+    "video_id": "video_096_festivals_and_cultural_events",
+    "category": "Festivals & Cultural Events",
+    "title": "Diwali Fireworks Clip #6",
+    "expected_summary": "Family lighting sparklers and diyas outside decorated house.",
+    "primary_focus": "Diya & Sparklers",
+    "objects": [
+      "Diyas",
+      "sparklers",
+      "flower rangoli",
+      "lights"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Diwali Celebration"
+    ],
+    "environment": "Festivals & Cultural Events Setting",
+    "overall_context": "Festivals & Cultural Events",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Festivals & Cultural Events",
+    "primary_focus": "Diya & Sparklers",
+    "activities": [
+      "Diwali Celebration"
+    ],
+    "precision": 0.75,
+    "recall": 0.75,
+    "latency_sec": 17.53
+  }
+}

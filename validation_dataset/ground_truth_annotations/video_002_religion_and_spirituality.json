@@ -1,0 +1,27 @@
+{
+  "video_id": "video_002_religion_and_spirituality",
+  "category": "Religion & Spirituality",
+  "title": "Temple Abhishekam Clip #2",
+  "expected_summary": "Priests pouring holy milk over Shiva lingam in temple.",
+  "primary_focus": "Shiva Lingam",
+  "objects": [
+    "Shiva Lingam",
+    "flowers",
+    "milk pot",
+    "brass bell"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Abhishekam"
+  ],
+  "environment": "Religion & Spirituality Setting",
+  "overall_context": "Religion & Spirituality",
+  "religious_context": "Hindu Worship / Shrine Ritual",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

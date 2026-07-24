@@ -1,0 +1,37 @@
+[
+  {
+    "Category": "Objects",
+    "Ground_Truth": "Ganesha, Sai Baba, lamp, flowers",
+    "Model_Output": "Ganesha idol, Sai Baba shrine, oil lamp, marigold flowers",
+    "Match": "MATCH (100%)",
+    "Notes": "Identified all primary objects"
+  },
+  {
+    "Category": "Activity",
+    "Ground_Truth": "Puja / Worship",
+    "Model_Output": "Hindu Worship & Flower Offering Ritual",
+    "Match": "MATCH (100%)",
+    "Notes": "Correctly captured ritual nature"
+  },
+  {
+    "Category": "Religious Context",
+    "Ground_Truth": "Hindu home worship",
+    "Model_Output": "Hindu home worship / Devotional Puja",
+    "Match": "MATCH (100%)",
+    "Notes": "Precise context classification"
+  },
+  {
+    "Category": "Primary Focus",
+    "Ground_Truth": "Sai Baba",
+    "Model_Output": "Sai Baba shrine & altar",
+    "Match": "MATCH (100%)",
+    "Notes": "Fused vision with speech/OCR cues"
+  },
+  {
+    "Category": "Supporting Objects",
+    "Ground_Truth": "Ganesha, flowers, lamp",
+    "Model_Output": "Ganesha idol, oil lamp, marigold flowers, brass plate",
+    "Match": "MATCH (100%)",
+    "Notes": "Distinguished primary focus from supporting items"
+  }
+]

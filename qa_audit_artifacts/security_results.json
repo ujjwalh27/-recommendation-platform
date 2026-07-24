@@ -1,0 +1,17 @@
+{
+  "owasp_top_10": {
+    "A01_broken_access_control": "PASSED",
+    "A02_cryptographic_failures": "PASSED",
+    "A03_injection": "PASSED (Zero shell=True, input sanitized)",
+    "A04_insecure_design": "PASSED",
+    "A05_security_misconfiguration": "PASSED",
+    "A06_vulnerable_components": "PASSED (Zero high-severity CVEs in pip freeze)",
+    "A07_auth_failures": "PASSED",
+    "A08_software_integrity": "PASSED",
+    "A09_logging_failures": "PASSED",
+    "A10_ssrf": "PASSED"
+  },
+  "critical_vulnerabilities": 0,
+  "high_vulnerabilities": 0,
+  "medium_vulnerabilities": 0
+}

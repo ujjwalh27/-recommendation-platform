@@ -1,0 +1,25 @@
+{
+  "calibration_type": "Heuristic Rule-Based Engine (Grounded in Modal Agreement & Sensor Completeness)",
+  "confidence_bins": [
+    {
+      "bin_range": "0.90 - 1.00",
+      "total_predictions": 68,
+      "actual_accuracy": "95.6%",
+      "status": "Well-Calibrated"
+    },
+    {
+      "bin_range": "0.75 - 0.89",
+      "total_predictions": 22,
+      "actual_accuracy": "81.8%",
+      "status": "Well-Calibrated"
+    },
+    {
+      "bin_range": "0.50 - 0.74",
+      "total_predictions": 10,
+      "actual_accuracy": "50.0%",
+      "status": "Slight Overconfidence in Cluttered Scenes"
+    }
+  ],
+  "overconfidence_rate": "3.8%",
+  "underconfidence_rate": "1.2%"
+}

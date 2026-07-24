@@ -1,0 +1,13 @@
+{
+  "folder": "case_03_education",
+  "domain": "Education / Tutorial",
+  "video_name": "math_lecture.mp4",
+  "ground_truth_desc": "An academic video lecture explaining mathematical concepts on a whiteboard in a classroom setting.",
+  "category": "Education",
+  "subcategory": "Academic Tutorial",
+  "personas": [
+    "Students",
+    "Learners",
+    "Academic Viewers"
+  ]
+}

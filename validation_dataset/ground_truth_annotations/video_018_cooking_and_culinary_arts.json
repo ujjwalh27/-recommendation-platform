@@ -1,0 +1,27 @@
+{
+  "video_id": "video_018_cooking_and_culinary_arts",
+  "category": "Cooking & Culinary Arts",
+  "title": "Street Food Samosa Clip #8",
+  "expected_summary": "Vendor frying potato samosas in deep oil wok.",
+  "primary_focus": "Deep Wok",
+  "objects": [
+    "Wok",
+    "strainer",
+    "samosas",
+    "chutney bowls"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Deep Frying"
+  ],
+  "environment": "Cooking & Culinary Arts Setting",
+  "overall_context": "Cooking & Culinary Arts",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

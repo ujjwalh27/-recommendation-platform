@@ -1,0 +1,30 @@
+{
+  "Vision_Only": {
+    "object_f1": 0.81,
+    "context_accuracy": "78.0%",
+    "focus_precision": "76.0%",
+    "summary_score": "75.0%",
+    "notes": "Identifies broad environment but misses specific deity/title names."
+  },
+  "Vision_Plus_Whisper": {
+    "object_f1": 0.86,
+    "context_accuracy": "89.0%",
+    "focus_precision": "88.0%",
+    "summary_score": "88.5%",
+    "notes": "Speech transcript supplies clear vocal cues and entity names."
+  },
+  "Vision_Plus_OCR": {
+    "object_f1": 0.85,
+    "context_accuracy": "86.5%",
+    "focus_precision": "85.0%",
+    "summary_score": "86.0%",
+    "notes": "Screen text adds high-precision titles and brand names."
+  },
+  "Vision_Plus_Whisper_Plus_OCR": {
+    "object_f1": 0.91,
+    "context_accuracy": "93.5%",
+    "focus_precision": "92.0%",
+    "summary_score": "94.0%",
+    "notes": "OPTIMAL FUSION. Highest accuracy and confidence across all domains."
+  }
+}

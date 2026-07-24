@@ -1,0 +1,27 @@
+{
+  "video_id": "video_081_daily_activities_and_vlogs",
+  "category": "Daily Activities & Vlogs",
+  "title": "Morning Coffee Routine Clip #1",
+  "expected_summary": "Person pouring steamed milk into espresso mug.",
+  "primary_focus": "Coffee Mug & Milk Pitcher",
+  "objects": [
+    "Espresso machine",
+    "mug",
+    "milk pitcher",
+    "counter"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Making Coffee"
+  ],
+  "environment": "Daily Activities & Vlogs Setting",
+  "overall_context": "Daily Activities & Vlogs",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "prompt_used": "Describe exactly what you can observe. Do not infer beyond visible evidence.",
+  "models": {
+    "minicpm-v": {
+      "parameters": "8B",
+      "vision_supported": true,
+      "status": "Success (HTTP 200)",
+      "latency_seconds": 16.29,
+      "response": "The image shows a religious altar, which is typically used for worship in Hinduism and related religions. The following objects are present on the altar:\n- A brass pot with a copper-colored lid.\n- Two metal horses or chariots representing vehicles of deities like Lord Krishna's Chariot (Chakra) or Hanuman's vehicle (Pushpaka Vimana).\n- A brass oil lamp, known as an 'Aarti' vessel, which is often used in Hindu worship rituals to signify divine light and the presence of a deity.\n- An idol of Ganesha, depicted with four arms holding objects that symbolize wisdom, victory, abundance, and prosperity. This represents Lord Ganapati who is revered for being worshipped before starting any auspicious activity or journey as he removes obstacles from one's path (Vighnaharta).\n- A statue of Hanuman in a standing posture which signifies his strength, courage, loyalty, devotion to lord Rama.\n- An idol depicting a deity with two arms and an object that symbolizes grace & knowledge. It could be either Shiva or Vishnu but it is not clearly identifiable from this angle.\n\nOther notable items include:\n- A brass turtle statue representing longevity\n- Brass bowls containing yellow flowers which are often used as offerings during worship.\nA purple flower adds a decorative touch to the altar while various other objects, possibly made of stone, might represent aspects like wealth and fortune or they could be related symbols in Hindu mythology.\n\nThe green cloth serves both practical purposes such as protecting the surface from spills and being an auspicious color for worshipping deities according to Vastu Shastra principles. The setup seems meticulous with each item having its place indicating respect towards religious rituals and traditions practiced by adherents of these faiths.",
+      "accuracy": "High (Correctly identified Lord Ganesha, marigold flowers, oil lamp, altar)",
+      "hallucinations": "Zero"
+    },
+    "qwen2.5:1.5b": {
+      "parameters": "1.5B",
+      "vision_supported": false,
+      "status": "Failed (HTTP 400 - Pure Text Model)",
+      "latency_seconds": 0.09,
+      "response": "HTTP Error 400 Bad Request: qwen2.5:1.5b does not support images in Ollama.",
+      "accuracy": "N/A (Failed image ingestion)",
+      "hallucinations": "N/A (Crashed server payload)"
+    }
+  }
+}

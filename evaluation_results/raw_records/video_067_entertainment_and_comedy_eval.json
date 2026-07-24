@@ -1,0 +1,40 @@
+{
+  "video_id": "video_067_entertainment_and_comedy",
+  "ground_truth": {
+    "video_id": "video_067_entertainment_and_comedy",
+    "category": "Entertainment & Comedy",
+    "title": "Dance Performance Clip #7",
+    "expected_summary": "Dancers executing synchronized hiphop routine on stage.",
+    "primary_focus": "Dance Troupe",
+    "objects": [
+      "Stage lights",
+      "speakers",
+      "sneakers",
+      "costumes"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Dance Routine"
+    ],
+    "environment": "Entertainment & Comedy Setting",
+    "overall_context": "Entertainment & Comedy",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Entertainment & Comedy",
+    "primary_focus": "Dance Troupe",
+    "activities": [
+      "Dance Routine"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 17.38
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "dataset_version": "2.0-enterprise",
+  "total_categories": 10,
+  "annotations": {
+    "devotion": {
+      "video_id": "video_devotion_puja",
+      "category": "Devotion",
+      "subcategory": "Sai Baba Puja & Devotional Worship",
+      "expected_environment": "Home Prayer Shrine",
+      "expected_objects": ["Oil Lamp", "Idol", "Aarti Plate", "Flowers"],
+      "expected_activities": ["Lighting Deepa", "Performing Puja", "Chanting"],
+      "expected_intent": "Devotional Worship",
+      "expected_personas": ["Sai Baba Devotees", "Religious Audience", "Spiritual Viewers"]
+    },
+    "cooking": {
+      "video_id": "video_cooking_recipe",
+      "category": "Food",
+      "subcategory": "Cooking Tutorial",
+      "expected_environment": "Kitchen",
+      "expected_objects": ["Pan", "Knife", "Vegetables", "Plate"],
+      "expected_activities": ["Chopping", "Cooking", "Stirring"],
+      "expected_intent": "Culinary Instruction",
+      "expected_personas": ["Home Chefs", "Recipe Viewers", "Food Enthusiasts"]
+    },
+    "education": {
+      "video_id": "video_education_math",
+      "category": "Education",
+      "subcategory": "Academic Tutorial",
+      "expected_environment": "Classroom / Studio",
+      "expected_objects": ["Whiteboard", "Marker", "Laptop"],
+      "expected_activities": ["Writing", "Explaining", "Lecturing"],
+      "expected_intent": "Educational Instruction",
+      "expected_personas": ["Students", "Learners", "Academic Viewers"]
+    },
+    "travel": {
+      "video_id": "video_travel_vlog",
+      "category": "Travel",
+      "subcategory": "Destination Vlog",
+      "expected_environment": "Outdoor Landscape",
+      "expected_objects": ["Camera", "Backpack", "Landmarks"],
+      "expected_activities": ["Walking", "Sightseeing", "Exploring"],
+      "expected_intent": "Travel Exploration",
+      "expected_personas": ["Travelers", "Vacation Seekers", "Explorers"]
+    },
+    "lifestyle": {
+      "video_id": "video_lifestyle_routine",
+      "category": "Lifestyle",
+      "subcategory": "Personal Routine Vlog",
+      "expected_environment": "Home Living Room",
+      "expected_objects": ["Couch", "Coffee Cup", "Phone"],
+      "expected_activities": ["Talking to Camera", "Relaxing"],
+      "expected_intent": "Personal Sharing",
+      "expected_personas": ["Vlog Followers", "Lifestyle Enthusiasts"]
+    },
+    "fitness": {
+      "video_id": "video_fitness_workout",
+      "category": "Fitness",
+      "subcategory": "Gym Workout",
+      "expected_environment": "Gym",
+      "expected_objects": ["Dumbbells", "Mat", "Water Bottle"],
+      "expected_activities": ["Lifting Weights", "Stretching"],
+      "expected_intent": "Fitness Instruction",
+      "expected_personas": ["Gym-goers", "Fitness Enthusiasts", "Athletes"]
+    },
+    "entertainment": {
+      "video_id": "video_entertainment_comedy",
+      "category": "Entertainment",
+      "subcategory": "Comedy Skit",
+      "expected_environment": "Stage / Studio",
+      "expected_objects": ["Microphone", "Props"],
+      "expected_activities": ["Acting", "Performing"],
+      "expected_intent": "Entertainment",
+      "expected_personas": ["Comedy Fans", "Entertainment Viewers"]
+    },
+    "news": {
+      "video_id": "video_news_bulletin",
+      "category": "News",
+      "subcategory": "News Broadcast",
+      "expected_environment": "News Studio",
+      "expected_objects": ["Desk", "Screen", "Microphone"],
+      "expected_activities": ["News Anchoring", "Reporting"],
+      "expected_intent": "News Reporting",
+      "expected_personas": ["News Viewers", "Current Affairs Followers"]
+    },
+    "sports": {
+      "video_id": "video_sports_match",
+      "category": "Sports",
+      "subcategory": "Cricket Match",
+      "expected_environment": "Sports Stadium",
+      "expected_objects": ["Bat", "Ball", "Wickets"],
+      "expected_activities": ["Batting", "Bowling", "Fielding"],
+      "expected_intent": "Sports Match",
+      "expected_personas": ["Sports Fans", "Cricket Enthusiasts"]
+    },
+    "interviews": {
+      "video_id": "video_interview_podcast",
+      "category": "Interviews",
+      "subcategory": "Podcast Interview",
+      "expected_environment": "Podcast Studio",
+      "expected_objects": ["Headphones", "Microphone", "Table"],
+      "expected_activities": ["Interviewing", "Discussion"],
+      "expected_intent": "Podcast Conversation",
+      "expected_personas": ["Podcast Listeners", "Interview Fans"]
+    }
+  }
+}

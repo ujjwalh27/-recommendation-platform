@@ -1,0 +1,28 @@
+{
+  "video_id": "video_016_cooking_and_culinary_arts",
+  "category": "Cooking & Culinary Arts",
+  "title": "Pasta Preparation Clip #6",
+  "expected_summary": "Chef boiling pasta and stir-frying garlic and cherry tomatoes in olive oil.",
+  "primary_focus": "Stove & Frying Pan",
+  "objects": [
+    "Frying pan",
+    "olive oil",
+    "garlic",
+    "tomatoes",
+    "pasta"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Stir-frying"
+  ],
+  "environment": "Cooking & Culinary Arts Setting",
+  "overall_context": "Cooking & Culinary Arts",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

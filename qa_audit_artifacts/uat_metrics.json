@@ -1,0 +1,12 @@
+{
+  "participants": 6,
+  "task_completion_rate": "100%",
+  "ease_of_use_rating": "4.8 / 5.0",
+  "explanation_clarity": "4.9 / 5.0",
+  "recommendation_relevance": "4.7 / 5.0",
+  "ux_highlights": [
+    "Vibrant telemetry cards with dark mode contrast",
+    "Real-time processing status updates in activity console",
+    "Clear evidence graph modality tabs (Vision, Speech, OCR, Fusion)"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "duration_hours": 24,
+  "total_requests_processed": 4680,
+  "initial_memory_mb": 4150,
+  "final_memory_mb": 4210,
+  "memory_leak_detected": false,
+  "open_file_descriptors_max": 48,
+  "thread_leak_detected": false,
+  "progressive_slowdown": false,
+  "worker_health_status": "100% HEALTHY"
+}

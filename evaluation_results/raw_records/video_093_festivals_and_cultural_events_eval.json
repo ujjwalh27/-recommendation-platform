@@ -1,0 +1,39 @@
+{
+  "video_id": "video_093_festivals_and_cultural_events",
+  "ground_truth": {
+    "video_id": "video_093_festivals_and_cultural_events",
+    "category": "Festivals & Cultural Events",
+    "title": "Carnival Parade Clip #3",
+    "expected_summary": "Dancers in elaborate feather costumes marching on parade float.",
+    "primary_focus": "Parade Float",
+    "objects": [
+      "Feather costume",
+      "parade float",
+      "drums"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Parade Dancing"
+    ],
+    "environment": "Festivals & Cultural Events Setting",
+    "overall_context": "Festivals & Cultural Events",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Sports & Athletics",
+    "primary_focus": "Unclear Background Item",
+    "activities": [
+      "General Action"
+    ],
+    "precision": 0.33,
+    "recall": 0.33,
+    "latency_sec": 17.74
+  }
+}

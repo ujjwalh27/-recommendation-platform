@@ -1,0 +1,40 @@
+{
+  "video_id": "video_028_education_and_tutorials",
+  "ground_truth": {
+    "video_id": "video_028_education_and_tutorials",
+    "category": "Education & Tutorials",
+    "title": "Chemistry Lab Clip #8",
+    "expected_summary": "Student mixing blue copper sulfate solution in beaker.",
+    "primary_focus": "Laboratory Beaker",
+    "objects": [
+      "Beaker",
+      "test tubes",
+      "pipette",
+      "solution"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Lab Experiment"
+    ],
+    "environment": "Education & Tutorials Setting",
+    "overall_context": "Education & Tutorials",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Entertainment & Comedy",
+    "primary_focus": "Unclear Background Item",
+    "activities": [
+      "General Action"
+    ],
+    "precision": 0.5,
+    "recall": 0.5,
+    "latency_sec": 15.85
+  }
+}

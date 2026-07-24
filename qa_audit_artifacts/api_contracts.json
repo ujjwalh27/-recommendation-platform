@@ -1,0 +1,26 @@
+[
+  {
+    "endpoint": "GET /health",
+    "status_code": 200,
+    "schema_match": true,
+    "backward_compatible": true
+  },
+  {
+    "endpoint": "POST /content-intelligence/analyze",
+    "status_code": 200,
+    "schema_match": true,
+    "backward_compatible": true
+  },
+  {
+    "endpoint": "GET /content-intelligence/history",
+    "status_code": 200,
+    "schema_match": true,
+    "backward_compatible": true
+  },
+  {
+    "endpoint": "GET /content-intelligence/metrics",
+    "status_code": 200,
+    "schema_match": true,
+    "backward_compatible": true
+  }
+]

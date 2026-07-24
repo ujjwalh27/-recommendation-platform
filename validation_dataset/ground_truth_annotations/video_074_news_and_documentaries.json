@@ -1,0 +1,26 @@
+{
+  "video_id": "video_074_news_and_documentaries",
+  "category": "News & Documentaries",
+  "title": "Space Launch Clip #4",
+  "expected_summary": "Rocket thrusters firing and launching from launchpad.",
+  "primary_focus": "Space Rocket",
+  "objects": [
+    "Rocket",
+    "launchpad tower",
+    "smoke plume"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Rocket Launch"
+  ],
+  "environment": "News & Documentaries Setting",
+  "overall_context": "News & Documentaries",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

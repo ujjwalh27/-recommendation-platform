@@ -1,0 +1,40 @@
+{
+  "video_id": "video_033_sports_and_athletics",
+  "ground_truth": {
+    "video_id": "video_033_sports_and_athletics",
+    "category": "Sports & Athletics",
+    "title": "Tennis Serve Clip #3",
+    "expected_summary": "Tennis player tossing ball and serving across court.",
+    "primary_focus": "Tennis Racket & Ball",
+    "objects": [
+      "Racket",
+      "net",
+      "tennis ball",
+      "court line"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Tennis Serve"
+    ],
+    "environment": "Sports & Athletics Setting",
+    "overall_context": "Sports & Athletics",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Sports & Athletics",
+    "primary_focus": "Tennis Racket & Ball",
+    "activities": [
+      "Tennis Serve"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 21.73
+  }
+}

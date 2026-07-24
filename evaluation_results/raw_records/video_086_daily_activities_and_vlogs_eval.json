@@ -1,0 +1,40 @@
+{
+  "video_id": "video_086_daily_activities_and_vlogs",
+  "ground_truth": {
+    "video_id": "video_086_daily_activities_and_vlogs",
+    "category": "Daily Activities & Vlogs",
+    "title": "Morning Coffee Routine Clip #6",
+    "expected_summary": "Person pouring steamed milk into espresso mug.",
+    "primary_focus": "Coffee Mug & Milk Pitcher",
+    "objects": [
+      "Espresso machine",
+      "mug",
+      "milk pitcher",
+      "counter"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Making Coffee"
+    ],
+    "environment": "Daily Activities & Vlogs Setting",
+    "overall_context": "Daily Activities & Vlogs",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Religion & Spirituality",
+    "primary_focus": "Unclear Background Item",
+    "activities": [
+      "General Action"
+    ],
+    "precision": 0.5,
+    "recall": 0.5,
+    "latency_sec": 19.01
+  }
+}

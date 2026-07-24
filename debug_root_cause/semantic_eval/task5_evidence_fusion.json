@@ -1,0 +1,42 @@
+{
+  "modalities_fused": {
+    "vision": {
+      "environment": "Hindu home prayer shrine",
+      "person": "Woman in traditional attire",
+      "detected_objects": [
+        "Ganesha idol",
+        "Sai Baba idol / shrine",
+        "Oil lamp (deepa)",
+        "Marigold flowers",
+        "Aarti plate"
+      ],
+      "actions": [
+        "Lighting deepa",
+        "Offering marigold flowers",
+        "Performing worship"
+      ]
+    },
+    "speech": {
+      "transcript": "Sri Sai Samartha Jay Jay Sai Samartha... Om Sai Ram",
+      "confidence": 0.94,
+      "keywords": [
+        "Sri Sai Samartha",
+        "Sai Ram"
+      ]
+    },
+    "ocr": {
+      "detected_text": [
+        "Sai Baba Aarti",
+        "Shirdi"
+      ],
+      "confidence": 0.92
+    }
+  },
+  "final_conclusion": {
+    "primary_ritual": "Sai Baba Puja & Devotional Worship",
+    "religious_context": "Hindu home worship",
+    "supporting_deity": "Lord Ganesha",
+    "confidence": 0.96,
+    "fusion_reasoning": "Vision identifies a Hindu home prayer shrine with deepa lighting and marigold flower offerings. Speech transcript ('Sri Sai Samartha') and OCR ('Sai Baba Aarti') provide ground-truth text cues specifying Sai Baba devotional worship."
+  }
+}

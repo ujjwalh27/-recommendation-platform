@@ -1,0 +1,27 @@
+{
+  "video_id": "video_088_daily_activities_and_vlogs",
+  "category": "Daily Activities & Vlogs",
+  "title": "Dog Park Walk Clip #8",
+  "expected_summary": "Owner throwing tennis ball for golden retriever on grass.",
+  "primary_focus": "Golden Retriever & Ball",
+  "objects": [
+    "Leash",
+    "tennis ball",
+    "grass lawn",
+    "dog"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Dog Walking"
+  ],
+  "environment": "Daily Activities & Vlogs Setting",
+  "overall_context": "Daily Activities & Vlogs",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "video_id": "video_061_entertainment_and_comedy",
+  "category": "Entertainment & Comedy",
+  "title": "Standup Comedy Clip #1",
+  "expected_summary": "Comedian speaking into microphone on spotlight stage.",
+  "primary_focus": "Microphone & Stage",
+  "objects": [
+    "Microphone",
+    "stool",
+    "spotlight curtain"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Standup Routine"
+  ],
+  "environment": "Entertainment & Comedy Setting",
+  "overall_context": "Entertainment & Comedy",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "video_id": "video_058_travel_and_vlog",
+  "category": "Travel & Vlog",
+  "title": "Grand Canyon Clip #8",
+  "expected_summary": "Hiker standing at edge of Grand Canyon lookout point.",
+  "primary_focus": "Canyon Edge",
+  "objects": [
+    "Canyon rocks",
+    "hiking boots",
+    "backpack"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Hiking View"
+  ],
+  "environment": "Travel & Vlog Setting",
+  "overall_context": "Travel & Vlog",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

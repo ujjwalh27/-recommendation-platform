@@ -1,0 +1,26 @@
+{
+  "video_id": "video_030_education_and_tutorials",
+  "category": "Education & Tutorials",
+  "title": "Guitar Lesson Clip #10",
+  "expected_summary": "Instructor showing C-major chord fingering on acoustic guitar.",
+  "primary_focus": "Guitar Fretboard",
+  "objects": [
+    "Acoustic guitar",
+    "fretboard",
+    "pick"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Guitar Lesson"
+  ],
+  "environment": "Education & Tutorials Setting",
+  "overall_context": "Education & Tutorials",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

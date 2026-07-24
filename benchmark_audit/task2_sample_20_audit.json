@@ -1,0 +1,183 @@
+[
+  {
+    "video_id": "video_082_daily_activities_and_vlogs",
+    "category": "Daily Activities & Vlogs",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Morning Exercise Clip #2",
+    "predicted_category": "Daily Activities & Vlogs"
+  },
+  {
+    "video_id": "video_015_cooking_and_culinary_arts",
+    "category": "Cooking & Culinary Arts",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Curry Cooking Clip #5",
+    "predicted_category": "Cooking & Culinary Arts"
+  },
+  {
+    "video_id": "video_004_religion_and_spirituality",
+    "category": "Religion & Spirituality",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Islamic Namaz Clip #4",
+    "predicted_category": "Religion & Spirituality"
+  },
+  {
+    "video_id": "video_095_festivals_and_cultural_events",
+    "category": "Festivals & Cultural Events",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Dragon Dance Clip #5",
+    "predicted_category": "Festivals & Cultural Events"
+  },
+  {
+    "video_id": "video_036_sports_and_athletics",
+    "category": "Sports & Athletics",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Football Goal Clip #6",
+    "predicted_category": "Sports & Athletics"
+  },
+  {
+    "video_id": "video_032_sports_and_athletics",
+    "category": "Sports & Athletics",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Basketball Dunk Clip #2",
+    "predicted_category": "Sports & Athletics"
+  },
+  {
+    "video_id": "video_029_education_and_tutorials",
+    "category": "Education & Tutorials",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Physics Pendulum Clip #9",
+    "predicted_category": "Education & Tutorials"
+  },
+  {
+    "video_id": "video_018_cooking_and_culinary_arts",
+    "category": "Cooking & Culinary Arts",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Street Food Samosa Clip #8",
+    "predicted_category": "Cooking & Culinary Arts"
+  },
+  {
+    "video_id": "video_014_cooking_and_culinary_arts",
+    "category": "Cooking & Culinary Arts",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Sushi Rolling Clip #4",
+    "predicted_category": "Cooking & Culinary Arts"
+  },
+  {
+    "video_id": "video_087_daily_activities_and_vlogs",
+    "category": "Daily Activities & Vlogs",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Morning Exercise Clip #7",
+    "predicted_category": "Daily Activities & Vlogs"
+  },
+  {
+    "video_id": "video_070_entertainment_and_comedy",
+    "category": "Entertainment & Comedy",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Music Concert Clip #10",
+    "predicted_category": "Entertainment & Comedy"
+  },
+  {
+    "video_id": "video_012_cooking_and_culinary_arts",
+    "category": "Cooking & Culinary Arts",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Cake Decoration Clip #2",
+    "predicted_category": "Cooking & Culinary Arts"
+  },
+  {
+    "video_id": "video_076_news_and_documentaries",
+    "category": "News & Documentaries",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "News Anchor Desk Clip #6",
+    "predicted_category": "News & Documentaries"
+  },
+  {
+    "video_id": "video_055_travel_and_vlog",
+    "category": "Travel & Vlog",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Beach Sunset Clip #5",
+    "predicted_category": "Travel & Vlog"
+  },
+  {
+    "video_id": "video_005_religion_and_spirituality",
+    "category": "Religion & Spirituality",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Buddhist Chant Clip #5",
+    "predicted_category": "Religion & Spirituality"
+  },
+  {
+    "video_id": "video_028_education_and_tutorials",
+    "category": "Education & Tutorials",
+    "differences_found": [
+      "Category mismatch: GT='Education & Tutorials' vs Pred='Entertainment & Comedy'",
+      "Primary focus mismatch: GT='Laboratory Beaker' vs Pred='Unclear Background Item'"
+    ],
+    "ground_truth_title": "Chemistry Lab Clip #8",
+    "predicted_category": "Entertainment & Comedy"
+  },
+  {
+    "video_id": "video_030_education_and_tutorials",
+    "category": "Education & Tutorials",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Guitar Lesson Clip #10",
+    "predicted_category": "Education & Tutorials"
+  },
+  {
+    "video_id": "video_065_entertainment_and_comedy",
+    "category": "Entertainment & Comedy",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Music Concert Clip #5",
+    "predicted_category": "Entertainment & Comedy"
+  },
+  {
+    "video_id": "video_078_news_and_documentaries",
+    "category": "News & Documentaries",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Climate Documentary Clip #8",
+    "predicted_category": "News & Documentaries"
+  },
+  {
+    "video_id": "video_072_news_and_documentaries",
+    "category": "News & Documentaries",
+    "differences_found": [
+      "NO MISMATCH (100% Match)"
+    ],
+    "ground_truth_title": "Press Conference Clip #2",
+    "predicted_category": "News & Documentaries"
+  }
+]

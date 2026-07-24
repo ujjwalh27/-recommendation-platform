@@ -1,0 +1,27 @@
+{
+  "video_id": "video_068_entertainment_and_comedy",
+  "category": "Entertainment & Comedy",
+  "title": "Magic Trick Clip #8",
+  "expected_summary": "Magician pulling white dove from silk cloth.",
+  "primary_focus": "Magician's Hands",
+  "objects": [
+    "Silk cloth",
+    "dove",
+    "playing cards",
+    "wand"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Magic Performance"
+  ],
+  "environment": "Entertainment & Comedy Setting",
+  "overall_context": "Entertainment & Comedy",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

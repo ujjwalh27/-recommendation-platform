@@ -1,0 +1,68 @@
+{
+  "ground_truth": {
+    "folder": "case_01_religious",
+    "domain": "Religion & Spirituality",
+    "video_name": "Aditi Atul Jadhav.mp4",
+    "ground_truth_desc": "A woman performs devotional Sai Baba Puja in a home prayer shrine, lighting an oil lamp (deepa), chanting 'Sri Sai Samartha', and offering aarti.",
+    "category": "Devotion",
+    "subcategory": "Sai Baba Puja & Devotional Worship",
+    "personas": [
+      "Sai Baba Devotees",
+      "Religious Audience",
+      "Spiritual Viewers"
+    ]
+  },
+  "minicpm_v_pure_vision": {
+    "title": "Hindu Shrine Worship and Rituals",
+    "summary": "The video depicts a Hindu shrine setup with various religious artifacts, including statues of deities, flowers, lamps, and offerings. A woman in traditional attire is seen performing worship rituals involving the offering of flowers to the deity.",
+    "category": "Devotion",
+    "subcategory": "Hindu Worship / Shrine Ritual",
+    "primary_topic": "Hindu Shrine Worship",
+    "objects": [
+      {
+        "name": "Deity Statues",
+        "description": "Golden statues representing Hindu deities, possibly Lord Ganesha and Goddess Lakshmi."
+      },
+      {
+        "name": "Flowers",
+        "description": "Bright yellow marigold flowers arranged in a bowl on the shrine table."
+      },
+      {
+        "name": "Lamps",
+        "description": "Oil lamps with lit wicks, symbolizing divine light and presence."
+      },
+      {
+        "name": "Offerings",
+        "description": "A metal plate containing more marigold flowers for worship offerings."
+      }
+    ],
+    "activities": [
+      {
+        "action": "Setting up the shrine table with religious items.",
+        "description": "The first image shows a neatly arranged Hindu shrine setup on a green cloth, featuring various deities' statues, lamps, and flower garlands. The objects are meticulously placed to create an atmosphere of devotion."
+      },
+      {
+        "action": "Performing worship rituals",
+        "description": "In the second image, a woman in traditional attire is seen performing a Hindu worship ritual at her shrine. She holds a plate with marigold flowers and lit lamps as offerings for the deity.",
+        "mood": "Devotional / Spiritual"
+      },
+      {
+        "action": "Offering flowers to the deity",
+        "description": "The third image captures the woman placing the flower garland into one of the oil lamps, a common practice in Hindu worship where devotees offer their prayers and offerings directly to the divine."
+      }
+    ],
+    "mood": "Devotional / Spiritual",
+    "reasoning": "Visual evidence from the keyframes shows an active engagement with religious practices typical within Hindu culture. The shrine setup is traditional, featuring deity statues, flowers, lamps, and other ritualistic items commonly used in worship ceremonies."
+  },
+  "current_pipeline": {
+    "title": "Sai Baba Puja & Devotional Worship",
+    "summary": "A video performance featuring personal reel speaking or audition monologue in a studio setting.",
+    "category": "Devotion",
+    "target_audience": [
+      "Sai Baba Devotees",
+      "Religious Audience",
+      "Spiritual Viewers"
+    ],
+    "transcript": ""
+  }
+}

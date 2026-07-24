@@ -1,0 +1,39 @@
+{
+  "video_id": "video_042_nature_and_wildlife",
+  "ground_truth": {
+    "video_id": "video_042_nature_and_wildlife",
+    "category": "Nature & Wildlife",
+    "title": "Eagle Flight Clip #2",
+    "expected_summary": "Bald eagle soaring above snowy mountain peak.",
+    "primary_focus": "Bald Eagle",
+    "objects": [
+      "Eagle",
+      "mountain peak",
+      "blue sky"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Soaring"
+    ],
+    "environment": "Nature & Wildlife Setting",
+    "overall_context": "Nature & Wildlife",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Nature & Wildlife",
+    "primary_focus": "Bald Eagle",
+    "activities": [
+      "Soaring"
+    ],
+    "precision": 0.67,
+    "recall": 0.67,
+    "latency_sec": 16.73
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "video_id": "video_098_festivals_and_cultural_events",
+  "category": "Festivals & Cultural Events",
+  "title": "Carnival Parade Clip #8",
+  "expected_summary": "Dancers in elaborate feather costumes marching on parade float.",
+  "primary_focus": "Parade Float",
+  "objects": [
+    "Feather costume",
+    "parade float",
+    "drums"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Parade Dancing"
+  ],
+  "environment": "Festivals & Cultural Events Setting",
+  "overall_context": "Festivals & Cultural Events",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

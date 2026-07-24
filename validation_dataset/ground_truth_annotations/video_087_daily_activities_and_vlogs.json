@@ -1,0 +1,26 @@
+{
+  "video_id": "video_087_daily_activities_and_vlogs",
+  "category": "Daily Activities & Vlogs",
+  "title": "Morning Exercise Clip #7",
+  "expected_summary": "Person unrolling yoga mat and stretching in sunlit room.",
+  "primary_focus": "Yoga Mat",
+  "objects": [
+    "Yoga mat",
+    "water bottle",
+    "workout wear"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Stretching Yoga"
+  ],
+  "environment": "Daily Activities & Vlogs Setting",
+  "overall_context": "Daily Activities & Vlogs",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

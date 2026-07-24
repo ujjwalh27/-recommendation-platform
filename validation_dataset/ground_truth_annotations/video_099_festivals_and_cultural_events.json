@@ -1,0 +1,26 @@
+{
+  "video_id": "video_099_festivals_and_cultural_events",
+  "category": "Festivals & Cultural Events",
+  "title": "Lantern Festival Clip #9",
+  "expected_summary": "Sky lanterns rising into night sky above river.",
+  "primary_focus": "Sky Lanterns",
+  "objects": [
+    "Sky lanterns",
+    "candles",
+    "river bank"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Releasing Lanterns"
+  ],
+  "environment": "Festivals & Cultural Events Setting",
+  "overall_context": "Festivals & Cultural Events",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

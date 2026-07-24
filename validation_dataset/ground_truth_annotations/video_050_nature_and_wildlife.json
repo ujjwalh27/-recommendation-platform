@@ -1,0 +1,26 @@
+{
+  "video_id": "video_050_nature_and_wildlife",
+  "category": "Nature & Wildlife",
+  "title": "Lion Pride Clip #10",
+  "expected_summary": "Lioness resting with cubs on savanna grassland.",
+  "primary_focus": "Lioness & Cubs",
+  "objects": [
+    "Lions",
+    "dry grass",
+    "acacia tree"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Resting"
+  ],
+  "environment": "Nature & Wildlife Setting",
+  "overall_context": "Nature & Wildlife",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

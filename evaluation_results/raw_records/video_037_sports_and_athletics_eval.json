@@ -1,0 +1,40 @@
+{
+  "video_id": "video_037_sports_and_athletics",
+  "ground_truth": {
+    "video_id": "video_037_sports_and_athletics",
+    "category": "Sports & Athletics",
+    "title": "Basketball Dunk Clip #7",
+    "expected_summary": "Player leaping and dunking basketball into hoop.",
+    "primary_focus": "Basketball Hoop",
+    "objects": [
+      "Hoop",
+      "backboard",
+      "ball",
+      "sneakers"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Slam Dunk"
+    ],
+    "environment": "Sports & Athletics Setting",
+    "overall_context": "Sports & Athletics",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Sports & Athletics",
+    "primary_focus": "Basketball Hoop",
+    "activities": [
+      "Slam Dunk"
+    ],
+    "precision": 1.0,
+    "recall": 0.75,
+    "latency_sec": 19.82
+  }
+}

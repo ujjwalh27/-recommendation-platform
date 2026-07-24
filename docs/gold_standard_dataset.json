@@ -1,0 +1,120 @@
+{
+  "dataset_name": "Video Intelligence Platform Human Ground-Truth Gold Standard",
+  "version": "1.0.0",
+  "videos": {
+    "video_ci_validation_aditi": {
+      "filename": "Aditi Atul Jadhav.mp4",
+      "expected_title": "Aditi Atul Jadhav: Pumpkin Carving & Beauty Contest Reel",
+      "expected_summary": "A video of contestant Aditi Atul Jadhav nervously preparing and carving a pumpkin in a kitchen setting while speaking about her experience.",
+      "expected_category": "Entertainment",
+      "expected_subcategory": "How-to & Beauty",
+      "expected_primary_topic": "Pumpkin Carving",
+      "expected_secondary_topics": ["Beauty Contest", "Kitchen Cooking", "Nervous Preparation"],
+      "expected_activities": ["pumpkin carving", "speaking", "holding knife"],
+      "expected_objects": ["pumpkin", "knife", "kitchen counter", "bowl"],
+      "expected_relationships": [
+        {"subject": "Aditi Atul Jadhav", "predicate": "PREPARES", "object": "Pumpkin"},
+        {"subject": "Aditi Atul Jadhav", "predicate": "LOCATED_AT", "object": "Kitchen"}
+      ],
+      "expected_events": ["Pumpkin Carving Session"],
+      "expected_mood": "Informative & Nervous",
+      "expected_audience": ["Cooking Enthusiasts", "Beauty Contest Viewers"],
+      "expected_keywords": ["aditi", "pumpkin", "carving", "kitchen", "beauty"]
+    },
+    "video_ci_validation_anjali__jarad": {
+      "filename": "Anjali  Jarad.mp4",
+      "expected_title": "Swami Samartha Devotional Discourse by Anjali Jarad",
+      "expected_summary": "A devotional video narration focusing on Swami Samartha's spiritual teachings, rituals, and blessings.",
+      "expected_category": "Devotion",
+      "expected_subcategory": "Spiritual Discourse",
+      "expected_primary_topic": "Swami Samartha Teachings",
+      "expected_secondary_topics": ["Devotional Rituals", "Spiritual Guidance"],
+      "expected_activities": ["chanting", "speaking", "praying"],
+      "expected_objects": ["idol", "lamp", "diya", "flowers"],
+      "expected_relationships": [
+        {"subject": "Devotees", "predicate": "LISTEN_TO", "object": "Swami Samartha Discourse"},
+        {"subject": "Anjali Jarad", "predicate": "PERFORMS", "object": "Spiritual Narration"}
+      ],
+      "expected_events": ["Swami Samarth Devotional Discourse"],
+      "expected_mood": "Calm & Devotional",
+      "expected_audience": ["Swami Samarth Devotees", "Spiritual Seekers"],
+      "expected_keywords": ["swami", "samarth", "devotional", "discourse", "blessing"]
+    },
+    "video_ci_validation_poonam_goswami": {
+      "filename": "Poonam Goswami.mp4",
+      "expected_title": "Khatu Shyam Bhajan & Aarti Offering by Poonam Goswami",
+      "expected_summary": "A devotional music video clip depicting a Khatu Shyam worship ritual, Aarti ceremony, and bhajan singing.",
+      "expected_category": "Devotion",
+      "expected_subcategory": "Bhajan & Aarti",
+      "expected_primary_topic": "Khatu Shyam Aarti",
+      "expected_secondary_topics": ["Devotional Music", "Temple Ritual"],
+      "expected_activities": ["singing bhajan", "performing aarti", "worshipping"],
+      "expected_objects": ["altar", "diya", "garland", "musical instruments"],
+      "expected_relationships": [
+        {"subject": "Poonam Goswami", "predicate": "PERFORMS", "object": "Khatu Shyam Aarti"},
+        {"subject": "Devotees", "predicate": "LISTEN_TO", "object": "Bhajan"}
+      ],
+      "expected_events": ["Khatu Shyam Temple Aarti"],
+      "expected_mood": "Spiritual & Reverent",
+      "expected_audience": ["Khatu Shyam Devotees", "Devotional Music Fans"],
+      "expected_keywords": ["khatu shyam", "bhajan", "aarti", "poonam goswami", "devotional"]
+    },
+    "video_ci_validation_s.laxmi": {
+      "filename": "S.laxmi .mp4",
+      "expected_title": "Spoonful of Love: S. Laxmi Musical Performance & Cooking",
+      "expected_summary": "A lifestyle short video combining acoustic vocal performance with meal preparation and warm hospitality.",
+      "expected_category": "Lifestyle",
+      "expected_subcategory": "Music & Culinary",
+      "expected_primary_topic": "Acoustic Vocal Performance",
+      "expected_secondary_topics": ["Culinary Recipe", "Lifestyle Vlog"],
+      "expected_activities": ["singing", "cooking", "serving food"],
+      "expected_objects": ["microphone", "cooking pan", "plate", "guitar"],
+      "expected_relationships": [
+        {"subject": "S. Laxmi", "predicate": "PERFORMS", "object": "Acoustic Song"},
+        {"subject": "S. Laxmi", "predicate": "PREPARES", "object": "Meal"}
+      ],
+      "expected_events": ["Musical Performance"],
+      "expected_mood": "Warm & Playful",
+      "expected_audience": ["Music Lovers", "Food Vlog Viewers"],
+      "expected_keywords": ["s. laxmi", "singing", "cooking", "music", "lifestyle"]
+    },
+    "video_ci_validation_soulfulraveli": {
+      "filename": "Soulfulraveli- https_www.instagram.com_reel_DUpNMunk3-i_utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==_.mp4",
+      "expected_title": "The Sacred Chant: Devotional Music Reel by Soulfulraveli",
+      "expected_summary": "A sacred devotional reel featuring melodious chant recitations, temple ambiance, and spiritual meditation.",
+      "expected_category": "Devotion",
+      "expected_subcategory": "Sacred Chant",
+      "expected_primary_topic": "Sacred Mantra Recitation",
+      "expected_secondary_topics": ["Temple Ambiance", "Meditation Music"],
+      "expected_activities": ["reciting chant", "meditating", "singing"],
+      "expected_objects": ["rudraksha", "temple bell", "incense", "lamp"],
+      "expected_relationships": [
+        {"subject": "Soulfulraveli", "predicate": "PERFORMS", "object": "Sacred Mantra"},
+        {"subject": "Devotees", "predicate": "OBSERVES", "object": "Meditation"}
+      ],
+      "expected_events": ["Devotional Chant Recitation"],
+      "expected_mood": "Peaceful & Sacred",
+      "expected_audience": ["Meditation Viewers", "Devotional Music Fans"],
+      "expected_keywords": ["soulfulraveli", "sacred chant", "mantra", "devotional", "meditation"]
+    },
+    "video_ci_validation_iamshwetagopal": {
+      "filename": "iamshwetagopal - https_www.instagram.com_reels_DYGgVotRZpF__.mp4",
+      "expected_title": "Lalita Mantra Devotional Offering by Shweta Gopal",
+      "expected_summary": "An uplifting devotional singing offering dedicated to Goddess Lalita Tripurasundari recited with authentic intonation.",
+      "expected_category": "Devotion",
+      "expected_subcategory": "Devotional Music",
+      "expected_primary_topic": "Lalita Stotram Recitation",
+      "expected_secondary_topics": ["Goddess Devotion", "Sanskrit Chant"],
+      "expected_activities": ["singing stotram", "folding hands", "praying"],
+      "expected_objects": ["goddess idol", "flower garland", "lamp"],
+      "expected_relationships": [
+        {"subject": "Shweta Gopal", "predicate": "PERFORMS", "object": "Lalita Mantra"},
+        {"subject": "Shweta Gopal", "predicate": "LOCATED_AT", "object": "Temple Shrine"}
+      ],
+      "expected_events": ["Lalita Stotram Worship"],
+      "expected_mood": "Spiritual & Energetic",
+      "expected_audience": ["Devotional Viewers", "Stotram Learners"],
+      "expected_keywords": ["shweta gopal", "lalita mantra", "stotram", "devotional", "goddess"]
+    }
+  }
+}

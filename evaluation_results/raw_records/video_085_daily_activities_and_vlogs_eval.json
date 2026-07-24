@@ -1,0 +1,40 @@
+{
+  "video_id": "video_085_daily_activities_and_vlogs",
+  "ground_truth": {
+    "video_id": "video_085_daily_activities_and_vlogs",
+    "category": "Daily Activities & Vlogs",
+    "title": "Desk Setup Tour Clip #5",
+    "expected_summary": "Creator organizing mechanical keyboard and monitor arm on wooden desk.",
+    "primary_focus": "Desk Setup",
+    "objects": [
+      "Keyboard",
+      "monitor arm",
+      "desk lamp",
+      "plant"
+    ],
+    "people": [
+      "Present"
+    ],
+    "activities": [
+      "Desk Organizing"
+    ],
+    "environment": "Daily Activities & Vlogs Setting",
+    "overall_context": "Daily Activities & Vlogs",
+    "religious_context": "Non-Religious",
+    "sequence_of_events": [
+      "Preparation",
+      "Active Execution",
+      "Completion"
+    ]
+  },
+  "pipeline_prediction": {
+    "category": "Daily Activities & Vlogs",
+    "primary_focus": "Desk Setup",
+    "activities": [
+      "Desk Organizing"
+    ],
+    "precision": 0.75,
+    "recall": 0.75,
+    "latency_sec": 21.17
+  }
+}

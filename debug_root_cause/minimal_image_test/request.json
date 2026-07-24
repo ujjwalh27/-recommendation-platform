@@ -1,0 +1,6 @@
+{
+  "model": "minicpm-v",
+  "prompt": "What do you see in this image? Describe in detail.",
+  "image_length_bytes": 94041,
+  "b64_prefix": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAg"
+}

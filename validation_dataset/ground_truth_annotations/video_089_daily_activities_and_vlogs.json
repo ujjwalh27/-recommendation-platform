@@ -1,0 +1,27 @@
+{
+  "video_id": "video_089_daily_activities_and_vlogs",
+  "category": "Daily Activities & Vlogs",
+  "title": "Grocery Haul Clip #9",
+  "expected_summary": "Person unpacking fresh vegetables and fruits onto kitchen counter.",
+  "primary_focus": "Vegetable Basket",
+  "objects": [
+    "Shopping bags",
+    "apples",
+    "broccoli",
+    "kitchen counter"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Unpacking Groceries"
+  ],
+  "environment": "Daily Activities & Vlogs Setting",
+  "overall_context": "Daily Activities & Vlogs",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

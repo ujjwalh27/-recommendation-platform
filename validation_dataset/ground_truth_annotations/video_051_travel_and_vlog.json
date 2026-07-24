@@ -1,0 +1,26 @@
+{
+  "video_id": "video_051_travel_and_vlog",
+  "category": "Travel & Vlog",
+  "title": "Paris Eiffel Vlog Clip #1",
+  "expected_summary": "Traveler speaking to camera with Eiffel Tower in background.",
+  "primary_focus": "Traveler & Eiffel Tower",
+  "objects": [
+    "Camera",
+    "Eiffel Tower",
+    "monument square"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Vlogging Travel"
+  ],
+  "environment": "Travel & Vlog Setting",
+  "overall_context": "Travel & Vlog",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

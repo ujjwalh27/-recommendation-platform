@@ -1,0 +1,42 @@
+[
+  {
+    "doc_name": "Installation Guide",
+    "file_path": "README.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "Deployment Guide",
+    "file_path": "docs/deployment_guide.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "Architecture Diagram",
+    "file_path": "docs/architecture.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "API Documentation",
+    "file_path": "docs/api_reference.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "Operations Runbook",
+    "file_path": "docs/operations_runbook.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "Model Configuration Guide",
+    "file_path": "docs/model_config.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "Known Limitations",
+    "file_path": "docs/known_limitations.md",
+    "status": "VERIFIED"
+  },
+  {
+    "doc_name": "Release Notes",
+    "file_path": "docs/release_notes_v2.0.md",
+    "status": "VERIFIED"
+  }
+]

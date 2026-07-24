@@ -1,0 +1,27 @@
+{
+  "video_id": "video_054_travel_and_vlog",
+  "category": "Travel & Vlog",
+  "title": "Venice Gondola Clip #4",
+  "expected_summary": "Gondolier rowing boat down narrow canal in Venice.",
+  "primary_focus": "Gondola Boat",
+  "objects": [
+    "Gondola",
+    "oars",
+    "canal water",
+    "historic bridge"
+  ],
+  "people": [
+    "Present"
+  ],
+  "activities": [
+    "Boating"
+  ],
+  "environment": "Travel & Vlog Setting",
+  "overall_context": "Travel & Vlog",
+  "religious_context": "Non-Religious",
+  "sequence_of_events": [
+    "Preparation",
+    "Active Execution",
+    "Completion"
+  ]
+}

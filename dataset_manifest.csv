@@ -1,0 +1,101 @@
+filename,duration_sec,category,source,resolution,ground_truth_file
+video_001_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_001_religion_and_spirituality.json
+video_002_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_002_religion_and_spirituality.json
+video_003_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_003_religion_and_spirituality.json
+video_004_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_004_religion_and_spirituality.json
+video_005_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_005_religion_and_spirituality.json
+video_006_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_006_religion_and_spirituality.json
+video_007_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_007_religion_and_spirituality.json
+video_008_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_008_religion_and_spirituality.json
+video_009_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_009_religion_and_spirituality.json
+video_010_religion_and_spirituality.mp4,15.0,Religion & Spirituality,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_010_religion_and_spirituality.json
+video_011_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_011_cooking_and_culinary_arts.json
+video_012_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_012_cooking_and_culinary_arts.json
+video_013_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_013_cooking_and_culinary_arts.json
+video_014_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_014_cooking_and_culinary_arts.json
+video_015_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_015_cooking_and_culinary_arts.json
+video_016_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_016_cooking_and_culinary_arts.json
+video_017_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_017_cooking_and_culinary_arts.json
+video_018_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_018_cooking_and_culinary_arts.json
+video_019_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_019_cooking_and_culinary_arts.json
+video_020_cooking_and_culinary_arts.mp4,15.0,Cooking & Culinary Arts,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_020_cooking_and_culinary_arts.json
+video_021_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_021_education_and_tutorials.json
+video_022_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_022_education_and_tutorials.json
+video_023_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_023_education_and_tutorials.json
+video_024_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_024_education_and_tutorials.json
+video_025_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_025_education_and_tutorials.json
+video_026_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_026_education_and_tutorials.json
+video_027_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_027_education_and_tutorials.json
+video_028_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_028_education_and_tutorials.json
+video_029_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_029_education_and_tutorials.json
+video_030_education_and_tutorials.mp4,15.0,Education & Tutorials,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_030_education_and_tutorials.json
+video_031_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_031_sports_and_athletics.json
+video_032_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_032_sports_and_athletics.json
+video_033_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_033_sports_and_athletics.json
+video_034_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_034_sports_and_athletics.json
+video_035_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_035_sports_and_athletics.json
+video_036_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_036_sports_and_athletics.json
+video_037_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_037_sports_and_athletics.json
+video_038_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_038_sports_and_athletics.json
+video_039_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_039_sports_and_athletics.json
+video_040_sports_and_athletics.mp4,15.0,Sports & Athletics,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_040_sports_and_athletics.json
+video_041_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_041_nature_and_wildlife.json
+video_042_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_042_nature_and_wildlife.json
+video_043_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_043_nature_and_wildlife.json
+video_044_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_044_nature_and_wildlife.json
+video_045_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_045_nature_and_wildlife.json
+video_046_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_046_nature_and_wildlife.json
+video_047_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_047_nature_and_wildlife.json
+video_048_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_048_nature_and_wildlife.json
+video_049_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_049_nature_and_wildlife.json
+video_050_nature_and_wildlife.mp4,15.0,Nature & Wildlife,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_050_nature_and_wildlife.json
+video_051_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_051_travel_and_vlog.json
+video_052_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_052_travel_and_vlog.json
+video_053_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_053_travel_and_vlog.json
+video_054_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_054_travel_and_vlog.json
+video_055_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_055_travel_and_vlog.json
+video_056_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_056_travel_and_vlog.json
+video_057_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_057_travel_and_vlog.json
+video_058_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_058_travel_and_vlog.json
+video_059_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_059_travel_and_vlog.json
+video_060_travel_and_vlog.mp4,15.0,Travel & Vlog,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_060_travel_and_vlog.json
+video_061_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_061_entertainment_and_comedy.json
+video_062_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_062_entertainment_and_comedy.json
+video_063_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_063_entertainment_and_comedy.json
+video_064_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_064_entertainment_and_comedy.json
+video_065_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_065_entertainment_and_comedy.json
+video_066_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_066_entertainment_and_comedy.json
+video_067_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_067_entertainment_and_comedy.json
+video_068_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_068_entertainment_and_comedy.json
+video_069_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_069_entertainment_and_comedy.json
+video_070_entertainment_and_comedy.mp4,15.0,Entertainment & Comedy,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_070_entertainment_and_comedy.json
+video_071_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_071_news_and_documentaries.json
+video_072_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_072_news_and_documentaries.json
+video_073_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_073_news_and_documentaries.json
+video_074_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_074_news_and_documentaries.json
+video_075_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_075_news_and_documentaries.json
+video_076_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_076_news_and_documentaries.json
+video_077_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_077_news_and_documentaries.json
+video_078_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_078_news_and_documentaries.json
+video_079_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_079_news_and_documentaries.json
+video_080_news_and_documentaries.mp4,15.0,News & Documentaries,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_080_news_and_documentaries.json
+video_081_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_081_daily_activities_and_vlogs.json
+video_082_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_082_daily_activities_and_vlogs.json
+video_083_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_083_daily_activities_and_vlogs.json
+video_084_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_084_daily_activities_and_vlogs.json
+video_085_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_085_daily_activities_and_vlogs.json
+video_086_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_086_daily_activities_and_vlogs.json
+video_087_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_087_daily_activities_and_vlogs.json
+video_088_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_088_daily_activities_and_vlogs.json
+video_089_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_089_daily_activities_and_vlogs.json
+video_090_daily_activities_and_vlogs.mp4,15.0,Daily Activities & Vlogs,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_090_daily_activities_and_vlogs.json
+video_091_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_091_festivals_and_cultural_events.json
+video_092_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_092_festivals_and_cultural_events.json
+video_093_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_093_festivals_and_cultural_events.json
+video_094_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_094_festivals_and_cultural_events.json
+video_095_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_095_festivals_and_cultural_events.json
+video_096_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_096_festivals_and_cultural_events.json
+video_097_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_097_festivals_and_cultural_events.json
+video_098_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_098_festivals_and_cultural_events.json
+video_099_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_099_festivals_and_cultural_events.json
+video_100_festivals_and_cultural_events.mp4,15.0,Festivals & Cultural Events,MSR-VTT / Synthesized Benchmark,1280x720,validation_dataset/ground_truth_annotations/video_100_festivals_and_cultural_events.json

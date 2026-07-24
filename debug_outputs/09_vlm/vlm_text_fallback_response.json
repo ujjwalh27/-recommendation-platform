@@ -1,0 +1,16 @@
+{
+  "model": "qwen2.5:1.5b",
+  "created_at": "2026-07-23T11:02:30.977838Z",
+  "message": {
+    "role": "assistant",
+    "content": "```json\n{\n  \"title\": \"Mama's Locking Ceremony\",\n  \"summary\": \"A touching moment of a mother comforting her child during a ceremony, emphasizing love and protection.\",\n  \"category\": \"Lifestyle\",\n  \"subcategory\": \"Devotion\",\n  \"primary_topic\": \"Ceremony\",\n  \"secondary_topics\": [\"Motherhood\", \"Childcare\"],\n  \"entities\": [\"Mama\", \"Baby\"],\n  \"people\": [\"Mama\", \"Baby\"],\n  \"locations\": [\"Home\"],\n  \"activities\": [\"Comforting Child\", \"Performing Ceremony\"],\n  \"objects\": [\"Dining Table\", \"Wine Glass\", \"Bowl\", \"Person\", \"Chair\"],\n  \"events\": [\"Ceremony for Baby's Locking\"],\n  \"keywords\": [\"Mama\", \"Baby\", \"Locking Ceremony\", \"Motherhood\"],\n  \"recommendation_keywords\": [\"Devotional Moments\", \"Cultural Ceremonies\"],\n  \"language\": \"Japanese\",\n  \"mood\": \"Spiritual\",\n  \"emotion\": \"Devotional\",\n  \"target_audience\": \"Religious Families, Mothers, and Children\",\n  \"reasoning\": \"The spoken transcript describes a mother comforting her child during a ceremony, emphasizing love and protection. The visual frames show the scene of a mother holding her baby while performing a locking ritual, which is a common practice in some cultures to ensure safety and protectiveness.\"\n```"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3907089292,
+  "load_duration": 80859250,
+  "prompt_eval_count": 723,
+  "prompt_eval_duration": 31335000,
+  "eval_count": 297,
+  "eval_duration": 3791905000
+}

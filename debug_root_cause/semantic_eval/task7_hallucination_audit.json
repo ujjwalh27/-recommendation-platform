@@ -1,0 +1,29 @@
+{
+  "statements_evaluated": [
+    {
+      "statement": "Woman holding flowers and prayer plate",
+      "classification": "Directly Observed",
+      "evidence": "Visible in keyframe 2"
+    },
+    {
+      "statement": "Lit oil lamps (deepa) on green altar cloth",
+      "classification": "Directly Observed",
+      "evidence": "Visible in keyframe 1 and 3"
+    },
+    {
+      "statement": "Golden idol of Lord Ganesha",
+      "classification": "Directly Observed",
+      "evidence": "Visible in keyframe 1"
+    },
+    {
+      "statement": "Hindu home devotional puja ritual",
+      "classification": "Inferred",
+      "evidence": "Derived from shrine setup, deepa lighting, and flower offering"
+    },
+    {
+      "statement": "Diwali festival celebration",
+      "classification": "Assumed (Prevented)",
+      "evidence": "No explicit text cue or festival symbol; flagged to prevent assumption as fact"
+    }
+  ]
+}

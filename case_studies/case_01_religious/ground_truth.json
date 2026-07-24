@@ -1,0 +1,13 @@
+{
+  "folder": "case_01_religious",
+  "domain": "Religion & Spirituality",
+  "video_name": "Aditi Atul Jadhav.mp4",
+  "ground_truth_desc": "A woman performs devotional Sai Baba Puja in a home prayer shrine, lighting an oil lamp (deepa), chanting 'Sri Sai Samartha', and offering aarti.",
+  "category": "Devotion",
+  "subcategory": "Sai Baba Puja & Devotional Worship",
+  "personas": [
+    "Sai Baba Devotees",
+    "Religious Audience",
+    "Spiritual Viewers"
+  ]
+}
