@@ -21,6 +21,7 @@ from src.video_intelligence.metadata_generator import MetadataGenerator
 from src.video_intelligence.evaluator import HumanEvaluator
 
 # Secondary sensor models
+
 from src.content_intelligence.speech import SpeechRecognizer
 from src.content_intelligence.ocr import OCRDetector
 from src.content_intelligence.vision import ObjectDetector
@@ -43,6 +44,14 @@ class VideoIntelligenceOrchestrator:
         self.knowledge_builder = KnowledgeBuilder()
         self.metadata_generator = MetadataGenerator()
         self.evaluator = HumanEvaluator()
+
+        # 2b. Daiv Domain HRCE Components (Lazy imported to prevent circular dependency)
+        from src.semantic_knowledge.hrce_classifier import HRCEClassifier
+        from src.semantic_knowledge.daiv_hierarchical_metadata import DaivHierarchicalMetadataGenerator
+        self.hrce_classifier = HRCEClassifier()
+        self.daiv_metadata_gen = DaivHierarchicalMetadataGenerator()
+
+
 
         # 3. Secondary Modality Sensors (lazy-loaded to conserve memory)
         self._speech_rec = None
@@ -222,6 +231,45 @@ class VideoIntelligenceOrchestrator:
 
         # Step 6: Generate Recommendation-Ready Metadata Report
         final_metadata = self.metadata_generator.generate_report(refined_data, confidence_map)
+
+        # Step 6b: Enrich with HRCE & Daiv Fine-Grained Domain Metadata
+        try:
+            ocr_lines = [n.value for n in evidence.ocr]
+            vis_objs = [n.value for n in evidence.vision]
+            act_objs = [n.value for n in evidence.actions]
+
+            hrce_res = self.hrce_classifier.classify_video_content(
+                vision_data={"detected_objects": vis_objs, "actions": act_objs},
+                speech_data={"transcript": speech_transcript, "keywords": [speech_transcript]},
+                ocr_data=ocr_lines
+            )
+
+            daiv_pkg = self.daiv_metadata_gen.generate_daiv_metadata_package(
+                video_id,
+                vision_data={"detected_objects": vis_objs, "actions": act_objs},
+                speech_data={"transcript": speech_transcript, "keywords": [speech_transcript]},
+                ocr_data=ocr_lines
+            )
+
+            final_metadata["hrce_classification"] = hrce_res
+            final_metadata["daiv_semantic_profile"] = daiv_pkg["daiv_semantic_profile"]
+            final_metadata["recommendation_filter_keys"] = daiv_pkg["recommendation_filter_keys"]
+            print(f"[Orchestrator] HRCE Classification: {hrce_res['content_type']} -> {hrce_res['primary_class']} -> {hrce_res['sub_class']}")
+
+            # Step 6c: Enrich with SRCDE Target Structured JSON Schema Output
+            from src.semantic_knowledge.hierarchical_classifier import HierarchicalClassifier
+            srcde_cls = HierarchicalClassifier()
+            srcde_res = srcde_cls.classify(
+                vision_data={"detected_objects": vis_objs, "actions": act_objs},
+                speech_data={"transcript": speech_transcript, "keywords": [speech_transcript]},
+                ocr_data=ocr_lines
+            )
+            final_metadata["srcde_structured_classification"] = srcde_res
+            print(f"[Orchestrator] SRCDE Classification: {srcde_res['classification']['content_type']} -> {srcde_res['classification']['primary_class']} -> {srcde_res['classification']['sub_class']} (Conf: {srcde_res['confidence']})")
+        except Exception as e:
+            print(f"[Orchestrator] HRCE/SRCDE enrichment warning: {e}")
+
+
 
         # Step 7: Build Hierarchical Semantic Graph representation
         hierarchy = self.knowledge_builder.build_hierarchy(

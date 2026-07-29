@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_032_dcd_008_sanskrit_chanting",
+  "title": "Echoey Sanctum Sahasranama Chanting (Trial #3)",
+  "challenge_category": "Wide Angle | Acoustic Echo | Sanskrit",
+  "camera_variation": "Wide Angle",
+  "environmental_variation": "Acoustic Echo",
+  "audio_language": "Sanskrit",
+  "ocr_condition": "Standard OCR",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Ashtottara Archana",
+    "sub_class": "Ashtottara Archana",
+    "primary_deity": "Lord Hanuman"
+  }
+}

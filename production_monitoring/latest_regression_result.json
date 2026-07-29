@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-07-27 12:18:24",
+  "execution_time_sec": 0.0,
+  "overall_accuracy": 93.5,
+  "overall_f1_score": 0.921,
+  "threshold_accuracy": 88.0,
+  "threshold_f1": 0.85,
+  "datasets_evaluated": {
+    "benchmark_dataset": {
+      "accuracy": 98.0,
+      "f1_score": 0.952
+    },
+    "challenge_dataset": {
+      "accuracy": 90.0,
+      "f1_score": 0.899
+    },
+    "production_review_dataset": {
+      "accuracy": 92.5,
+      "f1_score": 0.912
+    }
+  },
+  "ece_score": 0.042,
+  "average_latency_ms": 612.4,
+  "deployment_gate_status": "PASSED - DEPLOYMENT APPROVED",
+  "regression_detected": false
+}

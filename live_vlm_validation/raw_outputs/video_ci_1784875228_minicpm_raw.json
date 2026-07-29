@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1784875228",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 21535,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Ritual\",\n  \"summary\": \"A person is performing a devotional worship (Pooja) with various items on an altar including flowers, lamps, and other religious objects.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Ritual\",\n  \"primary_class\": \"Pooja\",\n  \"secondary_classes\": [\"Oil Lamp\", \"Flower Offerings\"],\n  \"deity\": null,\n  \"temple\": null,\n  \"festival\": null,\n  \"language\": \"Sanskrit and Hindi\",\n  \"confidence\": 0.85,\n  \"reasoning\": \"The visual keyframes depict a devotional worship scene with items typically used in Hindu rituals such as flowers, lamps, and other religious objects.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Ritual",
+    "summary": "A person is performing a devotional worship (Pooja) with various items on an altar including flowers, lamps, and other religious objects.",
+    "category": "Devotion",
+    "content_type": "Ritual",
+    "primary_class": "Pooja",
+    "secondary_classes": [
+      "Oil Lamp",
+      "Flower Offerings"
+    ],
+    "deity": null,
+    "temple": null,
+    "festival": null,
+    "language": "Sanskrit and Hindi",
+    "confidence": 0.85,
+    "reasoning": "The visual keyframes depict a devotional worship scene with items typically used in Hindu rituals such as flowers, lamps, and other religious objects."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 168,
+  "eval_duration_ns": 9344599000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

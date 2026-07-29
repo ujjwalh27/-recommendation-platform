@@ -123,8 +123,9 @@ class RecommenderService:
             vid = item["video_id"]
             meta = item["metadata"]
             
-            # Generate explanation
+            # Generate explanations
             explanation = self.explainer.generate_explanation(item, interest_profile)
+            semantic_explanation = self.explainer.generate_semantic_explanation(item, interest_profile)
 
             # Retrieve user's historical interaction state
             interaction = user_interactions.get(vid, {"is_liked": False, "is_saved": False, "is_commented": False})
@@ -139,6 +140,7 @@ class RecommenderService:
                 "video_url": f"{BASE_URL}/videos/{vid}.mp4",
                 "score": float(item["final_score"]),
                 "explanation": explanation,
+                "semantic_explanation": semantic_explanation,
                 "score_breakdown": item["score_breakdown"],
                 "retrieval_sources": item["retrieval_sources"],
                 "is_liked": interaction["is_liked"],
@@ -174,14 +176,14 @@ class RecommenderService:
         is_commented = bool(engagement.get("is_commented", False))
         is_final = bool(engagement.get("is_final", False))
         
-        # Engagement event weights – tuned down to reduce their impact on the interest profile
-        WATCH_COMPLETE_WEIGHT = 6   # previously +10
-        SKIP_WEIGHT = -5            # previously -8
-        REPLAY_WEIGHT = 5           # previously +8 per replay
-        LIKE_WEIGHT = 3             # previously +7
-        SAVE_WEIGHT = 4             # previously +9
-        SHARE_WEIGHT = 5            # previously +10
-        COMMENT_WEIGHT = 4          # previously +8
+        # Engagement event weights – calibrated down for smooth, gradual interest adjustments
+        WATCH_COMPLETE_WEIGHT = 2.0
+        SKIP_WEIGHT = -1.5
+        REPLAY_WEIGHT = 1.0
+        LIKE_WEIGHT = 1.0
+        SAVE_WEIGHT = 1.5
+        SHARE_WEIGHT = 1.5
+        COMMENT_WEIGHT = 1.5
         
         # Score engagement events using the new weights
         event_score = 0
@@ -250,24 +252,19 @@ class RecommenderService:
         })
         
         raw_scores = profile.setdefault("raw_scores", {})
-        # If raw_scores is empty, initialize it from current interests or defaults
-        if not raw_scores and profile.get("interests"):
-            raw_scores.update({cat: float(pct) for cat, pct in profile["interests"].items()})
-            
-        # Decay other categories ONLY on a fresh new video interaction to avoid over-decay from button clicks
-        if not prev_event:
-            for cat in raw_scores:
-                if cat != category:
-                    raw_scores[cat] = max(0.0, 15.0 + (raw_scores[cat] - 15.0) * 0.95)
-            
+        
+        # Increment raw score ONLY for the interacted video category
         raw_scores[category] = max(0.0, raw_scores.get(category, 0.0) + score_delta)
         
-        # Normalize interests to sum to 100
-        total_score = sum(raw_scores.values())
-        if total_score > 0:
-            profile["interests"] = {cat: round((score / total_score) * 100, 2) for cat, score in raw_scores.items()}
-        else:
-            profile["interests"] = {cat: 0.0 for cat in raw_scores}
+        # Compute interest percentage independently on a calibrated 100.0 capacity scale
+        # so interacting with category X NEVER alters percentages of unrelated categories!
+        MAX_CAPACITY = 100.0
+        interests = profile.setdefault("interests", {})
+        for cat, score in raw_scores.items():
+            if score > 0:
+                interests[cat] = min(100.0, round((max(0.0, float(score)) / MAX_CAPACITY) * 100, 1))
+            elif cat in interests:
+                del interests[cat]
             
         # 5. Update Creator Affinity
         affinities = self.user_creator_affinities.setdefault(resolved_uid, {})

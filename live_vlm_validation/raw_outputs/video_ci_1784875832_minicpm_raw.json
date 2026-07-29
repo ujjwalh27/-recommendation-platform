@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1784875832",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 24424,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Activity\",\n  \"summary\": \"A person is engaged in a devotional worship activity involving chanting mantras.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Discourse\",\n  \"primary_class\": \"Bhajan\",\n  \"secondary_classes\": [\"Chanting\"],\n  \"deity\": null,\n  \"temple\": null,\n  \"festival\": null,\n  \"language\": \"Sanskrit and Hindi\",\n  \"confidence\": 0.85,\n  \"reasoning\": \"The keyframes depict a person chanting mantras, which is indicative of devotional worship.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Activity",
+    "summary": "A person is engaged in a devotional worship activity involving chanting mantras.",
+    "category": "Devotion",
+    "content_type": "Discourse",
+    "primary_class": "Bhajan",
+    "secondary_classes": [
+      "Chanting"
+    ],
+    "deity": null,
+    "temple": null,
+    "festival": null,
+    "language": "Sanskrit and Hindi",
+    "confidence": 0.85,
+    "reasoning": "The keyframes depict a person chanting mantras, which is indicative of devotional worship."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 138,
+  "eval_duration_ns": 9959519000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

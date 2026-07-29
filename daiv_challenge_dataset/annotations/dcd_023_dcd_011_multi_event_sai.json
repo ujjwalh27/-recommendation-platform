@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_023_dcd_011_multi_event_sai",
+  "title": "Complete Shirdi Sai 4-Stage Worship Stream (Trial #2)",
+  "challenge_category": "HD Stream | Normal Light | Marathi",
+  "camera_variation": "HD Stream",
+  "environmental_variation": "Normal Light",
+  "audio_language": "Marathi",
+  "ocr_condition": "Live Stream OCR",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Milk Abhishekam",
+    "sub_class": "Milk Abhishekam",
+    "primary_deity": "Shirdi Sai Baba"
+  }
+}

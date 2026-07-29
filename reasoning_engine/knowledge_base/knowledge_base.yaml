@@ -1,0 +1,204 @@
+# CMREE Domain Knowledge Base – Hindu Devotional Ecosystem
+# Version: 2.0-cmree-enterprise
+# Author: Daiv Video Intelligence Engineering Team
+
+metadata:
+  version: "2.0-cmree-enterprise"
+  updated_at: "2026-07-27"
+  domain: "Hindu Devotional Content & Temple Rituals"
+
+deities:
+  Lord Shiva:
+    canonical_name: "Lord Shiva"
+    category: "Deity"
+    tradition: "Shaivism"
+    aliases: ["Shiv", "Shiva", "Mahadev", "Bholenath", "Rudra", "Nataraja", "Maheshwara", "Kashi Vishwanath"]
+    symbols: ["Trident", "Snake", "Crescent Moon", "Shiva Linga", "Third Eye", "Damru", "Tripundra"]
+    associated_offerings: ["Water", "Milk", "Bilva Leaves", "Honey", "Curd", "Sacred Ash"]
+    associated_festivals: ["Mahashivratri", "Shravan Somvar"]
+
+  Lord Ganesha:
+    canonical_name: "Lord Ganesha"
+    category: "Deity"
+    tradition: "Ganapatya"
+    aliases: ["Ganesha", "Ganesh", "Ganpati", "Vinayaka", "Vighnaharta", "Gajanana", "Siddhivinayak"]
+    symbols: ["Elephant Head", "Modak", "Mouse", "Single Tusk", "Trishula"]
+    associated_offerings: ["Modak", "Durva Grass", "Marigold Flowers", "Red Flowers"]
+    associated_festivals: ["Ganesh Chaturthi", "Sankashti Chaturthi"]
+
+  Lord Hanuman:
+    canonical_name: "Lord Hanuman"
+    category: "Deity"
+    tradition: "Vaishnavism"
+    aliases: ["Hanuman", "Bajrangbali", "Anjaneya", "Maruti", "Pawanputra", "Hanumanji"]
+    symbols: ["Gada", "Mace", "Mountain", "Tilak"]
+    associated_offerings: ["Sindoor", "Jasmine Oil", "Betel Leaves", "Sweets"]
+    associated_festivals: ["Hanuman Jayanti"]
+
+  Shirdi Sai Baba:
+    canonical_name: "Shirdi Sai Baba"
+    category: "Deity"
+    tradition: "Universal Devotional"
+    aliases: ["Sai Baba", "Sai", "Shirdi Sai", "Sai Ram", "Sai Nath"]
+    symbols: ["Daf", "Satka", "Chavadi", "Kakad Aarti Lamp", "White Robe"]
+    associated_offerings: ["Milk", "Flowers", "Incense", "Chadar", "Sweets"]
+    associated_festivals: ["Guru Purnima", "Ram Navami", "Vijayadashami"]
+
+  Lord Vishnu:
+    canonical_name: "Lord Vishnu"
+    category: "Deity"
+    tradition: "Vaishnavism"
+    aliases: ["Vishnu", "Narayana", "Venkateswara", "Balaji", "Hari", "Perumal", "Jagannath", "Tirupati Balaji"]
+    symbols: ["Conch", "Chakra", "Lotus", "Gada", "Namam", "Tilak"]
+    associated_offerings: ["Tulsi Leaves", "Sandalwood Paste", "Butter", "Curd Rice"]
+    associated_festivals: ["Vaikuntha Ekadashi", "Ratha Yatra", "Diwali"]
+
+  Goddess Durga:
+    canonical_name: "Goddess Durga"
+    category: "Deity"
+    tradition: "Shaktism"
+    aliases: ["Durga", "Amba", "Sherawali", "Mahakali", "Jagdamba", "Navdurga", "Chandi"]
+    symbols: ["Lion", "Trident", "Chakra", "Sword", "Red Chunari"]
+    associated_offerings: ["Red Flowers", "Red Chunari", "Coconut", "Kumkum"]
+    associated_festivals: ["Navratri", "Durga Puja"]
+
+  Lord Krishna:
+    canonical_name: "Lord Krishna"
+    category: "Deity"
+    tradition: "Vaishnavism"
+    aliases: ["Krishna", "Govinda", "Gopala", "Kanha", "Murlidhar", "Vasudeva", "Dwarkadhish"]
+    symbols: ["Flute", "Peacock Feather", "Butter Pot", "Cows"]
+    associated_offerings: ["Butter", "Tulsi", "Milk", "Flute", "Yellow Cloth"]
+    associated_festivals: ["Janmashtami", "Holi", "Gopashtami"]
+
+rituals:
+  Jalabhishekam:
+    canonical_name: "Jalabhishekam"
+    family: "Abhishekam"
+    description: "Ritual pouring of holy water over a sacred Shiva Linga or idol"
+    primary_deity: "Lord Shiva"
+    required_indicators: ["pouring water", "water vessel", "Shiva Linga"]
+    offerings: ["Water"]
+
+  Milk Abhishekam:
+    canonical_name: "Milk Abhishekam"
+    family: "Abhishekam"
+    description: "Pouring of fresh milk over deity idol or Shiva Linga"
+    primary_deity: "Lord Shiva"
+    required_indicators: ["pouring milk", "white liquid", "Shiva Linga"]
+    offerings: ["Milk"]
+
+  Panchamrutha Abhishekam:
+    canonical_name: "Panchamrutha Abhishekam"
+    family: "Abhishekam"
+    description: "Sacred bath using 5 holy substances (milk, curd, honey, ghee, sugar)"
+    primary_deity: "Lord Shiva"
+    required_indicators: ["pouring honey", "pouring milk", "pouring curd", "Shiva Linga"]
+    offerings: ["Milk", "Curd", "Honey", "Ghee", "Panchamrutha"]
+
+  Sandhya Aarti:
+    canonical_name: "Sandhya Aarti"
+    family: "Aarti"
+    description: "Evening light worship ritual accompanied by bells and camphor flames"
+    primary_deity: "Universal"
+    required_indicators: ["oil lamp", "camphor fire", "ringing bell", "evening"]
+    offerings: ["Camphor", "Oil Lamp"]
+
+  Kakad Aarti:
+    canonical_name: "Kakad Aarti"
+    family: "Aarti"
+    description: "Early morning awakening aarti ritual, particularly at Shirdi Sai Mandir"
+    primary_deity: "Shirdi Sai Baba"
+    required_indicators: ["morning aarti", "Sai Baba", "bell ringing", "oil lamp"]
+    offerings: ["Oil Lamp", "Incense"]
+
+  Ashtottara Archana:
+    canonical_name: "Ashtottara Archana"
+    family: "Archana"
+    description: "Chanting 108 holy names while offering individual flowers or bilva leaves"
+    primary_deity: "Universal"
+    required_indicators: ["chanting names", "offering flowers", "flower plate"]
+    offerings: ["Flowers", "Bilva Leaves"]
+
+  Group Bhajan:
+    canonical_name: "Group Bhajan"
+    family: "Bhajan"
+    description: "Devotional group singing accompanied by harmonium, dholak, or manjira"
+    primary_deity: "Universal"
+    required_indicators: ["singing", "harmonium", "dholak", "group devotional"]
+    offerings: ["Music", "Devotional Singing"]
+
+  Bhagavad Gita Pravachan:
+    canonical_name: "Bhagavad Gita Pravachan"
+    family: "Pravachan"
+    description: "Spiritual discourse, sermon, or philosophical lecture"
+    primary_deity: "Lord Krishna"
+    required_indicators: ["speaker", "microphone", "audience", "lecture"]
+    offerings: ["Spiritual Knowledge"]
+
+  Temple Darshan:
+    canonical_name: "Temple Darshan"
+    family: "Darshan"
+    description: "Sacred viewing or visit of sanctum sanctorum deity idol in a temple"
+    primary_deity: "Universal"
+    required_indicators: ["temple sanctum", "deity idol", "devotees viewing"]
+    offerings: ["Darshan"]
+
+  Ratha Yatra Procession:
+    canonical_name: "Ratha Yatra Procession"
+    family: "Procession"
+    description: "Grand chariot festival procession with pulling of sacred wooden ratha"
+    primary_deity: "Lord Vishnu"
+    required_indicators: ["chariot", "ratha", "crowd pulling ropes", "street procession"]
+    offerings: ["Chariot Procession"]
+
+  Homa:
+    canonical_name: "Homa"
+    family: "Homa"
+    description: "Vedic fire ritual with oblations poured into sacred havan kund"
+    primary_deity: "Universal"
+    required_indicators: ["fire altar", "havan kund", "offering ghee", "fire flame"]
+    offerings: ["Ghee", "Samagri", "Grain"]
+
+temples:
+  Kashi Vishwanath:
+    canonical_name: "Kashi Vishwanath"
+    city: "Varanasi"
+    state: "Uttar Pradesh"
+    deity: "Lord Shiva"
+    tradition: "Shaivism"
+
+  Siddhivinayak:
+    canonical_name: "Siddhivinayak Mumbai"
+    city: "Mumbai"
+    state: "Maharashtra"
+    deity: "Lord Ganesha"
+    tradition: "Ganapatya"
+
+  Shirdi Sai Mandir:
+    canonical_name: "Shirdi Sai Mandir"
+    city: "Shirdi"
+    state: "Maharashtra"
+    deity: "Shirdi Sai Baba"
+    tradition: "Universal Devotional"
+
+  Tirupati Balaji:
+    canonical_name: "Tirupati Balaji"
+    city: "Tirupati"
+    state: "Andhra Pradesh"
+    deity: "Lord Vishnu"
+    tradition: "Vaishnavism"
+
+  Hanuman Garhi:
+    canonical_name: "Hanuman Garhi"
+    city: "Ayodhya"
+    state: "Uttar Pradesh"
+    deity: "Lord Hanuman"
+    tradition: "Vaishnavism"
+
+  Puri Jagannath Temple:
+    canonical_name: "Puri Jagannath Temple"
+    city: "Puri"
+    state: "Odisha"
+    deity: "Lord Vishnu"
+    tradition: "Vaishnavism"

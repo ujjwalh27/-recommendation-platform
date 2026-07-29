@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_040_dcd_004_sunlight_procession",
+  "title": "Bright Sunlight Street Ratha Yatra (Trial #4)",
+  "challenge_category": "Landscape Wide | Bright Sunlight | Odia",
+  "camera_variation": "Landscape Wide",
+  "environmental_variation": "Bright Sunlight",
+  "audio_language": "Odia",
+  "ocr_condition": "Multiple Banners",
+  "ground_truth": {
+    "content_type": "Festival",
+    "primary_class": "Ratha Yatra Procession",
+    "sub_class": "Festival Procession",
+    "primary_deity": "Lord Hanuman"
+  }
+}

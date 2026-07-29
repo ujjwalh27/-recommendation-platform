@@ -1,0 +1,16 @@
+{
+  "MiniCPM-V-4.5": {
+    "vram_required_gb": 6,
+    "recommended_gpu": "NVIDIA RTX 3060 6GB or A10G",
+    "estimated_cost_usd_per_1k_videos": 0.85,
+    "deployment_complexity": "Low",
+    "scaling_note": "Single GPU can handle ~1,940 videos/hour at CPU; ~8,200/hour on GPU"
+  },
+  "Qwen2.5-VL-7B": {
+    "vram_required_gb": 16,
+    "recommended_gpu": "NVIDIA RTX 4090 24GB or A100-40GB",
+    "estimated_cost_usd_per_1k_videos": 1.4,
+    "deployment_complexity": "Moderate",
+    "scaling_note": "Single A100-40GB handles ~1,384 videos/hour. Cost delta vs MiniCPM is $0.55/1k videos \u2014 justified by -16.4% human review reduction."
+  }
+}

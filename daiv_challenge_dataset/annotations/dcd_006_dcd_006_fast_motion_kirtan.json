@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_006_dcd_006_fast_motion_kirtan",
+  "title": "Fast Camera Movement Kirtan Dance (Trial #1)",
+  "challenge_category": "Handheld Motion | Background Clutter | Bengali",
+  "camera_variation": "Handheld Motion",
+  "environmental_variation": "Background Clutter",
+  "audio_language": "Bengali",
+  "ocr_condition": "Rotated Banner",
+  "ground_truth": {
+    "content_type": "Music",
+    "primary_class": "Group Bhajan",
+    "sub_class": "Devotional Bhajan",
+    "primary_deity": "Lord Hanuman"
+  }
+}

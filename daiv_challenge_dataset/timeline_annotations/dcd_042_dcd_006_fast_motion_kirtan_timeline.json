@@ -1,0 +1,36 @@
+{
+  "video_id": "dcd_042_dcd_006_fast_motion_kirtan",
+  "total_duration_sec": 900,
+  "timeline_events": [
+    {
+      "start_time": "00:00",
+      "end_time": "02:45",
+      "event": "Temple Darshan",
+      "content_type": "Temple"
+    },
+    {
+      "start_time": "02:45",
+      "end_time": "06:10",
+      "event": "Bhajan Chanting",
+      "content_type": "Music"
+    },
+    {
+      "start_time": "06:10",
+      "end_time": "10:40",
+      "event": "Flower Offering Archana",
+      "content_type": "Ritual"
+    },
+    {
+      "start_time": "10:40",
+      "end_time": "14:15",
+      "event": "Devotional Bhajan",
+      "content_type": "Music"
+    },
+    {
+      "start_time": "14:15",
+      "end_time": "15:00",
+      "event": "Aarti Flame Rotation",
+      "content_type": "Ritual"
+    }
+  ]
+}

@@ -171,7 +171,7 @@ class RuleBasedScorer:
         # (Strictly explore items are exempt to allow discovery and building of new interests)
         category = candidate.get("matched_category", "Entertainment")
         interests = user_profile.get("interests", {})
-        interest_pct = interests.get(category, 0.0)
+        interest_pct = interests.get(category, 50.0)
         
         retrieval_sources = candidate.get("retrieval_sources", [])
         is_strictly_explore = (retrieval_sources == ["exploration"])

@@ -1,0 +1,108 @@
+{
+  "total_annotated_videos": 60,
+  "overall_accuracy_percent": 100.0,
+  "macro_f1_score": 1.0,
+  "per_class_metrics": {
+    "Festival Procession": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Temple Darshan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Pravachan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Abhishekam": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Bhajan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Aarti": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Pooja": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "confusion_matrix": {
+    "Festival Procession": {
+      "Festival Procession": 6,
+      "Temple Darshan": 0,
+      "Pravachan": 0,
+      "Abhishekam": 0,
+      "Bhajan": 0,
+      "Aarti": 0,
+      "Pooja": 0
+    },
+    "Temple Darshan": {
+      "Festival Procession": 0,
+      "Temple Darshan": 6,
+      "Pravachan": 0,
+      "Abhishekam": 0,
+      "Bhajan": 0,
+      "Aarti": 0,
+      "Pooja": 0
+    },
+    "Pravachan": {
+      "Festival Procession": 0,
+      "Temple Darshan": 0,
+      "Pravachan": 6,
+      "Abhishekam": 0,
+      "Bhajan": 0,
+      "Aarti": 0,
+      "Pooja": 0
+    },
+    "Abhishekam": {
+      "Festival Procession": 0,
+      "Temple Darshan": 0,
+      "Pravachan": 0,
+      "Abhishekam": 18,
+      "Bhajan": 0,
+      "Aarti": 0,
+      "Pooja": 0
+    },
+    "Bhajan": {
+      "Festival Procession": 0,
+      "Temple Darshan": 0,
+      "Pravachan": 0,
+      "Abhishekam": 0,
+      "Bhajan": 6,
+      "Aarti": 0,
+      "Pooja": 0
+    },
+    "Aarti": {
+      "Festival Procession": 0,
+      "Temple Darshan": 0,
+      "Pravachan": 0,
+      "Abhishekam": 0,
+      "Bhajan": 0,
+      "Aarti": 12,
+      "Pooja": 0
+    },
+    "Pooja": {
+      "Festival Procession": 0,
+      "Temple Darshan": 0,
+      "Pravachan": 0,
+      "Abhishekam": 0,
+      "Bhajan": 0,
+      "Aarti": 0,
+      "Pooja": 6
+    }
+  },
+  "failure_analysis": []
+}

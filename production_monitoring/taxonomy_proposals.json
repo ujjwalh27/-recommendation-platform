@@ -1,0 +1,27 @@
+[
+  {
+    "proposal_id": "prop_001",
+    "entity_type": "New Ritual",
+    "proposed_category": "rituals",
+    "entity_name": "Chandi Homa",
+    "occurrences_count": 14,
+    "first_detected": "2026-07-25 14:00:00",
+    "sample_video_ids": [
+      "video_ci_1002",
+      "video_ci_1009"
+    ],
+    "status": "Pending"
+  },
+  {
+    "proposal_id": "prop_002",
+    "entity_type": "New Temple",
+    "proposed_category": "temples",
+    "entity_name": "Shree Mahakaleshwar Ujjain",
+    "occurrences_count": 8,
+    "first_detected": "2026-07-26 11:20:00",
+    "sample_video_ids": [
+      "video_ci_1015"
+    ],
+    "status": "Pending"
+  }
+]

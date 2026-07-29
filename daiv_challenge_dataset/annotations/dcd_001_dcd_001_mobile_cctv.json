@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_001_dcd_001_mobile_cctv",
+  "title": "Mobile Vertical Recording of Sai Abhishekam (Trial #1)",
+  "challenge_category": "Mobile Vertical | Low Lighting | Hindi",
+  "camera_variation": "Mobile Vertical",
+  "environmental_variation": "Low Lighting",
+  "audio_language": "Hindi",
+  "ocr_condition": "No OCR Text",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Milk Abhishekam",
+    "sub_class": "Milk Abhishekam",
+    "primary_deity": "Shirdi Sai Baba"
+  }
+}

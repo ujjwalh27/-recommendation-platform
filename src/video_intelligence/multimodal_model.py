@@ -6,12 +6,25 @@ from typing import List, Dict, Any
 from src.video_intelligence.config import OLLAMA_URL, VLM_MODEL
 from src.video_intelligence.schemas import VLMResponseSchema
 
+# ─── QVPEM Sprint: Delegate to configurable VLMProviderClient ────────────────
+try:
+    from src.video_intelligence.vlm_provider import VLMProviderClient as _ProviderClient, load_vlm_config as _load_cfg
+    _vlm_cfg = _load_cfg()
+    _ACTIVE_MODEL = _vlm_cfg.get("vision_model", {}).get("model", VLM_MODEL)
+    _ACTIVE_URL   = _vlm_cfg.get("vision_model", {}).get("ollama_url", OLLAMA_URL)
+except Exception:
+    _ACTIVE_MODEL = VLM_MODEL
+    _ACTIVE_URL   = OLLAMA_URL
+    _ProviderClient = None
+# ─────────────────────────────────────────────────────────────────────────────
+
 class MultimodalVLMClient:
     """Interfaces with local Ollama to send multi-modal keyframe sequences for global context extraction."""
 
     def __init__(self, ollama_url: str = None, model_name: str = None):
-        self.ollama_url = ollama_url or OLLAMA_URL
-        self.model_name = model_name or VLM_MODEL
+        # QVPEM: use active model from vlm_model_config.yaml unless overridden
+        self.ollama_url = ollama_url or _ACTIVE_URL
+        self.model_name = model_name or _ACTIVE_MODEL
 
     def analyze_keyframes(self, frame_paths: List[str], audio_transcript: str = "", evidence_summary: str = "") -> Dict[str, Any]:
         """

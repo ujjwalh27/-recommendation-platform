@@ -1,0 +1,8052 @@
+[
+  {
+    "video_id": "video_001_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_002_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_003_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_004_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_005_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_006_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_007_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_008_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_009_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_010_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_011_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_012_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_013_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_014_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_015_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_016_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_017_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_018_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_019_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_020_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_021_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_022_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_023_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_024_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_025_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_026_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_027_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_028_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_029_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_030_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_031_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_032_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_033_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_034_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_035_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_036_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_037_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_038_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_039_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_040_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_041_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_042_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_043_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_044_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_045_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_046_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_047_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_048_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_049_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_050_abhishekam",
+    "ground_truth_class": "Abhishekam",
+    "vision": {
+      "detected_objects": [
+        "Milk",
+        "Pouring vessel",
+        "Shiva Lingam"
+      ],
+      "actions": [
+        "Pouring milk"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Namah Shivaya",
+      "keywords": [
+        "Milk Abhishekam"
+      ]
+    },
+    "ocr": [
+      "Milk Abhishekam Live"
+    ]
+  },
+  {
+    "video_id": "video_051_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_052_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_053_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_054_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_055_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_056_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_057_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_058_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_059_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_060_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_061_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_062_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_063_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_064_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_065_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_066_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_067_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_068_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_069_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_070_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_071_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_072_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_073_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_074_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_075_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_076_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_077_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_078_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_079_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_080_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_081_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_082_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_083_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_084_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_085_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_086_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_087_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_088_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_089_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_090_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_091_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_092_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_093_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_094_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_095_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_096_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_097_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_098_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_099_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_100_aarti",
+    "ground_truth_class": "Aarti",
+    "vision": {
+      "detected_objects": [
+        "Camphor flame",
+        "Brass lamp",
+        "Deity shrine"
+      ],
+      "actions": [
+        "Waving flame"
+      ]
+    },
+    "speech": {
+      "transcript": "Jai Dev Jai Dev Aarti",
+      "keywords": [
+        "Aarti"
+      ]
+    },
+    "ocr": [
+      "Evening Aarti Live"
+    ]
+  },
+  {
+    "video_id": "video_101_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_102_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_103_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_104_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_105_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_106_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_107_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_108_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_109_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_110_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_111_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_112_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_113_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_114_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_115_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_116_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_117_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_118_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_119_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_120_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_121_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_122_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_123_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_124_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_125_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_126_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_127_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_128_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_129_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_130_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_131_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_132_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_133_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_134_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_135_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_136_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_137_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_138_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_139_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_140_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_141_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_142_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_143_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_144_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_145_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_146_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_147_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_148_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_149_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_150_pooja",
+    "ground_truth_class": "Pooja",
+    "vision": {
+      "detected_objects": [
+        "Marigold flowers",
+        "Brass bell",
+        "Incense"
+      ],
+      "actions": [
+        "Offering flowers"
+      ]
+    },
+    "speech": {
+      "transcript": "Om Ganeshaya Namah",
+      "keywords": [
+        "Pooja"
+      ]
+    },
+    "ocr": [
+      "Daily Puja"
+    ]
+  },
+  {
+    "video_id": "video_151_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_152_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_153_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_154_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_155_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_156_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_157_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_158_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_159_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_160_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_161_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_162_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_163_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_164_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_165_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_166_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_167_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_168_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_169_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_170_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_171_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_172_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_173_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_174_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_175_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_176_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_177_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_178_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_179_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_180_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_181_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_182_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_183_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_184_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_185_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_186_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_187_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_188_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_189_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_190_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_191_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_192_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_193_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_194_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_195_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_196_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_197_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_198_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_199_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_200_bhajan",
+    "ground_truth_class": "Bhajan",
+    "vision": {
+      "detected_objects": [
+        "Harmonium",
+        "Tabla",
+        "Singers"
+      ],
+      "actions": [
+        "Singing song"
+      ]
+    },
+    "speech": {
+      "transcript": "Hari Om Kirtan Bhajan",
+      "keywords": [
+        "Bhajan"
+      ]
+    },
+    "ocr": [
+      "Bhajan Sandhya"
+    ]
+  },
+  {
+    "video_id": "video_201_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_202_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_203_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_204_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_205_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_206_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_207_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_208_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_209_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_210_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_211_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_212_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_213_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_214_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_215_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_216_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_217_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_218_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_219_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_220_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_221_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_222_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_223_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_224_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_225_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_226_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_227_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_228_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_229_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_230_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_231_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_232_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_233_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_234_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_235_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_236_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_237_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_238_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_239_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_240_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_241_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_242_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_243_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_244_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_245_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_246_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_247_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_248_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_249_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_250_pravachan",
+    "ground_truth_class": "Pravachan",
+    "vision": {
+      "detected_objects": [
+        "Guru on lectern",
+        "Scripture book",
+        "Mic"
+      ],
+      "actions": [
+        "Speaking lecture"
+      ]
+    },
+    "speech": {
+      "transcript": "Bhagavad Gita Chapter 3 Verse 19",
+      "keywords": [
+        "Pravachan"
+      ]
+    },
+    "ocr": [
+      "Bhagavad Gita Discourse"
+    ]
+  },
+  {
+    "video_id": "video_251_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_252_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_253_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_254_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_255_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_256_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_257_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_258_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_259_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_260_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_261_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_262_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_263_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_264_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_265_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_266_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_267_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_268_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_269_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_270_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_271_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_272_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_273_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_274_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_275_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_276_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_277_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_278_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_279_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_280_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_281_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_282_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_283_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_284_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_285_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_286_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_287_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_288_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_289_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_290_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_291_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_292_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_293_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_294_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_295_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_296_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_297_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_298_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_299_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_300_temple_darshan",
+    "ground_truth_class": "Temple Darshan",
+    "vision": {
+      "detected_objects": [
+        "Sanctum door",
+        "Queue crowd",
+        "Gopuram"
+      ],
+      "actions": [
+        "Walking queue"
+      ]
+    },
+    "speech": {
+      "transcript": "Darshan Live View",
+      "keywords": [
+        "Darshan"
+      ]
+    },
+    "ocr": [
+      "Shirdi Temple Darshan"
+    ]
+  },
+  {
+    "video_id": "video_301_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_302_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_303_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_304_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_305_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_306_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_307_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_308_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_309_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_310_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_311_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_312_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_313_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_314_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_315_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_316_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_317_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_318_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_319_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_320_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_321_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_322_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_323_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_324_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_325_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_326_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_327_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_328_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_329_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_330_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_331_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_332_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_333_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_334_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_335_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_336_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_337_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_338_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_339_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_340_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_341_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_342_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_343_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_344_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_345_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_346_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_347_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_348_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_349_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  },
+  {
+    "video_id": "video_350_festival_procession",
+    "ground_truth_class": "Festival Procession",
+    "vision": {
+      "detected_objects": [
+        "Chariot Ratha",
+        "Street crowd",
+        "Drums"
+      ],
+      "actions": [
+        "Pulling chariot"
+      ]
+    },
+    "speech": {
+      "transcript": "Ratha Yatra Procession",
+      "keywords": [
+        "Ratha Yatra"
+      ]
+    },
+    "ocr": [
+      "Festival Procession Live"
+    ]
+  }
+]

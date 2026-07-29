@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_029_dcd_005_occluded_priest",
+  "title": "Crowded Shrine with Priest Occluding Idol (Trial #3)",
+  "challenge_category": "Mobile Handheld | Occluded Deity | Telugu",
+  "camera_variation": "Mobile Handheld",
+  "environmental_variation": "Occluded Deity",
+  "audio_language": "Telugu",
+  "ocr_condition": "No Text",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Home Pooja",
+    "sub_class": "Home Pooja",
+    "primary_deity": "Lord Hanuman"
+  }
+}

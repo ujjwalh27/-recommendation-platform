@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1785135112",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 56471,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Abhishekam Ritual\",\n  \"summary\": \"A person is performing an abhishekam (ritual bathing) of a deity statue with milk while surrounded by yellow flowers.\",\n  \"category\": \"Ritual\",\n  \"content_type\": \"Temple Worship\",\n  \"primary_class\": \"Abhishekam\",\n  \"secondary_classes\": [\"Oil Lamp\", \"Flower Offerings\"],\n  \"deity\": \"Shiva (identified from the ritual and attire of devotee)\",\n  \"temple\": \"Not identified in keyframes, but likely a Shiva temple based on deity statue.\",\n  \"festival\": \"Unknown\",\n  \"language\": \"Sanskrit/Hindi\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Visual evidence shows the ritualistic act of pouring milk over a deity's head and surrounding it with flowers, indicative of an abhishekam.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Abhishekam Ritual",
+    "summary": "A person is performing an abhishekam (ritual bathing) of a deity statue with milk while surrounded by yellow flowers.",
+    "category": "Ritual",
+    "content_type": "Temple Worship",
+    "primary_class": "Abhishekam",
+    "secondary_classes": [
+      "Oil Lamp",
+      "Flower Offerings"
+    ],
+    "deity": "Shiva (identified from the ritual and attire of devotee)",
+    "temple": "Not identified in keyframes, but likely a Shiva temple based on deity statue.",
+    "festival": "Unknown",
+    "language": "Sanskrit/Hindi",
+    "confidence": 0.9,
+    "reasoning": "Visual evidence shows the ritualistic act of pouring milk over a deity's head and surrounding it with flowers, indicative of an abhishekam."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 198,
+  "eval_duration_ns": 10667916000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

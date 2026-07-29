@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1784875765",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 44204,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Activity\",\n  \"summary\": \"A Hindu devotional worship activity is depicted with chanting of mantras.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Ritual\",\n  \"primary_class\": \"Aarti\",\n  \"secondary_classes\": [\"Pooja\"],\n  \"deity\": \"Shiva (identified by Om Namah Shivaya mantra)\",\n  \"temple\": \"Unknown temple, but likely a Hindu temple setting.\",\n  \"festival\": \"Unknown festival or specific occasion identified in the keyframes provided.\",\n  \"language\": \"Sanskrit and Hindi\",\n  \"confidence\": 0.8,\n  \"reasoning\": \"The presence of mantras being chanted suggests it is part of a devotional worship ritual, with visual evidence supporting an altar setup.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Activity",
+    "summary": "A Hindu devotional worship activity is depicted with chanting of mantras.",
+    "category": "Devotion",
+    "content_type": "Ritual",
+    "primary_class": "Aarti",
+    "secondary_classes": [
+      "Pooja"
+    ],
+    "deity": "Shiva (identified by Om Namah Shivaya mantra)",
+    "temple": "Unknown temple, but likely a Hindu temple setting.",
+    "festival": "Unknown festival or specific occasion identified in the keyframes provided.",
+    "language": "Sanskrit and Hindi",
+    "confidence": 0.8,
+    "reasoning": "The presence of mantras being chanted suggests it is part of a devotional worship ritual, with visual evidence supporting an altar setup."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 176,
+  "eval_duration_ns": 14503516000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

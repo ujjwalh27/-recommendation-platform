@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1784804233",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 31428,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "Based on the provided images, here is a raw JSON classification for Hindu devotional content:\n\n{\n  \"title\": \"Sanskrit Mantra Chanting\",\n  \"summary\": \"A person reciting 'Om Namah Shivaya' and other mantras in Sanskrit.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Discourse\",\n  \"primary_class\": \"Bhajan\",\n  \"secondary_classes\": [\"Chanting\"],\n  \"deity\": \"Shiva (identified by the mantra 'Om Namah Shivaya')\",\n  \"temple\": null,\n  \"festival\": null,\n  \"language\": \"Sanskrit and Hindi\",\n  \"confidence\": 0.85,\n  \"reasoning\": \"The audio transcript mentions chanting mantras in Sanskrit, which is a common practice during Hindu devotional activities.\"\n}",
+  "parsed_json": {
+    "title": "Sanskrit Mantra Chanting",
+    "summary": "A person reciting 'Om Namah Shivaya' and other mantras in Sanskrit.",
+    "category": "Devotion",
+    "content_type": "Discourse",
+    "primary_class": "Bhajan",
+    "secondary_classes": [
+      "Chanting"
+    ],
+    "deity": "Shiva (identified by the mantra 'Om Namah Shivaya')",
+    "temple": null,
+    "festival": null,
+    "language": "Sanskrit and Hindi",
+    "confidence": 0.85,
+    "reasoning": "The audio transcript mentions chanting mantras in Sanskrit, which is a common practice during Hindu devotional activities."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 180,
+  "eval_duration_ns": 10178146000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

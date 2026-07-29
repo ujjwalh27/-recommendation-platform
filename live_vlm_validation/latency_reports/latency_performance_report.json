@@ -1,0 +1,20 @@
+{
+  "baseline_model": {
+    "name": "minicpm-v:latest",
+    "total_requests": 20,
+    "successful_requests": 20,
+    "json_parse_success_rate": "100.0%",
+    "average_latency_ms": 25884,
+    "p50_latency_ms": 24424,
+    "p95_latency_ms": 56471
+  },
+  "candidate_model": {
+    "name": "qwen2.5:1.5b",
+    "total_requests": 20,
+    "successful_requests": 20,
+    "json_parse_success_rate": "0.0%",
+    "average_latency_ms": 162,
+    "p50_latency_ms": 117,
+    "p95_latency_ms": 615
+  }
+}

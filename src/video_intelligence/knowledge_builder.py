@@ -50,12 +50,15 @@ class KnowledgeBuilder:
                 ))
                 
         # 3. Compile concepts (mood, emotion, category)
-        concepts = list(set([
-            vlm_data.get("category", ""),
-            vlm_data.get("mood", ""),
-            vlm_data.get("emotion", "")
-        ]))
-        concepts = [c for c in concepts if c]
+        raw_concepts = []
+        for key in ["category", "mood", "emotion"]:
+            val = vlm_data.get(key, "")
+            if isinstance(val, list):
+                raw_concepts.extend([str(v) for v in val if v])
+            elif val:
+                raw_concepts.append(str(val))
+        concepts = list(set(raw_concepts))
+
 
         # 4. Compile topics
         topics = [vlm_data.get("primary_topic", "")] + vlm_data.get("secondary_topics", [])

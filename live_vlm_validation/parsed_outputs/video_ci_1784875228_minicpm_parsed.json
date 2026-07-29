@@ -1,0 +1,17 @@
+{
+  "title": "Hindu Devotional Ritual",
+  "summary": "A person is performing a devotional worship (Pooja) with various items on an altar including flowers, lamps, and other religious objects.",
+  "category": "Devotion",
+  "content_type": "Ritual",
+  "primary_class": "Pooja",
+  "secondary_classes": [
+    "Oil Lamp",
+    "Flower Offerings"
+  ],
+  "deity": null,
+  "temple": null,
+  "festival": null,
+  "language": "Sanskrit and Hindi",
+  "confidence": 0.85,
+  "reasoning": "The visual keyframes depict a devotional worship scene with items typically used in Hindu rituals such as flowers, lamps, and other religious objects."
+}

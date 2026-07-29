@@ -1,0 +1,101 @@
+{
+  "Water Abhishekam": {
+    "Water Abhishekam": 1,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 4,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Bhagavad Gita Pravachan": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 4,
+    "Sandhya Aarti": 0,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Sandhya Aarti": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 8,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Devotional Bhajan": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 0,
+    "Devotional Bhajan": 4,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Kakad Aarti": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 0,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 4,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Home Pooja": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 5,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 3,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Milk Abhishekam": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 0,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 9,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 0
+  },
+  "Festival Procession": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 0,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 4,
+    "Ashtottara Archana": 0
+  },
+  "Ashtottara Archana": {
+    "Water Abhishekam": 0,
+    "Bhagavad Gita Pravachan": 0,
+    "Sandhya Aarti": 0,
+    "Devotional Bhajan": 0,
+    "Kakad Aarti": 0,
+    "Home Pooja": 0,
+    "Milk Abhishekam": 0,
+    "Festival Procession": 0,
+    "Ashtottara Archana": 4
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "video_id": "xai_test_aditi",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 22378,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Ritual\",\n  \"summary\": \"A woman is performing a devotional worship (Pooja) with various Hindu deities' statues on an altar.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Ritual\",\n  \"primary_class\": \"Pooja\",\n  \"secondary_classes\": [\"Oil Lamp\", \"Deity Statues\"],\n  \"deity\": [\n    {\n      \"name\": \"Lord Shiva\"\n    },\n    {\n      \"name\": \"Goddess Lakshmi\"\n    }\n  ],\n  \"temple\": null,\n  \"festival\": null,\n  \"language\": \"Hindi\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"Visual keyframes show an altar with deities' statues, oil lamp, and flower offerings indicating a Hindu devotional worship ritual.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Ritual",
+    "summary": "A woman is performing a devotional worship (Pooja) with various Hindu deities' statues on an altar.",
+    "category": "Devotion",
+    "content_type": "Ritual",
+    "primary_class": "Pooja",
+    "secondary_classes": [
+      "Oil Lamp",
+      "Deity Statues"
+    ],
+    "deity": [
+      {
+        "name": "Lord Shiva"
+      },
+      {
+        "name": "Goddess Lakshmi"
+      }
+    ],
+    "temple": null,
+    "festival": null,
+    "language": "Hindi",
+    "confidence": 0.95,
+    "reasoning": "Visual keyframes show an altar with deities' statues, oil lamp, and flower offerings indicating a Hindu devotional worship ritual."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 188,
+  "eval_duration_ns": 10611714000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

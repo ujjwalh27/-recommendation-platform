@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1785135264",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 35985,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Deity Abhishekam Ritual\",\n  \"summary\": \"A Hindu devotional worship (Pooja) ceremony is taking place with the deity being anointed by a person using a golden vessel filled with water.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Ritual\",\n  \"primary_class\": \"Abhishekam\",\n  \"secondary_classes\": [\"Oil Anointing\", \"Deity Worship\"],\n  \"deity\": \"Lord Shiva (identified by the presence of a third eye and crescent moon)\",\n  \"temple\": \"Unknown temple, but likely within a Hindu temple setting due to altar decorations.\",\n  \"festival\": \"Unknown specific festival\",\n  \"language\": \"Sanskrit/Hindi mantras being chanted during worship\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Visual keyframes depict an oil anointing ritual, which is a common practice in Hindu devotional rituals.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Deity Abhishekam Ritual",
+    "summary": "A Hindu devotional worship (Pooja) ceremony is taking place with the deity being anointed by a person using a golden vessel filled with water.",
+    "category": "Devotion",
+    "content_type": "Ritual",
+    "primary_class": "Abhishekam",
+    "secondary_classes": [
+      "Oil Anointing",
+      "Deity Worship"
+    ],
+    "deity": "Lord Shiva (identified by the presence of a third eye and crescent moon)",
+    "temple": "Unknown temple, but likely within a Hindu temple setting due to altar decorations.",
+    "festival": "Unknown specific festival",
+    "language": "Sanskrit/Hindi mantras being chanted during worship",
+    "confidence": 0.9,
+    "reasoning": "Visual keyframes depict an oil anointing ritual, which is a common practice in Hindu devotional rituals."
+  },
+  "parse_error": null,
+  "frame_count": 2,
+  "eval_count": 209,
+  "eval_duration_ns": 12576647000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

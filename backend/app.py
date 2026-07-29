@@ -38,6 +38,8 @@ sys.path.append(str(BASE_DIR))
 from src.recommender.service import RecommenderService
 from src.indexing.faiss_service import FaissSearchService
 from src.content_intelligence.pipeline import ContentIntelligencePipeline
+from content_catalog.api.router import router as catalog_router
+from content_catalog.publisher.publisher import ContentPublisher
 
 # --------------------------------------------------
 # Project Paths
@@ -79,6 +81,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(catalog_router)
 
 # --------------------------------------------------
 # Static Files
@@ -148,7 +152,7 @@ def home():
 
 
 @app.get("/feed")
-def feed(user_id: str = "user_1", limit: int = 10):
+def feed(user_id: str = "user_1", limit: int = 100):
     """
     Returns personalized recommendation feed with scoring details and natural explanations.
     Accepts user_id (e.g. 'user_1') or persona name (e.g. 'Gamer', 'Traveler', 'Automobile Enthusiast').
@@ -265,75 +269,18 @@ def analyze_video(file: UploadFile = File(...)):
     # 4. Execute Content Intelligence Pipeline
     record = ci_pipeline.analyze_video(str(video_path), video_id, force_reanalyze=True)
     
-    # 5. Dynamic FAISS Vector Indexing
-    faiss_service.add_video(video_id, record["embedding"])
+    # 5. Automated Content Publishing & Real-time Catalog Sync
+    publisher = ContentPublisher(recommender_service=service)
+    pub_result = publisher.publish_video(
+        video_file_path=str(video_path),
+        pipeline_result=record,
+        video_id=video_id
+    )
     
-    # 6. Map Category safely matching platform personas
-    category_label = record.get("category", "Entertainment")
-    known_categories = [
-        "Automobile", "Food", "Animation", "Kids/Family", "Animal", 
-        "Sports", "Education", "TV Shows", "Comedy", "Tech", 
-        "Gamer", "People", "Advertisement", "How-to", "Music", 
-        "News", "Fashion", "Travel", "Documentary"
-    ]
-    matched_category = "Entertainment"
-    for cat in known_categories:
-        if cat.lower() in category_label.lower():
-            matched_category = cat
-            break
-            
-    # 7. Compile video metadata to append to enriched_videos.json
-    duration = 15.0
-    cap = cv2.VideoCapture(str(video_path))
-    if cap.isOpened():
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        frame_count = cap.get(cv2.CAP_PROP_FRAME_COUNT)
-        if fps > 0:
-            duration = frame_count / fps
-        cap.release()
-
-    video_meta = {
-        "video_id": video_id,
-        "caption": f"{record['title']} - {record['summary']}",
-        "hashtags": " ".join([f"#{t.lower()}" for t in record["tags"]]),
-        "mentions": "nan",
-        "creator": "ai_intelligence",
-        "creator_name": "AI Intelligence Core",
-        "verified": True,
-        "music_name": f"Synthesis_{video_id}",
-        "music_author": "AI Synthesizer",
-        "duration": round(duration, 2),
-        "views": 100,
-        "likes": 10,
-        "comments": 2,
-        "shares": 1,
-        "engagement_score": 15.0,
-        "engagement_rate": 0.15,
-        "created_time": timestamp,
-        "video_url": f"http://localhost:8000/videos/{video_filename}",
-        "category": matched_category,
-        "keywords": record["keywords"]
-    }
+    # Attach publication summary to JSON intelligence report
+    record["publication"] = pub_result
     
-    # Load and append to enriched_videos.json
-    enriched_path = BASE_DIR / "datasets" / "processed" / "enriched_videos.json"
-    existing_meta = []
-    if enriched_path.exists():
-        try:
-            with open(enriched_path, "r", encoding="utf-8") as f:
-                existing_meta = json.load(f)
-        except Exception:
-            pass
-            
-    existing_meta.append(video_meta)
-    
-    with open(enriched_path, "w", encoding="utf-8") as f:
-        json.dump(existing_meta, f, indent=4)
-        
-    # 8. Register in recommender service catalog in memory
-    service.candidate_generator.video_lookup[video_id] = video_meta
-    
-    # 9. Return JSON intelligence report
+    # 6. Return JSON intelligence report
     return record
 
 
@@ -354,3 +301,143 @@ def get_analyzed_video(video_id: str):
     if not record:
         return {"status": "error", "message": f"Analysis for video {video_id} not found."}
     return record
+
+
+# --------------------------------------------------
+# Daiv Benchmark Builder (DBB) Routes
+# --------------------------------------------------
+from backend.dbb_engine import DaivBenchmarkBuilderEngine
+from fastapi import Body, Response
+
+dbb_engine = DaivBenchmarkBuilderEngine()
+
+@app.get("/api/dbb/taxonomy")
+def get_dbb_taxonomy():
+    return dbb_engine.get_taxonomy()
+
+@app.post("/api/dbb/taxonomy")
+def update_dbb_taxonomy(taxonomy: dict = Body(...)):
+    return dbb_engine.update_taxonomy(taxonomy)
+
+@app.get("/api/dbb/candidates")
+def get_dbb_candidates(query: str = ""):
+    return dbb_engine.search_candidates(query)
+
+@app.get("/api/dbb/annotations")
+def get_dbb_annotations():
+    return dbb_engine.get_all_annotations()
+
+@app.post("/api/dbb/annotate")
+def save_dbb_annotation(annotation: dict = Body(...)):
+    return dbb_engine.save_annotation(annotation)
+
+@app.get("/api/dbb/export")
+def export_dbb_dataset(format: str = "json"):
+    if format.lower() == "csv":
+        csv_data = dbb_engine.export_dataset_csv()
+        return Response(content=csv_data, media_type="text/csv", headers={"Content-Disposition": "attachment; filename=dbb_benchmark_dataset.csv"})
+    return dbb_engine.get_all_annotations()
+
+@app.post("/api/dbb/run-benchmark")
+def run_dbb_benchmark():
+    return dbb_engine.run_benchmark_evaluation()
+
+
+# --------------------------------------------------
+# Production Monitoring & Continuous Learning (PMCLP) Routes
+# --------------------------------------------------
+from backend.monitoring.prediction_logger import PredictionLogger
+from backend.monitoring.audit_trail import AuditTrailManager
+from backend.review.review_queue import HumanReviewQueueManager
+from backend.failures.failure_repository import FailureRepositoryManager
+from backend.monitoring.unknown_detector import UnknownKnowledgeDetector
+from backend.regression.regression_runner import RegressionRunnerEngine
+from backend.reports.monthly_report import MonthlyReportGeneratorEngine
+from backend.dashboards.dashboard_provider import PMCLPDashboardProvider
+
+pmclp_logger = PredictionLogger()
+pmclp_audit = AuditTrailManager()
+pmclp_review = HumanReviewQueueManager()
+pmclp_failures = FailureRepositoryManager()
+pmclp_unknown = UnknownKnowledgeDetector()
+pmclp_regression = RegressionRunnerEngine()
+pmclp_reports = MonthlyReportGeneratorEngine()
+pmclp_dashboards = PMCLPDashboardProvider()
+
+@app.get("/api/monitoring/predictions")
+def get_monitoring_predictions():
+    return pmclp_logger.get_all_logs()
+
+@app.get("/api/monitoring/predictions/{id}")
+def get_monitoring_prediction(id: str):
+    return pmclp_logger.get_log(id)
+
+@app.get("/api/monitoring/audit/{predictionId}")
+def get_prediction_audit(predictionId: str):
+    return pmclp_audit.get_audit(predictionId)
+
+@app.get("/api/review/pending")
+def get_pending_reviews():
+    return pmclp_review.get_pending_reviews()
+
+@app.post("/api/review/{id}/approve")
+def approve_review_item(id: str, reviewer: str = "Admin"):
+    return pmclp_review.approve_review(id, reviewer)
+
+@app.post("/api/review/{id}/correct")
+def correct_review_item(id: str, correction: dict = Body(...)):
+    return pmclp_review.correct_review(id, correction)
+
+@app.get("/api/failures")
+def get_all_failures():
+    return pmclp_failures.get_failures()
+
+@app.get("/api/failures/{id}")
+def get_failure_by_id(id: str):
+    return pmclp_failures.get_failure_by_id(id)
+
+@app.get("/api/dashboard/overview")
+def get_dashboard_overview():
+    return pmclp_dashboards.get_overview_dashboard()
+
+@app.get("/api/dashboard/semantic")
+def get_dashboard_semantic():
+    return pmclp_dashboards.get_semantic_dashboard()
+
+@app.get("/api/dashboard/failures")
+def get_dashboard_failures():
+    return pmclp_dashboards.get_failure_dashboard()
+
+@app.get("/api/dashboard/reviews")
+def get_dashboard_reviews():
+    return pmclp_dashboards.get_review_dashboard()
+
+@app.get("/api/dashboard/readiness")
+def get_dashboard_readiness():
+    return pmclp_dashboards.get_recommendation_readiness()
+
+@app.get("/api/taxonomy/proposals")
+def get_taxonomy_proposals():
+    return pmclp_unknown.get_proposals()
+
+@app.post("/api/taxonomy/proposals/{id}/approve")
+def approve_taxonomy_proposal(id: str):
+    return pmclp_unknown.approve_proposal(id)
+
+@app.post("/api/taxonomy/proposals/{id}/reject")
+def reject_taxonomy_proposal(id: str):
+    return pmclp_unknown.reject_proposal(id)
+
+@app.post("/api/regression/run")
+def run_regression_testing():
+    return pmclp_regression.run_regression_test()
+
+@app.get("/api/reports/monthly")
+def get_monthly_report(month: str = "July 2026"):
+    return pmclp_reports.generate_monthly_report(month)
+
+# --------------------------------------------------
+# CMREE Reasoning Engine Routes
+# --------------------------------------------------
+from reasoning_engine.api.routes import router as cmree_router
+app.include_router(cmree_router)

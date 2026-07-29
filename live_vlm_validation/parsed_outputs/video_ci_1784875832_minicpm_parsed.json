@@ -1,0 +1,16 @@
+{
+  "title": "Hindu Devotional Activity",
+  "summary": "A person is engaged in a devotional worship activity involving chanting mantras.",
+  "category": "Devotion",
+  "content_type": "Discourse",
+  "primary_class": "Bhajan",
+  "secondary_classes": [
+    "Chanting"
+  ],
+  "deity": null,
+  "temple": null,
+  "festival": null,
+  "language": "Sanskrit and Hindi",
+  "confidence": 0.85,
+  "reasoning": "The keyframes depict a person chanting mantras, which is indicative of devotional worship."
+}

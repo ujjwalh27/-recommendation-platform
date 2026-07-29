@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_validation_anjali__jarad",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 45365,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Ritual\",\n  \"summary\": \"The video depicts a Hindu devotional worship scene with various elements such as an oil lamp being lit, deity statues adorned with flowers and garlands, and other religious paraphernalia. The activity involves the performance of rituals.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Temple Worship\",\n  \"primary_class\": \"Pooja\",\n  \"secondary_classes\": [\"Oil Lamp Lighting\", \"Deity Offerings\"],\n  \"deity\": \"Lord Shiva and Lord Vishnu statues are visible, indicating the worship of these deities.\",\n  \"temple\": \"The setting appears to be a temple altar with religious artifacts typical for Hindu devotional practices.\",\n  \"festival\": \"No specific festival is identified in the keyframes provided.\",\n  \"language\": \"Sanskrit and Hindi\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Visual evidence of ritualistic activities, such as oil lamp lighting and deity offerings, supports a classification focused on Hindu devotional worship.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Ritual",
+    "summary": "The video depicts a Hindu devotional worship scene with various elements such as an oil lamp being lit, deity statues adorned with flowers and garlands, and other religious paraphernalia. The activity involves the performance of rituals.",
+    "category": "Devotion",
+    "content_type": "Temple Worship",
+    "primary_class": "Pooja",
+    "secondary_classes": [
+      "Oil Lamp Lighting",
+      "Deity Offerings"
+    ],
+    "deity": "Lord Shiva and Lord Vishnu statues are visible, indicating the worship of these deities.",
+    "temple": "The setting appears to be a temple altar with religious artifacts typical for Hindu devotional practices.",
+    "festival": "No specific festival is identified in the keyframes provided.",
+    "language": "Sanskrit and Hindi",
+    "confidence": 0.9,
+    "reasoning": "Visual evidence of ritualistic activities, such as oil lamp lighting and deity offerings, supports a classification focused on Hindu devotional worship."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 226,
+  "eval_duration_ns": 13142427000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

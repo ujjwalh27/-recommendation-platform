@@ -4,7 +4,7 @@ from typing import List, Dict, Any
 class DiversityFilter:
     """Applies re-ranking / spacing rules to ensure category and creator diversity in the recommendation feed."""
 
-    def __init__(self, max_consecutive_category: int = 1, max_consecutive_creator: int = 1, max_category_ratio: float = 0.3):
+    def __init__(self, max_consecutive_category: int = 1, max_consecutive_creator: int = 1, max_category_ratio: float = 1.0):
         self.max_consecutive_category = max_consecutive_category
         self.max_consecutive_creator = max_consecutive_creator
         self.max_category_ratio = max_category_ratio
@@ -50,7 +50,7 @@ class DiversityFilter:
                 # Check if candidate matches the target pattern source
                 matches = False
                 if pattern_source == "personal":
-                    matches = any(s in ["similarity", "collaborative_filtering", "creator_affinity", "category"] for s in sources)
+                    matches = any(s in ["similarity", "collaborative_filtering", "creator_affinity", "category", "same_primary_deity", "same_ritual_family"] for s in sources)
                 elif pattern_source == "freshness":
                     matches = "freshness" in sources
                 elif pattern_source == "exploration":

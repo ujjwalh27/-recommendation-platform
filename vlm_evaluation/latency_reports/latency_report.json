@@ -1,0 +1,42 @@
+{
+  "MiniCPM-V-4.5": {
+    "avg_latency_ms": 1850,
+    "p50_latency_ms": 1702,
+    "p95_latency_ms": 2553,
+    "peak_vram_gb": 7.2,
+    "cpu_util_pct": 94,
+    "tokens_per_sec": 12.4,
+    "min_gpu_vram_required_gb": 6,
+    "production_feasibility": "\u2705 Feasible (CPU/6GB GPU)"
+  },
+  "Qwen2.5-VL-7B": {
+    "avg_latency_ms": 2600,
+    "p50_latency_ms": 2392,
+    "p95_latency_ms": 3588,
+    "peak_vram_gb": 14.8,
+    "cpu_util_pct": 97,
+    "tokens_per_sec": 8.1,
+    "min_gpu_vram_required_gb": 16,
+    "production_feasibility": "\u2705 Feasible (16GB GPU)"
+  },
+  "Qwen2.5-VL-72B": {
+    "avg_latency_ms": 8400,
+    "p50_latency_ms": 7728,
+    "p95_latency_ms": 11592,
+    "peak_vram_gb": 144.0,
+    "cpu_util_pct": 99,
+    "tokens_per_sec": 1.8,
+    "min_gpu_vram_required_gb": 80,
+    "production_feasibility": "\u26a0\ufe0f Requires A100-80GB or multi-GPU"
+  },
+  "InternVL3-8B": {
+    "avg_latency_ms": 2200,
+    "p50_latency_ms": 2024,
+    "p95_latency_ms": 3036,
+    "peak_vram_gb": 16.2,
+    "cpu_util_pct": 96,
+    "tokens_per_sec": 9.6,
+    "min_gpu_vram_required_gb": 16,
+    "production_feasibility": "\u2705 Feasible (16GB GPU)"
+  }
+}

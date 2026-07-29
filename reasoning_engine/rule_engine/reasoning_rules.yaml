@@ -1,0 +1,162 @@
+# CMREE Reasoning Rules
+# Version: 3.0-cmree-canonical
+# Explanatory, deterministic, rule-based inference rules mapped strictly to 13 Canonical Categories.
+
+rules:
+  - id: "RULE_001_JALABHISHEKAM"
+    name: "Jalabhishekam Water Pouring Rule"
+    conditions:
+      objects_any: ["Shiva Linga", "Water Vessel", "Kalash", "Dark Stone Structure", "Sacred Object"]
+      text_contains: ["Jalabhishekam", "Jal Abhishek", "Pouring Water", "Water Pouring", "Bathing Lingam", "Water over Lingam", "Water"]
+    output:
+      primary_ritual: "Jalabhishekam"
+      primary_category: "Abhishekam"
+      primary_deity: "Lord Shiva"
+      offering: "Water"
+    base_confidence: 0.96
+    explanation: "Shiva Lingam or sacred object combined with water pouring / jalabhishekam indicators confirms Abhishekam."
+
+  - id: "RULE_002_MILK_ABHISHEKAM"
+    name: "Milk Abhishekam Pouring Rule"
+    conditions:
+      text_contains: ["Abhishekam", "Abhishek", "Doodh Abhishek", "Pouring Milk", "Bathing with milk", "White Liquid", "Anointed", "Milk Kalash", "Milk Stream", "Milk"]
+    output:
+      primary_ritual: "Milk Abhishekam"
+      primary_category: "Abhishekam"
+      primary_deity: "Lord Shiva"
+      offering: "Milk"
+    base_confidence: 0.98
+    explanation: "Milk pouring, anointing, or Doodh Abhishek indicators confirm Abhishekam ritual."
+
+  - id: "RULE_003_PANCHAMRUTHA_ABHISHEKAM"
+    name: "Panchamrutha Abhishekam Rule"
+    conditions:
+      text_contains: ["Panchamrit", "Panchamrutha", "Honey", "Curd", "Curd and Honey"]
+    output:
+      primary_ritual: "Panchamrutha Abhishekam"
+      primary_category: "Abhishekam"
+      primary_deity: "Lord Shiva"
+      offering: "Panchamrutha"
+    base_confidence: 0.95
+    explanation: "Panchamrutha / honey / curd liquid indicators confirm Abhishekam ritual."
+
+  - id: "RULE_004_DEVOTIONAL_AARTI"
+    name: "Devotional Aarti Flame Ritual Rule"
+    conditions:
+      text_contains: ["Aarti", "Arti", "Kakad", "Sandhya Aarti", "Deepa", "Lamp", "Flame", "Diya", "Kapoor", "Camphor", "Flame Worship"]
+    output:
+      primary_ritual: "Devotional Aarti"
+      primary_category: "Aarti"
+      offering: "Camphor & Flame"
+    base_confidence: 0.94
+    explanation: "Flame / Lamp / Camphor waving visual or text indicators confirm Aarti ritual."
+
+  - id: "RULE_005_ARCHANA"
+    name: "Archana Name Recitation Rule"
+    conditions:
+      text_contains: ["Archana", "Ashtottara", "108 Names", "Namavali", "Sahasranama"]
+    output:
+      primary_ritual: "Ashtottara Archana"
+      primary_category: "Archana"
+      offering: "Flowers & Kumkum"
+    base_confidence: 0.93
+    explanation: "Ritual name recitation / 108 names confirm Archana."
+
+  - id: "RULE_006_BHAJAN"
+    name: "Bhajan Devotional Music Rule"
+    conditions:
+      text_contains: ["Bhajan", "Devotional Song", "Harmonium", "Tabla", "Dhun", "Singing"]
+    output:
+      primary_ritual: "Devotional Bhajan"
+      primary_category: "Bhajan"
+      offering: "Music & Hymns"
+    base_confidence: 0.92
+    explanation: "Devotional singing, harmonium, or bhajan music confirms Bhajan."
+
+  - id: "RULE_007_KIRTAN"
+    name: "Kirtan Nama Sankeerthana Rule"
+    conditions:
+      text_contains: ["Kirtan", "Sankeerthana", "Nama Sankeerthana", "Harinam", "Choral Chanting"]
+    output:
+      primary_ritual: "Nama Sankeerthana"
+      primary_category: "Kirtan / Nama Sankeerthana"
+      offering: "Chanting"
+    base_confidence: 0.93
+    explanation: "Group devotional chanting and choral praise confirm Kirtan / Nama Sankeerthana."
+
+  - id: "RULE_008_PRAVACHAN"
+    name: "Pravachan Spiritual Discourse Rule"
+    conditions:
+      text_contains: ["Pravachan", "Katha", "Discourse", "Gita", "Satsang", "Lecture", "Sermon", "Scripture"]
+    output:
+      primary_ritual: "Spiritual Pravachan"
+      primary_category: "Pravachan / Spiritual Discourses"
+      offering: "Scripture Reading"
+    base_confidence: 0.93
+    explanation: "Scripture commentary and satsang confirm Pravachan / Spiritual Discourses."
+
+  - id: "RULE_009_HOMA_YAJNA"
+    name: "Homa Fire Altar Rule"
+    conditions:
+      text_contains: ["Havan", "Homa", "Homam", "Yajna", "Yagya", "Fire Altar", "Fire Ritual"]
+    output:
+      primary_ritual: "Vedic Homa"
+      primary_category: "Homa / Yajna"
+      offering: "Ghee"
+    base_confidence: 0.95
+    explanation: "Fire altar (Havan kund) presence confirms Homa / Yajna fire ritual."
+
+  - id: "RULE_010_FESTIVAL_PROCESSION"
+    name: "Festival Procession Chariot Rule"
+    conditions:
+      text_contains: ["Ratha Yatra", "Rath Yatra", "Chariot", "Procession", "Palkhi", "Yatra", "Parade", "Street Procession"]
+    output:
+      primary_ritual: "Sacred Procession"
+      primary_category: "Festival Processions"
+      offering: "Decorated Deity"
+    base_confidence: 0.95
+    explanation: "Chariot, palkhi, or festival street procession confirms Festival Processions."
+
+  - id: "RULE_011_ANNADANAM"
+    name: "Annadanam Prasad Service Rule"
+    conditions:
+      text_contains: ["Annadanam", "Bhandara", "Prasad Distribution", "Free Food", "Langhar"]
+    output:
+      primary_ritual: "Annadanam"
+      primary_category: "Annadanam"
+      offering: "Prasad"
+    base_confidence: 0.95
+    explanation: "Sacred free food service or prasad distribution confirms Annadanam."
+
+  - id: "RULE_012_MEDITATION_CHANTING"
+    name: "Meditation and Mantra Japa Rule"
+    conditions:
+      text_contains: ["Meditation", "Dhyana", "Jap", "Japa", "Mantra", "Om Chanting"]
+    output:
+      primary_ritual: "Mantra Meditation"
+      primary_category: "Meditation / Chanting"
+      offering: "Mantra"
+    base_confidence: 0.92
+    explanation: "Silent reflection or mantra japa confirms Meditation / Chanting."
+
+  - id: "RULE_013_TEMPLE_DARSHAN"
+    name: "Temple Darshan Shrine View Rule"
+    conditions:
+      text_contains: ["Darshan", "Shrine View", "Sanctum", "Temple Tour", "Walkthrough", "Queue"]
+    output:
+      primary_ritual: "Temple Darshan"
+      primary_category: "Temple Darshan"
+      offering: "Shrine View"
+    base_confidence: 0.90
+    explanation: "Sanctum shrine view or temple walkthrough confirms Temple Darshan."
+
+  - id: "RULE_014_POOJA"
+    name: "Devotional Pooja Worship Rule"
+    conditions:
+      text_contains: ["Pooja", "Puja", "Home Pooja", "Temple Worship", "Devotional Worship"]
+    output:
+      primary_ritual: "Devotional Worship"
+      primary_category: "Pooja"
+      offering: "Flowers & Incense"
+    base_confidence: 0.88
+    explanation: "Devotional ritual and shrine worship confirm Pooja."

@@ -1,0 +1,34 @@
+{
+  "MiniCPM-V-4.5": {
+    "vision_evidence_score": 0.705,
+    "temporal_evidence_score": 0.633,
+    "ocr_utilization_score": 0.632,
+    "speech_utilization_score": 0.566,
+    "reasoning_consistency": 0.651,
+    "unsupported_assumption_rate": 0.154
+  },
+  "Qwen2.5-VL-7B": {
+    "vision_evidence_score": 0.751,
+    "temporal_evidence_score": 0.705,
+    "ocr_utilization_score": 0.753,
+    "speech_utilization_score": 0.715,
+    "reasoning_consistency": 0.79,
+    "unsupported_assumption_rate": 0.089
+  },
+  "Qwen2.5-VL-72B": {
+    "vision_evidence_score": 0.873,
+    "temporal_evidence_score": 0.796,
+    "ocr_utilization_score": 0.801,
+    "speech_utilization_score": 0.749,
+    "reasoning_consistency": 0.861,
+    "unsupported_assumption_rate": 0.045
+  },
+  "InternVL3-8B": {
+    "vision_evidence_score": 0.784,
+    "temporal_evidence_score": 0.703,
+    "ocr_utilization_score": 0.744,
+    "speech_utilization_score": 0.657,
+    "reasoning_consistency": 0.744,
+    "unsupported_assumption_rate": 0.097
+  }
+}

@@ -1,0 +1,752 @@
+[
+  {
+    "video_id": "dcd_001_dcd_001_mobile_cctv",
+    "title": "Mobile Vertical Recording of Sai Abhishekam (Trial #1)",
+    "challenge_category": "Mobile Vertical | Low Lighting | Hindi",
+    "camera_variation": "Mobile Vertical",
+    "environmental_variation": "Low Lighting",
+    "audio_language": "Hindi",
+    "ocr_condition": "No OCR Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_002_dcd_002_cctv_shrine",
+    "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #1)",
+    "challenge_category": "CCTV Wide Angle | Crowded Sanctum | Sanskrit",
+    "camera_variation": "CCTV Wide Angle",
+    "environmental_variation": "Crowded Sanctum",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Blurred OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Water Abhishekam",
+      "sub_class": "Water Abhishekam",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_003_dcd_003_zoomed_aarti",
+    "title": "Zoomed Close-up Camphor Flame Rotation (Trial #1)",
+    "challenge_category": "Zoomed Telephoto | Smoke & Flame | Hindi",
+    "camera_variation": "Zoomed Telephoto",
+    "environmental_variation": "Smoke & Flame",
+    "audio_language": "Hindi",
+    "ocr_condition": "Decorative Font",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_004_dcd_004_sunlight_procession",
+    "title": "Bright Sunlight Street Ratha Yatra (Trial #1)",
+    "challenge_category": "Landscape Wide | Bright Sunlight | Odia",
+    "camera_variation": "Landscape Wide",
+    "environmental_variation": "Bright Sunlight",
+    "audio_language": "Odia",
+    "ocr_condition": "Multiple Banners",
+    "ground_truth": {
+      "content_type": "Festival",
+      "primary_class": "Ratha Yatra Procession",
+      "sub_class": "Festival Procession",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_005_dcd_005_occluded_priest",
+    "title": "Crowded Shrine with Priest Occluding Idol (Trial #1)",
+    "challenge_category": "Mobile Handheld | Occluded Deity | Telugu",
+    "camera_variation": "Mobile Handheld",
+    "environmental_variation": "Occluded Deity",
+    "audio_language": "Telugu",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_006_dcd_006_fast_motion_kirtan",
+    "title": "Fast Camera Movement Kirtan Dance (Trial #1)",
+    "challenge_category": "Handheld Motion | Background Clutter | Bengali",
+    "camera_variation": "Handheld Motion",
+    "environmental_variation": "Background Clutter",
+    "audio_language": "Bengali",
+    "ocr_condition": "Rotated Banner",
+    "ground_truth": {
+      "content_type": "Music",
+      "primary_class": "Group Bhajan",
+      "sub_class": "Devotional Bhajan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_007_dcd_007_loud_crowd_aarti",
+    "title": "Loud Crowd Noise Evening Aarti (Trial #1)",
+    "challenge_category": "Landscape | Loud Crowd Noise | Tamil",
+    "camera_variation": "Landscape",
+    "environmental_variation": "Loud Crowd Noise",
+    "audio_language": "Tamil",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_008_dcd_008_sanskrit_chanting",
+    "title": "Echoey Sanctum Sahasranama Chanting (Trial #1)",
+    "challenge_category": "Wide Angle | Acoustic Echo | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Acoustic Echo",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Standard OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Ashtottara Archana",
+      "sub_class": "Ashtottara Archana",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_009_dcd_009_marathi_kakad",
+    "title": "Marathi Kakad Aarti Morning Stream (Trial #1)",
+    "challenge_category": "Vertical Mobile | Dim Morning Light | Marathi",
+    "camera_variation": "Vertical Mobile",
+    "environmental_variation": "Dim Morning Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Kakad Aarti",
+      "sub_class": "Kakad Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_010_dcd_010_kannada_pravachan",
+    "title": "Kannada Gita Discourse with Mic Echo (Trial #1)",
+    "challenge_category": "Seated Lectern | Indoor Hall | Kannada",
+    "camera_variation": "Seated Lectern",
+    "environmental_variation": "Indoor Hall",
+    "audio_language": "Kannada",
+    "ocr_condition": "Lecture Banner",
+    "ground_truth": {
+      "content_type": "Discourse",
+      "primary_class": "Bhagavad Gita Pravachan",
+      "sub_class": "Bhagavad Gita Pravachan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_011_dcd_011_multi_event_sai",
+    "title": "Complete Shirdi Sai 4-Stage Worship Stream (Trial #1)",
+    "challenge_category": "HD Stream | Normal Light | Marathi",
+    "camera_variation": "HD Stream",
+    "environmental_variation": "Normal Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_012_dcd_012_simultaneous_pooja",
+    "title": "Simultaneous Homa and Aarti Ceremony (Trial #1)",
+    "challenge_category": "Wide Angle | Smoke & Fire | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Smoke & Fire",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_013_dcd_001_mobile_cctv",
+    "title": "Mobile Vertical Recording of Sai Abhishekam (Trial #2)",
+    "challenge_category": "Mobile Vertical | Low Lighting | Hindi",
+    "camera_variation": "Mobile Vertical",
+    "environmental_variation": "Low Lighting",
+    "audio_language": "Hindi",
+    "ocr_condition": "No OCR Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_014_dcd_002_cctv_shrine",
+    "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #2)",
+    "challenge_category": "CCTV Wide Angle | Crowded Sanctum | Sanskrit",
+    "camera_variation": "CCTV Wide Angle",
+    "environmental_variation": "Crowded Sanctum",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Blurred OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Water Abhishekam",
+      "sub_class": "Water Abhishekam",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_015_dcd_003_zoomed_aarti",
+    "title": "Zoomed Close-up Camphor Flame Rotation (Trial #2)",
+    "challenge_category": "Zoomed Telephoto | Smoke & Flame | Hindi",
+    "camera_variation": "Zoomed Telephoto",
+    "environmental_variation": "Smoke & Flame",
+    "audio_language": "Hindi",
+    "ocr_condition": "Decorative Font",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_016_dcd_004_sunlight_procession",
+    "title": "Bright Sunlight Street Ratha Yatra (Trial #2)",
+    "challenge_category": "Landscape Wide | Bright Sunlight | Odia",
+    "camera_variation": "Landscape Wide",
+    "environmental_variation": "Bright Sunlight",
+    "audio_language": "Odia",
+    "ocr_condition": "Multiple Banners",
+    "ground_truth": {
+      "content_type": "Festival",
+      "primary_class": "Ratha Yatra Procession",
+      "sub_class": "Festival Procession",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_017_dcd_005_occluded_priest",
+    "title": "Crowded Shrine with Priest Occluding Idol (Trial #2)",
+    "challenge_category": "Mobile Handheld | Occluded Deity | Telugu",
+    "camera_variation": "Mobile Handheld",
+    "environmental_variation": "Occluded Deity",
+    "audio_language": "Telugu",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_018_dcd_006_fast_motion_kirtan",
+    "title": "Fast Camera Movement Kirtan Dance (Trial #2)",
+    "challenge_category": "Handheld Motion | Background Clutter | Bengali",
+    "camera_variation": "Handheld Motion",
+    "environmental_variation": "Background Clutter",
+    "audio_language": "Bengali",
+    "ocr_condition": "Rotated Banner",
+    "ground_truth": {
+      "content_type": "Music",
+      "primary_class": "Group Bhajan",
+      "sub_class": "Devotional Bhajan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_019_dcd_007_loud_crowd_aarti",
+    "title": "Loud Crowd Noise Evening Aarti (Trial #2)",
+    "challenge_category": "Landscape | Loud Crowd Noise | Tamil",
+    "camera_variation": "Landscape",
+    "environmental_variation": "Loud Crowd Noise",
+    "audio_language": "Tamil",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_020_dcd_008_sanskrit_chanting",
+    "title": "Echoey Sanctum Sahasranama Chanting (Trial #2)",
+    "challenge_category": "Wide Angle | Acoustic Echo | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Acoustic Echo",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Standard OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Ashtottara Archana",
+      "sub_class": "Ashtottara Archana",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_021_dcd_009_marathi_kakad",
+    "title": "Marathi Kakad Aarti Morning Stream (Trial #2)",
+    "challenge_category": "Vertical Mobile | Dim Morning Light | Marathi",
+    "camera_variation": "Vertical Mobile",
+    "environmental_variation": "Dim Morning Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Kakad Aarti",
+      "sub_class": "Kakad Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_022_dcd_010_kannada_pravachan",
+    "title": "Kannada Gita Discourse with Mic Echo (Trial #2)",
+    "challenge_category": "Seated Lectern | Indoor Hall | Kannada",
+    "camera_variation": "Seated Lectern",
+    "environmental_variation": "Indoor Hall",
+    "audio_language": "Kannada",
+    "ocr_condition": "Lecture Banner",
+    "ground_truth": {
+      "content_type": "Discourse",
+      "primary_class": "Bhagavad Gita Pravachan",
+      "sub_class": "Bhagavad Gita Pravachan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_023_dcd_011_multi_event_sai",
+    "title": "Complete Shirdi Sai 4-Stage Worship Stream (Trial #2)",
+    "challenge_category": "HD Stream | Normal Light | Marathi",
+    "camera_variation": "HD Stream",
+    "environmental_variation": "Normal Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_024_dcd_012_simultaneous_pooja",
+    "title": "Simultaneous Homa and Aarti Ceremony (Trial #2)",
+    "challenge_category": "Wide Angle | Smoke & Fire | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Smoke & Fire",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_025_dcd_001_mobile_cctv",
+    "title": "Mobile Vertical Recording of Sai Abhishekam (Trial #3)",
+    "challenge_category": "Mobile Vertical | Low Lighting | Hindi",
+    "camera_variation": "Mobile Vertical",
+    "environmental_variation": "Low Lighting",
+    "audio_language": "Hindi",
+    "ocr_condition": "No OCR Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_026_dcd_002_cctv_shrine",
+    "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #3)",
+    "challenge_category": "CCTV Wide Angle | Crowded Sanctum | Sanskrit",
+    "camera_variation": "CCTV Wide Angle",
+    "environmental_variation": "Crowded Sanctum",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Blurred OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Water Abhishekam",
+      "sub_class": "Water Abhishekam",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_027_dcd_003_zoomed_aarti",
+    "title": "Zoomed Close-up Camphor Flame Rotation (Trial #3)",
+    "challenge_category": "Zoomed Telephoto | Smoke & Flame | Hindi",
+    "camera_variation": "Zoomed Telephoto",
+    "environmental_variation": "Smoke & Flame",
+    "audio_language": "Hindi",
+    "ocr_condition": "Decorative Font",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_028_dcd_004_sunlight_procession",
+    "title": "Bright Sunlight Street Ratha Yatra (Trial #3)",
+    "challenge_category": "Landscape Wide | Bright Sunlight | Odia",
+    "camera_variation": "Landscape Wide",
+    "environmental_variation": "Bright Sunlight",
+    "audio_language": "Odia",
+    "ocr_condition": "Multiple Banners",
+    "ground_truth": {
+      "content_type": "Festival",
+      "primary_class": "Ratha Yatra Procession",
+      "sub_class": "Festival Procession",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_029_dcd_005_occluded_priest",
+    "title": "Crowded Shrine with Priest Occluding Idol (Trial #3)",
+    "challenge_category": "Mobile Handheld | Occluded Deity | Telugu",
+    "camera_variation": "Mobile Handheld",
+    "environmental_variation": "Occluded Deity",
+    "audio_language": "Telugu",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_030_dcd_006_fast_motion_kirtan",
+    "title": "Fast Camera Movement Kirtan Dance (Trial #3)",
+    "challenge_category": "Handheld Motion | Background Clutter | Bengali",
+    "camera_variation": "Handheld Motion",
+    "environmental_variation": "Background Clutter",
+    "audio_language": "Bengali",
+    "ocr_condition": "Rotated Banner",
+    "ground_truth": {
+      "content_type": "Music",
+      "primary_class": "Group Bhajan",
+      "sub_class": "Devotional Bhajan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_031_dcd_007_loud_crowd_aarti",
+    "title": "Loud Crowd Noise Evening Aarti (Trial #3)",
+    "challenge_category": "Landscape | Loud Crowd Noise | Tamil",
+    "camera_variation": "Landscape",
+    "environmental_variation": "Loud Crowd Noise",
+    "audio_language": "Tamil",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_032_dcd_008_sanskrit_chanting",
+    "title": "Echoey Sanctum Sahasranama Chanting (Trial #3)",
+    "challenge_category": "Wide Angle | Acoustic Echo | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Acoustic Echo",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Standard OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Ashtottara Archana",
+      "sub_class": "Ashtottara Archana",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_033_dcd_009_marathi_kakad",
+    "title": "Marathi Kakad Aarti Morning Stream (Trial #3)",
+    "challenge_category": "Vertical Mobile | Dim Morning Light | Marathi",
+    "camera_variation": "Vertical Mobile",
+    "environmental_variation": "Dim Morning Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Kakad Aarti",
+      "sub_class": "Kakad Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_034_dcd_010_kannada_pravachan",
+    "title": "Kannada Gita Discourse with Mic Echo (Trial #3)",
+    "challenge_category": "Seated Lectern | Indoor Hall | Kannada",
+    "camera_variation": "Seated Lectern",
+    "environmental_variation": "Indoor Hall",
+    "audio_language": "Kannada",
+    "ocr_condition": "Lecture Banner",
+    "ground_truth": {
+      "content_type": "Discourse",
+      "primary_class": "Bhagavad Gita Pravachan",
+      "sub_class": "Bhagavad Gita Pravachan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_035_dcd_011_multi_event_sai",
+    "title": "Complete Shirdi Sai 4-Stage Worship Stream (Trial #3)",
+    "challenge_category": "HD Stream | Normal Light | Marathi",
+    "camera_variation": "HD Stream",
+    "environmental_variation": "Normal Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_036_dcd_012_simultaneous_pooja",
+    "title": "Simultaneous Homa and Aarti Ceremony (Trial #3)",
+    "challenge_category": "Wide Angle | Smoke & Fire | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Smoke & Fire",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_037_dcd_001_mobile_cctv",
+    "title": "Mobile Vertical Recording of Sai Abhishekam (Trial #4)",
+    "challenge_category": "Mobile Vertical | Low Lighting | Hindi",
+    "camera_variation": "Mobile Vertical",
+    "environmental_variation": "Low Lighting",
+    "audio_language": "Hindi",
+    "ocr_condition": "No OCR Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_038_dcd_002_cctv_shrine",
+    "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #4)",
+    "challenge_category": "CCTV Wide Angle | Crowded Sanctum | Sanskrit",
+    "camera_variation": "CCTV Wide Angle",
+    "environmental_variation": "Crowded Sanctum",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Blurred OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Water Abhishekam",
+      "sub_class": "Water Abhishekam",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_039_dcd_003_zoomed_aarti",
+    "title": "Zoomed Close-up Camphor Flame Rotation (Trial #4)",
+    "challenge_category": "Zoomed Telephoto | Smoke & Flame | Hindi",
+    "camera_variation": "Zoomed Telephoto",
+    "environmental_variation": "Smoke & Flame",
+    "audio_language": "Hindi",
+    "ocr_condition": "Decorative Font",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_040_dcd_004_sunlight_procession",
+    "title": "Bright Sunlight Street Ratha Yatra (Trial #4)",
+    "challenge_category": "Landscape Wide | Bright Sunlight | Odia",
+    "camera_variation": "Landscape Wide",
+    "environmental_variation": "Bright Sunlight",
+    "audio_language": "Odia",
+    "ocr_condition": "Multiple Banners",
+    "ground_truth": {
+      "content_type": "Festival",
+      "primary_class": "Ratha Yatra Procession",
+      "sub_class": "Festival Procession",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_041_dcd_005_occluded_priest",
+    "title": "Crowded Shrine with Priest Occluding Idol (Trial #4)",
+    "challenge_category": "Mobile Handheld | Occluded Deity | Telugu",
+    "camera_variation": "Mobile Handheld",
+    "environmental_variation": "Occluded Deity",
+    "audio_language": "Telugu",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_042_dcd_006_fast_motion_kirtan",
+    "title": "Fast Camera Movement Kirtan Dance (Trial #4)",
+    "challenge_category": "Handheld Motion | Background Clutter | Bengali",
+    "camera_variation": "Handheld Motion",
+    "environmental_variation": "Background Clutter",
+    "audio_language": "Bengali",
+    "ocr_condition": "Rotated Banner",
+    "ground_truth": {
+      "content_type": "Music",
+      "primary_class": "Group Bhajan",
+      "sub_class": "Devotional Bhajan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_043_dcd_007_loud_crowd_aarti",
+    "title": "Loud Crowd Noise Evening Aarti (Trial #4)",
+    "challenge_category": "Landscape | Loud Crowd Noise | Tamil",
+    "camera_variation": "Landscape",
+    "environmental_variation": "Loud Crowd Noise",
+    "audio_language": "Tamil",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Sandhya Aarti",
+      "sub_class": "Sandhya Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_044_dcd_008_sanskrit_chanting",
+    "title": "Echoey Sanctum Sahasranama Chanting (Trial #4)",
+    "challenge_category": "Wide Angle | Acoustic Echo | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Acoustic Echo",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Standard OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Ashtottara Archana",
+      "sub_class": "Ashtottara Archana",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_045_dcd_009_marathi_kakad",
+    "title": "Marathi Kakad Aarti Morning Stream (Trial #4)",
+    "challenge_category": "Vertical Mobile | Dim Morning Light | Marathi",
+    "camera_variation": "Vertical Mobile",
+    "environmental_variation": "Dim Morning Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Kakad Aarti",
+      "sub_class": "Kakad Aarti",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_046_dcd_010_kannada_pravachan",
+    "title": "Kannada Gita Discourse with Mic Echo (Trial #4)",
+    "challenge_category": "Seated Lectern | Indoor Hall | Kannada",
+    "camera_variation": "Seated Lectern",
+    "environmental_variation": "Indoor Hall",
+    "audio_language": "Kannada",
+    "ocr_condition": "Lecture Banner",
+    "ground_truth": {
+      "content_type": "Discourse",
+      "primary_class": "Bhagavad Gita Pravachan",
+      "sub_class": "Bhagavad Gita Pravachan",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_047_dcd_011_multi_event_sai",
+    "title": "Complete Shirdi Sai 4-Stage Worship Stream (Trial #4)",
+    "challenge_category": "HD Stream | Normal Light | Marathi",
+    "camera_variation": "HD Stream",
+    "environmental_variation": "Normal Light",
+    "audio_language": "Marathi",
+    "ocr_condition": "Live Stream OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_048_dcd_012_simultaneous_pooja",
+    "title": "Simultaneous Homa and Aarti Ceremony (Trial #4)",
+    "challenge_category": "Wide Angle | Smoke & Fire | Sanskrit",
+    "camera_variation": "Wide Angle",
+    "environmental_variation": "Smoke & Fire",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "No Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Home Pooja",
+      "sub_class": "Home Pooja",
+      "primary_deity": "Lord Hanuman"
+    }
+  },
+  {
+    "video_id": "dcd_049_dcd_001_mobile_cctv",
+    "title": "Mobile Vertical Recording of Sai Abhishekam (Trial #5)",
+    "challenge_category": "Mobile Vertical | Low Lighting | Hindi",
+    "camera_variation": "Mobile Vertical",
+    "environmental_variation": "Low Lighting",
+    "audio_language": "Hindi",
+    "ocr_condition": "No OCR Text",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Milk Abhishekam",
+      "sub_class": "Milk Abhishekam",
+      "primary_deity": "Shirdi Sai Baba"
+    }
+  },
+  {
+    "video_id": "dcd_050_dcd_002_cctv_shrine",
+    "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #5)",
+    "challenge_category": "CCTV Wide Angle | Crowded Sanctum | Sanskrit",
+    "camera_variation": "CCTV Wide Angle",
+    "environmental_variation": "Crowded Sanctum",
+    "audio_language": "Sanskrit",
+    "ocr_condition": "Blurred OCR",
+    "ground_truth": {
+      "content_type": "Ritual",
+      "primary_class": "Water Abhishekam",
+      "sub_class": "Water Abhishekam",
+      "primary_deity": "Lord Hanuman"
+    }
+  }
+]

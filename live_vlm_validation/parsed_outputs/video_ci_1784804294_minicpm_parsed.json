@@ -1,0 +1,17 @@
+{
+  "title": "Hindu Devotional Ritual",
+  "summary": "A person performing a devotional worship ritual with various elements of traditional attire and offerings.",
+  "category": "Devotion",
+  "content_type": "Ritual",
+  "primary_class": "Pooja",
+  "secondary_classes": [
+    "Abhishekam",
+    "Oil Lamp Lighting"
+  ],
+  "deity": null,
+  "temple": null,
+  "festival": null,
+  "language": "Hindi and Sanskrit",
+  "confidence": 0.85,
+  "reasoning": "The visual keyframes depict a person in traditional attire performing devotional activities, including lighting an oil lamp which is part of the pooja ritual."
+}

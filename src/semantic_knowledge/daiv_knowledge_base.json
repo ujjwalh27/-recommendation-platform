@@ -1,0 +1,96 @@
+{
+  "religions": {
+    "Hinduism": {
+      "traditions": {
+        "Sai": {
+          "aliases": ["Shirdi Sai", "Sai Baba", "Sai Samartha"],
+          "primary_deity": "Shirdi Sai Baba",
+          "associated_mantras": ["Sri Sai Samartha", "Om Sai Ram", "Ananta Koti Brahmanda Nayaka"],
+          "typical_festivals": ["Guru Purnima", "Sai Punyatithi", "Ram Navami"],
+          "sacred_objects": ["Kakad Aarti Lamp", "Udi", "Chillam", "Marble Shrine"]
+        },
+        "Vaishnava": {
+          "aliases": ["Vaishnavism", "Vishnu", "Krishna", "Rama", "Iskcon"],
+          "primary_deity": "Lord Vishnu / Lord Krishna / Lord Rama",
+          "associated_mantras": ["Hare Krishna", "Om Namo Bhagavate Vasudevaya", "Sri Ram Jai Ram"],
+          "typical_festivals": ["Janmashtami", "Ram Navami", "Ratha Yatra"],
+          "sacred_objects": ["Tulsi leaves", "Conch / Shankh", "Sudarshana Chakra", "Flute"]
+        },
+        "Shaiva": {
+          "aliases": ["Shaivism", "Shiva", "Mahadev"],
+          "primary_deity": "Lord Shiva",
+          "associated_mantras": ["Om Namah Shivaya", "Mahamrityunjaya Mantra", "Har Har Mahadev"],
+          "typical_festivals": ["Mahashivratri", "Shravan Somvar", "Karthikai Deepam"],
+          "sacred_objects": ["Trishul", "Damru", "Bilva leaves", "Lingam", "Bhasma"]
+        },
+        "Shakta": {
+          "aliases": ["Shaktism", "Durga", "Kali", "Devi", "Parvati"],
+          "primary_deity": "Goddess Durga / Goddess Kali",
+          "associated_mantras": ["Jai Mata Di", "Ya Devi Sarvabhuteshu", "Om Aim Hrim Klim Chamundaye Viche"],
+          "typical_festivals": ["Navratri", "Durga Puja", "Kali Puja"],
+          "sacred_objects": ["Trishul", "Sindoor", "Red chunri", "Marigold garland"]
+        }
+      }
+    }
+  },
+  "deities": {
+    "Shirdi Sai Baba": {
+      "canonical_name": "Shirdi Sai Baba",
+      "aliases": ["Sai Baba", "Sai Nath", "Sai Guru"],
+      "tradition": "Sai",
+      "visual_cues": ["White headscarf", "Orange/white robe", "Seated posture on stone", "Marble statue", "Dwarakamayi setup"],
+      "associated_offerings": ["Milk", "Flowers", "Spinach/Vegetables", "Sweets", "Udi"]
+    },
+    "Lord Hanuman": {
+      "canonical_name": "Lord Hanuman",
+      "aliases": ["Hanuman", "Bajrangbali", "Anjaneya", "Maruti"],
+      "tradition": "Vaishnava",
+      "visual_cues": ["Orange/Vermilion idol", "Mace / Gada", "Mountain carrying posture", "Standing/kneeling devant Rama"],
+      "associated_offerings": ["Sindoor", "Jasmine oil", "Betel leaf garland", "Boondi / Laddu", "Camphor"]
+    },
+    "Lord Ganesha": {
+      "canonical_name": "Lord Ganesha",
+      "aliases": ["Ganesha", "Ganapati", "Vinayaka", "Vighnaharta"],
+      "tradition": "Smarta",
+      "visual_cues": ["Elephant head", "Trunk curved left/right", "Single tusk", "Modak in hand", "Mouse vehicle"],
+      "associated_offerings": ["Modak", "Durva grass", "Red flowers", "Yellow marigolds", "Laddus"]
+    },
+    "Lord Shiva": {
+      "canonical_name": "Lord Shiva",
+      "aliases": ["Shiva", "Mahadev", "Bholenath", "Neelkanth", "Shiva Lingam"],
+      "tradition": "Shaiva",
+      "visual_cues": ["Shiva Lingam", "Crescent moon", "Snake around neck", "Third eye", "Trishul & Damru"],
+      "associated_offerings": ["Milk", "Water", "Bilva leaves", "Dhatura", "Bhang", "Vibhuti"]
+    }
+  },
+  "rituals": {
+    "Abhishekam": {
+      "canonical_name": "Abhishekam",
+      "sub_types": {
+        "Milk Abhishekam": {"required_items": ["Milk", "Deity idol / Lingam", "Pouring vessel / Kalash"], "stage": "Milk Pouring / Cleansing"},
+        "Water Abhishekam": {"required_items": ["Water", "Gangajal"], "stage": "Water Washing"},
+        "Panchamrutha Abhishekam": {"required_items": ["Milk", "Curd", "Ghee", "Honey", "Sugar"], "stage": "Five Nectars Pouring"}
+      },
+      "sequence": ["Idol Preparation", "Water Wash", "Milk Pouring", "Secondary Liquid Pouring", "Final Water Rinse", "Alankaram (Decoration)", "Aarti"]
+    },
+    "Aarti": {
+      "canonical_name": "Aarti",
+      "sub_types": {
+        "Kakad Aarti": {"time_of_day": "Morning", "focus": "Awakening deity"},
+        "Sandhya Aarti": {"time_of_day": "Evening", "focus": "Twilight worship"},
+        "Dhoop Aarti": {"time_of_day": "Afternoon", "focus": "Incense worship"}
+      },
+      "sequence": ["Lighting Lamp / Camphor", "Circular Rotations before Deity", "Ringing Bell (Ghanta)", "Chanting / Singing Aarti Song", "Offering Aarti Light to Devotees"]
+    },
+    "Pravachan": {
+      "canonical_name": "Pravachan",
+      "aliases": ["Katha", "Discourse", "Sermon", "Spiritual Lecture"],
+      "sub_types": {
+        "Bhagavad Gita Pravachan": {"scripture": "Bhagavad Gita", "content_type": "Teaching"},
+        "Ramayana Katha": {"scripture": "Ramayana", "content_type": "Narration"},
+        "Bhagavata Purana Katha": {"scripture": "Bhagavata Purana", "content_type": "Recitation"}
+      },
+      "sequence": ["Invocation Chant", "Scripture Verse Reading", "Exposition & Commentary", "Q&A / Devotional Summary", "Closing Prayer"]
+    }
+  }
+}

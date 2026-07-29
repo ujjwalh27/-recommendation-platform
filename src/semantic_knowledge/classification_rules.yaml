@@ -1,0 +1,129 @@
+rules:
+  - id: RULE_ABHISHEKAM_MILK
+    stage1: Ritual
+    stage2: Abhishekam
+    sub_class: Milk Abhishekam
+    if:
+      vision_actions: ["pouring water", "pouring milk", "pouring liquid"]
+      vision_objects: ["milk", "water vessel", "kalash", "idol", "shrine", "lingam"]
+    then:
+      confidence_boost: 0.85
+      reason: "Liquid/milk pouring over deity detected in temple/shrine setting"
+
+  - id: RULE_ABHISHEKAM_WATER
+    stage1: Ritual
+    stage2: Abhishekam
+    sub_class: Water Abhishekam
+    if:
+      vision_actions: ["pouring water"]
+      vision_objects: ["water", "kalash", "vessel", "idol", "lingam"]
+    then:
+      confidence_boost: 0.80
+      reason: "Water vessel pouring over deity detected without milk/curd"
+
+  - id: RULE_ABHISHEKAM_PANCHAMRUTHA
+    stage1: Ritual
+    stage2: Abhishekam
+    sub_class: Panchamrutha Abhishekam
+    if:
+      vision_objects: ["milk", "curd", "honey", "ghee", "sugar", "five liquids"]
+    then:
+      confidence_boost: 0.90
+      reason: "Multiple sacred nectars (curd/honey/ghee/milk) poured sequentially"
+
+  - id: RULE_AARTI_LAMP
+    stage1: Ritual
+    stage2: Aarti
+    sub_class: Devotional Aarti
+    if:
+      vision_objects: ["lamp", "camphor", "aarti plate", "flame", "bell"]
+      vision_actions: ["circular waving motion", "lighting lamp", "waving flame"]
+    then:
+      confidence_boost: 0.85
+      reason: "Circular flame rotation before deity with bell ringing"
+
+  - id: RULE_AARTI_SANDHYA
+    stage1: Ritual
+    stage2: Aarti
+    sub_class: Sandhya Aarti
+    if:
+      ocr: ["evening aarti", "sandhya aarti"]
+      vision_objects: ["camphor", "aarti plate"]
+    then:
+      confidence_boost: 0.95
+      reason: "Evening twilight aarti confirmed by OCR/speech text and camphor flame"
+
+  - id: RULE_AARTI_KAKAD
+    stage1: Ritual
+    stage2: Aarti
+    sub_class: Kakad Aarti
+    if:
+      ocr: ["kakad aarti", "morning aarti"]
+      speech: ["kakad aarti", "om sai ram"]
+    then:
+      confidence_boost: 0.95
+      reason: "Morning awakening Kakad Aarti confirmed by speech/OCR text"
+
+  - id: RULE_BHAJAN_DEVOTIONAL
+    stage1: Music
+    stage2: Bhajan
+    sub_class: Devotional Bhajan
+    if:
+      vision_objects: ["harmonium", "tabla", "microphones", "singers", "musicians"]
+      vision_actions: ["singing", "playing harmonium", "playing tabla"]
+    then:
+      confidence_boost: 0.85
+      reason: "Continuous devotional singing with harmonium/tabla and no pouring actions"
+
+  - id: RULE_POOJA_GENERAL
+    stage1: Ritual
+    stage2: Pooja
+    sub_class: Home Pooja
+    if:
+      vision_objects: ["flowers", "bell", "lamp", "incense", "idol"]
+      vision_actions: ["offering flowers"]
+    then:
+      confidence_boost: 0.75
+      reason: "Flower offering and bell ringing at prayer shrine"
+
+  - id: RULE_ARCHANA_NAMES
+    stage1: Ritual
+    stage2: Archana
+    sub_class: Ashtottara Archana
+    if:
+      speech: ["108 names", "namah", "ashtottara"]
+      vision_actions: ["offering flowers"]
+    then:
+      confidence_boost: 0.85
+      reason: "Sequential flower offering per deity name chant"
+
+  - id: RULE_PRAVACHAN_LECTURE
+    stage1: Discourse
+    stage2: Pravachan
+    sub_class: Bhagavad Gita Pravachan
+    if:
+      vision_objects: ["microphone", "scripture book", "book stand", "lectern", "speaker"]
+      speech: ["bhagavad gita", "chapter", "verse", "pravachan"]
+    then:
+      confidence_boost: 0.90
+      reason: "Spiritual lecturer explaining scripture verse before audience"
+
+  - id: RULE_TEMPLE_DARSHAN
+    stage1: Temple
+    stage2: Temple Darshan
+    sub_class: Live Shrine View
+    if:
+      vision_objects: ["sanctum door", "temple queue", "gopuram", "crowd"]
+      ocr: ["live darshan", "mandir"]
+    then:
+      confidence_boost: 0.85
+      reason: "Sanctum shrine walkthrough view without active pouring/flame rituals"
+
+conflict_resolution:
+  priority_order:
+    - Abhishekam  # Pouring liquid overrides general pooja
+    - Aarti       # Circular flame overrides general pooja
+    - Pravachan   # Book/mic lecture overrides music
+    - Bhajan      # Instrumental singing overrides general pooja
+    - Archana
+    - Pooja

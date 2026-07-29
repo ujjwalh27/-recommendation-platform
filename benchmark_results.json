@@ -1,0 +1,128 @@
+{
+  "overall_accuracy_percent": 98.0,
+  "total_videos_evaluated": 100,
+  "confusion_matrix": {
+    "Abhishekam": {
+      "Abhishekam": 29,
+      "Aarti": 1,
+      "Bhajan": 0,
+      "Pooja": 0,
+      "Archana": 0,
+      "Pravachan": 0,
+      "Temple Darshan": 0,
+      "Festival Procession": 0
+    },
+    "Aarti": {
+      "Abhishekam": 0,
+      "Aarti": 9,
+      "Bhajan": 0,
+      "Pooja": 1,
+      "Archana": 0,
+      "Pravachan": 0,
+      "Temple Darshan": 0,
+      "Festival Procession": 0
+    },
+    "Bhajan": {
+      "Abhishekam": 0,
+      "Aarti": 0,
+      "Bhajan": 10,
+      "Pooja": 0,
+      "Archana": 0,
+      "Pravachan": 0,
+      "Temple Darshan": 0,
+      "Festival Procession": 0
+    },
+    "Pooja": {
+      "Abhishekam": 0,
+      "Aarti": 0,
+      "Bhajan": 0,
+      "Pooja": 10,
+      "Archana": 0,
+      "Pravachan": 0,
+      "Temple Darshan": 0,
+      "Festival Procession": 0
+    },
+    "Archana": {
+      "Abhishekam": 0,
+      "Aarti": 0,
+      "Bhajan": 0,
+      "Pooja": 0,
+      "Archana": 10,
+      "Pravachan": 0,
+      "Temple Darshan": 0,
+      "Festival Procession": 0
+    },
+    "Pravachan": {
+      "Abhishekam": 0,
+      "Aarti": 0,
+      "Bhajan": 0,
+      "Pooja": 0,
+      "Archana": 0,
+      "Pravachan": 10,
+      "Temple Darshan": 0,
+      "Festival Procession": 0
+    },
+    "Temple Darshan": {
+      "Abhishekam": 0,
+      "Aarti": 0,
+      "Bhajan": 0,
+      "Pooja": 0,
+      "Archana": 0,
+      "Pravachan": 0,
+      "Temple Darshan": 10,
+      "Festival Procession": 0
+    },
+    "Festival Procession": {
+      "Abhishekam": 0,
+      "Aarti": 0,
+      "Bhajan": 0,
+      "Pooja": 0,
+      "Archana": 0,
+      "Pravachan": 0,
+      "Temple Darshan": 0,
+      "Festival Procession": 10
+    }
+  },
+  "per_class_metrics": {
+    "Abhishekam": {
+      "precision": 1.0,
+      "recall": 0.9667,
+      "f1_score": 0.9831
+    },
+    "Aarti": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1_score": 0.9
+    },
+    "Bhajan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Pooja": {
+      "precision": 0.9091,
+      "recall": 1.0,
+      "f1_score": 0.9524
+    },
+    "Archana": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Pravachan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Temple Darshan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "Festival Procession": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  }
+}

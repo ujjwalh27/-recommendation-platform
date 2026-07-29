@@ -1,0 +1,20 @@
+{
+  "MiniCPM-V-4.5": {
+    "metadata_completeness_pct": 71.2,
+    "recommendation_eligibility_pct": 74.0,
+    "missing_deity_pct": 18.4,
+    "missing_ritual_subtype_pct": 32.6,
+    "missing_temple_pct": 14.2,
+    "unknown_entity_pct": 8.6,
+    "human_correction_rate_pct": 24.8
+  },
+  "Qwen2.5-VL-7B": {
+    "metadata_completeness_pct": 88.4,
+    "recommendation_eligibility_pct": 91.2,
+    "missing_deity_pct": 6.2,
+    "missing_ritual_subtype_pct": 12.8,
+    "missing_temple_pct": 5.6,
+    "unknown_entity_pct": 3.2,
+    "human_correction_rate_pct": 8.4
+  }
+}

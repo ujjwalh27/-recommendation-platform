@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_021_dcd_009_marathi_kakad",
+  "title": "Marathi Kakad Aarti Morning Stream (Trial #2)",
+  "challenge_category": "Vertical Mobile | Dim Morning Light | Marathi",
+  "camera_variation": "Vertical Mobile",
+  "environmental_variation": "Dim Morning Light",
+  "audio_language": "Marathi",
+  "ocr_condition": "Live Stream OCR",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Kakad Aarti",
+    "sub_class": "Kakad Aarti",
+    "primary_deity": "Lord Hanuman"
+  }
+}

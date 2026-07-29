@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_036_dcd_012_simultaneous_pooja",
+  "title": "Simultaneous Homa and Aarti Ceremony (Trial #3)",
+  "challenge_category": "Wide Angle | Smoke & Fire | Sanskrit",
+  "camera_variation": "Wide Angle",
+  "environmental_variation": "Smoke & Fire",
+  "audio_language": "Sanskrit",
+  "ocr_condition": "No Text",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Home Pooja",
+    "sub_class": "Home Pooja",
+    "primary_deity": "Lord Hanuman"
+  }
+}

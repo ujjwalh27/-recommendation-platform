@@ -61,6 +61,19 @@ function VideoFeed() {
             }
         }
         initLoad();
+
+        const handleCatalogUpdated = async () => {
+            try {
+                const updatedFeed = await getFeed(ACTIVE_USER_ID);
+                setVideos(updatedFeed);
+                addLog(`REAL_TIME_SYNC: Live recommendation feed automatically updated with newly processed content!`, "info");
+            } catch (err) {
+                console.error("Failed to auto-refresh catalog feed:", err);
+            }
+        };
+
+        window.addEventListener("catalog_updated", handleCatalogUpdated);
+        return () => window.removeEventListener("catalog_updated", handleCatalogUpdated);
     }, []);
 
     // Callback when feedback is successfully posted to backend

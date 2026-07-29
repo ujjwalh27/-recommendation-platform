@@ -1,0 +1,22 @@
+[
+  {
+    "failure_id": "fail_001",
+    "video_id": "video_ci_1001",
+    "predicted_class": "Pooja",
+    "correct_class": "Abhishekam",
+    "failure_type": "Visual Ambiguity",
+    "root_cause": "Liquid stream obscured by bright altar lighting, misclassified as flower pooja.",
+    "reviewer": "Reviewer_Sanskrit_A",
+    "timestamp": "2026-07-27 10:15:00"
+  },
+  {
+    "failure_id": "fail_002",
+    "video_id": "video_ci_1002",
+    "predicted_class": "Bhajan",
+    "correct_class": "Aarti",
+    "failure_type": "Audio Failure",
+    "root_cause": "Heavy temple bell reverberation drowned out evening aarti chant audio.",
+    "reviewer": "Reviewer_Devotional_B",
+    "timestamp": "2026-07-27 10:30:00"
+  }
+]

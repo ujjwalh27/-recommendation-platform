@@ -1,0 +1,17 @@
+{
+  "title": "Hindu Devotional Ritual",
+  "summary": "A person is performing a devotional worship ritual involving the lighting of an oil lamp near various Hindu deities.",
+  "category": "Devotion",
+  "content_type": "Ritual",
+  "primary_class": "Pooja",
+  "secondary_classes": [
+    "Oil Lamp Lighting",
+    "Deity Worship"
+  ],
+  "deity": "Lord Shiva (inferred from 'Om Namah Shivaya' chanting)",
+  "temple": null,
+  "festival": null,
+  "language": "Hindi and Sanskrit",
+  "confidence": 0.95,
+  "reasoning": "Visual keyframes depict an altar with deity statues, flower offerings, and the lighting of a lamp indicative of Hindu devotional worship."
+}

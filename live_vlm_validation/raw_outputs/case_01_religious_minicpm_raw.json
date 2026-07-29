@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "case_01_religious",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 29291,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Abhishekam ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Ritual\",\n  \"summary\": \"A Hindu woman performing a devotional ritual involving the worship of deities through various rituals such as abhishekam (ritual bathing), arati, and offering flowers.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Ritual\",\n  \"primary_class\": \"Pooja\",\n  \"secondary_classes\": [\"Abhishekam\", \"Aarti\"],\n  \"deity\": \"Lord Shiva or Lord Vishnu (statues not clearly identifiable)\",\n  \"temple\": \"Not identified, likely a home altar setup.\",\n  \"festival\": \"Not specified in the video caption but could be related to Diwali or another Hindu festival\",\n  \"language\": \"Sanskrit and Hindi mantras are chanted during the ritual.\",\n  \"confidence\": \"High confidence based on visual evidence of devotional activities, rituals, and offerings typical for a Hindu worship setting.\",\n  \"reasoning\": \"The video captures various elements associated with Hindu devotional practices such as deity statues, oil lamps, flower garlands, and an altar setup. The woman's attire and jewelry are traditional Indian clothing often worn during religious ceremonies.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Ritual",
+    "summary": "A Hindu woman performing a devotional ritual involving the worship of deities through various rituals such as abhishekam (ritual bathing), arati, and offering flowers.",
+    "category": "Devotion",
+    "content_type": "Ritual",
+    "primary_class": "Pooja",
+    "secondary_classes": [
+      "Abhishekam",
+      "Aarti"
+    ],
+    "deity": "Lord Shiva or Lord Vishnu (statues not clearly identifiable)",
+    "temple": "Not identified, likely a home altar setup.",
+    "festival": "Not specified in the video caption but could be related to Diwali or another Hindu festival",
+    "language": "Sanskrit and Hindi mantras are chanted during the ritual.",
+    "confidence": "High confidence based on visual evidence of devotional activities, rituals, and offerings typical for a Hindu worship setting.",
+    "reasoning": "The video captures various elements associated with Hindu devotional practices such as deity statues, oil lamps, flower garlands, and an altar setup. The woman's attire and jewelry are traditional Indian clothing often worn during religious ceremonies."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 254,
+  "eval_duration_ns": 17338290000,
+  "ground_truth": {
+    "primary_class": "Abhishekam",
+    "deity": "Lord Shiva",
+    "temple": "Kashi Vishwanath"
+  }
+}

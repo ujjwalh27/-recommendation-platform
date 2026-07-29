@@ -1,0 +1,17 @@
+{
+  "title": "Hindu Devotional Worship",
+  "summary": "A person performing various aspects of Hindu devotional worship including chanting mantras and offering prayers.",
+  "category": "Devotion",
+  "content_type": "Discourse",
+  "primary_class": "Pooja",
+  "secondary_classes": [
+    "Chanting Mantras",
+    "Offering Prayers"
+  ],
+  "deity": null,
+  "temple": null,
+  "festival": null,
+  "language": "Hindi and Sanskrit",
+  "confidence": 0.85,
+  "reasoning": "The visual keyframes depict a person engaged in devotional activities such as chanting mantras, which is indicative of Hindu worship practices."
+}

@@ -1,0 +1,33 @@
+{
+  "prompt_library_version": "1.0-vlm-cef",
+  "description": "Standardized 3-tier prompt library for VLM-CEF evaluation. All models must use these exact prompts without modification.",
+  "prompts": {
+    "prompt_a_general_captioning": {
+      "id": "PROMPT_A",
+      "category": "General Captioning",
+      "purpose": "Measure generic descriptive ability. Establishes performance ceiling for free-form description.",
+      "system": "You are an objective visual scene analyst. Describe only what you observe in the video frames.",
+      "user": "Describe what is happening in this video. Be specific about the scene, people, objects, and actions visible.",
+      "response_format": "free_text",
+      "evaluation_criteria": ["scene_accuracy", "object_coverage", "action_accuracy", "specificity_score"]
+    },
+    "prompt_b_structured_observation": {
+      "id": "PROMPT_B",
+      "category": "Structured Observation Extraction",
+      "purpose": "Measure structured information extraction ability. Model must only report observable facts. No ritual inference permitted.",
+      "system": "You are a precise visual observation extractor. Report ONLY what you can directly observe in the frames. Do NOT infer ritual names or categories. Return ONLY valid JSON.",
+      "user": "Analyze the video frames and return a JSON object with exactly these fields:\n{\n  \"idol_visible\": \"<description or null>\",\n  \"people_count\": <integer>,\n  \"liquids_visible\": [\"<liquid types observed>\"],\n  \"flowers_visible\": <true/false>,\n  \"lamp_visible\": <true/false>,\n  \"fire_visible\": <true/false>,\n  \"pouring_action\": <true/false>,\n  \"offering_flowers\": <true/false>,\n  \"chanting_visible\": <true/false>,\n  \"musical_instruments\": [\"<instruments observed>\"],\n  \"text_detected\": [\"<screen text observed>\"],\n  \"confidence\": <0.0-1.0>\n}",
+      "response_format": "json_only",
+      "evaluation_criteria": ["field_accuracy", "hallucination_rate", "json_validity", "observable_fact_fidelity"]
+    },
+    "prompt_c_domain_classification": {
+      "id": "PROMPT_C",
+      "category": "Domain Classification",
+      "purpose": "Measure direct ritual inference ability using structured output. Tests whether models understand Hindu devotional content.",
+      "system": "You are an expert in Hindu temple worship and devotional practices. Analyze video frames and classify the spiritual content. Return ONLY valid JSON.",
+      "user": "Analyze these video frames showing Hindu devotional content and return a JSON classification:\n{\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<additional activities observed>\"],\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": [\"<step 1>\", \"<step 2>\", \"<step 3>\"]\n}",
+      "response_format": "json_only",
+      "evaluation_criteria": ["classification_accuracy", "reasoning_quality", "confidence_calibration", "secondary_class_recall"]
+    }
+  }
+}

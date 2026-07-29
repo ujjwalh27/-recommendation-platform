@@ -1,0 +1,20 @@
+[
+  {
+    "review_id": "rev_001",
+    "video_id": "video_ci_1001",
+    "title": "Evening Shrine Aarti Stream",
+    "predicted_class": "Pooja",
+    "confidence": 0.62,
+    "routing_reason": "Confidence below threshold (0.62 < 0.75)",
+    "timestamp": "2026-07-27 09:30:00"
+  },
+  {
+    "review_id": "rev_002",
+    "video_id": "video_ci_1002",
+    "title": "Chandi Homa Yajna Stream",
+    "predicted_class": "Home Pooja",
+    "confidence": 0.68,
+    "routing_reason": "Unknown ritual 'Chandi Homa' detected",
+    "timestamp": "2026-07-27 10:15:00"
+  }
+]

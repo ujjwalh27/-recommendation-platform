@@ -1,0 +1,18 @@
+{
+  "title": "Hindu Devotional Ritual",
+  "summary": "A Hindu woman performing a devotional worship (Pooja) with various deities' statues, flowers, lamps, and other religious items on an altar.",
+  "category": "Devotion",
+  "content_type": "Ritual",
+  "primary_class": "Pooja",
+  "secondary_classes": [
+    "Oil Lamp",
+    "Deity Statues",
+    "Flower Offerings"
+  ],
+  "deity": "Multiple deities including Lord Shiva and others.",
+  "temple": "Not identified, likely a home altar setup.",
+  "festival": "Not specified in the video keyframes.",
+  "language": "Sanskrit/Hindi",
+  "confidence": "High",
+  "reasoning": "Visual evidence of Hindu devotional items such as deity statues, oil lamps, and flower offerings indicates an ongoing worship ritual."
+}

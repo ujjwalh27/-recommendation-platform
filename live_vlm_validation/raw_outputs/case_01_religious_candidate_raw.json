@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "video_id": "case_01_religious",
+  "model_name": "qwen2.5:1.5b",
+  "latency_ms": 142,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Abhishekam ritual in progress.\"",
+  "raw_response": "ERROR: HTTP Error 400: Bad Request",
+  "parsed_json": null,
+  "parse_error": "HTTP Error 400: Bad Request",
+  "frame_count": 3,
+  "eval_count": 0,
+  "eval_duration_ns": 0,
+  "ground_truth": {
+    "primary_class": "Abhishekam",
+    "deity": "Lord Shiva",
+    "temple": "Kashi Vishwanath"
+  }
+}

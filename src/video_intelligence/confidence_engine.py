@@ -206,7 +206,13 @@ class ConfidenceEngine:
         audio_events = [n.value.lower() for n in evidence.audio]
         speech_text = " ".join([n.value.lower() for n in evidence.speech])
 
+        if isinstance(mood, list):
+            mood = " ".join([str(m) for m in mood])
+        elif not isinstance(mood, str):
+            mood = str(mood) if mood is not None else ""
+
         mood_lower = mood.lower()
+
         
         # Match keys
         if "spiritual" in mood_lower or "calm" in mood_lower:

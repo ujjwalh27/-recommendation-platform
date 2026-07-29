@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CMREE Unified Observation Schema",
+  "description": "Normalized observation payload extracted from VLM, Whisper speech recognition, and EasyOCR. All VLM providers must produce this exact structure.",
+  "type": "object",
+  "required": [
+    "video_id",
+    "scene",
+    "actions",
+    "objects",
+    "ocr_text",
+    "speech_text",
+    "language",
+    "confidence"
+  ],
+  "properties": {
+    "video_id": {
+      "type": "string",
+      "description": "Unique identifier for the video asset"
+    },
+    "scene": {
+      "type": "string",
+      "description": "Free-text visual scene description from VLM"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Physical activities and actions observed in keyframes"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "attributes": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "description": "Physical objects identified in frames"
+    },
+    "ocr_text": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Text extracted from video frames via EasyOCR"
+    },
+    "speech_text": {
+      "type": "string",
+      "description": "Audio transcription track extracted via Whisper"
+    },
+    "language": {
+      "type": "string",
+      "description": "Spoken or text language detected"
+    },
+    "emotion": {
+      "type": "string",
+      "description": "Emotional vibe or mood expressed in video"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Overall VLM perception confidence score"
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp_sec": { "type": "number" },
+          "frame_observation": { "type": "string" }
+        }
+      },
+      "description": "Chronological keyframe observation sequence"
+    }
+  }
+}

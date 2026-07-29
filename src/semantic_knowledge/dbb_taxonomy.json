@@ -1,0 +1,72 @@
+{
+  "taxonomy_version": "3.0-daiv-user-mandate",
+  "content_categories": [
+    "Abhishekam",
+    "Aarti",
+    "Pooja",
+    "Archana",
+    "Bhajan",
+    "Kirtan / Nama Sankeerthana",
+    "Pravachan / Spiritual Discourses",
+    "Homa / Yajna",
+    "Temple Darshan",
+    "Festival Processions",
+    "Annadanam",
+    "Meditation / Chanting",
+    "Any other devotional or temple-related activities"
+  ],
+  "category_details": {
+    "Abhishekam": {
+      "subtypes": ["Milk Abhishekam", "Water Abhishekam", "Honey Abhishekam", "Panchamrutha Abhishekam", "Sandalwood Abhishekam"],
+      "description": "Sacred liquid bathing ritual over deity idol or Shiva Lingam"
+    },
+    "Aarti": {
+      "subtypes": ["Kakad Aarti", "Sandhya Aarti", "Madhyana Aarti", "Dhoop Aarti", "Devotional Aarti"],
+      "description": "Worship using lit lamps, camphor flame, bell ringing, and circular rotations"
+    },
+    "Pooja": {
+      "subtypes": ["Home Pooja", "Temple Pooja", "Special Worship"],
+      "description": "General ritual worship offerings with flowers, deepa, and incense"
+    },
+    "Archana": {
+      "subtypes": ["Ashtottara Archana", "Sahasranama Archana"],
+      "description": "Chanting of 108 or 1000 sacred names while offering flowers/kumkum"
+    },
+    "Bhajan": {
+      "subtypes": ["Group Bhajan", "Solo Devotional Song", "Sai Bhajan", "Shiva Bhajan", "Hanuman Bhajan", "Krishna Bhajan"],
+      "description": "Devotional singing accompanied by harmonium, tabla, or cymbals"
+    },
+    "Kirtan / Nama Sankeerthana": {
+      "subtypes": ["Nama Kirtan", "Sankeerthana", "Harinam Choral Praise"],
+      "description": "Call-and-response devotional chanting of divine names"
+    },
+    "Pravachan / Spiritual Discourses": {
+      "subtypes": ["Bhagavad Gita Pravachan", "Ramayana Katha", "Purana Lecture", "Satsang Discourse"],
+      "description": "Scriptural lecture, commentary, and spiritual teachings"
+    },
+    "Homa / Yajna": {
+      "subtypes": ["Ganapati Homa", "Navagraha Homa", "Chandi Yajna", "Havan"],
+      "description": "Sacred fire altar rituals with oblation offerings"
+    },
+    "Temple Darshan": {
+      "subtypes": ["Live Shrine View", "Sanctum Walkthrough", "Queue View"],
+      "description": "Visual view and darshan of sacred shrine idol"
+    },
+    "Festival Processions": {
+      "subtypes": ["Ratha Yatra Procession", "Palkhi Procession", "Ganesh Visarjan Procession"],
+      "description": "Public chariot or palanquin street procession of deity"
+    },
+    "Annadanam": {
+      "subtypes": ["Sacred Food Service", "Bhandara", "Prasad Distribution"],
+      "description": "Offering and serving of free consecrated meals to devotees"
+    },
+    "Meditation / Chanting": {
+      "subtypes": ["Japa Meditation", "OM Chanting", "Silent Dhyana"],
+      "description": "Contemplative meditation and repetitive mantra japa"
+    },
+    "Any other devotional or temple-related activities": {
+      "subtypes": ["General Devotional Activity", "Temple Cultural Vlog"],
+      "description": "Fallback category for any other devotional or temple-related activities"
+    }
+  }
+}

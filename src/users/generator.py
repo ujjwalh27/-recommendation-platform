@@ -6,15 +6,15 @@ import pandas as pd
 from src.utils.paths import get_path
 from src.users.personas import PERSONAS, get_persona_preferred_categories
 
-# Engagement weights for interest profile builder
+# Engagement weights for interest profile builder (gentle calibrated increments)
 ENGAGEMENT_WEIGHTS = {
-    "completed": 6,
-    "replay": 5,
-    "like": 1,
-    "save": 1,
-    "share": 2,
-    "comment": 1,
-    "skip": -5
+    "completed": 2.0,
+    "replay": 1.0,
+    "like": 1.0,
+    "save": 1.5,
+    "share": 1.5,
+    "comment": 1.5,
+    "skip": -1.5
 }
 
 MOCK_USERNAMES = [
@@ -171,22 +171,16 @@ class MockDataGenerator:
             df_events = pd.DataFrame(user_events)
             cat_scores = df_events.groupby("category")["engagement_score"].sum().to_dict()
 
-            # Clean and keep non-negative scores, adding a baseline of 15.0 to prevent 0% inertia
+            # Clean and store positive engagement scores per category on an independent fixed scale (100.0 capacity)
+            MAX_CAPACITY = 100.0
             cleaned_scores = {}
-            for cat in self.categories:
-                score = cat_scores.get(cat, 0.0)
-                cleaned_scores[cat] = max(0.0, float(score)) + 15.0
-
-            # Normalize to sum up to 100
-            total_score = sum(cleaned_scores.values())
             normalized_profile = {}
-            if total_score > 0:
-                for cat, score in cleaned_scores.items():
-                    normalized_profile[cat] = round((score / total_score) * 100, 2)
-            else:
-                # Fallback to uniform distribution if zero interaction score
-                for cat in self.categories:
-                    normalized_profile[cat] = round(100 / len(self.categories), 2)
+            
+            for cat, score in cat_scores.items():
+                if score > 0:
+                    val = max(0.0, float(score))
+                    cleaned_scores[cat] = val
+                    normalized_profile[cat] = min(100.0, round((val / MAX_CAPACITY) * 100, 1))
 
             interest_profiles[user_id] = {
                 "user_id": user_id,

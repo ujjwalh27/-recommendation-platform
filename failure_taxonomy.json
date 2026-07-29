@@ -1,0 +1,95 @@
+{
+  "failure_categories": [
+    "Visual Ambiguity",
+    "Audio Failure",
+    "OCR Failure",
+    "Multi-Ritual Video",
+    "Occlusion",
+    "Low Lighting",
+    "Camera Motion",
+    "Unknown Ritual"
+  ],
+  "failures_encountered": [
+    {
+      "video_id": "dcd_002_dcd_002_cctv_shrine",
+      "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #1)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Water Abhishekam",
+      "failure_category": "Audio Failure",
+      "root_cause": "Audio Failure: Crowded Sanctum and CCTV Wide Angle degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_005_dcd_005_occluded_priest",
+      "title": "Crowded Shrine with Priest Occluding Idol (Trial #1)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Home Pooja",
+      "failure_category": "OCR Failure",
+      "root_cause": "OCR Failure: Occluded Deity and Mobile Handheld degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_014_dcd_002_cctv_shrine",
+      "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #2)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Water Abhishekam",
+      "failure_category": "Audio Failure",
+      "root_cause": "Audio Failure: Crowded Sanctum and CCTV Wide Angle degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_017_dcd_005_occluded_priest",
+      "title": "Crowded Shrine with Priest Occluding Idol (Trial #2)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Home Pooja",
+      "failure_category": "OCR Failure",
+      "root_cause": "OCR Failure: Occluded Deity and Mobile Handheld degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_024_dcd_012_simultaneous_pooja",
+      "title": "Simultaneous Homa and Aarti Ceremony (Trial #2)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Home Pooja",
+      "failure_category": "OCR Failure",
+      "root_cause": "OCR Failure: Smoke & Fire and Wide Angle degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_029_dcd_005_occluded_priest",
+      "title": "Crowded Shrine with Priest Occluding Idol (Trial #3)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Home Pooja",
+      "failure_category": "OCR Failure",
+      "root_cause": "OCR Failure: Occluded Deity and Mobile Handheld degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_038_dcd_002_cctv_shrine",
+      "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #4)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Water Abhishekam",
+      "failure_category": "Audio Failure",
+      "root_cause": "Audio Failure: Crowded Sanctum and CCTV Wide Angle degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_041_dcd_005_occluded_priest",
+      "title": "Crowded Shrine with Priest Occluding Idol (Trial #4)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Home Pooja",
+      "failure_category": "OCR Failure",
+      "root_cause": "OCR Failure: Occluded Deity and Mobile Handheld degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    },
+    {
+      "video_id": "dcd_050_dcd_002_cctv_shrine",
+      "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #5)",
+      "predicted_class": "Sandhya Aarti",
+      "actual_class": "Water Abhishekam",
+      "failure_category": "Audio Failure",
+      "root_cause": "Audio Failure: Crowded Sanctum and CCTV Wide Angle degraded input signal",
+      "suggested_improvement": "Increase temporal window from 7 to 15 keyframes and weight Whisper chant matching."
+    }
+  ]
+}

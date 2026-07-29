@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1785130112",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 13637,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Ritual\",\n  \"summary\": \"A Hindu woman performing a devotional worship (Pooja) with various religious items on an altar.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Ritual\",\n  \"primary_class\": \"Pooja\",\n  \"secondary_classes\": [\"Oil Lamp\", \"Deity Statue\"],\n  \"deity\": \"Lord Shiva or Lord Vishnu (statue not clearly identifiable)\",\n  \"temple\": \"Not identified, likely a home altar setup.\",\n  \"festival\": \"Not specified in the video keyframes.\",\n  \"language\": \"Hindi and Sanskrit\",\n  \"confidence\": \"High confidence based on visual evidence of religious items and worship activity.\",\n  \"reasoning\": \"The images depict an individual engaged in Hindu devotional practices, including offerings such as flowers, oil lamps, and deity statues. The presence of a woman performing rituals suggests the context is likely related to personal or home temple worship.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Ritual",
+    "summary": "A Hindu woman performing a devotional worship (Pooja) with various religious items on an altar.",
+    "category": "Devotion",
+    "content_type": "Ritual",
+    "primary_class": "Pooja",
+    "secondary_classes": [
+      "Oil Lamp",
+      "Deity Statue"
+    ],
+    "deity": "Lord Shiva or Lord Vishnu (statue not clearly identifiable)",
+    "temple": "Not identified, likely a home altar setup.",
+    "festival": "Not specified in the video keyframes.",
+    "language": "Hindi and Sanskrit",
+    "confidence": "High confidence based on visual evidence of religious items and worship activity.",
+    "reasoning": "The images depict an individual engaged in Hindu devotional practices, including offerings such as flowers, oil lamps, and deity statues. The presence of a woman performing rituals suggests the context is likely related to personal or home temple worship."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 212,
+  "eval_duration_ns": 13109196000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

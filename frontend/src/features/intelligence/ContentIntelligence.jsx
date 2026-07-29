@@ -142,8 +142,9 @@ function ContentIntelligence() {
             const result = await res.json();
             setAnalysisResult(result);
             setCurrentStage("Analysis Complete!");
-            setProgressLogs(prev => [...prev, "[Pipeline] Completed. Indexing successful."]);
+            setProgressLogs(prev => [...prev, "[Pipeline] Completed. Catalog & Recommendation Feed Synchronized!"]);
             fetchHistory();
+            window.dispatchEvent(new CustomEvent("catalog_updated"));
         } catch (err) {
             clearInterval(mockLogTimer);
             setCurrentStage("Error running pipeline");
@@ -278,8 +279,11 @@ function ContentIntelligence() {
                                                 transition: "all 0.15s"
                                             }}
                                         >
-                                            <div style={{ width: "32px", height: "32px", background: "#1e1b4b", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>
-                                                📼
+                                            <div style={{ width: "32px", height: "32px", background: "#1e1b4b", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--accent)" }}>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                    <polygon points="23 7 16 12 23 17 23 7"/>
+                                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                                                </svg>
                                             </div>
                                             <div style={{ flex: 1, minWidth: 0 }}>
                                                 <div style={{ color: "#fff", fontSize: "12px", fontWeight: "700", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>
@@ -363,8 +367,48 @@ function ContentIntelligence() {
                                             </div>
                                             <div style={{ fontSize: "12.5px", color: "#cbd5e1", lineHeight: "1.4" }}>{analysisResult.summary}</div>
                                             
-                                            {/* Category Grid */}
-                                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 16px", margin: "6px 0", background: "rgba(255,255,255,0.02)", padding: "10px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.04)" }}>
+                                            {/* CMREE Canonical Semantic Intelligence Box */}
+                                             <div style={{
+                                                 background: "linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%)",
+                                                 padding: "12px",
+                                                 borderRadius: "8px",
+                                                 border: "1px solid rgba(56, 189, 248, 0.25)",
+                                                 margin: "8px 0"
+                                             }}>
+                                                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                                                     <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "10px", color: "var(--accent)", fontWeight: "900", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                                         </svg>
+                                                         CMREE Canonical Semantic Intelligence
+                                                     </div>
+                                                     <span style={{ fontSize: "9px", padding: "2px 6px", background: "rgba(16, 185, 129, 0.2)", color: "#34d399", borderRadius: "4px", fontWeight: "800" }}>
+                                                         Rule Confidence: {((analysisResult.cmree_confidence || analysisResult.canonical_metadata?.confidence || 0.95) * 100).toFixed(0)}%
+                                                     </span>
+                                                 </div>
+                                                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+                                                     <div>
+                                                         <div style={{ fontSize: "8.5px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Primary Ritual</div>
+                                                         <div style={{ fontSize: "12px", color: "#fff", fontWeight: "800" }}>{analysisResult.primary_ritual || analysisResult.canonical_metadata?.primary_ritual || "Devotional Worship"}</div>
+                                                     </div>
+                                                     <div>
+                                                         <div style={{ fontSize: "8.5px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Ritual Family</div>
+                                                         <div style={{ fontSize: "12px", color: "#38bdf8", fontWeight: "800" }}>{analysisResult.ritual_family || analysisResult.canonical_metadata?.ritual_family || "Pooja"}</div>
+                                                     </div>
+                                                     <div>
+                                                         <div style={{ fontSize: "8.5px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Primary Deity</div>
+                                                         <div style={{ fontSize: "12px", color: "#c084fc", fontWeight: "800" }}>{analysisResult.primary_deity || analysisResult.canonical_metadata?.primary_deity || "Lord Shiva"}</div>
+                                                     </div>
+                                                 </div>
+                                                 {(analysisResult.temple || analysisResult.canonical_metadata?.temple) && (
+                                                     <div style={{ marginTop: "6px", fontSize: "10.5px", color: "#cbd5e1" }}>
+                                                         <strong>Temple:</strong> {analysisResult.temple || analysisResult.canonical_metadata?.temple} • <strong>Offerings:</strong> {(analysisResult.offerings || analysisResult.canonical_metadata?.offerings || []).join(", ") || "Flowers"}
+                                                     </div>
+                                                 )}
+                                             </div>
+
+                                             {/* Legacy Category Grid */}
+                                             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 16px", margin: "6px 0", background: "rgba(255,255,255,0.02)", padding: "10px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.04)" }}>
                                                 <div>
                                                     <div style={{ fontSize: "9px", color: "#64748b", textTransform: "uppercase", fontWeight: "800" }}>
                                                         Category {renderGroundingBadge("category")}
@@ -381,13 +425,13 @@ function ContentIntelligence() {
                                                     <div style={{ fontSize: "9px", color: "#64748b", textTransform: "uppercase", fontWeight: "800" }}>
                                                         Mood {renderGroundingBadge("mood")}
                                                     </div>
-                                                    <div style={{ fontSize: "12px", color: "#fff", fontWeight: "700" }}>🎭 {analysisResult.mood || "Normal"}</div>
+                                                    <div style={{ fontSize: "12px", color: "#fff", fontWeight: "700" }}>{analysisResult.mood || "Normal"}</div>
                                                 </div>
                                                 <div>
                                                     <div style={{ fontSize: "9px", color: "#64748b", textTransform: "uppercase", fontWeight: "800" }}>
                                                         Language & Type {renderGroundingBadge("language")}
                                                     </div>
-                                                    <div style={{ fontSize: "12px", color: "#fff", fontWeight: "700" }}>🗣 {analysisResult.language || "English"} • {analysisResult.content_type || "Video Clip"}</div>
+                                                    <div style={{ fontSize: "12px", color: "#fff", fontWeight: "700" }}>{analysisResult.language || "English"} • {analysisResult.content_type || "Video Clip"}</div>
                                                 </div>
                                             </div>
 
@@ -477,8 +521,11 @@ function ContentIntelligence() {
                                     <div style={{ flex: 1, overflowY: "auto", fontSize: "13px" }}>
                                         {activeDetailTab === "reasoning" && (
                                             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                                                <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-                                                    <span style={{ fontSize: "20px" }}>🧠</span>
+                                                <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5">
+                                                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                                                        <path d="M12 6v6l4 2"/>
+                                                    </svg>
                                                     <div style={{ color: "#38bdf8", fontWeight: "700", fontSize: "14px" }}>Engine Reasoning & Semantic Understanding:</div>
                                                 </div>
                                                 <div style={{ background: "rgba(56, 189, 248, 0.05)", border: "1px solid rgba(56, 189, 248, 0.15)", padding: "14px", borderRadius: "10px", lineHeight: "1.6", color: "#e2e8f0" }}>
@@ -488,14 +535,14 @@ function ContentIntelligence() {
                                                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "8px" }}>
                                                     <div style={{ background: "rgba(255,255,255,0.02)", padding: "12px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.05)" }}>
                                                         <div style={{ fontSize: "10px", color: "#94a3b8", fontWeight: "800", textTransform: "uppercase", marginBottom: "6px" }}>Primary Topic</div>
-                                                        <div style={{ fontSize: "13px", color: "#fff", fontWeight: "700" }}>🎯 {analysisResult.primary_topic || "Not determined"}</div>
+                                                        <div style={{ fontSize: "13px", color: "#fff", fontWeight: "700" }}>{analysisResult.primary_topic || "Not determined"}</div>
                                                     </div>
                                                     <div style={{ background: "rgba(255,255,255,0.02)", padding: "12px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.05)" }}>
                                                         <div style={{ fontSize: "10px", color: "#94a3b8", fontWeight: "800", textTransform: "uppercase", marginBottom: "6px" }}>Target Audience Intent</div>
                                                         <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
                                                             {analysisResult.target_audience && analysisResult.target_audience.length > 0 ? (
                                                                 analysisResult.target_audience.map((aud, i) => (
-                                                                    <span key={i} style={{ fontSize: "11px", color: "#f472b6", background: "rgba(244, 114, 182, 0.1)", padding: "2px 6px", borderRadius: "6px", fontWeight: "600" }}>👥 {aud}</span>
+                                                                    <span key={i} style={{ fontSize: "11px", color: "#f472b6", background: "rgba(244, 114, 182, 0.1)", padding: "2px 6px", borderRadius: "6px", fontWeight: "600" }}>{aud}</span>
                                                                 ))
                                                             ) : (
                                                                 <span style={{ fontSize: "11px", color: "#475569", fontStyle: "italic" }}>General</span>

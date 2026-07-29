@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Prediction_Log_Schema",
+  "type": "object",
+  "required": [
+    "prediction_id",
+    "video_id",
+    "timestamp",
+    "processing_time_ms",
+    "model_version",
+    "taxonomy_version",
+    "rule_engine_version",
+    "primary_class",
+    "secondary_classes",
+    "confidence",
+    "vision_confidence",
+    "speech_confidence",
+    "ocr_confidence",
+    "language",
+    "deity",
+    "temple",
+    "festival"
+  ],
+  "properties": {
+    "prediction_id": {"type": "string"},
+    "video_id": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "processing_time_ms": {"type": "number"},
+    "model_version": {"type": "string"},
+    "taxonomy_version": {"type": "string"},
+    "rule_engine_version": {"type": "string"},
+    "primary_class": {"type": "string"},
+    "secondary_classes": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number"},
+    "vision_confidence": {"type": "number"},
+    "speech_confidence": {"type": "number"},
+    "ocr_confidence": {"type": "number"},
+    "language": {"type": "string"},
+    "deity": {"type": "string"},
+    "temple": {"type": "string"},
+    "festival": {"type": "string"}
+  }
+}

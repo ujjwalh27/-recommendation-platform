@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_038_dcd_002_cctv_shrine",
+  "title": "CCTV Temple Sanctum Wide Angle Stream (Trial #4)",
+  "challenge_category": "CCTV Wide Angle | Crowded Sanctum | Sanskrit",
+  "camera_variation": "CCTV Wide Angle",
+  "environmental_variation": "Crowded Sanctum",
+  "audio_language": "Sanskrit",
+  "ocr_condition": "Blurred OCR",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Water Abhishekam",
+    "sub_class": "Water Abhishekam",
+    "primary_deity": "Lord Hanuman"
+  }
+}

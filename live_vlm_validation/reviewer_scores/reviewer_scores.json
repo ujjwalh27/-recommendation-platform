@@ -1,0 +1,182 @@
+[
+  {
+    "video_id": "case_01_religious",
+    "ground_truth_class": "Abhishekam",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784802389",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784804233",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 80,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784804294",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784874128",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784874288",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784874396",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784874689",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784875065",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784875228",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784875765",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784875832",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784890149",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784891525",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1784893364",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1785130112",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1785135112",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_1785135264",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 40,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "video_ci_validation_anjali__jarad",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  },
+  {
+    "video_id": "xai_test_aditi",
+    "ground_truth_class": "Devotional Worship",
+    "baseline_score_out_of_100": 100,
+    "candidate_score_out_of_100": 10,
+    "preferred_model": "minicpm-v:latest",
+    "baseline_parsed_fields": 12,
+    "candidate_parsed_fields": 0
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_010_dcd_010_kannada_pravachan",
+  "title": "Kannada Gita Discourse with Mic Echo (Trial #1)",
+  "challenge_category": "Seated Lectern | Indoor Hall | Kannada",
+  "camera_variation": "Seated Lectern",
+  "environmental_variation": "Indoor Hall",
+  "audio_language": "Kannada",
+  "ocr_condition": "Lecture Banner",
+  "ground_truth": {
+    "content_type": "Discourse",
+    "primary_class": "Bhagavad Gita Pravachan",
+    "sub_class": "Bhagavad Gita Pravachan",
+    "primary_deity": "Lord Hanuman"
+  }
+}

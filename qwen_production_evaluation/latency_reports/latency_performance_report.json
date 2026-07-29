@@ -1,0 +1,20 @@
+{
+  "MiniCPM-V-4.5": {
+    "avg_latency_ms": 1901,
+    "p50_latency_ms": 1927,
+    "p95_latency_ms": 2098,
+    "throughput_videos_per_hour": 1893.8,
+    "json_validity_rate": 0.81,
+    "failure_rate_pct": 2.4,
+    "system_stability": "Stable \u2013 occasional JSON markdown wrapping"
+  },
+  "Qwen2.5-VL-7B": {
+    "avg_latency_ms": 2699,
+    "p50_latency_ms": 2698,
+    "p95_latency_ms": 2963,
+    "throughput_videos_per_hour": 1333.9,
+    "json_validity_rate": 0.94,
+    "failure_rate_pct": 0.8,
+    "system_stability": "Stable \u2013 clean JSON output, no markdown wrapping"
+  }
+}

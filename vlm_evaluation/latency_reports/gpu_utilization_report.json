@@ -1,0 +1,18 @@
+{
+  "MiniCPM-V-4.5": {
+    "peak_vram_gb": 7.2,
+    "min_gpu_required": 6
+  },
+  "Qwen2.5-VL-7B": {
+    "peak_vram_gb": 14.8,
+    "min_gpu_required": 16
+  },
+  "Qwen2.5-VL-72B": {
+    "peak_vram_gb": 144.0,
+    "min_gpu_required": 80
+  },
+  "InternVL3-8B": {
+    "peak_vram_gb": 16.2,
+    "min_gpu_required": 16
+  }
+}

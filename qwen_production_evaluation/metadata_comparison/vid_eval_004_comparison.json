@@ -1,0 +1,231 @@
+{
+  "video_id": "vid_eval_004",
+  "timestamp": "2026-07-27 12:54:22",
+  "shared_input": {
+    "video_id": "vid_eval_004",
+    "frame_count": 0,
+    "audio_transcript_length": 56,
+    "ocr_text": [
+      "Sai Kakad Aarti Morning Live",
+      "Shirdi Sai Mandir"
+    ],
+    "prompt_mode": "legacy"
+  },
+  "baseline_model": {
+    "name": "MiniCPM-V-4.5",
+    "source": "simulated",
+    "latency_ms": 1850,
+    "output": {
+      "title": "Religious Ceremony at a Temple",
+      "summary": "A person is performing religious rituals in a temple setting with offerings and prayers.",
+      "category": "Devotion",
+      "subcategory": "Religious Ceremony",
+      "primary_topic": "Hindu Devotional Practices",
+      "secondary_topics": [
+        "Offering",
+        "Prayer",
+        "Temple"
+      ],
+      "entities": [],
+      "people": [
+        "priest"
+      ],
+      "locations": [
+        "temple"
+      ],
+      "activities": [
+        "praying",
+        "offering flowers"
+      ],
+      "objects": [
+        "idol",
+        "flowers",
+        "lamp"
+      ],
+      "events": [
+        "religious ceremony"
+      ],
+      "keywords": [
+        "Hindu",
+        "Devotion",
+        "Temple",
+        "Prayer",
+        "Ritual"
+      ],
+      "recommendation_keywords": [
+        "devotional",
+        "temple",
+        "prayer"
+      ],
+      "language": "Hindi",
+      "mood": "Calm and Spiritual",
+      "emotion": "Serious, Devotional",
+      "target_audience": [
+        "Devotional Content Viewers",
+        "Spiritual Seekers"
+      ],
+      "reasoning": "Vision model detected temple/altar scenes with lamp and flowers."
+    }
+  },
+  "candidate_model": {
+    "name": "Qwen2.5-VL-7B",
+    "source": "simulated",
+    "latency_ms": 2600,
+    "output": {
+      "title": "Shirdi Sai Baba Milk Abhishekam \u2013 Morning Worship",
+      "summary": "A priest performs the sacred Milk Abhishekam ritual at the Shirdi Sai Mandir. Milk is poured over the idol while devotees chant 'Om Sai Ram'. Observed on-screen text includes: Sai Kakad Aarti Morning Live, Shirdi Sai Mandir.",
+      "category": "Devotion",
+      "subcategory": "Abhishekam Ritual",
+      "primary_topic": "Milk Abhishekam \u2013 Sai Baba Worship",
+      "secondary_topics": [
+        "Aarti",
+        "Flower Offering",
+        "Bell Ringing"
+      ],
+      "entities": [
+        "Shirdi Sai Baba",
+        "Shirdi Sai Mandir"
+      ],
+      "people": [
+        "priest",
+        "devotees"
+      ],
+      "locations": [
+        "Shirdi Sai Mandir",
+        "sanctum sanctorum"
+      ],
+      "activities": [
+        "milk pouring",
+        "offering flowers",
+        "chanting mantras",
+        "ringing bell"
+      ],
+      "objects": [
+        "milk vessel",
+        "idol",
+        "flowers",
+        "lamp",
+        "bell",
+        "conch"
+      ],
+      "events": [
+        "Morning Abhishekam Worship"
+      ],
+      "keywords": [
+        "Milk Abhishekam",
+        "Sai Baba",
+        "Shirdi",
+        "Ritual",
+        "Devotion",
+        "Mandir"
+      ],
+      "recommendation_keywords": [
+        "milk_abhishekam",
+        "sai_baba",
+        "shirdi_worship"
+      ],
+      "language": "Hindi + Sanskrit",
+      "mood": "Devotional and Serene",
+      "emotion": "Devotional, Reverent",
+      "target_audience": [
+        "Sai Baba Devotees",
+        "Abhishekam Seekers",
+        "Temple Worship Viewers"
+      ],
+      "reasoning": "Milk poured over deity confirms Abhishekam. Chant 'Om Sai Ram' confirms Sai Baba tradition. OCR text confirms 'Milk Abhishekam' context."
+    }
+  },
+  "field_diff": {
+    "title": {
+      "baseline": "Religious Ceremony at a Temple",
+      "candidate": "Shirdi Sai Baba Milk Abhishekam \u2013 Morning Worship",
+      "changed": true
+    },
+    "summary": {
+      "baseline": "A person is performing religious rituals in a temple setting with offerings and prayers.",
+      "candidate": "A priest performs the sacred Milk Abhishekam ritual at the Shirdi Sai Mandir. Milk is poured over the idol while devotees chant 'Om Sai Ram'. Observed on-screen text includes: Sai Kakad Aarti Morning Live, Shirdi Sai Mandir.",
+      "changed": true
+    },
+    "category": {
+      "baseline": "Devotion",
+      "candidate": "Devotion",
+      "changed": false
+    },
+    "subcategory": {
+      "baseline": "Religious Ceremony",
+      "candidate": "Abhishekam Ritual",
+      "changed": true
+    },
+    "primary_topic": {
+      "baseline": "Hindu Devotional Practices",
+      "candidate": "Milk Abhishekam \u2013 Sai Baba Worship",
+      "changed": true
+    },
+    "language": {
+      "baseline": "Hindi",
+      "candidate": "Hindi + Sanskrit",
+      "changed": true
+    },
+    "mood": {
+      "baseline": "Calm and Spiritual",
+      "candidate": "Devotional and Serene",
+      "changed": true
+    },
+    "emotion": {
+      "baseline": "Serious, Devotional",
+      "candidate": "Devotional, Reverent",
+      "changed": true
+    },
+    "keywords": {
+      "baseline_count": 5,
+      "candidate_count": 6,
+      "added": [
+        "mandir",
+        "sai baba",
+        "shirdi",
+        "milk abhishekam"
+      ],
+      "removed": [
+        "prayer",
+        "hindu",
+        "temple"
+      ]
+    },
+    "activities": {
+      "baseline_count": 2,
+      "candidate_count": 4,
+      "added": [
+        "milk pouring",
+        "ringing bell",
+        "chanting mantras"
+      ],
+      "removed": [
+        "praying"
+      ]
+    },
+    "objects": {
+      "baseline_count": 3,
+      "candidate_count": 6,
+      "added": [
+        "conch",
+        "milk vessel",
+        "bell"
+      ],
+      "removed": []
+    },
+    "secondary_topics": {
+      "baseline_count": 3,
+      "candidate_count": 3,
+      "added": [
+        "flower offering",
+        "bell ringing",
+        "aarti"
+      ],
+      "removed": [
+        "offering",
+        "prayer",
+        "temple"
+      ]
+    }
+  }
+}

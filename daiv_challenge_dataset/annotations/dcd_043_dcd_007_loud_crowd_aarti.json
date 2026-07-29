@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_043_dcd_007_loud_crowd_aarti",
+  "title": "Loud Crowd Noise Evening Aarti (Trial #4)",
+  "challenge_category": "Landscape | Loud Crowd Noise | Tamil",
+  "camera_variation": "Landscape",
+  "environmental_variation": "Loud Crowd Noise",
+  "audio_language": "Tamil",
+  "ocr_condition": "No Text",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Sandhya Aarti",
+    "sub_class": "Sandhya Aarti",
+    "primary_deity": "Lord Hanuman"
+  }
+}

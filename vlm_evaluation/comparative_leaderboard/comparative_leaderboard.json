@@ -1,0 +1,58 @@
+[
+  {
+    "Model": "MiniCPM-V-4.5",
+    "Observation Accuracy": "70.0%",
+    "Ritual Top-1 Accuracy": "68.0%",
+    "Ritual Top-3 Accuracy": "82.0%",
+    "Macro F1": "0.660",
+    "Weighted F1": "0.670",
+    "Hallucination Rate": "12.0%",
+    "JSON Validity": "81.0%",
+    "Avg Latency (ms)": 1850,
+    "Peak VRAM (GB)": 7.2,
+    "Multilingual": "Limited",
+    "Min GPU (GB)": 6
+  },
+  {
+    "Model": "Qwen2.5-VL-7B",
+    "Observation Accuracy": "82.0%",
+    "Ritual Top-1 Accuracy": "79.0%",
+    "Ritual Top-3 Accuracy": "92.0%",
+    "Macro F1": "0.780",
+    "Weighted F1": "0.800",
+    "Hallucination Rate": "7.0%",
+    "JSON Validity": "94.0%",
+    "Avg Latency (ms)": 2600,
+    "Peak VRAM (GB)": 14.8,
+    "Multilingual": "Strong",
+    "Min GPU (GB)": 16
+  },
+  {
+    "Model": "Qwen2.5-VL-72B",
+    "Observation Accuracy": "91.0%",
+    "Ritual Top-1 Accuracy": "88.0%",
+    "Ritual Top-3 Accuracy": "97.0%",
+    "Macro F1": "0.870",
+    "Weighted F1": "0.890",
+    "Hallucination Rate": "3.0%",
+    "JSON Validity": "98.0%",
+    "Avg Latency (ms)": 8400,
+    "Peak VRAM (GB)": 144.0,
+    "Multilingual": "Excellent",
+    "Min GPU (GB)": 80
+  },
+  {
+    "Model": "InternVL3-8B",
+    "Observation Accuracy": "79.0%",
+    "Ritual Top-1 Accuracy": "76.0%",
+    "Ritual Top-3 Accuracy": "90.0%",
+    "Macro F1": "0.740",
+    "Weighted F1": "0.760",
+    "Hallucination Rate": "9.0%",
+    "JSON Validity": "89.0%",
+    "Avg Latency (ms)": 2200,
+    "Peak VRAM (GB)": 16.2,
+    "Multilingual": "Good",
+    "Min GPU (GB)": 16
+  }
+]

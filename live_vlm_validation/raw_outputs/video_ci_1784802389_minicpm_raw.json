@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1784802389",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 12803,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "Based on the provided images from a video showing Hindu devotional content, here is the raw JSON classification:\n\n{\n  \"title\": \"Hindu Devotional Worship\",\n  \"summary\": \"A person performing various aspects of Hindu devotional worship including chanting mantras and offering prayers.\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"Discourse\",\n  \"primary_class\": \"Pooja\",\n  \"secondary_classes\": [\"Chanting Mantras\", \"Offering Prayers\"],\n  \"deity\": null,\n  \"temple\": null,\n  \"festival\": null,\n  \"language\": \"Hindi and Sanskrit\",\n  \"confidence\": 0.85,\n  \"reasoning\": \"The visual keyframes depict a person engaged in devotional activities such as chanting mantras, which is indicative of Hindu worship practices.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Worship",
+    "summary": "A person performing various aspects of Hindu devotional worship including chanting mantras and offering prayers.",
+    "category": "Devotion",
+    "content_type": "Discourse",
+    "primary_class": "Pooja",
+    "secondary_classes": [
+      "Chanting Mantras",
+      "Offering Prayers"
+    ],
+    "deity": null,
+    "temple": null,
+    "festival": null,
+    "language": "Hindi and Sanskrit",
+    "confidence": 0.85,
+    "reasoning": "The visual keyframes depict a person engaged in devotional activities such as chanting mantras, which is indicative of Hindu worship practices."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 178,
+  "eval_duration_ns": 12537719000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

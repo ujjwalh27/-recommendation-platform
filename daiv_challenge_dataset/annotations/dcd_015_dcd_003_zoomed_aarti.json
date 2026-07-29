@@ -1,0 +1,15 @@
+{
+  "video_id": "dcd_015_dcd_003_zoomed_aarti",
+  "title": "Zoomed Close-up Camphor Flame Rotation (Trial #2)",
+  "challenge_category": "Zoomed Telephoto | Smoke & Flame | Hindi",
+  "camera_variation": "Zoomed Telephoto",
+  "environmental_variation": "Smoke & Flame",
+  "audio_language": "Hindi",
+  "ocr_condition": "Decorative Font",
+  "ground_truth": {
+    "content_type": "Ritual",
+    "primary_class": "Sandhya Aarti",
+    "sub_class": "Sandhya Aarti",
+    "primary_deity": "Lord Hanuman"
+  }
+}

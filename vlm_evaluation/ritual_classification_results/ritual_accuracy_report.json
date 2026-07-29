@@ -1,0 +1,274 @@
+{
+  "MiniCPM-V-4.5": {
+    "top1_accuracy": 0.68,
+    "top3_accuracy": 0.82,
+    "macro_f1": 0.66,
+    "weighted_f1": 0.67,
+    "per_class_metrics": {
+      "Milk Abhishekam": {
+        "precision": 0.682,
+        "recall": 0.722,
+        "f1": 0.7014
+      },
+      "Water Abhishekam": {
+        "precision": 0.657,
+        "recall": 0.685,
+        "f1": 0.6707
+      },
+      "Panchamrutha Abhishekam": {
+        "precision": 0.698,
+        "recall": 0.608,
+        "f1": 0.6499
+      },
+      "Sandhya Aarti": {
+        "precision": 0.731,
+        "recall": 0.737,
+        "f1": 0.734
+      },
+      "Kakad Aarti": {
+        "precision": 0.657,
+        "recall": 0.72,
+        "f1": 0.6871
+      },
+      "Home Pooja": {
+        "precision": 0.679,
+        "recall": 0.582,
+        "f1": 0.6268
+      },
+      "Ashtottara Archana": {
+        "precision": 0.714,
+        "recall": 0.67,
+        "f1": 0.6913
+      },
+      "Group Bhajan": {
+        "precision": 0.605,
+        "recall": 0.667,
+        "f1": 0.6345
+      },
+      "Bhagavad Gita Pravachan": {
+        "precision": 0.732,
+        "recall": 0.734,
+        "f1": 0.733
+      },
+      "Festival Procession": {
+        "precision": 0.608,
+        "recall": 0.686,
+        "f1": 0.6446
+      },
+      "Ratha Yatra Procession": {
+        "precision": 0.592,
+        "recall": 0.632,
+        "f1": 0.6113
+      },
+      "Temple Darshan": {
+        "precision": 0.716,
+        "recall": 0.661,
+        "f1": 0.6874
+      }
+    }
+  },
+  "Qwen2.5-VL-7B": {
+    "top1_accuracy": 0.79,
+    "top3_accuracy": 0.92,
+    "macro_f1": 0.78,
+    "weighted_f1": 0.8,
+    "per_class_metrics": {
+      "Milk Abhishekam": {
+        "precision": 0.793,
+        "recall": 0.7,
+        "f1": 0.7436
+      },
+      "Water Abhishekam": {
+        "precision": 0.769,
+        "recall": 0.813,
+        "f1": 0.7904
+      },
+      "Panchamrutha Abhishekam": {
+        "precision": 0.78,
+        "recall": 0.766,
+        "f1": 0.7729
+      },
+      "Sandhya Aarti": {
+        "precision": 0.719,
+        "recall": 0.814,
+        "f1": 0.7636
+      },
+      "Kakad Aarti": {
+        "precision": 0.776,
+        "recall": 0.815,
+        "f1": 0.795
+      },
+      "Home Pooja": {
+        "precision": 0.831,
+        "recall": 0.793,
+        "f1": 0.8116
+      },
+      "Ashtottara Archana": {
+        "precision": 0.791,
+        "recall": 0.793,
+        "f1": 0.792
+      },
+      "Group Bhajan": {
+        "precision": 0.815,
+        "recall": 0.812,
+        "f1": 0.8135
+      },
+      "Bhagavad Gita Pravachan": {
+        "precision": 0.768,
+        "recall": 0.855,
+        "f1": 0.8092
+      },
+      "Festival Procession": {
+        "precision": 0.856,
+        "recall": 0.762,
+        "f1": 0.8063
+      },
+      "Ratha Yatra Procession": {
+        "precision": 0.735,
+        "recall": 0.86,
+        "f1": 0.7926
+      },
+      "Temple Darshan": {
+        "precision": 0.78,
+        "recall": 0.793,
+        "f1": 0.7864
+      }
+    }
+  },
+  "Qwen2.5-VL-72B": {
+    "top1_accuracy": 0.88,
+    "top3_accuracy": 0.97,
+    "macro_f1": 0.87,
+    "weighted_f1": 0.89,
+    "per_class_metrics": {
+      "Milk Abhishekam": {
+        "precision": 0.804,
+        "recall": 0.94,
+        "f1": 0.8667
+      },
+      "Water Abhishekam": {
+        "precision": 0.887,
+        "recall": 0.946,
+        "f1": 0.9156
+      },
+      "Panchamrutha Abhishekam": {
+        "precision": 0.846,
+        "recall": 0.869,
+        "f1": 0.8573
+      },
+      "Sandhya Aarti": {
+        "precision": 0.932,
+        "recall": 0.827,
+        "f1": 0.8764
+      },
+      "Kakad Aarti": {
+        "precision": 0.888,
+        "recall": 0.901,
+        "f1": 0.8945
+      },
+      "Home Pooja": {
+        "precision": 0.855,
+        "recall": 0.845,
+        "f1": 0.85
+      },
+      "Ashtottara Archana": {
+        "precision": 0.934,
+        "recall": 0.819,
+        "f1": 0.8727
+      },
+      "Group Bhajan": {
+        "precision": 0.821,
+        "recall": 0.849,
+        "f1": 0.8348
+      },
+      "Bhagavad Gita Pravachan": {
+        "precision": 0.806,
+        "recall": 0.866,
+        "f1": 0.8349
+      },
+      "Festival Procession": {
+        "precision": 0.907,
+        "recall": 0.909,
+        "f1": 0.908
+      },
+      "Ratha Yatra Procession": {
+        "precision": 0.935,
+        "recall": 0.913,
+        "f1": 0.9239
+      },
+      "Temple Darshan": {
+        "precision": 0.902,
+        "recall": 0.896,
+        "f1": 0.899
+      }
+    }
+  },
+  "InternVL3-8B": {
+    "top1_accuracy": 0.76,
+    "top3_accuracy": 0.9,
+    "macro_f1": 0.74,
+    "weighted_f1": 0.76,
+    "per_class_metrics": {
+      "Milk Abhishekam": {
+        "precision": 0.731,
+        "recall": 0.778,
+        "f1": 0.7538
+      },
+      "Water Abhishekam": {
+        "precision": 0.711,
+        "recall": 0.774,
+        "f1": 0.7412
+      },
+      "Panchamrutha Abhishekam": {
+        "precision": 0.812,
+        "recall": 0.755,
+        "f1": 0.7825
+      },
+      "Sandhya Aarti": {
+        "precision": 0.81,
+        "recall": 0.774,
+        "f1": 0.7916
+      },
+      "Kakad Aarti": {
+        "precision": 0.666,
+        "recall": 0.766,
+        "f1": 0.7125
+      },
+      "Home Pooja": {
+        "precision": 0.733,
+        "recall": 0.669,
+        "f1": 0.6995
+      },
+      "Ashtottara Archana": {
+        "precision": 0.786,
+        "recall": 0.72,
+        "f1": 0.7516
+      },
+      "Group Bhajan": {
+        "precision": 0.682,
+        "recall": 0.665,
+        "f1": 0.6734
+      },
+      "Bhagavad Gita Pravachan": {
+        "precision": 0.703,
+        "recall": 0.684,
+        "f1": 0.6934
+      },
+      "Festival Procession": {
+        "precision": 0.748,
+        "recall": 0.748,
+        "f1": 0.748
+      },
+      "Ratha Yatra Procession": {
+        "precision": 0.815,
+        "recall": 0.792,
+        "f1": 0.8033
+      },
+      "Temple Darshan": {
+        "precision": 0.793,
+        "recall": 0.776,
+        "f1": 0.7844
+      }
+    }
+  }
+}

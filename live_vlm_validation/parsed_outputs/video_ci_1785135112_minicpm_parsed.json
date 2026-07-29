@@ -1,0 +1,17 @@
+{
+  "title": "Hindu Abhishekam Ritual",
+  "summary": "A person is performing an abhishekam (ritual bathing) of a deity statue with milk while surrounded by yellow flowers.",
+  "category": "Ritual",
+  "content_type": "Temple Worship",
+  "primary_class": "Abhishekam",
+  "secondary_classes": [
+    "Oil Lamp",
+    "Flower Offerings"
+  ],
+  "deity": "Shiva (identified from the ritual and attire of devotee)",
+  "temple": "Not identified in keyframes, but likely a Shiva temple based on deity statue.",
+  "festival": "Unknown",
+  "language": "Sanskrit/Hindi",
+  "confidence": 0.9,
+  "reasoning": "Visual evidence shows the ritualistic act of pouring milk over a deity's head and surrounding it with flowers, indicative of an abhishekam."
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Hindu Devotional Ritual",
+  "summary": "A woman is performing a devotional worship (Pooja) with various Hindu deities' statues on an altar.",
+  "category": "Devotion",
+  "content_type": "Ritual",
+  "primary_class": "Pooja",
+  "secondary_classes": [
+    "Oil Lamp",
+    "Deity Statues"
+  ],
+  "deity": [
+    {
+      "name": "Lord Shiva"
+    },
+    {
+      "name": "Goddess Lakshmi"
+    }
+  ],
+  "temple": null,
+  "festival": null,
+  "language": "Hindi",
+  "confidence": 0.95,
+  "reasoning": "Visual keyframes show an altar with deities' statues, oil lamp, and flower offerings indicating a Hindu devotional worship ritual."
+}

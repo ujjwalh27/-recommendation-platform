@@ -1,0 +1,46 @@
+{
+  "deities": {
+    "Lord Shiva": ["Shiv", "Shiva", "Mahadev", "Bholenath", "Rudra", "Nataraja", "Maheshwara", "Kashi Vishwanath", "Shivling", "Shiva Linga"],
+    "Lord Ganesha": ["Ganesha", "Ganesh", "Ganpati", "Vinayaka", "Vighnaharta", "Gajanana", "Siddhivinayak"],
+    "Lord Hanuman": ["Hanuman", "Bajrangbali", "Anjaneya", "Maruti", "Pawanputra", "Hanumanji"],
+    "Shirdi Sai Baba": ["Sai Baba", "Sai", "Shirdi Sai", "Sai Ram", "Sai Nath", "Om Sai Ram"],
+    "Lord Vishnu": ["Vishnu", "Narayana", "Venkateswara", "Balaji", "Hari", "Perumal", "Jagannath", "Tirupati Balaji"],
+    "Goddess Durga": ["Durga", "Amba", "Sherawali", "Mahakali", "Jagdamba", "Navdurga", "Chandi"],
+    "Lord Krishna": ["Krishna", "Govinda", "Gopala", "Kanha", "Murlidhar", "Vasudeva", "Dwarkadhish"]
+  },
+  "objects": {
+    "Shiva Linga": ["Lingam", "Shivling", "Shivalinga", "Shiva Lingam", "Phallic Idol"],
+    "Oil Lamp": ["Deepam", "Diya", "Aarti Diya", "Lamp", "Brass Lamp", "Oil Diya"],
+    "Trident": ["Trishul", "Trishula", "Three-Pronged Spear"],
+    "Conch": ["Sankh", "Shankh", "Shankha", "Conch Shell"],
+    "Bell": ["Ghanta", "Ghanti", "Temple Bell", "Brass Bell"],
+    "Fire Altar": ["Havan Kund", "Homakunda", "Fire Pit", "Agni Kund"],
+    "Modak": ["Modaka", "Sweet Dumpling"],
+    "Marigold Flowers": ["Genda Phool", "Marigold", "Yellow Flowers", "Orange Garland"],
+    "Garland": ["Mala", "Phool Mala", "Flower Garland"],
+    "Water Vessel": ["Kalash", "Lota", "Water Pot", "Jal Kalash"],
+    "Milk Vessel": ["Milk Lota", "Milk Bowl", "Doodh Kalash"]
+  },
+  "actions": {
+    "Pouring Water": ["Pouring liquid", "Bathing with water", "Jal Abhishek", "Jal Arpan", "Water pouring"],
+    "Pouring Milk": ["Pouring white liquid", "Bathing with milk", "Doodh Abhishek", "Milk bath"],
+    "Ringing Bell": ["Shaking bell", "Sounding bell", "Bell ringing"],
+    "Lighting Lamp": ["Lighting diya", "Deepam lighting", "Lighting fire"],
+    "Offering Flowers": ["Placing flowers", "Flower shower", "Offering mala", "Phool arpan"],
+    "Chanting": ["Singing mantras", "Chanting prayers", "Mantra chanting", "Vocal prayer"],
+    "Discourse": ["Giving lecture", "Spiritual talk", "Pravachan lecture", "Sermon"]
+  },
+  "rituals": {
+    "Jalabhishekam": ["Jal Abhishek", "Water Abhishekam", "Water Bath Ritual"],
+    "Milk Abhishekam": ["Doodh Abhishek", "Milk Abhishek", "Milk Bath Ritual"],
+    "Panchamrutha Abhishekam": ["Panchamrit Abhishek", "5 Liquid Bath Ritual"],
+    "Sandhya Aarti": ["Evening Aarti", "Sandhya Arati", "Evening Diya Worship"],
+    "Kakad Aarti": ["Morning Aarti", "Kakad Arati", "Sai Kakad Aarti"],
+    "Ashtottara Archana": ["Archana", "108 Names Worship", "Flower Archana"],
+    "Group Bhajan": ["Bhajan Kirtan", "Kirtan", "Devotional Singing"],
+    "Bhagavad Gita Pravachan": ["Pravachan", "Gita Lecture", "Spiritual Discourse"],
+    "Temple Darshan": ["Darshan", "Temple Visit", "Viewing Idol"],
+    "Ratha Yatra Procession": ["Ratha Yatra", "Chariot Procession", "Rath Yatra"],
+    "Homa": ["Havan", "Homam", "Yajna", "Fire Ritual"]
+  }
+}

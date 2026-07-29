@@ -1,0 +1,225 @@
+{
+  "video_1_sai_milk_abhishekam": {
+    "video_id": "video_001_sai_milk_abhishekam",
+    "daiv_semantic_profile": {
+      "taxonomy_hierarchy": {
+        "religion": "Hinduism",
+        "tradition": "Sai",
+        "primary_deity": "Shirdi Sai Baba",
+        "secondary_deities": [
+          "Lord Ganesha"
+        ],
+        "ritual_hierarchy": {
+          "category": "Abhishekam",
+          "sub_ritual": "Milk Abhishekam",
+          "current_stage": "Milk Offering Stage"
+        }
+      },
+      "spiritual_attributes": {
+        "festival": "Guru Purnima",
+        "occasion": "Daily Devotional Worship",
+        "offerings": [
+          "Milk",
+          "Yellow Marigold Flowers"
+        ],
+        "sacred_objects": [
+          "Lit Deepa Lamp",
+          "Copper Kalash Pouring Vessel",
+          "Marble Shrine Idol"
+        ],
+        "mantras": [
+          "Sri Sai Samartha",
+          "Om Sai Ram"
+        ]
+      },
+      "engagement_context": {
+        "content_type": "Devotional Ritual Video",
+        "intent": "Devotional Worship & Prayer",
+        "target_audience": "Shirdi Sai Baba Devotees & Spiritual Seekers",
+        "mood": "Devotional & Reverent",
+        "language": "Hindi / Sanskrit"
+      },
+      "temporal_ritual_flow": [
+        "Idol Preparation & Shrine Setup",
+        "Milk Abhishekam Pouring",
+        "Water Rinse & Alankaram",
+        "Final Aarti & Prayer Completion"
+      ]
+    },
+    "recommendation_filter_keys": {
+      "deity_key": "hinduism:sai:shirdi_sai_baba",
+      "ritual_key": "abhishekam:milk_abhishekam",
+      "festival_key": "guru_purnima",
+      "intent_key": "devotional_worship_&_prayer"
+    },
+    "explainability": {
+      "primary_deity": {
+        "value": "Shirdi Sai Baba",
+        "confidence": 0.96,
+        "source": "Fused (Speech Transcript + OCR Screen Text + Vision Shrine)",
+        "reasoning_path": "Deity -> Sai -> Shirdi Sai Baba"
+      },
+      "primary_ritual": {
+        "value": "Milk Abhishekam",
+        "confidence": 0.96,
+        "source": "Fused (Vision Offerings + Speech Keywords)",
+        "reasoning_path": "Ritual -> Abhishekam -> Milk Abhishekam"
+      },
+      "offerings": {
+        "value": [
+          "Milk",
+          "Yellow Marigold Flowers"
+        ],
+        "confidence": 0.95,
+        "source": "Vision Analysis + OCR Text"
+      }
+    },
+    "overall_confidence": 0.96
+  },
+  "video_2_hanuman_aarti": {
+    "video_id": "video_002_hanuman_aarti",
+    "daiv_semantic_profile": {
+      "taxonomy_hierarchy": {
+        "religion": "Hinduism",
+        "tradition": "Vaishnava",
+        "primary_deity": "Lord Hanuman",
+        "secondary_deities": [
+          "Lord Ganesha"
+        ],
+        "ritual_hierarchy": {
+          "category": "Aarti",
+          "sub_ritual": "Sandhya Aarti",
+          "current_stage": "Aarti Lighting Stage"
+        }
+      },
+      "spiritual_attributes": {
+        "festival": "Hanuman Jayanti",
+        "occasion": "Daily Devotional Worship",
+        "offerings": [
+          "Camphor"
+        ],
+        "sacred_objects": [
+          "Brass Aarti Plate",
+          "Marble Shrine Idol"
+        ],
+        "mantras": [
+          "Hanuman Chalisa"
+        ]
+      },
+      "engagement_context": {
+        "content_type": "Devotional Ritual Video",
+        "intent": "Devotional Worship & Prayer",
+        "target_audience": "Lord Hanuman Devotees & Spiritual Seekers",
+        "mood": "Devotional & Reverent",
+        "language": "Hindi / Sanskrit"
+      },
+      "temporal_ritual_flow": [
+        "Idol Preparation & Shrine Setup",
+        "Lighting Camphor & Lamp",
+        "Circular Rotations before Shrine",
+        "Final Aarti & Prayer Completion"
+      ]
+    },
+    "recommendation_filter_keys": {
+      "deity_key": "hinduism:vaishnava:lord_hanuman",
+      "ritual_key": "aarti:sandhya_aarti",
+      "festival_key": "hanuman_jayanti",
+      "intent_key": "devotional_worship_&_prayer"
+    },
+    "explainability": {
+      "primary_deity": {
+        "value": "Lord Hanuman",
+        "confidence": 0.96,
+        "source": "Fused (Speech Transcript + OCR Screen Text + Vision Shrine)",
+        "reasoning_path": "Deity -> Vaishnava -> Lord Hanuman"
+      },
+      "primary_ritual": {
+        "value": "Sandhya Aarti",
+        "confidence": 0.94,
+        "source": "Fused (Vision Offerings + Speech Keywords)",
+        "reasoning_path": "Ritual -> Aarti -> Evening Sandhya Aarti"
+      },
+      "offerings": {
+        "value": [
+          "Camphor"
+        ],
+        "confidence": 0.95,
+        "source": "Vision Analysis + OCR Text"
+      }
+    },
+    "overall_confidence": 0.96
+  },
+  "video_3_gita_pravachan": {
+    "video_id": "video_003_gita_pravachan",
+    "daiv_semantic_profile": {
+      "taxonomy_hierarchy": {
+        "religion": "Hinduism",
+        "tradition": "Smarta",
+        "primary_deity": "Lord Ganesha",
+        "secondary_deities": [],
+        "ritual_hierarchy": {
+          "category": "Pravachan",
+          "sub_ritual": "Bhagavad Gita Pravachan",
+          "current_stage": "Scripture Commentary Stage"
+        }
+      },
+      "spiritual_attributes": {
+        "festival": "Mahashivratri",
+        "occasion": "Daily Devotional Worship",
+        "offerings": [
+          "Yellow Marigold Flowers",
+          "Lit Deepa Lamp"
+        ],
+        "sacred_objects": [
+          "Brass Altar",
+          "Lit Deepa Lamp"
+        ],
+        "mantras": [
+          "Hanuman Chalisa"
+        ]
+      },
+      "engagement_context": {
+        "content_type": "Pravachan / Lecture",
+        "intent": "Teaching & Discourse",
+        "target_audience": "Lord Ganesha Devotees & Spiritual Seekers",
+        "mood": "Devotional & Reverent",
+        "language": "Hindi / Sanskrit"
+      },
+      "temporal_ritual_flow": [
+        "Idol Preparation & Shrine Setup",
+        "Verse Recitation",
+        "Discourse Exposition",
+        "Final Aarti & Prayer Completion"
+      ]
+    },
+    "recommendation_filter_keys": {
+      "deity_key": "hinduism:smarta:lord_ganesha",
+      "ritual_key": "pravachan:bhagavad_gita_pravachan",
+      "festival_key": "mahashivratri",
+      "intent_key": "teaching_&_discourse"
+    },
+    "explainability": {
+      "primary_deity": {
+        "value": "Lord Ganesha",
+        "confidence": 0.85,
+        "source": "Fused (Speech Transcript + OCR Screen Text + Vision Shrine)",
+        "reasoning_path": "Deity -> Smarta -> Lord Ganesha"
+      },
+      "primary_ritual": {
+        "value": "Bhagavad Gita Pravachan",
+        "confidence": 0.95,
+        "source": "Fused (Vision Offerings + Speech Keywords)",
+        "reasoning_path": "Ritual -> Pravachan -> Bhagavad Gita Pravachan"
+      },
+      "offerings": {
+        "value": [
+          "Flowers",
+          "Lit Deepa"
+        ],
+        "confidence": 0.95,
+        "source": "Vision Analysis + OCR Text"
+      }
+    },
+    "overall_confidence": 0.96
+  }
+}

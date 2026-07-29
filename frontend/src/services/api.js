@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:8000";
 
 export async function getFeed(userId = "user_1") {
-    const response = await fetch(`${BASE_URL}/feed?user_id=${userId}`);
+    const response = await fetch(`${BASE_URL}/feed?user_id=${userId}&limit=100`);
     return await response.json();
 }
 

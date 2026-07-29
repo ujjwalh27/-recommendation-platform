@@ -1,16 +1,16 @@
 {
   "model": "minicpm-v",
-  "created_at": "2026-07-24T06:41:11.300027Z",
+  "created_at": "2026-07-29T11:49:22.808382Z",
   "message": {
     "role": "assistant",
-    "content": "{\n  \"title\": \"Celebrating a Religious Festival\",\n  \"summary\": \"The sequence of frames depicts individuals engaging in celebratory activities, likely during a religious festival. The presence of offerings on an altar suggests devotion or worship practices.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"Religious Celebration\",\n  \"primary_topic\": \"Festive Religious Activities\",\n  \"secondary_topics\": [\"Offerings\", \"Celebration\"],\n  \"entities\": [],\n  \"people\": [\n    {\n      \"name\": \"Person in traditional attire\"\n    }\n  ],\n  \"locations\": [\n    {\n      \"type\": \"Indoor setting with religious artifacts and offerings\"\n    },\n    {\n      \"type\": \"Temple or shrine, indicated by the altar setup\"\n    }\n  ],\n  \"activities\": [\"Offering prayers\", \"Celebrating a festival\"],\n  \"objects\": [\n    {\n      \"name\": \"Altar with flowers, leaves, and other items for worship\",\n      \"description\": \"The altar is decorated with various offerings including white flowers, pink objects that could be marigolds or similar flowers, green leaves, and possibly food items.\"\n    },\n    {\n      \"name\": \"Traditional attire worn by the person\"\n      }\n  ],\n  \"events\": [\"Religious ceremony involving prayers and offerings\"],\n  \"keywords\": [\n    \"Celebration\",\n    \"Devotion\",\n    \"Festival\",\n    \"Offerings\",\n    \"Worship\",\n    \"Religious Practices\"\n  ],\n  \"recommendation_keywords\": [\n    \"Religious Festival\",\n    \"Cultural Celebration\",\n    \"Devotional Worship\"\n  ],\n  \"language\": [\"Hindi\", \"Tamil\"],\n  \"mood\": \"Spiritual and Devotional\",\n  \"emotion\": \"Serious, Reverent\",\n  \"target_audience\": [\"Individuals interested in religious practices or cultural festivals\"],\n  \"reasoning\": \"The video captures a sequence of frames showing individuals engaging in devotional activities during what appears to be a festival. The presence of an altar with offerings and the person's traditional attire suggest that they are participating in worship rituals, likely part of a larger celebration.\"\n}"
+    "content": "Based on the provided frames from a sequence of keyframes sampled from an uploaded video along with audio transcription, secondary sensor logs, here is the structured semantic analysis:\n\n{\n  \"title\": \"Devotional Worship in a Temple Shrine\",\n  \"summary\": \"The video captures a vibrant and colorful devotional worship scene dedicated to Lord Krishna. The shrine is adorned with flowers and ornate decorations as two figurines of deities are worshipped amidst musical accompaniment.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"Religious Worship\",\n  \"primary_topic\": \"Lord Krishna Devotion\",\n  \"secondary_topics\": [\"Hindu Deity Worship\", \"Temple Rituals\"],\n  \"entities\": [\n    {\n      \"name\": \"Lord Krishna\",\n      \"type\": \"Deity\"\n    },\n    {\n      \"name\": \"Goddess Radha\",\n      \"type\": \"Deity\"\n    }\n  ],\n  \"people\": [],\n  \"locations\": [\"Temple Shrine\", \"Devotional Place\"],\n  \"activities\": [\n    \"Worshiping Deities\",\n    \"Offering Flowers and Decorations\"\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Flowers\",\n      \"type\": \"Decorative Items\"\n    },\n    {\n      \"name\": \"Ornate Figurines of Lord Krishna and Goddess Radha\",\n      \"type\": \"Religious Artifacts\"\n    }\n  ],\n  \"events\": [\"Devotional Worship Ceremony\"],\n  \"keywords\": [\n    \"Lord Krishna\",\n    \"Deity Worship\",\n    \"Temple Decorations\",\n    \"Floral Offerings\",\n    \"Hindu Rituals\"\n  ],\n  \"recommendation_keywords\": [\n    \"Religious Worship\",\n    \"Hindu Devotion\",\n    \"Colorful Temple Decorations\"\n  ],\n  \"language\": \"Hindi\",\n  \"mood\": \"Spiritual and Reverent\",\n  \"emotion\": \"Devotional\",\n  \"target_audience\": [\"Hindus\", \"Religious Enthusiasts\"],\n  \"reasoning\": \"The video showcases a detailed depiction of Hindu devotional worship, focusing on the vibrant decorations and musical accompaniment that enhance the spiritual atmosphere.\"\n}"
   },
   "done": true,
   "done_reason": "stop",
-  "total_duration": 33422826209,
-  "load_duration": 114492459,
-  "prompt_eval_count": 1298,
-  "prompt_eval_duration": 12624833000,
-  "eval_count": 448,
-  "eval_duration": 20549338000
+  "total_duration": 45905680209,
+  "load_duration": 137956334,
+  "prompt_eval_count": 1985,
+  "prompt_eval_duration": 23899993000,
+  "eval_count": 460,
+  "eval_duration": 21506139000
 }

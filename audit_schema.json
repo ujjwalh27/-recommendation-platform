@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Audit_Trail_Schema",
+  "type": "object",
+  "required": [
+    "prediction_id",
+    "video_id",
+    "vision_evidence",
+    "speech_evidence",
+    "ocr_evidence",
+    "decision_engine"
+  ],
+  "properties": {
+    "prediction_id": {"type": "string"},
+    "video_id": {"type": "string"},
+    "vision_evidence": {
+      "type": "object",
+      "properties": {
+        "detected_objects": {"type": "array"},
+        "detected_actions": {"type": "array"},
+        "keyframes_used": {"type": "array"}
+      }
+    },
+    "speech_evidence": {
+      "type": "object",
+      "properties": {
+        "transcript": {"type": "string"},
+        "detected_chants": {"type": "array"},
+        "detected_keywords": {"type": "array"}
+      }
+    },
+    "ocr_evidence": {
+      "type": "object",
+      "properties": {
+        "detected_text": {"type": "array"},
+        "confidence": {"type": "number"},
+        "bounding_boxes": {"type": "array"}
+      }
+    },
+    "decision_engine": {
+      "type": "object",
+      "properties": {
+        "matched_rules": {"type": "array"},
+        "reasoning_chain": {"type": "array"},
+        "confidence_propagation": {"type": "object"}
+      }
+    }
+  }
+}

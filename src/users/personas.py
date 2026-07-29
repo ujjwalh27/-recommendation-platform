@@ -1,30 +1,30 @@
 from typing import Dict, List, Any
 
-# Dynamic persona configuration definitions
+# Dynamic spiritual and domain persona configuration definitions
 PERSONAS: Dict[str, Dict[str, Any]] = {
-    "Automobile Enthusiast": {
-        "preferred_categories": ["Automobile"],
-        "description": "Fascinated by cars, motorbikes, engines, racing, and driving."
+    "Devotional Practitioner": {
+        "preferred_categories": ["Pooja & Aarti", "Abhishekam"],
+        "description": "Engaged in daily shrine worship, lamp lighting, and temple rituals."
     },
-    "Tech Enthusiast": {
-        "preferred_categories": ["Tech"],
-        "description": "Interested in gadgets, computers, programming, tutorials, and tech specs."
+    "Temple Pilgrim": {
+        "preferred_categories": ["Abhishekam", "Archana & Mantras", "Pooja & Aarti"],
+        "description": "Fascinated by sacred fluid pourings, lingam abhishekam, and temple visits."
     },
-    "Food Lover": {
-        "preferred_categories": ["Food"],
-        "description": "Loves recipes, cooking, restaurants, eating, and culinary content."
+    "Bhajan & Chant Seeker": {
+        "preferred_categories": ["Bhajan & Kirtan", "Pooja & Aarti", "Archana & Mantras"],
+        "description": "Loves devotional music, morning/evening aarti singing, and sacred chants."
     },
-    "Animal Lover": {
-        "preferred_categories": ["Animal"],
-        "description": "Enjoys pets, cute animal clips, wildlife, and veterinary content."
+    "Spiritual Discourse Scholar": {
+        "preferred_categories": ["Pravachan & Discourses", "Archana & Mantras"],
+        "description": "Interested in scriptural commentary, Bhagavad Gita lectures, and wisdom talks."
     },
-    "Traveler": {
-        "preferred_categories": ["Travel"],
-        "description": "Passionate about vacations, nature, beaches, exploring destinations, and world travel."
+    "Cultural & Festival Enthusiast": {
+        "preferred_categories": ["Lifestyle & Culture", "Performative Arts"],
+        "description": "Enjoys traditional festival preparations, cultural attire, and classical dance."
     },
-    "Gamer": {
-        "preferred_categories": ["Gamer"],
-        "description": "Watches gameplay, game tutorials, streaming highlights, and gaming hacks."
+    "Legal & Rights Advocate": {
+        "preferred_categories": ["Legal & Society"],
+        "description": "Follows legal awareness, citizen rights, and social commentary."
     }
 }
 

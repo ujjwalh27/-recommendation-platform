@@ -20,21 +20,40 @@ class CandidateGenerator:
 
         # Index videos by category for category candidate retrieval
         self.videos_by_category: Dict[str, List[Dict[str, Any]]] = {}
+        self.videos_by_creator: Dict[str, List[Dict[str, Any]]] = {}
+        self.videos_by_deity: Dict[str, List[Dict[str, Any]]] = {}
+        self.videos_by_ritual_family: Dict[str, List[Dict[str, Any]]] = {}
+        self.videos_by_ritual: Dict[str, List[Dict[str, Any]]] = {}
+
         for video in self.videos:
-            cat = video.get("category", "Entertainment")
+            cat = video.get("category") or video.get("primary_category", "Entertainment")
             self.videos_by_category.setdefault(cat, []).append(video)
 
-        # Index videos by creator for creator affinity retrieval
-        self.videos_by_creator: Dict[str, List[Dict[str, Any]]] = {}
-        for video in self.videos:
             creator = video.get("creator", "")
             if creator:
                 self.videos_by_creator.setdefault(creator, []).append(video)
 
+            deity = video.get("primary_deity")
+            if deity:
+                self.videos_by_deity.setdefault(deity, []).append(video)
+
+            family = video.get("ritual_family")
+            if family:
+                self.videos_by_ritual_family.setdefault(family, []).append(video)
+
+            ritual = video.get("primary_ritual")
+            if ritual:
+                self.videos_by_ritual.setdefault(ritual, []).append(video)
+
         self.categories = list(self.videos_by_category.keys())
 
-        # Initialize vector similarity search
+        # Initialize vector similarity search and retrieval logger
         self.faiss_search = FaissSearchService()
+        try:
+            from semantic_indexing.logging.retrieval_logger import CandidateRetrievalLogger
+            self.retrieval_logger = CandidateRetrievalLogger()
+        except ImportError:
+            self.retrieval_logger = None
 
     def retrieve_trending(self, limit: int = 30) -> List[Dict[str, Any]]:
         """Retrieves top overall trending/high-engagement videos."""
@@ -183,6 +202,28 @@ class CandidateGenerator:
                 
         return candidates
 
+    def retrieve_by_deity(self, preferred_deities: List[str], limit_per_deity: int = 15) -> List[Dict[str, Any]]:
+        """Retrieves videos matching the user's preferred deities."""
+        candidates = []
+        for deity in preferred_deities:
+            deity_vids = self.videos_by_deity.get(deity, [])
+            for v in deity_vids[:limit_per_deity]:
+                c = v.copy()
+                c["_retrieval_channel"] = "same_primary_deity"
+                candidates.append(c)
+        return candidates
+
+    def retrieve_by_ritual_family(self, preferred_families: List[str], limit_per_family: int = 15) -> List[Dict[str, Any]]:
+        """Retrieves videos matching the user's preferred ritual families."""
+        candidates = []
+        for family in preferred_families:
+            family_vids = self.videos_by_ritual_family.get(family, [])
+            for v in family_vids[:limit_per_family]:
+                c = v.copy()
+                c["_retrieval_channel"] = "same_ritual_family"
+                candidates.append(c)
+        return candidates
+
     def retrieve_exploration(self, limit: int = 30) -> List[Dict[str, Any]]:
         """Retrieves random videos from across the entire catalog to ensure variety."""
         return random.sample(self.videos, min(limit, len(self.videos)))
@@ -195,10 +236,19 @@ class CandidateGenerator:
 
     def generate_candidates(self, interest_profile: Dict[str, Any], watch_history: List[Dict[str, Any]], creator_affinities: Dict[str, float] = None, all_interest_profiles: Dict[str, Any] = None, all_watch_histories: Dict[str, List[Dict[str, Any]]] = None) -> List[Dict[str, Any]]:
         """Generates and merges candidates from all channels."""
+        t_start = time.time() if 'time' in globals() else 0.0
+
         # 1. Retrieve candidates from each channel
         trending_pool = self.retrieve_trending(limit=100)
         category_pool = self.retrieve_by_categories(interest_profile, limit_per_category=15)
         similarity_pool = self.retrieve_similar_to_watch_history(watch_history, limit_per_video=10)
+
+        # 2. Retrieve from CMREE Semantic Channels
+        preferred_deities = interest_profile.get("preferred_deities", ["Lord Shiva", "Shirdi Sai Baba", "Lord Ganesha"])
+        preferred_families = interest_profile.get("preferred_ritual_families", ["Abhishekam", "Aarti", "Archana"])
+        
+        deity_pool = self.retrieve_by_deity(preferred_deities, limit_per_deity=15)
+        family_pool = self.retrieve_by_ritual_family(preferred_families, limit_per_family=15)
         
         # Dynamic collaborative filtering pool
         cf_pool = self.retrieve_collaborative_filtering(
@@ -222,7 +272,9 @@ class CandidateGenerator:
         merged_candidates: Dict[str, Dict[str, Any]] = {}
         
         # User's recently watched video IDs (to avoid recommending already watched videos in the same session)
-        watched_video_ids = {str(event["video_id"]) for event in watch_history}
+        # Relax watched filter if catalog total size is small to prevent zero candidates
+        unwatched_count = len([v for v in self.videos if str(v["video_id"]) not in {str(e["video_id"]) for e in watch_history}])
+        watched_video_ids = {str(event["video_id"]) for event in watch_history} if unwatched_count >= 5 else set()
 
         # Helper to insert and track source
         def add_candidate(video: Dict[str, Any], source: str):
@@ -266,6 +318,10 @@ class CandidateGenerator:
             add_candidate(video, "collaborative_filtering")
         for video in similarity_pool:
             add_candidate(video, "similarity")
+        for video in deity_pool:
+            add_candidate(video, "same_primary_deity")
+        for video in family_pool:
+            add_candidate(video, "same_ritual_family")
         for video in category_pool:
             add_candidate(video, "category")
         for video in trending_pool:

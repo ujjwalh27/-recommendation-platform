@@ -322,10 +322,10 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
                     <span className="category-tag">{video.category}</span>
                     <span className="match-badge">{matchPercentage}% Match</span>
                     {video.retrieval_sources && video.retrieval_sources.includes("freshness") && (
-                        <span className="badge-retrieval badge-fresh">✨ Fresh</span>
+                        <span className="badge-retrieval badge-fresh">Fresh</span>
                     )}
                     {video.retrieval_sources && video.retrieval_sources.includes("exploration") && (
-                        <span className="badge-retrieval badge-explore">🎲 Explore</span>
+                        <span className="badge-retrieval badge-explore">Explore</span>
                     )}
                     {video.retrieval_sources && (
                         video.retrieval_sources.includes("similarity") ||
@@ -333,15 +333,42 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
                         video.retrieval_sources.includes("collaborative_filtering") ||
                         video.retrieval_sources.includes("category")
                     ) && (
-                            <span className="badge-retrieval badge-personal">❤️ Personal</span>
+                            <span className="badge-retrieval badge-personal">Personalized</span>
                         )}
                 </div>
 
                 <p className="reels-caption">{video.title}</p>
 
+                {video.semantic_explanation && video.semantic_explanation.reasoning && (
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", margin: "4px 0" }}>
+                        {video.semantic_explanation.reasoning.map((r, idx) => (
+                            <span key={idx} style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "4px",
+                                fontSize: "9.5px",
+                                padding: "2px 8px",
+                                background: "rgba(56, 189, 248, 0.18)",
+                                color: "#e0f2fe",
+                                border: "1px solid rgba(56, 189, 248, 0.3)",
+                                borderRadius: "6px",
+                                fontWeight: "700"
+                            }}>
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                {r}
+                            </span>
+                        ))}
+                    </div>
+                )}
+
                 {video.explanation && (
-                    <div className="explanation-banner">
-                        ✨ {video.explanation}
+                    <div className="explanation-banner" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        {video.explanation}
                     </div>
                 )}
             </div>

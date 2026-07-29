@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SRCDE_Classification_Schema",
+  "type": "object",
+  "required": [
+    "classification",
+    "confidence",
+    "observations",
+    "reasoning",
+    "alternative_predictions",
+    "explanation"
+  ],
+  "properties": {
+    "classification": {
+      "type": "object",
+      "required": ["content_type", "primary_class", "sub_class"],
+      "properties": {
+        "content_type": {
+          "type": "string",
+          "enum": ["Ritual", "Music", "Discourse", "Temple", "Festival", "Meditation", "Unknown"]
+        },
+        "primary_class": {
+          "type": "string"
+        },
+        "sub_class": {
+          "type": "string"
+        }
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "observations": {
+      "type": "object",
+      "required": ["people", "objects", "actions", "environment", "speech", "ocr"],
+      "properties": {
+        "people": {"type": "array", "items": {"type": "string"}},
+        "objects": {"type": "array", "items": {"type": "string"}},
+        "actions": {"type": "array", "items": {"type": "string"}},
+        "environment": {"type": "array", "items": {"type": "string"}},
+        "speech": {"type": "array", "items": {"type": "string"}},
+        "ocr": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "reasoning": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "alternative_predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["class", "confidence"],
+        "properties": {
+          "class": {"type": "string"},
+          "confidence": {"type": "number"}
+        }
+      }
+    },
+    "explanation": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "dimensions": [
+    "Religion",
+    "Tradition",
+    "Primary Deity",
+    "Secondary Deities",
+    "Content Type",
+    "Primary Ritual",
+    "Sub Ritual",
+    "Ritual Stage",
+    "Festival",
+    "Occasion",
+    "Offerings",
+    "Sacred Objects",
+    "Mantras",
+    "Language",
+    "Audience",
+    "Intent",
+    "Mood"
+  ],
+  "supported_traditions": [
+    "Sai",
+    "Vaishnava",
+    "Shaiva",
+    "Shakta",
+    "Smarta",
+    "Sikh",
+    "Buddhist"
+  ],
+  "supported_rituals": [
+    "Abhishekam",
+    "Aarti",
+    "Pravachan",
+    "Bhajan",
+    "Homam",
+    "Kirtan"
+  ],
+  "version": "2.0-enterprise-daiv"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "video_id": "video_ci_1784874396",
+  "model_name": "minicpm-v:latest",
+  "latency_ms": 24220,
+  "raw_prompt": "Analyze the video keyframe images showing Hindu devotional content and return ONLY a raw JSON classification matching this schema:\n{\n  \"title\": \"<Concise descriptive title>\",\n  \"summary\": \"<2-sentence summary of spiritual activity>\",\n  \"category\": \"Devotion\",\n  \"content_type\": \"<Ritual|Music|Discourse|Temple|Festival|Unknown>\",\n  \"primary_class\": \"<Abhishekam|Aarti|Pooja|Archana|Bhajan|Pravachan|Temple Darshan|Festival Procession|Unknown>\",\n  \"secondary_classes\": [\"<secondary activities>\"],\n  \"deity\": \"<Deity identified or null>\",\n  \"temple\": \"<Temple identified or null>\",\n  \"festival\": \"<Festival identified or null>\",\n  \"language\": \"<Language spoken or detected>\",\n  \"confidence\": <0.0-1.0>,\n  \"reasoning\": \"<Reasoning for classification>\"\n}\n\nAudio Transcript: \"Om Namah Shivaya chanting mantras in Sanskrit and Hindi.\"\nSensor Evidence: \"Visual keyframes show altar, deity statue, oil lamp, and flower offerings. Devotional Worship ritual in progress.\"",
+  "raw_response": "{\n  \"title\": \"Hindu Devotional Ritual\",\n  \"summary\": \"The video depicts a Hindu devotional worship ritual involving the offering of flowers to a deity statue, accompanied by lit candles and an oil lamp.\",\n  \"category\": \"Ritual\",\n  \"content_type\": \"Pooja\",\n  \"primary_class\": \"Aarti\",\n  \"secondary_classes\": [\"Offering\", \"Lighting\"],\n  \"deity\": \"Lord Shiva (identified from the Om Namah Shivaya chanting)\",\n  \"temple\": \"Not identified in keyframes, but likely a Hindu temple setting.\",\n  \"festival\": \"Unknown specific festival mentioned; general worship ritual observed.\",\n  \"language\": \"Sanskrit and Hindi\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Visual evidence of flower offerings to the deity statue, lit candles, oil lamp, and chanting in Sanskrit/Hindi indicates a Hindu devotional worship ritual.\"\n}",
+  "parsed_json": {
+    "title": "Hindu Devotional Ritual",
+    "summary": "The video depicts a Hindu devotional worship ritual involving the offering of flowers to a deity statue, accompanied by lit candles and an oil lamp.",
+    "category": "Ritual",
+    "content_type": "Pooja",
+    "primary_class": "Aarti",
+    "secondary_classes": [
+      "Offering",
+      "Lighting"
+    ],
+    "deity": "Lord Shiva (identified from the Om Namah Shivaya chanting)",
+    "temple": "Not identified in keyframes, but likely a Hindu temple setting.",
+    "festival": "Unknown specific festival mentioned; general worship ritual observed.",
+    "language": "Sanskrit and Hindi",
+    "confidence": 0.9,
+    "reasoning": "Visual evidence of flower offerings to the deity statue, lit candles, oil lamp, and chanting in Sanskrit/Hindi indicates a Hindu devotional worship ritual."
+  },
+  "parse_error": null,
+  "frame_count": 3,
+  "eval_count": 201,
+  "eval_duration_ns": 11689906000,
+  "ground_truth": {
+    "primary_class": "Devotional Worship",
+    "deity": "Deity Shrine",
+    "temple": "Hindu Temple"
+  }
+}

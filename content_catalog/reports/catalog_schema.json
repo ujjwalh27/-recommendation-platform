@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CatalogRecordSchema",
+  "description": "JSON Schema defining authoritative Content Catalog records in ACPCS.",
+  "type": "object",
+  "required": [
+    "video_id",
+    "content_hash",
+    "title",
+    "category",
+    "canonical_metadata",
+    "metadata_version",
+    "embedding_version",
+    "processing_status",
+    "indexing_status",
+    "publication_status",
+    "created_timestamp",
+    "last_processed_timestamp",
+    "last_published_timestamp"
+  ],
+  "properties": {
+    "video_id": {
+      "type": "string",
+      "description": "Unique immutable identifier for the video."
+    },
+    "content_hash": {
+      "type": "string",
+      "description": "Deterministic SHA-256 hash of raw video file bytes."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of the video content."
+    },
+    "caption": {
+      "type": "string",
+      "description": "Full text caption or summary text."
+    },
+    "category": {
+      "type": "string",
+      "description": "Primary domain category (e.g. Pooja & Aarti, Abhishekam, Bhajan & Kirtan)."
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Specific ritual or domain subcategory."
+    },
+    "duration": {
+      "type": "number",
+      "description": "Video duration in seconds."
+    },
+    "language": {
+      "type": "string",
+      "description": "Primary spoken or written language."
+    },
+    "canonical_metadata": {
+      "type": "object",
+      "description": "CMREE rule-reasoned structured metadata."
+    },
+    "primary_ritual": {
+      "type": ["string", "null"]
+    },
+    "ritual_family": {
+      "type": ["string", "null"]
+    },
+    "offerings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "metadata_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "embedding_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "processing_status": {
+      "type": "string",
+      "enum": ["RECEIVED", "PROCESSING", "CMREE_COMPLETE", "EMBEDDING_COMPLETE", "INDEXED", "PUBLISHED", "FAILED"]
+    },
+    "indexing_status": {
+      "type": "string",
+      "enum": ["INDEXED", "PENDING", "FAILED"]
+    },
+    "publication_status": {
+      "type": "string",
+      "enum": ["PUBLISHED", "SKIPPED", "FAILED"]
+    },
+    "created_timestamp": {
+      "type": "number"
+    },
+    "last_processed_timestamp": {
+      "type": "number"
+    },
+    "last_published_timestamp": {
+      "type": "number"
+    },
+    "processing_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": { "type": "integer" },
+          "action": { "type": "string" },
+          "timestamp": { "type": "number" },
+          "metadata_hash": { "type": "string" }
+        }
+      }
+    }
+  }
+}

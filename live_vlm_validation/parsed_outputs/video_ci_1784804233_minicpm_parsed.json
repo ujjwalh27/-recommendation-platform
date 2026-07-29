@@ -1,0 +1,16 @@
+{
+  "title": "Sanskrit Mantra Chanting",
+  "summary": "A person reciting 'Om Namah Shivaya' and other mantras in Sanskrit.",
+  "category": "Devotion",
+  "content_type": "Discourse",
+  "primary_class": "Bhajan",
+  "secondary_classes": [
+    "Chanting"
+  ],
+  "deity": "Shiva (identified by the mantra 'Om Namah Shivaya')",
+  "temple": null,
+  "festival": null,
+  "language": "Sanskrit and Hindi",
+  "confidence": 0.85,
+  "reasoning": "The audio transcript mentions chanting mantras in Sanskrit, which is a common practice during Hindu devotional activities."
+}

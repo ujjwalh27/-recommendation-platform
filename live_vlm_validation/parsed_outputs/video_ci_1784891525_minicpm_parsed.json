@@ -1,0 +1,17 @@
+{
+  "title": "Hindu Devotional Ritual",
+  "summary": "The video depicts a Hindu devotional worship scene with various elements such as an oil lamp being lit, deity statues adorned with flowers and garlands, and other religious paraphernalia. The activity involves the performance of rituals.",
+  "category": "Devotion",
+  "content_type": "Ritual",
+  "primary_class": "Aarti",
+  "secondary_classes": [
+    "Oil Lamp Lighting",
+    "Deity Worship"
+  ],
+  "deity": "Lord Shiva and Lord Vishnu statues are visible, suggesting the worship of these deities.",
+  "temple": "The setting appears to be a home altar rather than an official temple due to personal items like jewelry in view. The exact location is unknown but likely within a domestic space dedicated for religious practices.",
+  "festival": "No specific festival identified from visual evidence, though the presence of multiple deities suggests it could be during Navaratri or Diwali when such worship rituals are common.",
+  "language": "Sanskrit and Hindi",
+  "confidence": "0.85",
+  "reasoning": "The video captures a moment in Hindu devotional practices with emphasis on ritualistic elements like oil lamps, deity statues, flower offerings, and chanting."
+}

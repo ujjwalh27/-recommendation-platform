@@ -1,16 +1,16 @@
 {
-  "model": "qwen2.5:1.5b",
-  "created_at": "2026-07-23T11:02:30.977838Z",
+  "model": "minicpm-v",
+  "created_at": "2026-07-27T12:16:48.249119Z",
   "message": {
     "role": "assistant",
-    "content": "```json\n{\n  \"title\": \"Mama's Locking Ceremony\",\n  \"summary\": \"A touching moment of a mother comforting her child during a ceremony, emphasizing love and protection.\",\n  \"category\": \"Lifestyle\",\n  \"subcategory\": \"Devotion\",\n  \"primary_topic\": \"Ceremony\",\n  \"secondary_topics\": [\"Motherhood\", \"Childcare\"],\n  \"entities\": [\"Mama\", \"Baby\"],\n  \"people\": [\"Mama\", \"Baby\"],\n  \"locations\": [\"Home\"],\n  \"activities\": [\"Comforting Child\", \"Performing Ceremony\"],\n  \"objects\": [\"Dining Table\", \"Wine Glass\", \"Bowl\", \"Person\", \"Chair\"],\n  \"events\": [\"Ceremony for Baby's Locking\"],\n  \"keywords\": [\"Mama\", \"Baby\", \"Locking Ceremony\", \"Motherhood\"],\n  \"recommendation_keywords\": [\"Devotional Moments\", \"Cultural Ceremonies\"],\n  \"language\": \"Japanese\",\n  \"mood\": \"Spiritual\",\n  \"emotion\": \"Devotional\",\n  \"target_audience\": \"Religious Families, Mothers, and Children\",\n  \"reasoning\": \"The spoken transcript describes a mother comforting her child during a ceremony, emphasizing love and protection. The visual frames show the scene of a mother holding her baby while performing a locking ritual, which is a common practice in some cultures to ensure safety and protectiveness.\"\n```"
+    "content": "{\n  \"title\": \"A Devotional Music Performance\",\n  \"summary\": \"The video features a person singing and playing music, with visual elements of devotion such as a dining table set for offerings.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"\",\n  \"primary_topic\": \"Music performance in a devotional setting\",\n  \"secondary_topics\": [\"Music\", \"Devotion\"],\n  \"entities\": [],\n  \"people\": [\n    {\n      \"name\": \"Singer\"\n    }\n  ],\n  \"locations\": [\"Temple, shrine, or devotional place\"],\n  \"activities\": [\"Singing and playing music\"],\n  \"objects\": [\n    {\n      \"type\": \"Dining table\",\n      \"description\": \"A dining table set with a bowl and wine glass.\"\n    },\n    {\n      \"type\": \"Chair\"\n    }\n  ],\n  \"events\": [],\n  \"keywords\": [\"Music\", \"Devotion\", \"Singing\"],\n  \"recommendation_keywords\": [\"Religious music\", \"Spiritual performance\"],\n  \"language\": \"Japanese\",\n  \"mood\": \"Calm and Spiritual\",\n  \"emotion\": [\n    \"Devotional\"\n  ],\n  \"target_audience\": [\"People interested in religious or spiritual content\"],\n  \"reasoning\": \"The spoken transcript mentions devotion, the visual elements include a dining table set for offerings typically found in temples or shrines, and the primary activity is singing music which suggests a devotional performance.\"\n}"
   },
   "done": true,
   "done_reason": "stop",
-  "total_duration": 3907089292,
-  "load_duration": 80859250,
-  "prompt_eval_count": 723,
-  "prompt_eval_duration": 31335000,
-  "eval_count": 297,
-  "eval_duration": 3791905000
+  "total_duration": 37639224375,
+  "load_duration": 298452167,
+  "prompt_eval_count": 702,
+  "prompt_eval_duration": 7727137000,
+  "eval_count": 305,
+  "eval_duration": 29516638000
 }

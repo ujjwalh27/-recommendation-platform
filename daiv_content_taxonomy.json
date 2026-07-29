@@ -1,0 +1,86 @@
+{
+  "taxonomy_version": "2.0-hrce",
+  "domain": "Daiv Spiritual Content",
+  "hierarchy": {
+    "Hinduism": {
+      "categories": {
+        "Ritual": {
+          "primary_classes": {
+            "Pooja": {
+              "sub_classes": ["Home Pooja", "Temple Archana", "Special Worship"],
+              "key_signals": ["flowers", "bell", "lamp", "incense", "priest", "chanting"]
+            },
+            "Abhishekam": {
+              "sub_classes": ["Milk Abhishekam", "Water Abhishekam", "Honey Abhishekam", "Panchamrutha Abhishekam", "Sandalwood Abhishekam"],
+              "key_signals": ["pouring liquid", "milk", "kalash", "lingam", "idol wash"]
+            },
+            "Aarti": {
+              "sub_classes": ["Kakad Aarti", "Madhyana Aarti", "Sandhya Aarti", "Dhoop Aarti"],
+              "key_signals": ["camphor flame", "waving lamp", "ghanta bell", "aarti song"]
+            },
+            "Archana": {
+              "sub_classes": ["Sahasranama Archana", "Ashtottara Archana"],
+              "key_signals": ["name chanting", "flower offering per name", "108 names"]
+            },
+            "Homa": {
+              "sub_classes": ["Ganapati Homa", "Navagraha Homa", "Chandi Yajna"],
+              "key_signals": ["fire pit", "havan kund", "offering ahuti", "smoke"]
+            }
+          }
+        },
+        "Music": {
+          "primary_classes": {
+            "Bhajan": {
+              "sub_classes": ["Group Bhajan", "Solo Devotional Song"],
+              "key_signals": ["harmonium", "tabla", "singing lyrics", "group response"]
+            },
+            "Kirtan": {
+              "sub_classes": ["Eknaam Kirtan", "Akhanda Kirtan"],
+              "key_signals": ["call and response", "dancing singers", "cymbals / kartal"]
+            },
+            "Nama Sankeerthana": {
+              "sub_classes": ["Chanting Sankeerthanam"],
+              "key_signals": ["repetition of deity name", "rhythmic clapping"]
+            }
+          }
+        },
+        "Discourse": {
+          "primary_classes": {
+            "Pravachan": {
+              "sub_classes": ["Bhagavad Gita Pravachan", "Ramayana Katha", "Purana Lecture"],
+              "key_signals": ["guru lecturer", "scripture book", "microphone", "seated audience"]
+            },
+            "Story": {
+              "sub_classes": ["Devotional Storytelling", "Moral Katha"],
+              "key_signals": ["narration", "animated storytelling"]
+            }
+          }
+        },
+        "Temple": {
+          "primary_classes": {
+            "Temple Darshan": {
+              "sub_classes": ["Live Shrine View", "Queue Walkthrough"],
+              "key_signals": ["sanctum view", "crowd queue", "temple architecture"]
+            },
+            "Temple Tour": {
+              "sub_classes": ["Architectural Walkthrough", "History Doc"],
+              "key_signals": ["gopuram", "temple pillars", "historical narration"]
+            }
+          }
+        },
+        "Festival": {
+          "primary_classes": {
+            "Festival Procession": {
+              "sub_classes": ["Ratha Yatra", "Palkhi Procession"],
+              "key_signals": ["chariot", "street crowd", "decorations", "music troupe"]
+            },
+            "Festival Celebration": {
+              "sub_classes": ["Diwali Lighting", "Holi Color Play", "Ganesh Visarjan"],
+              "key_signals": ["festive crowd", "fireworks", "color powder", "diyas"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

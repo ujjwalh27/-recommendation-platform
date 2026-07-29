@@ -1,0 +1,65 @@
+{
+  "Abhishekam": {
+    "Abhishekam": 48,
+    "Aarti": 0,
+    "Pooja": 0,
+    "Bhajan": 0,
+    "Pravachan": 0,
+    "Temple Darshan": 1,
+    "Festival Procession": 1
+  },
+  "Aarti": {
+    "Abhishekam": 2,
+    "Aarti": 48,
+    "Pooja": 0,
+    "Bhajan": 0,
+    "Pravachan": 0,
+    "Temple Darshan": 0,
+    "Festival Procession": 0
+  },
+  "Pooja": {
+    "Abhishekam": 1,
+    "Aarti": 0,
+    "Pooja": 47,
+    "Bhajan": 0,
+    "Pravachan": 1,
+    "Temple Darshan": 1,
+    "Festival Procession": 0
+  },
+  "Bhajan": {
+    "Abhishekam": 0,
+    "Aarti": 0,
+    "Pooja": 0,
+    "Bhajan": 46,
+    "Pravachan": 0,
+    "Temple Darshan": 3,
+    "Festival Procession": 1
+  },
+  "Pravachan": {
+    "Abhishekam": 1,
+    "Aarti": 0,
+    "Pooja": 1,
+    "Bhajan": 0,
+    "Pravachan": 46,
+    "Temple Darshan": 1,
+    "Festival Procession": 1
+  },
+  "Temple Darshan": {
+    "Abhishekam": 0,
+    "Aarti": 1,
+    "Pooja": 0,
+    "Bhajan": 1,
+    "Pravachan": 0,
+    "Temple Darshan": 46,
+    "Festival Procession": 2
+  },
+  "Festival Procession": {
+    "Abhishekam": 0,
+    "Aarti": 0,
+    "Pooja": 0,
+    "Bhajan": 0,
+    "Pravachan": 0,
+    "Temple Darshan": 1,
+    "Festival Procession": 49
+  }
+}

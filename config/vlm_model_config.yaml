@@ -1,0 +1,43 @@
+# Daiv Video Intelligence Platform – Live VLM Validation (LVV) Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+# REAL INFERENCE ONLY – NO SIMULATION, NO ESTIMATED METRICS, NO FAKE OUTPUTS.
+# All predictions are generated live via local Ollama inference service.
+# ─────────────────────────────────────────────────────────────────────────────
+
+live_validation:
+  enabled: true
+  simulation_mode: false       # STRICTLY FALSE – All predictions from live models
+  save_raw_payloads: true
+  output_dir: live_vlm_validation
+
+# Baseline VLM
+baseline_model:
+  name: minicpm-v:latest
+  provider: minicpm
+  ollama_url: http://localhost:11434/api/chat
+  temperature: 0.10
+  timeout_sec: 120
+  max_frames: 7
+
+# Candidate VLM under evaluation
+candidate_model:
+  name: moondream:latest
+  provider: moondream
+  ollama_url: http://localhost:11434/api/chat
+  temperature: 0.10
+  timeout_sec: 120
+  max_frames: 7
+
+# Frame sampling
+frame_sampling:
+  strategy: keyframe
+  num_frames: 7
+
+# Thresholds for downstream confidence scoring
+confidence:
+  human_review_threshold: 0.75
+  unknown_entity_threshold: 0.50
+
+versions:
+  sprint: "LVV-Live-Validation"
+  platform: "2.2-enterprise-live"
