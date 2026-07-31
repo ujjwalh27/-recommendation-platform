@@ -11,7 +11,7 @@ DEBUG_DIR = "datasets/processed/debug_pipeline"
 # Frame sampling settings
 SCENE_THRESHOLD = 0.35      # FFmpeg scene change threshold (0.0 to 1.0)
 MIN_SCENE_DURATION_S = 1.0   # Minimum duration between sampled frames
-MAX_SAMPLED_FRAMES = 12      # Maximum frames to feed the VLM to keep inference fast
+MAX_SAMPLED_FRAMES = 4       # Optimal keyframes to feed VLM for high-speed & high-fidelity inference
 
 # Confidence scoring weights
 WEIGHT_VLM = 0.50

@@ -51,13 +51,13 @@ class MetadataEnricher:
                     primary_deity = t_info.get("deity")
                 break
 
-        enriched["primary_deity"] = primary_deity or (deities_found[0] if deities_found else "Lord Shiva")
+        enriched["primary_deity"] = primary_deity or (deities_found[0] if deities_found else None)
         enriched["temple"] = temple_found
 
         # 4. Tradition & Tradition Category
         deities_kb = self.kb.get_deities()
         tradition = "Universal Devotional"
-        if enriched["primary_deity"] in deities_kb:
+        if enriched["primary_deity"] and enriched["primary_deity"] in deities_kb:
             tradition = deities_kb[enriched["primary_deity"]].get("tradition", "Universal Devotional")
         enriched["tradition"] = tradition
 

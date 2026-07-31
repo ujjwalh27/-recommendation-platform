@@ -1,6 +1,7 @@
 import os
 import time
 import cv2
+import concurrent.futures
 from typing import Dict, Any, List
 
 # Schema imports
@@ -129,73 +130,103 @@ class VideoIntelligenceOrchestrator:
             except Exception as e:
                 print(f"[Orchestrator] Error loading frame image: {e}")
 
-        # Step 2: Run Secondary Modality Extractors concurrently (sequential execution)
+        # Step 2: Run Secondary Modality Extractors in parallel via ThreadPoolExecutor
         evidence = EvidenceGraphSchema()
-
-        # Speech (Whisper)
         speech_transcript = ""
-        speech_conf = 0.0
-        if audio_path and os.path.exists(audio_path):
-            try:
-                speech_res = self.speech_rec.transcribe(audio_path)
-                speech_transcript = speech_res.get("transcript", "")
-                speech_conf = float(speech_res.get("confidence", 0.0))
-                if speech_transcript:
-                    evidence.speech.append(EvidenceNodeSchema(
-                        source="Speech", value=speech_transcript, confidence=speech_conf
-                    ))
-            except Exception as e:
-                print(f"[Orchestrator] Speech recognition error: {e}")
 
-        # OCR Text Scanner
-        if pil_frames:
-            try:
-                ocr_res = self.ocr_det.extract_text(pil_frames)
-                for o in ocr_res:
-                    evidence.ocr.append(EvidenceNodeSchema(
-                        source="OCR", value=o["text"], confidence=o["confidence"], timestamp=o.get("timestamp")
-                    ))
-            except Exception as e:
-                print(f"[Orchestrator] OCR extraction error: {e}")
+        def extract_speech():
+            nonlocal speech_transcript
+            if audio_path and os.path.exists(audio_path):
+                try:
+                    speech_res = self.speech_rec.transcribe(audio_path)
+                    speech_transcript = speech_res.get("transcript", "")
+                    speech_conf = float(speech_res.get("confidence", 0.0))
+                    if speech_transcript:
+                        return ("speech", EvidenceNodeSchema(source="Speech", value=speech_transcript, confidence=speech_conf))
+                except Exception as e:
+                    print(f"[Orchestrator] Speech recognition error: {e}")
+            return None
 
-        # Object Detection (YOLO / CLIP)
-        if pil_frames:
-            try:
-                obj_res = self.obj_det.detect_objects(pil_frames)
-                for obj in obj_res:
-                    evidence.vision.append(EvidenceNodeSchema(
-                        source="YOLO", value=obj["label"], confidence=obj["confidence"]
-                    ))
-                    
-                scene_res = self.scene_und.classify_scenes(pil_frames)
-                for sc in scene_res:
-                    evidence.vision.append(EvidenceNodeSchema(
-                        source="CLIP", value=sc["concept"], confidence=sc["confidence"]
-                    ))
-            except Exception as e:
-                print(f"[Orchestrator] Vision extraction error: {e}")
+        def extract_ocr():
+            nodes = []
+            if pil_frames:
+                try:
+                    ocr_res = self.ocr_det.extract_text(pil_frames)
+                    for o in ocr_res:
+                        nodes.append(EvidenceNodeSchema(
+                            source="OCR", value=o["text"], confidence=o["confidence"], timestamp=o.get("timestamp")
+                        ))
+                except Exception as e:
+                    print(f"[Orchestrator] OCR extraction error: {e}")
+            return ("ocr", nodes)
 
-        # Action Recognition (VideoMAE)
-        if pil_frames:
-            try:
-                act_res = self.act_rec.recognize_actions(pil_frames)
-                for act in act_res:
-                    evidence.actions.append(EvidenceNodeSchema(
-                        source="VideoMAE", value=act["action"], confidence=act["confidence"]
-                    ))
-            except Exception as e:
-                print(f"[Orchestrator] Action recognition error: {e}")
+        def extract_vision():
+            nodes = []
+            if pil_frames:
+                try:
+                    obj_res = self.obj_det.detect_objects(pil_frames)
+                    for obj in obj_res:
+                        nodes.append(EvidenceNodeSchema(
+                            source="YOLO", value=obj["label"], confidence=obj["confidence"]
+                        ))
+                    scene_res = self.scene_und.classify_scenes(pil_frames)
+                    for sc in scene_res:
+                        nodes.append(EvidenceNodeSchema(
+                            source="CLIP", value=sc["concept"], confidence=sc["confidence"]
+                        ))
+                except Exception as e:
+                    print(f"[Orchestrator] Vision extraction error: {e}")
+            return ("vision", nodes)
 
-        # Audio Spectrogram events (AST)
-        if audio_path and os.path.exists(audio_path):
-            try:
-                audio_res = self.aud_det.detect_events(audio_path)
-                for ev in audio_res:
-                    evidence.audio.append(EvidenceNodeSchema(
-                        source="AST", value=ev["event"], confidence=ev["confidence"]
-                    ))
-            except Exception as e:
-                print(f"[Orchestrator] Audio event detection error: {e}")
+        def extract_actions():
+            nodes = []
+            if pil_frames:
+                try:
+                    act_res = self.act_rec.recognize_actions(pil_frames)
+                    for act in act_res:
+                        nodes.append(EvidenceNodeSchema(
+                            source="VideoMAE", value=act["action"], confidence=act["confidence"]
+                        ))
+                except Exception as e:
+                    print(f"[Orchestrator] Action recognition error: {e}")
+            return ("actions", nodes)
+
+        def extract_audio():
+            nodes = []
+            if audio_path and os.path.exists(audio_path):
+                try:
+                    audio_res = self.aud_det.detect_events(audio_path)
+                    for ev in audio_res:
+                        nodes.append(EvidenceNodeSchema(
+                            source="AST", value=ev["event"], confidence=ev["confidence"]
+                        ))
+                except Exception as e:
+                    print(f"[Orchestrator] Audio event detection error: {e}")
+            return ("audio", nodes)
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+            futures = [
+                executor.submit(extract_speech),
+                executor.submit(extract_ocr),
+                executor.submit(extract_vision),
+                executor.submit(extract_actions),
+                executor.submit(extract_audio)
+            ]
+            for future in concurrent.futures.as_completed(futures):
+                res = future.result()
+                if not res:
+                    continue
+                kind, data = res
+                if kind == "speech" and data:
+                    evidence.speech.append(data)
+                elif kind == "ocr" and data:
+                    evidence.ocr.extend(data)
+                elif kind == "vision" and data:
+                    evidence.vision.extend(data)
+                elif kind == "actions" and data:
+                    evidence.actions.extend(data)
+                elif kind == "audio" and data:
+                    evidence.audio.extend(data)
 
         # Compile a text summary of secondary evidence for fallback text reasoning
         evidence_summary_parts = []

@@ -28,7 +28,7 @@ class CanonicalMetadataGenerator:
             "primary_category": enriched_metadata.get("primary_category", "Temple Ritual"),
             "primary_ritual": enriched_metadata.get("primary_ritual", "Devotional Worship"),
             "ritual_family": enriched_metadata.get("ritual_family", "Pooja"),
-            "primary_deity": enriched_metadata.get("primary_deity", "Lord Shiva"),
+            "primary_deity": enriched_metadata.get("primary_deity"),
             "temple": enriched_metadata.get("temple"),
             "festival": enriched_metadata.get("festival"),
             "tradition": enriched_metadata.get("tradition", "Universal Devotional"),

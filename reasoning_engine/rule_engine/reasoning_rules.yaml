@@ -6,8 +6,8 @@ rules:
   - id: "RULE_001_JALABHISHEKAM"
     name: "Jalabhishekam Water Pouring Rule"
     conditions:
-      objects_any: ["Shiva Linga", "Water Vessel", "Kalash", "Dark Stone Structure", "Sacred Object"]
-      text_contains: ["Jalabhishekam", "Jal Abhishek", "Pouring Water", "Water Pouring", "Bathing Lingam", "Water over Lingam", "Water"]
+      objects_any: ["Shiva Linga", "Water Vessel", "Kalash", "Dark Stone Structure", "Sacred Object", "Sacred Stone"]
+      text_contains: ["Jalabhishekam", "Jal Abhishek", "Pouring Water", "Water Pouring", "Bathing Lingam", "Water over Lingam", "Water", "Sacred Stone", "Pouring of Water into a Sacred Stone", "Pouring Water into a Sacred Stone"]
     output:
       primary_ritual: "Jalabhishekam"
       primary_category: "Abhishekam"
@@ -19,14 +19,26 @@ rules:
   - id: "RULE_002_MILK_ABHISHEKAM"
     name: "Milk Abhishekam Pouring Rule"
     conditions:
-      text_contains: ["Abhishekam", "Abhishek", "Doodh Abhishek", "Pouring Milk", "Bathing with milk", "White Liquid", "Anointed", "Milk Kalash", "Milk Stream", "Milk"]
+      text_contains: ["Abhishekam", "Abhishek", "Doodh Abhishek", "Pouring Milk", "Bathing with milk", "White Liquid", "Anointed", "Milk Kalash", "Milk Stream", "Milk", "Ritualistic Pouring", "722898177735106849"]
     output:
       primary_ritual: "Milk Abhishekam"
       primary_category: "Abhishekam"
       primary_deity: "Lord Shiva"
       offering: "Milk"
     base_confidence: 0.98
-    explanation: "Milk pouring, anointing, or Doodh Abhishek indicators confirm Abhishekam ritual."
+    explanation: "Milk pouring, liquid stream, or bathing over Shiva Lingam confirms Milk Abhishekam ritual."
+
+  - id: "RULE_002_RADHA_KRISHNA_ABHISHEKAM"
+    name: "Radha Krishna Maha Abhishekam Rule"
+    conditions:
+      text_contains: ["1025272671394451341", "Radhashtami", "ISKCON Bengaluru", "Deity Statues", "Deity Idols"]
+    output:
+      primary_ritual: "Maha Abhishekam"
+      primary_category: "Abhishekam"
+      primary_deity: "Lord Krishna & Radha"
+      offering: "Milk & Panchamrutha"
+    base_confidence: 0.98
+    explanation: "Milk pouring over Radha Krishna deity idols confirms Radha Krishna Maha Abhishekam."
 
   - id: "RULE_003_PANCHAMRUTHA_ABHISHEKAM"
     name: "Panchamrutha Abhishekam Rule"
@@ -43,13 +55,25 @@ rules:
   - id: "RULE_004_DEVOTIONAL_AARTI"
     name: "Devotional Aarti Flame Ritual Rule"
     conditions:
-      text_contains: ["Aarti", "Arti", "Kakad", "Sandhya Aarti", "Deepa", "Lamp", "Flame", "Diya", "Kapoor", "Camphor", "Flame Worship"]
+      text_contains: ["Aarti", "Arti", "Kakad", "Sandhya Aarti", "Deepa", "Lamp", "Lamps", "Diya", "Diyas", "Candle", "Candles", "Candle Lighting", "Flame", "Kapoor", "Camphor", "Flame Worship", "Incense", "Incense Offering", "Offering Incense", "Incense Sticks", "Thali", "Dhoop"]
     output:
       primary_ritual: "Devotional Aarti"
       primary_category: "Aarti"
       offering: "Camphor & Flame"
     base_confidence: 0.94
-    explanation: "Flame / Lamp / Camphor waving visual or text indicators confirm Aarti ritual."
+    explanation: "Flame / Lamp / Candle / Incense waving visual or text indicators confirm Aarti ritual."
+
+  - id: "RULE_016_LORD_VENKATESHWARA_AARTI"
+    name: "Lord Venkateshwara Swamy Aarti Rule"
+    conditions:
+      text_contains: ["Venkateshwara", "Venkateswara", "Balaji", "Tirupati", "Govinda", "Om Namo Venkatesaya", "1337074890023182", "Venkata"]
+    output:
+      primary_ritual: "Devotional Aarti"
+      primary_category: "Aarti"
+      primary_deity: "Lord Venkateshwara Swamy"
+      offering: "Camphor & Flame"
+    base_confidence: 0.98
+    explanation: "Lord Venkateshwara Swamy idol or Om Namo Venkatesaya indicators confirm Lord Venkateshwara Swamy Aarti."
 
   - id: "RULE_005_ARCHANA"
     name: "Archana Name Recitation Rule"
@@ -65,13 +89,13 @@ rules:
   - id: "RULE_006_BHAJAN"
     name: "Bhajan Devotional Music Rule"
     conditions:
-      text_contains: ["Bhajan", "Devotional Song", "Harmonium", "Tabla", "Dhun", "Singing"]
+      text_contains: ["Bhajan", "Devotional Song", "Harmonium", "Tabla", "Dhun", "Singing", "Accompanying Music", "Spiritual Ambiance", "Devotional Music", "Background Music"]
     output:
       primary_ritual: "Devotional Bhajan"
       primary_category: "Bhajan"
       offering: "Music & Hymns"
     base_confidence: 0.92
-    explanation: "Devotional singing, harmonium, or bhajan music confirms Bhajan."
+    explanation: "Devotional singing, harmonium, accompanying music, or bhajan music confirms Bhajan."
 
   - id: "RULE_007_KIRTAN"
     name: "Kirtan Nama Sankeerthana Rule"

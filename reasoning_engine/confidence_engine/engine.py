@@ -55,13 +55,16 @@ class CMREEConfidenceEngine:
         }
 
         # 2. Primary Deity Confidence
-        deity_val = enriched_metadata.get("primary_deity", "Lord Shiva")
-        deity_ev = [f"Entity resolved deity '{deity_val}'"]
-        deity_conf = 0.90 if deity_val in resolved_obs.get("canonical_deities", []) else 0.82
-        
-        if enriched_metadata.get("temple"):
-            deity_conf = min(0.98, deity_conf + 0.08)
-            deity_ev.append(f"Associated temple '{enriched_metadata['temple']}' confirms deity")
+        deity_val = enriched_metadata.get("primary_deity")
+        if deity_val:
+            deity_ev = [f"Entity resolved deity '{deity_val}'"]
+            deity_conf = 0.90 if deity_val in resolved_obs.get("canonical_deities", []) else 0.82
+            if enriched_metadata.get("temple"):
+                deity_conf = min(0.98, deity_conf + 0.08)
+                deity_ev.append(f"Associated temple '{enriched_metadata['temple']}' confirms deity")
+        else:
+            deity_conf = 0.0
+            deity_ev = ["No explicit deity evidence detected"]
 
         field_confidences["primary_deity"] = {
             "value": deity_val,

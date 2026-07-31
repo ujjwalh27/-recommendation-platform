@@ -1,7 +1,7 @@
 # PMCLP Monthly Quality Report – July 2026
 
 ## 1. Operational & Quality Summary
-- **Generated At**: `2026-07-27 12:18:24`
+- **Generated At**: `2026-07-31 12:30:54`
 - **Total Videos Processed**: `1420`
 - **Overall Prediction Accuracy**: **`94.2%`** (Increasing (+1.4% MoM))
 - **Average Inference Latency**: `580.4 ms`

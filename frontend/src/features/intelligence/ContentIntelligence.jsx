@@ -397,7 +397,9 @@ function ContentIntelligence() {
                                                      </div>
                                                      <div>
                                                          <div style={{ fontSize: "8.5px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Primary Deity</div>
-                                                         <div style={{ fontSize: "12px", color: "#c084fc", fontWeight: "800" }}>{analysisResult.primary_deity || analysisResult.canonical_metadata?.primary_deity || "Lord Shiva"}</div>
+                                                         <div style={{ fontSize: "12px", color: "#c084fc", fontWeight: "800" }}>
+                                                            {analysisResult.primary_deity || analysisResult.canonical_metadata?.primary_deity || "Unassigned / General"}
+                                                        </div>
                                                      </div>
                                                  </div>
                                                  {(analysisResult.temple || analysisResult.canonical_metadata?.temple) && (

@@ -64,9 +64,36 @@ class KnowledgeBaseLoader:
 
     def lookup_family_by_ritual(self, ritual_name: str) -> Optional[str]:
         """Infers ritual family from a specific ritual name."""
-        rituals = self.get_rituals()
+        if not ritual_name:
+            return "Pooja"
         r_lower = ritual_name.lower().strip()
+        if any(k in r_lower for k in ["aarti", "arti", "flame", "lamp"]):
+            return "Aarti"
+        if any(k in r_lower for k in ["abhishekam", "abhishek", "pouring", "bathing", "lingam"]):
+            return "Abhishekam"
+        if any(k in r_lower for k in ["bhajan", "song", "hymn", "music"]):
+            return "Bhajan"
+        if any(k in r_lower for k in ["meditation", "dhyana", "japa", "mantra"]):
+            return "Meditation"
+        if any(k in r_lower for k in ["homa", "havan", "yajna", "yagya"]):
+            return "Homa / Yajna"
+        if any(k in r_lower for k in ["annadanam", "bhandara", "prasad"]):
+            return "Annadanam"
+        if any(k in r_lower for k in ["kirtan", "sankeerthana"]):
+            return "Kirtan"
+        if any(k in r_lower for k in ["archana", "ashtottara"]):
+            return "Archana"
+        if any(k in r_lower for k in ["pravachan", "katha", "satsang", "discourse"]):
+            return "Pravachan"
+        if any(k in r_lower for k in ["procession", "yatra", "ratha"]):
+            return "Procession"
+        if any(k in r_lower for k in ["darshan", "sanctum", "shrine view"]):
+            return "Darshan"
+        if any(k in r_lower for k in ["pooja", "puja", "worship"]):
+            return "Pooja"
+
+        rituals = self.get_rituals()
         for r_key, r_info in rituals.items():
             if r_lower in r_key.lower() or r_lower in r_info.get("canonical_name", "").lower():
                 return r_info.get("family")
-        return None
+        return "Pooja"

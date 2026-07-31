@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ContentIntelligence from "../features/intelligence/ContentIntelligence";
 import VideoFeed from "../features/feed/VideoFeed";
 import PMCLPDashboard from "../features/monitoring/PMCLPDashboard";
-import BenchmarkBuilder from "../features/intelligence/BenchmarkBuilder";
 
 function Home() {
     const [activeTab, setActiveTab] = useState("intel");
@@ -118,31 +117,6 @@ function Home() {
                         </svg>
                         Production Monitoring (PMCLP)
                     </button>
-
-                    <button 
-                        onClick={() => setActiveTab("dbb")} 
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "6px",
-                            padding: "8px 16px",
-                            borderRadius: "8px",
-                            fontSize: "12px",
-                            fontWeight: "800",
-                            border: "none",
-                            cursor: "pointer",
-                            background: activeTab === "dbb" ? "var(--accent)" : "rgba(255,255,255,0.04)",
-                            color: activeTab === "dbb" ? "#000" : "#94a3b8",
-                            transition: "all 0.2s"
-                        }}
-                    >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <circle cx="12" cy="12" r="6"/>
-                            <circle cx="12" cy="12" r="2"/>
-                        </svg>
-                        Benchmark Builder (DBB)
-                    </button>
                 </div>
             </div>
             
@@ -151,7 +125,6 @@ function Home() {
                 {activeTab === "intel" && <ContentIntelligence />}
                 {activeTab === "feed" && <VideoFeed />}
                 {activeTab === "pmclp" && <PMCLPDashboard />}
-                {activeTab === "dbb" && <BenchmarkBuilder />}
             </div>
         </div>
     );
