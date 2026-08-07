@@ -1,0 +1,245 @@
+# Multimodal Perceptual Rules Configuration
+# Version: 2.0-msfacr-perceptual
+# Rule schema enforcing multimodal evidence inputs (CLIP, YOLO, MiniCPM, OCR, Whisper, AST, VideoMAE).
+
+rules:
+  environment:
+    - id: "RULE_ENV_001"
+      description: "Temple Sanctum Detection via CLIP, YOLO, and MiniCPM"
+      priority: 10
+      requires: ["clip", "yolo", "minicpm"]
+      conditions:
+        clip_contains: ["sanctum", "garbhagriha", "shrine", "temple"]
+        yolo_contains: ["lamp", "altar", "statue", "idol", "vessel"]
+        minicpm_contains: ["sanctum", "shrine", "inner sanctum", "altar"]
+      output:
+        value: "Temple Sanctum"
+        reason: "CLIP temple classification, YOLO altar/lamp objects, and MiniCPM sanctum narrative confirm an inner shrine."
+      confidence_modifier: 0.05
+
+    - id: "RULE_ENV_002"
+      description: "Procession Street Detection via CLIP, YOLO, and VideoMAE"
+      priority: 9
+      requires: ["clip", "yolo", "videomae"]
+      conditions:
+        clip_contains: ["street", "procession", "yatra", "road"]
+        yolo_min_persons: 4
+        videomae_contains: ["walking", "marching", "dancing", "procession"]
+      output:
+        value: "Procession Street"
+        reason: "Outdoor street environment with crowd and walking movement indicates a sacred procession."
+      confidence_modifier: 0.04
+
+    - id: "RULE_ENV_003"
+      description: "Home Shrine Detection"
+      priority: 8
+      requires: ["minicpm", "yolo"]
+      conditions:
+        minicpm_contains: ["home", "domestic", "living room", "personal shrine"]
+        yolo_max_persons: 2
+      output:
+        value: "Home Shrine"
+        reason: "Personal domestic altar setting with small family participation."
+      confidence_modifier: 0.03
+
+    - id: "RULE_ENV_DEFAULT"
+      description: "Default Indoor Sacred Space Fallback"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Indoor Sacred Space"
+        reason: "General indoor sacred environment inferred from available visual signals."
+      confidence_modifier: 0.0
+
+  lighting:
+    - id: "RULE_LIGHTING_001"
+      description: "Oil Lamp & Flame Illumination via YOLO, MiniCPM, and AST"
+      priority: 10
+      requires: ["yolo", "minicpm", "ast"]
+      conditions:
+        yolo_contains: ["lamp", "diya", "flame", "candle"]
+        minicpm_contains: ["flame", "aarti", "diya", "oil lamp", "camphor"]
+        ast_contains: ["bells", "chanting", "music"]
+      output:
+        value: "Warm / Oil Lamp Lit"
+        reason: "Multiple oil lamps detected by YOLO and flame worship descriptions in MiniCPM."
+      confidence_modifier: 0.06
+
+    - id: "RULE_LIGHTING_002"
+      description: "Natural Daylight"
+      priority: 8
+      requires: ["clip"]
+      conditions:
+        clip_contains: ["outdoor", "daylight", "bright", "sunlight"]
+      output:
+        value: "Bright / Natural Daylight"
+        reason: "Outdoor natural illumination."
+      confidence_modifier: 0.03
+
+    - id: "RULE_LIGHTING_DEFAULT"
+      description: "Default Warm Ceremonial Lighting"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Warm Ceremonial"
+        reason: "Standard warm ceremonial lighting common in temple rituals."
+      confidence_modifier: 0.0
+
+  crowd_size:
+    - id: "RULE_CROWD_001"
+      description: "Large Crowd Detection via YOLO and AST"
+      priority: 10
+      requires: ["yolo", "ast"]
+      conditions:
+        yolo_min_persons: 5
+        ast_contains: ["crowd_noise", "cheering", "chanting"]
+      output:
+        value: "Large Crowd"
+        reason: "YOLO detected 5+ participants accompanied by crowd audio."
+      confidence_modifier: 0.05
+
+    - id: "RULE_CROWD_002"
+      description: "Single Participant Focus"
+      priority: 8
+      requires: ["yolo"]
+      conditions:
+        yolo_max_persons: 1
+      output:
+        value: "Single Participant"
+        reason: "Solitary priest or devotee performing ritual."
+      confidence_modifier: 0.03
+
+    - id: "RULE_CROWD_DEFAULT"
+      description: "Default Small Group"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Small Group (2-4)"
+        reason: "Typical small group attendance at temple shrine."
+      confidence_modifier: 0.0
+
+  motion_level:
+    - id: "RULE_MOTION_001"
+      description: "High Motion in Ritual or Procession via VideoMAE and YOLO"
+      priority: 10
+      requires: ["videomae", "yolo"]
+      conditions:
+        videomae_contains: ["waving flame", "pouring stream", "dancing", "marching"]
+      output:
+        value: "Moderate to High"
+        reason: "Active movement from flame waving or liquid stream pouring."
+      confidence_modifier: 0.04
+
+    - id: "RULE_MOTION_DEFAULT"
+      description: "Default Gentle Motion"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Low / Steady"
+        reason: "Measured, gentle movements typical of temple worship."
+      confidence_modifier: 0.0
+
+  camera_distance:
+    - id: "RULE_DIST_001"
+      description: "Close-up Shrine View"
+      priority: 9
+      requires: ["minicpm"]
+      conditions:
+        minicpm_contains: ["close-up", "detail of", "face of idol", "close up"]
+      output:
+        value: "Close-up"
+        reason: "Tight visual framing on sacred idol details or offerings."
+      confidence_modifier: 0.04
+
+    - id: "RULE_DIST_DEFAULT"
+      description: "Medium Shot"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Medium Shot"
+        reason: "Standard medium distance capturing shrine and participant."
+      confidence_modifier: 0.0
+
+  visual_complexity:
+    - id: "RULE_COMPLEXITY_001"
+      description: "Elaborate Visual Decoration"
+      priority: 9
+      requires: ["yolo", "minicpm"]
+      conditions:
+        yolo_min_objects: 4
+        minicpm_contains: ["garlands", "petals", "flowers", "ornate", "jewelry"]
+      output:
+        value: "Elaborate / Intricate"
+        reason: "Rich visual composition featuring multiple flowers, garlands, and ornaments."
+      confidence_modifier: 0.05
+
+    - id: "RULE_COMPLEXITY_DEFAULT"
+      description: "Medium Visual Complexity"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Medium"
+        reason: "Balanced shrine composition."
+      confidence_modifier: 0.0
+
+  decoration_level:
+    - id: "RULE_DEC_001"
+      description: "Lavish Floral Arrangements"
+      priority: 10
+      requires: ["yolo", "minicpm"]
+      conditions:
+        yolo_contains: ["flower", "garland", "petal"]
+        minicpm_contains: ["pink petals", "garlands", "colorful flowers", "adorned"]
+      output:
+        value: "Lavish / Floral & Garlands"
+        reason: "Extensive floral garlands and fresh petal offerings adorn the shrine."
+      confidence_modifier: 0.06
+
+    - id: "RULE_DEC_DEFAULT"
+      description: "High Decoration"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "High"
+        reason: "Traditional sacred decorations."
+      confidence_modifier: 0.0
+
+  scene_density:
+    - id: "RULE_DENSITY_DEFAULT"
+      description: "Moderate Scene Density"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Moderate"
+        reason: "Well-arranged layout of offerings around deity."
+      confidence_modifier: 0.0
+
+  camera_motion:
+    - id: "RULE_CAM_MOTION_DEFAULT"
+      description: "Static Steady Framing"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Static / Steady"
+        reason: "Fixed camera framing focused on the deity altar."
+      confidence_modifier: 0.0
+
+  camera_angle:
+    - id: "RULE_CAM_ANGLE_DEFAULT"
+      description: "Eye-level View"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Eye-level"
+        reason: "Natural eye-level perspective facing the shrine."
+      confidence_modifier: 0.0

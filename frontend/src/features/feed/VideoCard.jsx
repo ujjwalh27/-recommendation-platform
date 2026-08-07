@@ -10,17 +10,26 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
     const [showIndicator, setShowIndicator] = useState(null); // 'play' or 'pause'
     const [progress, setProgress] = useState(0);
 
-    // Watch statistics refs to avoid React re-render loops during continuous updates
+    // Watch statistics & interaction state refs to avoid React closure stale-state bugs during unmounts/scrolls
     const watchStartTimeRef = useRef(null);
     const totalWatchTimeRef = useRef(0);
     const replayCountRef = useRef(0);
     const durationRef = useRef(video.duration || 15.0);
+    const likedRef = useRef(video.is_liked || false);
+    const savedRef = useRef(video.is_saved || false);
+    const commentedRef = useRef(video.is_commented || false);
 
     // Sync state if video model already has engagement (or defaults)
     useEffect(() => {
-        setLiked(video.is_liked || false);
-        setSaved(video.is_saved || false);
-        setCommented(video.is_commented || false);
+        const isL = video.is_liked || false;
+        const isS = video.is_saved || false;
+        const isC = video.is_commented || false;
+        setLiked(isL);
+        likedRef.current = isL;
+        setSaved(isS);
+        savedRef.current = isS;
+        setCommented(isC);
+        commentedRef.current = isC;
         totalWatchTimeRef.current = 0;
         replayCountRef.current = 0;
         setProgress(0);
@@ -45,13 +54,6 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
             setIsPlaying(false);
             submitSessionFeedback();
         }
-
-        return () => {
-            // Submit session on cleanup (when active changes or component unmounts)
-            if (isActive) {
-                submitSessionFeedback();
-            }
-        };
     }, [isActive, userId]);
 
     const submitSessionFeedback = () => {
@@ -73,10 +75,10 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
             watchCompletionRate: Number(watchCompletionRate.toFixed(2)),
             watchTimeSeconds: Number(totalWatchTimeRef.current.toFixed(2)),
             replayCount: replayCountRef.current,
-            isLiked: liked,
-            isSaved: saved,
+            isLiked: likedRef.current,
+            isSaved: savedRef.current,
             isShared: false,
-            isCommented: commented,
+            isCommented: commentedRef.current,
             isFinal: true
         };
 
@@ -145,6 +147,7 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         e.stopPropagation();
         const nextLiked = !liked;
         setLiked(nextLiked);
+        likedRef.current = nextLiked;
         addLog(`LIKE: ${nextLiked ? "Liked" : "Unliked"} clip ${video.video_id}`, "event");
 
         // Send immediate interactive update to backend
@@ -157,8 +160,8 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
             watchTimeSeconds: Number(totalTime.toFixed(2)),
             replayCount: replayCountRef.current,
             isLiked: nextLiked,
-            isSaved: saved,
-            isCommented: commented
+            isSaved: savedRef.current,
+            isCommented: commentedRef.current
         }).then(res => {
             if (res.status === "success" && onFeedbackSubmitted) {
                 onFeedbackSubmitted(res);
@@ -170,6 +173,7 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         e.stopPropagation();
         const nextSaved = !saved;
         setSaved(nextSaved);
+        savedRef.current = nextSaved;
         addLog(`SAVE: ${nextSaved ? "Saved" : "Unsaved"} clip ${video.video_id}`, "event");
 
         const duration = durationRef.current || 15.0;

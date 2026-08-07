@@ -409,6 +409,48 @@ function ContentIntelligence() {
                                                  )}
                                              </div>
 
+                                             {/* CEEE Multimodal Signal Fusion & Context Card */}
+                                             {(analysisResult.perceptual_metadata || analysisResult.emotional_metadata) && (
+                                                 <div style={{
+                                                     background: "linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(56, 189, 248, 0.08) 100%)",
+                                                     padding: "12px",
+                                                     borderRadius: "8px",
+                                                     border: "1px solid rgba(16, 185, 129, 0.25)",
+                                                     margin: "8px 0"
+                                                 }}>
+                                                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                                                         <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "10px", color: "#34d399", fontWeight: "900", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                                 <circle cx="12" cy="12" r="10"/>
+                                                                 <path d="M12 8v8M8 12h8"/>
+                                                             </svg>
+                                                             CEEE Multimodal Signal Fusion & Context Intelligence (Layer 2 & 3)
+                                                         </div>
+                                                         <span style={{ fontSize: "9px", padding: "2px 6px", background: "rgba(56, 189, 248, 0.2)", color: "#38bdf8", borderRadius: "4px", fontWeight: "800" }}>
+                                                             7 Models Fused
+                                                         </span>
+                                                     </div>
+                                                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "6px" }}>
+                                                         <div style={{ background: "rgba(0,0,0,0.2)", padding: "6px 8px", borderRadius: "6px" }}>
+                                                             <div style={{ fontSize: "8px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Environment</div>
+                                                             <div style={{ fontSize: "11px", color: "#34d399", fontWeight: "800" }}>{analysisResult.perceptual_metadata?.environment?.value || "Sacred Space"}</div>
+                                                         </div>
+                                                         <div style={{ background: "rgba(0,0,0,0.2)", padding: "6px 8px", borderRadius: "6px" }}>
+                                                             <div style={{ fontSize: "8px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Lighting</div>
+                                                             <div style={{ fontSize: "11px", color: "#fbbf24", fontWeight: "800" }}>{analysisResult.perceptual_metadata?.lighting?.value || "Warm"}</div>
+                                                         </div>
+                                                         <div style={{ background: "rgba(0,0,0,0.2)", padding: "6px 8px", borderRadius: "6px" }}>
+                                                             <div style={{ fontSize: "8px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Energy Level</div>
+                                                             <div style={{ fontSize: "11px", color: "#f472b6", fontWeight: "800" }}>{analysisResult.emotional_metadata?.energy_level?.value || "Moderate"}</div>
+                                                         </div>
+                                                         <div style={{ background: "rgba(0,0,0,0.2)", padding: "6px 8px", borderRadius: "6px" }}>
+                                                             <div style={{ fontSize: "8px", color: "#94a3b8", textTransform: "uppercase", fontWeight: "800" }}>Emotional Tone</div>
+                                                             <div style={{ fontSize: "11px", color: "#38bdf8", fontWeight: "800" }}>{analysisResult.emotional_metadata?.emotional_tone?.value || "Reverent"}</div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             )}
+
                                              {/* Legacy Category Grid */}
                                              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 16px", margin: "6px 0", background: "rgba(255,255,255,0.02)", padding: "10px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.04)" }}>
                                                 <div>
@@ -499,7 +541,7 @@ function ContentIntelligence() {
                                     
                                     {/* Tabs */}
                                     <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderBottom: "1px solid rgba(255,255,255,0.08)", paddingBottom: "8px", marginBottom: "14px" }}>
-                                        {["reasoning", "evidence_graph", "transcript", "ocr", "objects", "scenes", "actions", "audio_events", "embedding"].map(tab => (
+                                        {["reasoning", "perceptual_metadata", "emotional_metadata", "evidence_graph", "transcript", "ocr", "objects", "scenes", "actions", "audio_events", "embedding"].map(tab => (
                                             <button
                                                 key={tab}
                                                 onClick={() => setActiveDetailTab(tab)}
@@ -521,7 +563,41 @@ function ContentIntelligence() {
 
                                     {/* Tab Viewport */}
                                     <div style={{ flex: 1, overflowY: "auto", fontSize: "13px" }}>
-                                        {activeDetailTab === "reasoning" && (
+                                         {activeDetailTab === "perceptual_metadata" && (
+                                             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                                                 <div style={{ color: "#34d399", fontWeight: "700", fontSize: "14px" }}>Layer 2 — Objective Perceptual Metadata</div>
+                                                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+                                                     {Object.entries(analysisResult.perceptual_metadata || {}).map(([key, data]) => (
+                                                         <div key={key} style={{ background: "rgba(255,255,255,0.02)", padding: "10px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                                                             <div style={{ fontSize: "10px", color: "#34d399", textTransform: "uppercase", fontWeight: "800" }}>{key.replace("_", " ")}</div>
+                                                             <div style={{ fontSize: "13px", color: "#fff", fontWeight: "700" }}>{typeof data === "object" ? data.value : String(data)}</div>
+                                                             {typeof data === "object" && data.reason && (
+                                                                 <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "4px" }}>{data.reason}</div>
+                                                             )}
+                                                         </div>
+                                                     ))}
+                                                 </div>
+                                             </div>
+                                         )}
+
+                                         {activeDetailTab === "emotional_metadata" && (
+                                             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                                                 <div style={{ color: "#f472b6", fontWeight: "700", fontSize: "14px" }}>Layer 3 — Experiential & Emotional Metadata</div>
+                                                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+                                                     {Object.entries(analysisResult.emotional_metadata || {}).map(([key, data]) => (
+                                                         <div key={key} style={{ background: "rgba(255,255,255,0.02)", padding: "10px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                                                             <div style={{ fontSize: "10px", color: "#f472b6", textTransform: "uppercase", fontWeight: "800" }}>{key.replace("_", " ")}</div>
+                                                             <div style={{ fontSize: "13px", color: "#fff", fontWeight: "700" }}>{typeof data === "object" ? data.value : String(data)}</div>
+                                                             {typeof data === "object" && data.reason && (
+                                                                 <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "4px" }}>{data.reason}</div>
+                                                             )}
+                                                         </div>
+                                                     ))}
+                                                 </div>
+                                             </div>
+                                         )}
+
+                                         {activeDetailTab === "reasoning" && (
                                             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                                                 <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5">

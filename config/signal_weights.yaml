@@ -1,0 +1,26 @@
+# Signal Weights Configuration for Multimodal Signal Fusion Engine
+# Version: 1.0-signal-weights
+# Dynamically weighted model contributions for confidence calculation.
+
+version: "1.0-signal-weights"
+
+weights:
+  MiniCPM: 0.30
+  YOLO: 0.20
+  VideoMAE: 0.15
+  Whisper: 0.15
+  AST: 0.10
+  OCR: 0.05
+  CLIP: 0.05
+
+model_priorities:
+  visual_objects: ["YOLO", "MiniCPM"]
+  visual_scene: ["CLIP", "MiniCPM"]
+  action_motion: ["VideoMAE", "YOLO"]
+  audio_events: ["AST", "Whisper"]
+  text_ocr: ["OCR", "Whisper"]
+  vlm_narrative: ["MiniCPM"]
+
+fallback_thresholds:
+  minimum_confidence: 0.50
+  default_rule_confidence: 0.80

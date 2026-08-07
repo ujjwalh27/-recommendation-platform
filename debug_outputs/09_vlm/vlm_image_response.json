@@ -1,16 +1,16 @@
 {
   "model": "minicpm-v",
-  "created_at": "2026-07-29T11:49:22.808382Z",
+  "created_at": "2026-08-05T11:31:00.843532Z",
   "message": {
     "role": "assistant",
-    "content": "Based on the provided frames from a sequence of keyframes sampled from an uploaded video along with audio transcription, secondary sensor logs, here is the structured semantic analysis:\n\n{\n  \"title\": \"Devotional Worship in a Temple Shrine\",\n  \"summary\": \"The video captures a vibrant and colorful devotional worship scene dedicated to Lord Krishna. The shrine is adorned with flowers and ornate decorations as two figurines of deities are worshipped amidst musical accompaniment.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"Religious Worship\",\n  \"primary_topic\": \"Lord Krishna Devotion\",\n  \"secondary_topics\": [\"Hindu Deity Worship\", \"Temple Rituals\"],\n  \"entities\": [\n    {\n      \"name\": \"Lord Krishna\",\n      \"type\": \"Deity\"\n    },\n    {\n      \"name\": \"Goddess Radha\",\n      \"type\": \"Deity\"\n    }\n  ],\n  \"people\": [],\n  \"locations\": [\"Temple Shrine\", \"Devotional Place\"],\n  \"activities\": [\n    \"Worshiping Deities\",\n    \"Offering Flowers and Decorations\"\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Flowers\",\n      \"type\": \"Decorative Items\"\n    },\n    {\n      \"name\": \"Ornate Figurines of Lord Krishna and Goddess Radha\",\n      \"type\": \"Religious Artifacts\"\n    }\n  ],\n  \"events\": [\"Devotional Worship Ceremony\"],\n  \"keywords\": [\n    \"Lord Krishna\",\n    \"Deity Worship\",\n    \"Temple Decorations\",\n    \"Floral Offerings\",\n    \"Hindu Rituals\"\n  ],\n  \"recommendation_keywords\": [\n    \"Religious Worship\",\n    \"Hindu Devotion\",\n    \"Colorful Temple Decorations\"\n  ],\n  \"language\": \"Hindi\",\n  \"mood\": \"Spiritual and Reverent\",\n  \"emotion\": \"Devotional\",\n  \"target_audience\": [\"Hindus\", \"Religious Enthusiasts\"],\n  \"reasoning\": \"The video showcases a detailed depiction of Hindu devotional worship, focusing on the vibrant decorations and musical accompaniment that enhance the spiritual atmosphere.\"\n}"
+    "content": "{\n  \"title\": \"Devotional Celebration at a Temple\",\n  \"summary\": \"The sequence of frames captures a vibrant devotional celebration involving floral decorations, traditional attire, and offerings. The audio suggests singing or chanting is part of the ceremony.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"Religious Ceremony\",\n  \"primary_topic\": \"A religious worship event at a temple shrine\",\n  \"secondary_topics\": [\"Celebration\", \"Offerings\"],\n  \"entities\": [],\n  \"people\": [\n    {\n      \"name\": \"Person in white tank top and red skirt\"\n    },\n    {\n      \"name\": \"Individual holding lit sparklers\"\n    }\n  ],\n  \"locations\": [\"Temple or shrine with floral decorations\"],\n  \"activities\": [\"Offering flowers, lighting lamps\", \"Singing or chanting\"],\n  \"objects\": [\n    {\n      \"description\": \"Floral garlands in various colors\",\n      \"quantity\": \"Multiple strands hanging from above\"\n    },\n    {\n      \"description\": \"Decorative fan with peacock feathers and gold accents\",\n      \"quantity\": \"One large decorative item\"\n    },\n    {\n      \"description\": \"Offerings on a table including sweets, flowers, and lit lamps\",\n      \"quantity\": \"Various items arranged for worship\"\n    }\n  ],\n  \"events\": [\"A religious ceremony involving offerings and prayers\"],\n  \"keywords\": [\n    \"worship\",\n    \"devotion\",\n    \"celebration\",\n    \"temple\",\n    \"offerings\"\n  ],\n  \"recommendation_keywords\": [\n    \"Religious Ceremony\",\n    \"Devotional Worship\",\n    \"Cultural Celebration\"\n  ],\n  \"language\": \"Urdu/Hindi\",\n  \"mood\": \"Spiritual and Reverent\",\n  \"emotion\": [\"Devotional\", \"Happy\"],\n  \"target_audience\": [\"Individuals interested in religious ceremonies, cultural celebrations, or spiritual practices\"],\n  \"reasoning\": \"The visual elements such as floral decorations, traditional attire, lit lamps, and offerings indicate a devotional celebration. The audio suggests singing or chanting activities typical of temple worship events.\"\n}"
   },
   "done": true,
   "done_reason": "stop",
-  "total_duration": 45905680209,
-  "load_duration": 137956334,
-  "prompt_eval_count": 1985,
-  "prompt_eval_duration": 23899993000,
-  "eval_count": 460,
-  "eval_duration": 21506139000
+  "total_duration": 53395162500,
+  "load_duration": 7789363250,
+  "prompt_eval_count": 2022,
+  "prompt_eval_duration": 24394254000,
+  "eval_count": 441,
+  "eval_duration": 20898099000
 }

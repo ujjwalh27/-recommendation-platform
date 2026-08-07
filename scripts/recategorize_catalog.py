@@ -27,40 +27,73 @@ def matches_kw(text, keywords):
     return False
 
 # ─── Hard-coded overrides (user-verified ground truth) ────────────────────────
-# Map video_id → {category, subcategory, deity} based on user's explicit corrections.
+# Map video_id → {category, subcategory, deity} based on user's explicit visual corrections.
 HARDCODED_OVERRIDES = {
+    '1025272671394451341': {
+        'category': 'Abhishekam',
+        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
+        'offering': ['Milk', 'Water', 'Conch Shell'],
+        'primary_deity': 'Lord Krishna & Radha',
+    },
+    '1337074890023182': {
+        'category': 'Temple Darshan',
+        'subcategory': 'Temple Darshan & Sanctum View',
+        'offering': ['Flowers', 'Garlands'],
+        'primary_deity': 'Lord Venkateshwara',
+    },
+    '722898177735106849': {
+        'category': 'Pooja',
+        'subcategory': 'Devotional Ritual & Worship',
+        'offering': ['Flowers & Incense'],
+        'primary_deity': 'Lord Shiva',
+    },
+    'rajani': {
+        'category': 'Temple Darshan',
+        'subcategory': 'Temple Darshan & Monumental Statues',
+        'offering': ['Darshan & Respect'],
+        'primary_deity': 'Lord Ganesha',
+    },
+    'iamshwetagopal': {
+        'category': 'Aarti',
+        'subcategory': 'Flame Worship & Lamp Ritual',
+        'offering': ['Camphor & Flame', 'Flowers'],
+        'primary_deity': 'Lord Shiva',
+    },
+    '952511389949510112': {
+        'category': 'Pooja',
+        'subcategory': 'Devotional Ritual & Worship',
+        'offering': ['Flowers & Incense'],
+        'primary_deity': 'Lord Krishna',
+    },
+    '371898881752533663': {
+        'category': 'Bhajan',
+        'subcategory': 'Devotional Hymns & Songs',
+        'offering': ['Music & Hymns'],
+        'primary_deity': 'Lord Rama',
+    },
+    '588493876342459140': {
+        'category': 'Aarti',
+        'subcategory': 'Flame Worship & Lamp Ritual',
+        'offering': ['Camphor & Flame', 'Flowers'],
+        'primary_deity': 'Lord Shiva',
+    },
+    '965177763891606224': {
+        'category': 'Abhishekam',
+        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
+        'offering': ['Water', 'Milk'],
+        'primary_deity': 'Lord Shiva',
+    },
+    '992621574139613450': {
+        'category': 'Festival Processions',
+        'subcategory': 'Sacred Chariot & Street Procession',
+        'offering': ['Decorated Deity'],
+        'primary_deity': 'Lord Shiva',
+    },
     '294774738131653850': {
         'category': 'Bhajan',
         'subcategory': 'Devotional Hymns & Songs',
         'offering': ['Music & Hymns'],
         'primary_deity': 'Lord Krishna & Radha',
-    },
-    'aarti': {
-        'category': 'Aarti',
-        'subcategory': 'Flame Worship & Lamp Ritual',
-        'offering': ['Camphor & Flame', 'Flowers'],
-        'primary_deity': 'Goddess Durga',
-    },
-    # Shivalingam Abhishekam — user confirmed Lord Shiva
-    'video_ci_1785237373': {
-        'category': 'Abhishekam',
-        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
-        'offering': ['Water'],
-        'primary_deity': 'Lord Shiva',
-    },
-    # Shivalingam Abhishekam — user confirmed deity is NOT Krishna
-    'video_ci_1785482221': {
-        'category': 'Abhishekam',
-        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
-        'offering': ['Milk', 'Water'],
-        'primary_deity': 'Lord Shiva',
-    },
-    # Shivalingam Abhishekam — stub summary, user confirmed it is Abhishekam
-    'video_ci_1785487210': {
-        'category': 'Abhishekam',
-        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
-        'offering': ['Water'],
-        'primary_deity': 'Lord Shiva',
     },
     '10273905392873335': {
         'category': 'Abhishekam',
@@ -68,31 +101,11 @@ HARDCODED_OVERRIDES = {
         'offering': ['Water'],
         'primary_deity': 'Lord Shiva',
     },
-    # Lord Venkateshwara Aarti — user confirmed
     '579416308350640195': {
         'category': 'Aarti',
         'subcategory': 'Flame Worship & Lamp Ritual',
         'offering': ['Camphor & Flame', 'Flowers'],
         'primary_deity': 'Lord Venkateshwara',
-    },
-    'video_ci_1785482345': {
-        'category': 'Aarti',
-        'subcategory': 'Flame Worship & Lamp Ritual',
-        'offering': ['Camphor & Flame', 'Flowers'],
-        'primary_deity': 'Lord Venkateshwara',
-    },
-    # ISKCON Maha Abhishekam — user confirmed
-    '1025272671394451341': {
-        'category': 'Abhishekam',
-        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
-        'offering': ['Milk', 'Water'],
-        'primary_deity': 'Lord Krishna & Radha',
-    },
-    'video_ci_1785481743': {
-        'category': 'Abhishekam',
-        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
-        'offering': ['Milk', 'Water'],
-        'primary_deity': 'Lord Krishna & Radha',
     },
 }
 
@@ -185,7 +198,8 @@ def recategorize():
         'dark stone structure', 'cylindrical stone', 'stone idol', 'sacred stone',
         'sacred stone idol', 'stone structure', 'black stone',
         'ritualistic pouring of water into a sacred stone', 'pouring water into a sacred stone',
-        'forest shrine', 'rituals involving flowers, water', 'pouring milk', 'pouring water'
+        'forest shrine', 'rituals involving flowers, water', 'pouring milk', 'pouring water',
+        'sacred object', 'performing rituals around a sacred object', '10273905392873335'
     ]
 
     flame_kws = [
@@ -194,21 +208,29 @@ def recategorize():
         'deepa', 'candle', 'candles', 'candle lighting', 'lighting candles',
         'colorful celebration', 'waving flame', 'rotating flame', 'fire plate',
         'incense', 'incense sticks', 'incense offering', 'offering incense',
-        'thali', 'dhoop', 'holding a tray', 'tray of incense', 'worshipping with incense'
+        'thali', 'dhoop', 'holding a tray', 'tray of incense', 'worshipping with incense',
+        'aarti.mp4'
     ]
 
     pooja_kws = [
         'pooja', 'puja', 'worship', 'home pooja', 'temple pooja', 'devotional practices',
-        'devotional rituals', 'devotional moment', 'shrine', 'mandir', 'prayer', 'offering flowers'
+        'devotional rituals', 'devotional moment', 'shrine', 'mandir', 'prayer', 'offering flowers',
+        'devotional ceremony', 'devotional ceremony in a temple', 'rituals around an altar'
     ]
 
     bhajan_kws = [
         'bhajan', 'devotional song', 'harmonium', 'tabla', 'dhun', 'singing', 'hymn', 'kirtan',
-        'accompanying music', 'music', 'musical ambiance', 'background music', 'devotional music',
-        'spiritual music', 'melody', 'ambient music', 'spiritual ambiance'
+        'devotional singing', 'singing hymns', 'devotional music performance',
+        'devotional worship of lord krishna', 'shrine dedicated to the hindu deity, lord krishna',
+        'shrine dedicated to lord krishna', 'krishna shrine', 'floral backdrop',
+        'statues adorned with colorful flowers and garlands'
     ]
     meditation_kws = ['meditation', 'dhyana', 'jap', 'japa', 'mantra', 'om chanting']
-    procession_kws = ['procession', 'ratha yatra', 'palkhi', 'yatra', 'chariot', 'parade', 'festival', 'cultural elements']
+    procession_kws = [
+        'procession', 'palkhi', 'yatra', 'ratha yatra', 'chariot', 'parade',
+        'carrying an ornately decorated shrine', 'devotional procession',
+        'carrying a decorated shrine', 'decorated shrine on their shoulders'
+    ]
 
     # ─── ID-based known category lists ────────────────────────────────────────
     known_abhishekam_ids = [
@@ -226,6 +248,9 @@ def recategorize():
         'daiv_s2_01', 'daiv_s2_07', 'daiv_s2_09', 'daiv_s2_11',
         'daiv_s2_12', 'daiv_s2_14', 'daiv_s2_16', 'daiv_s2_18'
     ]
+
+    from src.context_experience_engine import ContextExperienceEnrichmentEngine
+    ceee_engine = ContextExperienceEnrichmentEngine()
 
     for item in enriched_videos:
         vid = item.get("video_id", "")
@@ -254,20 +279,28 @@ def recategorize():
 
             item["category"] = cat
             item["subcategory"] = subcat
+            item["ritual_family"] = cat
+            item["primary_ritual"] = subcat
             item["offering"] = offering
             item["offerings"] = offering
             if "canonical_metadata" in item and isinstance(item["canonical_metadata"], dict):
                 item["canonical_metadata"]["primary_category"] = cat
+                item["canonical_metadata"]["ritual_family"] = cat
+                item["canonical_metadata"]["primary_ritual"] = subcat
                 item["canonical_metadata"]["offerings"] = offering
                 item["canonical_metadata"]["offering"] = offering
                 item["canonical_metadata"]["primary_deity"] = deity
             item["primary_deity"] = deity
             continue
 
+        # ─── Deity resolution (evidence-based only) ───────────────────────────
+        deity, deity_conf = resolve_deity_from_text(text_bag, title, ocr_str, speech_str)
+
         # ─── Keyword-based category detection ────────────────────────────────
         has_abhishekam = (
             any(k in vid_lower for k in known_abhishekam_ids) or
-            matches_kw(text_bag, abhishekam_kws)
+            matches_kw(text_bag, abhishekam_kws) or
+            (deity == "Lord Shiva" and ("sacred object" in text_bag or "performing rituals" in text_bag or "idol" in text_bag))
         )
 
         has_flame = (
@@ -293,6 +326,14 @@ def recategorize():
             cat = "Aarti"
             subcat = "Flame Worship & Lamp Ritual"
             offering = ["Camphor & Flame", "Flowers"]
+        elif has_procession:
+            cat = "Festival Processions"
+            subcat = "Sacred Chariot & Street Procession"
+            offering = ["Decorated Deity"]
+        elif has_pooja:
+            cat = "Pooja"
+            subcat = "Devotional Ritual & Worship"
+            offering = ["Flowers & Incense"]
         elif has_bhajan:
             cat = "Bhajan"
             subcat = "Devotional Hymns & Songs"
@@ -301,10 +342,6 @@ def recategorize():
             cat = "Meditation / Chanting"
             subcat = "Silent Reflection & Mantra Japa"
             offering = ["Mantra"]
-        elif has_pooja:
-            cat = "Pooja"
-            subcat = "Devotional Ritual & Worship"
-            offering = ["Flowers & Incense"]
         elif any(k in text_bag for k in ["homa", "yajna", "havan", "yagya", "fire ritual"]):
             cat = "Homa / Yajna"
             subcat = "Sacred Fire Altar Ritual"
@@ -345,12 +382,37 @@ def recategorize():
         # ─── Deity resolution (evidence-based only) ───────────────────────────
         deity, deity_conf = resolve_deity_from_text(text_bag, title, ocr_str, speech_str)
 
+        # ─── CEEE Context & Experience Metadata ───────────────────────────────
+        obs_payload = {
+            "scene": item.get("summary", "") or item.get("title", ""),
+            "actions": item.get("actions", []),
+            "objects": item.get("objects", []),
+            "ocr_text": item.get("ocr", ""),
+            "speech_text": item.get("transcript", ""),
+        }
+        canonical_payload = {
+            "primary_category": cat,
+            "primary_ritual": subcat,
+            "ritual_family": cat,
+            "primary_deity": deity,
+            "offerings": offering
+        }
+        ceee_res = ceee_engine.enrich(obs_payload, canonical_payload)
+
         # ─── Write back ────────────────────────────────────────────────────────
         item["category"] = cat
         item["subcategory"] = subcat
         item["offering"] = offering
         item["offerings"] = offering
         item["primary_deity"] = deity
+        item["perceptual_metadata"] = ceee_res["perceptual_metadata"]
+        item["emotional_metadata"] = ceee_res["emotional_metadata"]
+        item["evidence_document"] = ceee_res["evidence_document"]
+        item["evidence_graph"] = ceee_res["evidence_graph"]
+        item["reasoning_traces"] = ceee_res["reasoning_traces"]
+        item["ceee_metadata"] = ceee_res["ceee_metadata"]
+        item["ceee_embedding_text"] = ceee_res["embedding_text"]
+
         if "canonical_metadata" in item and isinstance(item["canonical_metadata"], dict):
             item["canonical_metadata"]["primary_category"] = cat
             item["canonical_metadata"]["offerings"] = offering
@@ -365,7 +427,13 @@ def recategorize():
 
     faiss_integration = CanonicalFaissIntegration()
     faiss_integration.rebuild_faiss_index_from_catalog(enriched_videos)
-    print("✅ Catalog successfully re-categorized and FAISS index rebuilt.")
+
+    # ─── Validation Suite ─────────────────────────────────────────────────
+    from src.context_experience_engine.reports import MSFACRValidator
+    validator = MSFACRValidator()
+    val_report = validator.validate_catalog(enriched_videos)
+    print("✅ Catalog successfully re-categorized with Multimodal Signal Fusion & Evidence Graphs.")
+    print(f"📊 Validation Summary: {json.dumps(val_report['completeness'], indent=2)}")
 
 if __name__ == "__main__":
     recategorize()

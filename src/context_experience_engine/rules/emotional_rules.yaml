@@ -1,0 +1,176 @@
+# Multimodal Emotional Rules Configuration
+rules:
+  energy_level:
+    - id: "RULE_ENERGY_001"
+      description: "High Energy Festival or Percussive Chanting"
+      priority: 10
+      requires: ["ast", "videomae"]
+      conditions:
+        ast_contains: ["drums", "dhol", "chenda", "cymbals", "crowd_noise"]
+        videomae_contains: ["dancing", "marching", "procession"]
+      output:
+        value: "High / Celebratory"
+        reason: "Dynamic movement combined with percussive drums and crowd cheering indicates high energy."
+      confidence_modifier: 0.05
+
+    - id: "RULE_ENERGY_002"
+      description: "Tranquil Low Energy Water Offering or Chanting"
+      priority: 9
+      requires: ["whisper", "videomae"]
+      conditions:
+        whisper_contains: ["slow", "mantra", "peaceful", "silent"]
+        videomae_contains: ["seated", "pouring", "still"]
+      output:
+        value: "Low"
+        reason: "Minimal physical motion accompanied by calm chanting or quiet liquid flow indicates a serene ritual."
+      confidence_modifier: 0.04
+
+    - id: "RULE_ENERGY_DEFAULT"
+      description: "Default Devotional Energy"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Moderate"
+        reason: "Balanced devotional energy characteristic of regular temple worship."
+      confidence_modifier: 0.0
+
+  emotional_tone:
+    - id: "RULE_TONE_001"
+      description: "Peaceful & Serene Bathing / Meditation"
+      priority: 10
+      requires: ["whisper", "minicpm"]
+      conditions:
+        whisper_contains: ["peaceful", "serene", "om", "mantra", "shanti"]
+        minicpm_contains: ["water", "abhishekam", "meditation", "soothing"]
+      output:
+        value: "Peaceful & Serene"
+        reason: "Soothing audio chants and gentle liquid offerings create a tranquil atmosphere."
+      confidence_modifier: 0.05
+
+    - id: "RULE_TONE_002"
+      description: "Solemn & Reverent Temple Aarti / Worship"
+      priority: 9
+      requires: ["ast", "yolo"]
+      conditions:
+        ast_contains: ["bells", "chanting", "music"]
+        yolo_contains: ["lamp", "diya", "flame"]
+      output:
+        value: "Solemn & Reverent"
+        reason: "Ringing ceremonial bells and lit flame lamps evoke deep reverence."
+      confidence_modifier: 0.04
+
+    - id: "RULE_TONE_DEFAULT"
+      description: "Default Devotional Tone"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Solemn & Reverent"
+        reason: "Respectful devotional tone typical of sacred spaces."
+      confidence_modifier: 0.0
+
+  devotional_intensity:
+    - id: "RULE_INTENSITY_001"
+      description: "Deep Ritualistic Devotion via Bath / Fire Offerings"
+      priority: 10
+      requires: ["minicpm", "yolo"]
+      conditions:
+        minicpm_contains: ["abhishekam", "homa", "yajna", "panchamrutha", "havan"]
+        yolo_contains: ["vessel", "flame", "kalash"]
+      output:
+        value: "Deeply Reverent"
+        reason: "Sacred liquid bathing of deity or fire oblations reflect profound ritualistic devotion."
+      confidence_modifier: 0.06
+
+    - id: "RULE_INTENSITY_DEFAULT"
+      description: "High Devotional Focus"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "High Devotional Focus"
+        reason: "Attentive devotion directed toward sacred deity worship."
+      confidence_modifier: 0.0
+
+  ambience:
+    - id: "RULE_AMBIENCE_001"
+      description: "Temple Ceremony Ambience"
+      priority: 10
+      requires: ["ast", "yolo"]
+      conditions:
+        ast_contains: ["bells", "music"]
+        yolo_contains: ["lamp", "flower"]
+      output:
+        value: "Temple Ceremony"
+        reason: "Ringing bells, singing, and lit lamps define classic temple ceremonial ambience."
+      confidence_modifier: 0.05
+
+    - id: "RULE_AMBIENCE_002"
+      description: "Devotional Music Ambience"
+      priority: 9
+      requires: ["ast", "whisper"]
+      conditions:
+        ast_contains: ["music", "chanting"]
+        whisper_contains: ["bhajan", "kirtan", "song", "harmonium"]
+      output:
+        value: "Devotional Music"
+        reason: "Soulful hymns and musical instrumentation create a melodious shrine ambience."
+      confidence_modifier: 0.05
+
+    - id: "RULE_AMBIENCE_DEFAULT"
+      description: "Default Sacred Shrine Ambience"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Sacred Shrine"
+        reason: "Atmosphere of a consecrated devotional space."
+      confidence_modifier: 0.0
+
+  pace:
+    - id: "RULE_PACE_001"
+      description: "Slow & Unhurried Pace"
+      priority: 9
+      requires: ["videomae", "whisper"]
+      conditions:
+        videomae_contains: ["seated", "pouring", "still"]
+        whisper_contains: ["slow", "chanting", "silent"]
+      output:
+        value: "Slow & Unhurried"
+        reason: "Unhurried physical movements and steady chanting maintain a calm pace."
+      confidence_modifier: 0.04
+
+    - id: "RULE_PACE_DEFAULT"
+      description: "Default Slow & Rhythmic Pace"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "Slow & Rhythmic"
+        reason: "Measured cadence of classic temple rituals."
+      confidence_modifier: 0.0
+
+  immersiveness:
+    - id: "RULE_IMMERSIVENESS_001"
+      description: "Deeply Immersive Multisensory Experience"
+      priority: 10
+      requires: ["ast", "yolo", "minicpm"]
+      conditions:
+        ast_contains: ["bells", "music", "chanting"]
+        yolo_contains: ["lamp", "flower"]
+        minicpm_contains: ["shrine", "idol", "adorned"]
+      output:
+        value: "Deeply Immersive"
+        reason: "Combined audio (bells/chants) and detailed visual elements provide deep engagement."
+      confidence_modifier: 0.06
+
+    - id: "RULE_IMMERSIVENESS_DEFAULT"
+      description: "High Immersiveness"
+      priority: 1
+      requires: []
+      conditions: {}
+      output:
+        value: "High"
+        reason: "Clear visual and auditory connection to the sacred ritual."
+      confidence_modifier: 0.0

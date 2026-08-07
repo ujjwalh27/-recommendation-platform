@@ -267,7 +267,7 @@ def analyze_video(file: UploadFile = File(...)):
     cap.release()
     
     # 4. Execute Content Intelligence Pipeline
-    record = ci_pipeline.analyze_video(str(video_path), video_id, force_reanalyze=True)
+    record = ci_pipeline.analyze_video(str(video_path), video_id, force_reanalyze=True, original_filename=file.filename)
     
     # 5. Automated Content Publishing & Real-time Catalog Sync
     publisher = ContentPublisher(recommender_service=service)

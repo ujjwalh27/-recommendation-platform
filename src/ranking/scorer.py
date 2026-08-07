@@ -12,17 +12,33 @@ class RankingSignal:
 
 
 class InterestSignal(RankingSignal):
-    """Scores how well the video category matches the user's interest profile."""
+    """Scores how well the video category, ritual family, and primary ritual match the user's interest profile."""
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
-        category = candidate.get("matched_category", "Entertainment")
+        metadata = candidate.get("metadata", candidate)
+        category = candidate.get("matched_category") or metadata.get("category") or metadata.get("primary_category")
+        family = metadata.get("ritual_family")
+        ritual = metadata.get("primary_ritual")
+        deity = metadata.get("primary_deity")
+
         interests = user_profile.get("interests", {})
         
-        # Interest score is stored as a percentage (0.0 to 100.0)
-        interest_pct = interests.get(category, 0.0)
-        
-        # Normalize to 0.0 - 1.0 range
-        return min(1.0, max(0.0, interest_pct / 100.0))
+        # Interest score stored as percentage (0.0 to 100.0)
+        cat_score = interests.get(category, 0.0) if category else 0.0
+        family_score = interests.get(family, 0.0) if family else 0.0
+        ritual_score = interests.get(ritual, 0.0) if ritual else 0.0
+
+        best_interest = max(cat_score, family_score, ritual_score)
+
+        # Deity & Ritual Family preferences bonus
+        pref_deities = user_profile.get("preferred_deities", [])
+        pref_families = user_profile.get("preferred_ritual_families", [])
+
+        deity_boost = 15.0 if deity and deity in pref_deities else 0.0
+        family_boost = 15.0 if family and family in pref_families else 0.0
+
+        total_score = min(100.0, best_interest + deity_boost + family_boost)
+        return round(min(1.0, max(0.0, total_score / 100.0)), 4)
 
 
 class CreatorAffinitySignal(RankingSignal):
@@ -35,8 +51,8 @@ class CreatorAffinitySignal(RankingSignal):
             return 0.0
             
         affinity_score = creator_affinities.get(creator, 0.0)
-        # Normalize to 0.0 - 1.0 range, where an affinity of 100+ is a perfect score
-        return min(1.0, affinity_score / 100.0)
+        # Normalize to 0.0 - 1.0 range, where an affinity of 10+ is a perfect score
+        return min(1.0, affinity_score / 10.0)
 
 
 class PopularitySignal(RankingSignal):
@@ -44,9 +60,6 @@ class PopularitySignal(RankingSignal):
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
         metadata = candidate.get("metadata", {})
-        
-        # Cold-start boost: if the video is fresh (less than 30 days old),
-        # give it a high baseline popularity score so it doesn't get out-ranked
         created_time = metadata.get("created_time", 0)
         reference_time = 2205577600
         age_days = (reference_time - created_time) / (3600.0 * 24.0)
@@ -54,15 +67,9 @@ class PopularitySignal(RankingSignal):
             return 0.8  # High baseline popularity for fresh/cold-start videos
             
         engagement_rate = metadata.get("engagement_rate", 0.0)
-        
-        # Normalize engagement rate: typically between 0.0 and 0.2
         er_score = min(1.0, engagement_rate / 0.15)
-        
-        # Include a log-scaled views component
         views = metadata.get("views", 0)
-        views_score = min(1.0, math.log1p(views) / 18.0)  # log1p(1e7) ~= 16.1
-        
-        # Combine er_score (70%) and views_score (30%)
+        views_score = min(1.0, math.log1p(views) / 18.0)
         return round(0.7 * er_score + 0.3 * views_score, 4)
 
 
@@ -70,7 +77,6 @@ class SimilaritySignal(RankingSignal):
     """Scores the candidate based on FAISS semantic vector similarity."""
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
-        # Cosine similarity score from FAISS search
         return float(candidate.get("similarity_score", 0.0))
 
 
@@ -78,7 +84,6 @@ class CollaborativeFilteringSignal(RankingSignal):
     """Scores candidate based on user-based collaborative filtering similarity."""
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
-        # Collaborative filtering similarity score
         return float(candidate.get("cf_score", 0.0))
 
 
@@ -89,15 +94,10 @@ class FreshnessSignal(RankingSignal):
         metadata = candidate.get("metadata", {})
         created_time = metadata.get("created_time", 0)
         if created_time == 0:
-            return 0.5 # Default middle score
-            
-        # The maximum created_time for 7010 videos is 1600000000 + 7009 * 86400 = 2205577600
-        # We can calculate freshness relative to 2205577600.
+            return 0.5
         reference_time = 2205577600
         age_seconds = max(0, reference_time - created_time)
         age_days = age_seconds / (3600.0 * 24.0)
-        
-        # Slower decay factor (half-life of 30 days, lambda = 0.0231) to prioritize fresh videos.
         decay_factor = math.exp(-0.0231 * age_days)
         return round(decay_factor, 4)
 
@@ -106,22 +106,22 @@ class RandomExplorationSignal(RankingSignal):
     """Adds a small randomized score to encourage content discovery (exploration)."""
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
-        return random.random()
+        return random.random() * 0.1  # Micro exploration factor
 
 
 class RuleBasedScorer:
     """Combines multiple ranking signals using configurable weights to score candidates."""
 
     def __init__(self, weights: Dict[str, float] = None):
-        # Default weights: sum is 1.0
+        # Stable MSR-VTT Personalization Weights
         self.weights = weights or {
-            "interest": 0.10,
-            "creator_affinity": 0.05,
-            "similarity": 0.05,
-            "collaborative_filtering": 0.05,
-            "popularity": 0.15,
-            "freshness": 0.30,
-            "exploration": 0.30
+            "interest": 0.35,
+            "creator_affinity": 0.20,
+            "similarity": 0.15,
+            "collaborative_filtering": 0.10,
+            "popularity": 0.10,
+            "freshness": 0.05,
+            "exploration": 0.05
         }
 
         # Registered signals
@@ -167,16 +167,22 @@ class RuleBasedScorer:
 
         normalized_score = round(total_score / total_weight, 4)
         
-        # Category Interest Gate: Completely suppress category if user's interest score is <= 1.5%
-        # (Strictly explore items are exempt to allow discovery and building of new interests)
-        category = candidate.get("matched_category", "Entertainment")
+        # Category Interest Gate: Suppress category ONLY if user explicitly has a near-zero interest score (<= 1.5%)
+        metadata = candidate.get("metadata", candidate)
+        category = candidate.get("matched_category") or metadata.get("category") or metadata.get("primary_category")
+        family = metadata.get("ritual_family")
+        ritual = metadata.get("primary_ritual")
+
         interests = user_profile.get("interests", {})
-        interest_pct = interests.get(category, 50.0)
+        cat_interest = interests.get(category, 50.0) if category else 50.0
+        fam_interest = interests.get(family, 50.0) if family else 50.0
+        rit_interest = interests.get(ritual, 50.0) if ritual else 50.0
+        best_interest_pct = max(cat_interest, fam_interest, rit_interest)
         
         retrieval_sources = candidate.get("retrieval_sources", [])
         is_strictly_explore = (retrieval_sources == ["exploration"])
         
-        if not is_strictly_explore and interest_pct <= 1.5:
+        if not is_strictly_explore and best_interest_pct <= 1.5 and len(interests) > 0 and (category in interests or family in interests):
             normalized_score = 0.0
 
         return normalized_score, scores_breakdown

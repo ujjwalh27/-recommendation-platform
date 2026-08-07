@@ -77,11 +77,18 @@ class CandidateGenerator:
 
         candidates = []
         for cat in sorted_categories:
-            cat_videos = self.videos_by_category.get(cat, [])
+            # Aggregate across category, ritual family, and primary ritual indexes
+            cat_videos = list({
+                v["video_id"]: v for v in (
+                    self.videos_by_category.get(cat, []) +
+                    self.videos_by_ritual_family.get(cat, []) +
+                    self.videos_by_ritual.get(cat, [])
+                )
+            }.values())
+            
             if not cat_videos:
                 continue
 
-            # Sort videos in this category by popularity/engagement
             sorted_cat_videos = sorted(
                 cat_videos, 
                 key=lambda x: (x.get("engagement_score", 0), x.get("views", 0)), 

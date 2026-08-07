@@ -1,33 +1,13 @@
 {
-  "transcript": "Krishra Kundi chau ala chau he bha jali rima nera tha ra ra Krashra he krishra le ra ra Jaffa niri ma nera ra ra ra Krashruna ve krishruna le ra Krashras ma ne ra ra No, no, no! Please, let's go!",
+  "transcript": "پل پل مجھے دو غائی جاتے ہیں جاقتے ہے جا تجید جید ہارو یہ اپنان پر آن برایڈ جاہتے ہو جایتے گا جا چیدی دو خارویی اپناان پروڈ",
   "language": "en",
   "language_probability": 0.95,
   "confidence": 0.95,
   "segments": [
     {
       "start": 0.0,
-      "end": 7.96,
-      "text": "Krishra Kundi chau ala chau he bha jali rima nera tha ra ra"
-    },
-    {
-      "start": 8.2,
-      "end": 12.24,
-      "text": "Krashra he krishra le ra ra"
-    },
-    {
-      "start": 12.4,
-      "end": 16.64,
-      "text": "Jaffa niri ma nera ra ra ra"
-    },
-    {
-      "start": 16.84,
-      "end": 20.68,
-      "text": "Krashruna ve krishruna le ra"
-    },
-    {
-      "start": 20.88,
-      "end": 25.0,
-      "text": "Krashras ma ne ra ra No, no, no! Please, let's go!"
+      "end": 0.0,
+      "text": "پل پل مجھے دو غائی جاتے ہیں جاقتے ہے جا تجید جید ہارو یہ اپنان پر آن برایڈ جاہتے ہو جایتے گا جا چیدی دو خارویی اپناان پروڈ"
     }
   ]
 }
