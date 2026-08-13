@@ -284,33 +284,76 @@ function VideoFeed() {
                             Interest Profile Vector
                         </h3>
                         <div style={{ display: "flex", flexDirection: "column" }}>
-                            {Object.entries(profile.interests).length === 0 ? (
-                                <span style={{ fontSize: "12px", fontStyle: "italic", color: "#64748b" }}>Empty vector (Cold Start)</span>
-                            ) : (
-                                Object.entries(profile.interests)
-                                    .sort((a,b) => b[1] - a[1])
-                                    .map(([cat, pct]) => (
-                                        <div key={cat} className="interest-row">
-                                            <div className="interest-info">
-                                                <span>{cat}</span>
-                                                <span>{pct}%</span>
-                                            </div>
-                                            <div className="bar-bg">
-                                                <div 
-                                                    className="bar-fill" 
-                                                    style={{ 
-                                                        width: `${pct}%`, 
-                                                        background: cat === "Automobile" || cat === "Auto" ? "#ff3b5c" : 
-                                                                    cat === "Tech" || cat === "Science" ? "#00e676" : 
-                                                                    cat === "Food" ? "#ffeb3b" : 
-                                                                    cat === "Travel" ? "#38bdf8" : 
-                                                                    cat === "Animal" ? "#ec4899" : "#bb86fc"
-                                                    }}
-                                                ></div>
-                                            </div>
+                            {(() => {
+                                const CANONICAL_MAP = {
+                                    "Aarti": "Aarti",
+                                    "Devotional Aarti": "Aarti",
+                                    "Flame Worship & Lamp Ritual": "Aarti",
+                                    "Flame Worship": "Aarti",
+                                    "Abhishekam": "Abhishekam",
+                                    "Milk / Panchamrutha / Water Abhishekam": "Abhishekam",
+                                    "Panchamrutha Abhishekam": "Abhishekam",
+                                    "Water Abhishekam": "Abhishekam",
+                                    "Pooja": "Pooja",
+                                    "Devotional Ritual & Worship": "Pooja",
+                                    "Shrine Worship": "Pooja",
+                                    "Bhajan": "Bhajan",
+                                    "Devotional Hymns & Songs": "Bhajan",
+                                    "Kirtan / Nama Sankeerthana": "Bhajan",
+                                    "Kirtan": "Bhajan",
+                                    "Festival Processions": "Festival Processions",
+                                    "Sacred Chariot & Street Procession": "Festival Processions",
+                                    "Procession": "Festival Processions",
+                                    "Meditation / Chanting": "Meditation / Chanting",
+                                    "Silent Reflection & Mantra Japa": "Meditation / Chanting",
+                                    "Homa / Yajna": "Homa / Yajna",
+                                    "Sacred Fire Altar Ritual": "Homa / Yajna",
+                                    "Annadanam": "Annadanam",
+                                    "Sacred Food Service & Prasad": "Annadanam",
+                                    "Pravachan / Spiritual Discourses": "Pravachan / Spiritual Discourses",
+                                    "Temple Darshan": "Temple Darshan",
+                                    "Temple Darshan & Deity Viewing": "Temple Darshan",
+                                    "Temple Darshan & Monumental Statues": "Temple Darshan",
+                                    "Temple Darshan & Sanctum View": "Temple Darshan"
+                                };
+
+                                const rawInterests = profile.interests || {};
+                                const merged = {};
+                                Object.entries(rawInterests).forEach(([key, val]) => {
+                                    const cKey = CANONICAL_MAP[key] || key;
+                                    merged[cKey] = (merged[cKey] || 0) + val;
+                                });
+                                const total = Object.values(merged).reduce((acc, v) => acc + v, 0);
+                                const deduplicatedList = total === 0 ? [] : Object.entries(merged)
+                                    .map(([cat, val]) => [cat, Number(((val / total) * 100).toFixed(1))])
+                                    .sort((a, b) => b[1] - a[1]);
+
+                                if (deduplicatedList.length === 0) {
+                                    return <span style={{ fontSize: "12px", fontStyle: "italic", color: "#64748b" }}>Empty vector (Cold Start)</span>;
+                                }
+
+                                return deduplicatedList.map(([cat, pct]) => (
+                                    <div key={cat} className="interest-row">
+                                        <div className="interest-info">
+                                            <span>{cat}</span>
+                                            <span>{pct}%</span>
                                         </div>
-                                    ))
-                            )}
+                                        <div className="bar-bg">
+                                            <div 
+                                                className="bar-fill" 
+                                                style={{ 
+                                                    width: `${pct}%`, 
+                                                    background: cat === "Automobile" || cat === "Auto" ? "#ff3b5c" : 
+                                                                cat === "Tech" || cat === "Science" ? "#00e676" : 
+                                                                cat === "Food" ? "#ffeb3b" : 
+                                                                cat === "Travel" ? "#38bdf8" : 
+                                                                cat === "Animal" ? "#ec4899" : "#bb86fc"
+                                                }}
+                                            ></div>
+                                        </div>
+                                    </div>
+                                ));
+                            })()}
                         </div>
                     </div>
                 )}

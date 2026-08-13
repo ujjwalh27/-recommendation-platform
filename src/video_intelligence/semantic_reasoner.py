@@ -14,9 +14,10 @@ class SemanticReasoner:
         """
         refined = vlm_data.copy()
 
-        # Extract text aggregations for cross-checking
+        # Extract text & visual aggregations for cross-checking
         speech_text = " ".join([n.value.lower() for n in evidence.speech])
         ocr_text = " ".join([n.value.lower() for n in evidence.ocr])
+        yolo_labels = [n.value.lower() for n in evidence.vision]
 
         # Rule 1: Language override
         # If Whisper transcribed speech, use the language it detected as the source of truth
@@ -29,33 +30,44 @@ class SemanticReasoner:
             else:
                 refined["language"] = "English"
 
-        # Rule 2: Category Override Heuristics
-        # If VLM suggests a general category but secondary sensors have overwhelming evidence of a specific one:
-        vlm_category = refined.get("category", "").lower().strip()
-        yolo_labels = [n.value.lower() for n in evidence.vision]
-        audio_events = [n.value.lower() for n in evidence.audio]
+        # Rule 2: Strict Multimodal Category Rules (User Mandated)
+        title_str = vlm_data.get("title", "").lower()
+        caption_str = vlm_data.get("caption", "").lower()
+        summary_str = vlm_data.get("summary", "").lower()
+        text_bag = f"{title_str} {caption_str} {summary_str} {speech_text} {ocr_text} {' '.join(yolo_labels)}"
 
-        # Case 2A: VLM guessed Food/Travel, but YOLO detected "car", "motorcycle", or "truck" multiple times
-        car_count = sum(1 for val in yolo_labels if val in ["car", "motorcycle", "truck", "bus"])
-        if vlm_category != "automobile" and car_count >= 2:
-            refined["category"] = "Automobile"
-            refined["subcategory"] = "Vehicle Review/Vlog"
-            print("[Reasoner] Overrode category to 'Automobile' based on YOLO vehicle count.")
+        # Rule 2A: AARTI — Flame/Fire involved for deity (flame, diya, torch, camphor, oil lamp, night ceremony)
+        flame_keywords = ["flame", "fire", "diya", "torch", "lamp", "aarti", "oil lamp", "burning oil", "camphor", "fire ritual"]
+        has_flame_evidence = any(k in text_bag for k in flame_keywords)
+        
+        # Rule 2B: BHAJAN — Devotional gathering with clapping/hands raised/singing/kirtan or 'THIS BHAJAN'
+        bhajan_keywords = ["clapping", "hand clapping", "applause", "hands raised", "bhajan", "kirtan", "satsang", "singing", "devotional gathering"]
+        has_bhajan_evidence = any(k in text_bag for k in bhajan_keywords)
 
-        # Case 2B: VLM guessed Entertainment/Lifestyle, but Speech transcript contains strong devotional keywords
-        devotional_words = ["temple", "mantra", "puja", "satsang", "bhagavad", "krishna", "swami", "mukundananda", "bhakti"]
-        devotional_speech_hits = sum(1 for w in devotional_words if w in speech_text)
-        if vlm_category != "devotion" and devotional_speech_hits >= 3:
-            refined["category"] = "Devotion"
-            refined["subcategory"] = "Temple Discourse"
-            print("[Reasoner] Overrode category to 'Devotion' based on Whisper transcript keywords.")
+        # Rule 2C: ABHISHEKAM — Liquid pouring (milk, water, panchamrutha, curd, honey)
+        abhishekam_keywords = ["abhishekam", "pouring water", "pouring milk", "doodh", "panchamrutha", "white liquid", "pouring stream"]
+        has_abhishekam_evidence = any(k in text_bag for k in abhishekam_keywords)
 
-        # Case 2C: VLM guessed Lifestyle/Entertainment, but AST detected "singing" or "music" with high confidence
-        singing_hits = any("sing" in ev or "music" in ev for ev in audio_events)
-        if vlm_category != "music" and singing_hits and "singing" in speech_text:
-            refined["category"] = "Music"
-            refined["subcategory"] = "Vocal Performance"
-            print("[Reasoner] Overrode category to 'Music' based on AST audio events.")
+        # Rule 2D: POOJA — Flowers & quiet ritual/lamps combination without liquid stream or active torch waving
+        pooja_keywords = ["flower", "garland", "petal", "incense", "tilak", "archana", "puja", "pooja"]
+        has_pooja_evidence = any(k in text_bag for k in pooja_keywords)
+
+        if has_flame_evidence:
+            refined["category"] = "Aarti"
+            refined["subcategory"] = "Flame Worship & Lamp Ritual"
+            print("[Reasoner] Set category to 'Aarti' based on active flame/fire evidence.")
+        elif has_abhishekam_evidence:
+            refined["category"] = "Abhishekam"
+            refined["subcategory"] = "Milk / Panchamrutha / Water Abhishekam"
+            print("[Reasoner] Set category to 'Abhishekam' based on liquid pouring evidence.")
+        elif has_bhajan_evidence:
+            refined["category"] = "Bhajan"
+            refined["subcategory"] = "Devotional Hymns & Songs"
+            print("[Reasoner] Set category to 'Bhajan' based on devotional singing/clapping evidence.")
+        elif has_pooja_evidence:
+            refined["category"] = "Pooja"
+            refined["subcategory"] = "Devotional Ritual & Worship"
+            print("[Reasoner] Set category to 'Pooja' based on flower & ritual offering evidence.")
 
         # Rule 3: Grounded Entity & Activity enrichment
         # Enrich entities from OCR text if they look like proper nouns (e.g. brand names, creator tags)

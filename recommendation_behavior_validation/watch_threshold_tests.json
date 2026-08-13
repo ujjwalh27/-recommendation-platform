@@ -1,0 +1,92 @@
+[
+    {
+        "watch_completion_rate": 0.0,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.1,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.25,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.5,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.75,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.84,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.85,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 0.9,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    },
+    {
+        "watch_completion_rate": 1.0,
+        "version_after": 2,
+        "raw_score_aarti": 40.0,
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        }
+    }
+]

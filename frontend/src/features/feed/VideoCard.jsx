@@ -18,6 +18,8 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
     const likedRef = useRef(video.is_liked || false);
     const savedRef = useRef(video.is_saved || false);
     const commentedRef = useRef(video.is_commented || false);
+    // Stable session event ID: fixed per video per user — used by ALL handlers so backend idempotency always matches
+    const sessionEventIdRef = useRef(null);
 
     // Sync state if video model already has engagement (or defaults)
     useEffect(() => {
@@ -33,6 +35,8 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         totalWatchTimeRef.current = 0;
         replayCountRef.current = 0;
         setProgress(0);
+        // Reset session event ID when video changes — each new video gets a fresh stable key
+        sessionEventIdRef.current = `sess_${userId}_${video.video_id}`;
     }, [video, userId]);
 
     // Handle Reels Play/Pause auto trigger
@@ -64,38 +68,11 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         watchStartTimeRef.current = null;
 
         const duration = durationRef.current || 15.0;
-        const watchCompletionRate = Math.min(2.0, totalWatchTimeRef.current / duration);
+        const watchCompletionRate = Math.min(1.0, totalWatchTimeRef.current / duration);
 
-        if (totalWatchTimeRef.current < 0.5) {
-            // Ignore accidental quick scrolls
-            return;
-        }
-
-        const engagement = {
-            watchCompletionRate: Number(watchCompletionRate.toFixed(2)),
-            watchTimeSeconds: Number(totalWatchTimeRef.current.toFixed(2)),
-            replayCount: replayCountRef.current,
-            isLiked: likedRef.current,
-            isSaved: savedRef.current,
-            isShared: false,
-            isCommented: commentedRef.current,
-            isFinal: true
-        };
-
-        addLog(`SESSION_END: Finished watching clip ${video.video_id} (Watch Time: ${engagement.watchTimeSeconds}s, Completion: ${Math.round(engagement.watchCompletionRate * 100)}%, Replays: ${engagement.replayCount})`, "feedback");
-
-        submitFeedback(userId, video.video_id, engagement)
-            .then(res => {
-                if (res.status === "success") {
-                    addLog(`MODEL_TRAINED: Recalculated interests for ${userId}. Dynamic re-ranking updated!`, "info");
-                    if (onFeedbackSubmitted) {
-                        onFeedbackSubmitted(res);
-                    }
-                }
-            })
-            .catch(err => {
-                console.error("Feedback submit failed:", err);
-            });
+        // Scrolling Read-Only Safety: Log session end for observability, but do not mutate profile vector on scroll.
+        // Profile vector updates strictly on explicit user button interactions (Like, Save, Share, Comment).
+        addLog(`SESSION_END: Engagement recorded for ${video.video_id} (Watch: ${Math.round(watchCompletionRate * 100)}%, Liked: ${likedRef.current})`, "feedback");
     };
 
     const handleVideoClick = () => {
@@ -150,20 +127,20 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         likedRef.current = nextLiked;
         addLog(`LIKE: ${nextLiked ? "Liked" : "Unliked"} clip ${video.video_id}`, "event");
 
-        // Send immediate interactive update to backend
         const duration = durationRef.current || 15.0;
         const currentSessionTime = watchStartTimeRef.current ? (Date.now() - watchStartTimeRef.current) / 1000.0 : 0;
-        const totalTime = totalWatchTimeRef.current + currentSessionTime;
+        const totalTime = Math.min(totalWatchTimeRef.current + currentSessionTime, duration);
 
         submitFeedback(userId, video.video_id, {
-            watchCompletionRate: Number((totalTime / duration).toFixed(2)),
+            eventId: `evt_like_${userId}_${video.video_id}_${nextLiked}_${Date.now()}`,
+            watchCompletionRate: Number(Math.min(totalTime / duration, 1.0).toFixed(2)),
             watchTimeSeconds: Number(totalTime.toFixed(2)),
             replayCount: replayCountRef.current,
             isLiked: nextLiked,
             isSaved: savedRef.current,
             isCommented: commentedRef.current
         }).then(res => {
-            if (res.status === "success" && onFeedbackSubmitted) {
+            if (res && res.status === "success" && onFeedbackSubmitted) {
                 onFeedbackSubmitted(res);
             }
         });
@@ -178,17 +155,18 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
 
         const duration = durationRef.current || 15.0;
         const currentSessionTime = watchStartTimeRef.current ? (Date.now() - watchStartTimeRef.current) / 1000.0 : 0;
-        const totalTime = totalWatchTimeRef.current + currentSessionTime;
+        const totalTime = Math.min(totalWatchTimeRef.current + currentSessionTime, duration);
 
         submitFeedback(userId, video.video_id, {
-            watchCompletionRate: Number((totalTime / duration).toFixed(2)),
+            eventId: `evt_save_${userId}_${video.video_id}_${nextSaved}_${Date.now()}`,
+            watchCompletionRate: Number(Math.min(totalTime / duration, 1.0).toFixed(2)),
             watchTimeSeconds: Number(totalTime.toFixed(2)),
             replayCount: replayCountRef.current,
-            isLiked: liked,
+            isLiked: likedRef.current,
             isSaved: nextSaved,
-            isCommented: commented
+            isCommented: commentedRef.current
         }).then(res => {
-            if (res.status === "success" && onFeedbackSubmitted) {
+            if (res && res.status === "success" && onFeedbackSubmitted) {
                 onFeedbackSubmitted(res);
             }
         });
@@ -201,21 +179,23 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
 
         const text = commentText.trim() || "Awesome clip!";
         setCommented(true);
+        commentedRef.current = true;
         addLog(`COMMENT: Posted comment "${text}" on clip ${video.video_id}`, "event");
 
         const duration = durationRef.current || 15.0;
         const currentSessionTime = watchStartTimeRef.current ? (Date.now() - watchStartTimeRef.current) / 1000.0 : 0;
-        const totalTime = totalWatchTimeRef.current + currentSessionTime;
+        const totalTime = Math.min(totalWatchTimeRef.current + currentSessionTime, duration);
 
         submitFeedback(userId, video.video_id, {
-            watchCompletionRate: Number((totalTime / duration).toFixed(2)),
+            eventId: `evt_comment_${userId}_${video.video_id}_${Date.now()}`,
+            watchCompletionRate: Number(Math.min(totalTime / duration, 1.0).toFixed(2)),
             watchTimeSeconds: Number(totalTime.toFixed(2)),
             replayCount: replayCountRef.current,
-            isLiked: liked,
-            isSaved: saved,
+            isLiked: likedRef.current,
+            isSaved: savedRef.current,
             isCommented: true
         }).then(res => {
-            if (res.status === "success" && onFeedbackSubmitted) {
+            if (res && res.status === "success" && onFeedbackSubmitted) {
                 onFeedbackSubmitted(res);
             }
         });
@@ -225,21 +205,21 @@ function VideoCard({ video, isActive, layoutMode, userId, onFeedbackSubmitted, o
         e.stopPropagation();
         addLog(`SHARE: Shared clip ${video.video_id}`, "event");
 
-        // Share has +10 score weight
         const duration = durationRef.current || 15.0;
         const currentSessionTime = watchStartTimeRef.current ? (Date.now() - watchStartTimeRef.current) / 1000.0 : 0;
-        const totalTime = totalWatchTimeRef.current + currentSessionTime;
+        const totalTime = Math.min(totalWatchTimeRef.current + currentSessionTime, duration);
 
         submitFeedback(userId, video.video_id, {
-            watchCompletionRate: Number((totalTime / duration).toFixed(2)),
+            eventId: `evt_share_${userId}_${video.video_id}_${Date.now()}`,
+            watchCompletionRate: Number(Math.min(totalTime / duration, 1.0).toFixed(2)),
             watchTimeSeconds: Number(totalTime.toFixed(2)),
             replayCount: replayCountRef.current,
-            isLiked: liked,
-            isSaved: saved,
+            isLiked: likedRef.current,
+            isSaved: savedRef.current,
             isShared: true,
-            isCommented: commented
+            isCommented: commentedRef.current
         }).then(res => {
-            if (res.status === "success" && onFeedbackSubmitted) {
+            if (res && res.status === "success" && onFeedbackSubmitted) {
                 onFeedbackSubmitted(res);
             }
         });

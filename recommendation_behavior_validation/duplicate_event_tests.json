@@ -1,0 +1,62 @@
+[
+    {
+        "submission_number": 1,
+        "status": "applied",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 2,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 3,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 4,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 5,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 6,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 7,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 8,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 9,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    },
+    {
+        "submission_number": 10,
+        "status": "ignored_duplicate",
+        "profile_version": 2,
+        "aarti_raw_score": 41.5
+    }
+]

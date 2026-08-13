@@ -66,12 +66,17 @@ class CandidateGenerator:
         return sorted_videos[:limit]
 
     def retrieve_by_categories(self, interest_profile: Dict[str, Any], limit_per_category: int = 15) -> List[Dict[str, Any]]:
-        """Retrieves top videos from the user's preferred categories based on interest scores."""
+        """Retrieves top videos from the user's preferred categories, rituals, and deities based on interest scores."""
         interests = interest_profile.get("interests", {})
+        deity_interests = interest_profile.get("deity_interests", {})
         
         # Filter and sort categories with positive interest score (> 0)
         sorted_categories = [
             cat for cat, score in sorted(interests.items(), key=lambda x: x[1], reverse=True)
+            if score > 0
+        ]
+        sorted_deities = [
+            deity for deity, score in sorted(deity_interests.items(), key=lambda x: x[1], reverse=True)
             if score > 0
         ]
 
@@ -96,6 +101,11 @@ class CandidateGenerator:
             )
             candidates.extend(sorted_cat_videos[:limit_per_category])
             
+        for deity in sorted_deities[:3]:
+            deity_vids = self.videos_by_deity.get(deity, [])
+            if deity_vids:
+                candidates.extend(deity_vids[:limit_per_category])
+
         return candidates
 
     def retrieve_similar_to_watch_history(self, watch_history: List[Dict[str, Any]], limit_per_video: int = 10, max_seed_videos: int = 3) -> List[Dict[str, Any]]:

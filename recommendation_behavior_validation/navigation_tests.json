@@ -1,0 +1,79 @@
+[
+    {
+        "step": 1,
+        "navigated_to": "Video_A",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    },
+    {
+        "step": 2,
+        "navigated_to": "Video_B",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    },
+    {
+        "step": 3,
+        "navigated_to": "Video_C",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    },
+    {
+        "step": 4,
+        "navigated_to": "Video_B",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    },
+    {
+        "step": 5,
+        "navigated_to": "Video_A",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    },
+    {
+        "step": 6,
+        "navigated_to": "Video_C",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    },
+    {
+        "step": 7,
+        "navigated_to": "Video_B",
+        "version": 2,
+        "category_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "is_identical_to_baseline": true
+    }
+]

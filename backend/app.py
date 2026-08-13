@@ -29,7 +29,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 # Ensure the project root is in the python path
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,6 +137,7 @@ class FeedbackPayload(BaseModel):
     is_shared: bool = False
     is_commented: bool = False
     is_final: bool = False
+    event_id: Optional[str] = None
 
 # --------------------------------------------------
 # Routes
@@ -199,6 +200,7 @@ def feedback(payload: FeedbackPayload):
         user_id=payload.user_id,
         video_id=payload.video_id,
         engagement={
+            "event_id": payload.event_id,
             "watch_completion_rate": payload.watch_completion_rate,
             "watch_time_seconds": payload.watch_time_seconds,
             "replay_count": payload.replay_count,
@@ -218,19 +220,63 @@ def get_user_profile(user_id: str):
     """
     user = service.find_user_by_id_or_persona(user_id)
     uid = user["user_id"]
-    
-    interest_profile = service.interest_profiles.get(uid, {})
-    creator_affinities = service.user_creator_affinities.get(uid, {})
+    prof = service.profile_store.get_profile(uid, persona=user["persona"])
     watch_history = service.user_watch_histories.get(uid, [])
     
     return {
         "user_id": uid,
-        "username": user["username"],
-        "persona": user["persona"],
-        "interests": interest_profile.get("interests", {}),
-        "creator_affinities": creator_affinities,
+        "username": user.get("username", uid),
+        "persona": prof.get("persona", user.get("persona", "Devotional Practitioner")),
+        "version": prof.get("version", 1),
+        "interests": prof.get("interests", {}),
+        "category_interests": prof.get("category_interests", {}),
+        "deity_interests": prof.get("deity_interests", {}),
+        "ritual_interests": prof.get("ritual_interests", {}),
+        "creator_affinities": prof.get("creator_affinities", {}),
         "total_watched": len(watch_history)
     }
+
+
+@app.get("/profile/{user_id}/inspect")
+def inspect_user_profile(user_id: str):
+    """
+    Detailed inspection endpoint for user interest profile state, versioning, and metadata.
+    """
+    user = service.find_user_by_id_or_persona(user_id)
+    uid = user["user_id"]
+    prof = service.profile_store.get_profile(uid, persona=user["persona"])
+    return prof
+
+
+@app.get("/profile/{user_id}/events")
+def get_user_events(user_id: str):
+    """
+    Returns raw immutable interaction events for event-sourcing inspection.
+    """
+    user = service.find_user_by_id_or_persona(user_id)
+    uid = user["user_id"]
+    events = [e for e in service.profile_store.events if e.get("user_id") == uid]
+    return {
+        "user_id": uid,
+        "total_events": len(events),
+        "events": events
+    }
+
+
+@app.post("/profile/{user_id}/reset")
+def reset_user_profile(user_id: str):
+    """
+    Resets all interest scores, watch history, and creator affinities to zero for a specific user.
+    """
+    return service.reset_user_profile(user_id)
+
+
+@app.post("/profile/reset")
+def reset_all_user_profiles():
+    """
+    Resets all interest scores to zero for ALL users across the platform.
+    """
+    return service.reset_all_user_profiles()
 
 
 # --------------------------------------------------

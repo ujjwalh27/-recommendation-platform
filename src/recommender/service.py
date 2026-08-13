@@ -35,33 +35,77 @@ class RecommenderService:
             uid = event["user_id"]
             self.user_watch_histories.setdefault(uid, []).append(event)
 
-        # Load and sanitize interest profiles with persona baseline preferences
-        with open(self.interest_profiles_path, "r", encoding="utf-8") as f:
-            self.interest_profiles = json.load(f)
+        # Initialize UserInterestProfileStore as the SINGLE SOURCE OF TRUTH
+        from src.recommender.profile_store import UserInterestProfileStore
+        self.profile_store = UserInterestProfileStore()
 
         from src.users.personas import get_persona_preferred_categories
 
-        LEGACY_KEYS = {"Pooja & Aarti", "Temple Ritual", "Devotion", "Lifestyle & Culture", "Bhajan & Kirtan", "Archana & Mantras", "Entertainment"}
-        for uid, prof in self.interest_profiles.items():
-            user = self.user_lookup.get(uid, {})
-            persona_name = user.get("persona", prof.get("persona", "Devotional Practitioner"))
-            preferred_cats = get_persona_preferred_categories(persona_name)
+        # Canonical Mapping Dictionary to merge subcategories into main categories
+        self.CATEGORY_CANONICAL_MAP = {
+            "Aarti": "Aarti",
+            "Devotional Aarti": "Aarti",
+            "Flame Worship & Lamp Ritual": "Aarti",
+            "Flame Worship": "Aarti",
+            
+            "Abhishekam": "Abhishekam",
+            "Milk / Panchamrutha / Water Abhishekam": "Abhishekam",
+            "Panchamrutha Abhishekam": "Abhishekam",
+            "Water Abhishekam": "Abhishekam",
+            
+            "Pooja": "Pooja",
+            "Devotional Ritual & Worship": "Pooja",
+            "Shrine Worship": "Pooja",
+            "Temple Worship": "Pooja",
+            
+            "Bhajan": "Bhajan",
+            "Devotional Hymns & Songs": "Bhajan",
+            "Kirtan / Nama Sankeerthana": "Bhajan",
+            "Kirtan": "Bhajan",
+            "Devotional Singing": "Bhajan",
+            
+            "Festival Processions": "Festival Processions",
+            "Sacred Chariot & Street Procession": "Festival Processions",
+            "Procession": "Festival Processions",
+            "Chariot Procession": "Festival Processions",
+            
+            "Meditation / Chanting": "Meditation / Chanting",
+            "Silent Reflection & Mantra Japa": "Meditation / Chanting",
+            "Chanting": "Meditation / Chanting",
+            "Meditation": "Meditation / Chanting",
+            
+            "Homa / Yajna": "Homa / Yajna",
+            "Sacred Fire Altar Ritual": "Homa / Yajna",
+            "Havan": "Homa / Yajna",
+            
+            "Annadanam": "Annadanam",
+            "Sacred Food Service & Prasad": "Annadanam",
+            
+            "Pravachan / Spiritual Discourses": "Pravachan / Spiritual Discourses",
+            "Spiritual Discourses": "Pravachan / Spiritual Discourses",
+            
+            "Temple Darshan": "Temple Darshan",
+            "Temple Darshan & Deity Viewing": "Temple Darshan",
+            "Temple Darshan & Monumental Statues": "Temple Darshan",
+            "Temple Darshan & Sanctum View": "Temple Darshan",
+        }
 
+        self.LEGACY_KEYS = {"Pooja & Aarti", "Temple Ritual", "Devotion", "Lifestyle & Culture", "Bhajan & Kirtan", "Archana & Mantras", "Entertainment"}
+        for uid, prof in self.interest_profiles.items():
             raw_scores = prof.setdefault("raw_scores", {})
-            for key in list(raw_scores.keys()):
-                if key.startswith("Any other") or key in LEGACY_KEYS:
-                    del raw_scores[key]
+            consolidated = {}
+            for key, val in raw_scores.items():
+                if not key.startswith("Any other") and key not in self.LEGACY_KEYS:
+                    c_key = self.CATEGORY_CANONICAL_MAP.get(key, key)
+                    consolidated[c_key] = consolidated.get(c_key, 0.0) + val
             
-            # Ensure persona baseline scores exist (15.0 raw points each)
-            if not raw_scores:
-                for pcat in preferred_cats:
-                    raw_scores[pcat] = 15.0
-            
+            prof["raw_scores"] = consolidated
+
             # L1 Proportional Normalization (interests sum to 100.0%)
-            total_score = sum(raw_scores.values())
+            total_score = sum(consolidated.values())
             interests = {}
             if total_score > 0:
-                for k, v in raw_scores.items():
+                for k, v in consolidated.items():
                     if v > 0:
                         interests[k] = round((v / total_score) * 100.0, 1)
             prof["interests"] = dict(sorted(interests.items(), key=lambda x: x[1], reverse=True))
@@ -91,79 +135,56 @@ class RecommenderService:
         self.diversity_filter = DiversityFilter(max_consecutive_category=1, max_category_ratio=0.3)
         self.explainer = RecommendationExplainer()
 
+    @property
+    def interest_profiles(self) -> Dict[str, Any]:
+        return self.profile_store.profiles
+
     def find_user_by_id_or_persona(self, query: str) -> Dict[str, Any]:
-        """Resolves user_id or persona name to a valid user profile.
-        
-        If a persona name is supplied, it finds the first user belonging to that persona.
-        """
-        # Clean query
+        """Resolves user_id or persona name to a valid user profile."""
         query = query.strip()
-        
-        # 1. Direct user_id match
         if query in self.user_lookup:
             return self.user_lookup[query]
 
-        # 2. Check if query is a persona name
         for user in self.users:
             if user["persona"].lower() == query.lower() or user["persona"].replace(" ", "").lower() == query.replace(" ", "").lower():
                 return user
 
-        # 3. Fallback to first user in list
         return self.users[0]
 
     def get_recommendations(self, user_query: str, limit: int = 10) -> List[Dict[str, Any]]:
-        """Executes the full candidate retrieval, ranking, diversity filtering, and explanation generation pipeline."""
+        """Executes the full candidate retrieval, ranking, diversity filtering, and explanation generation pipeline.
+        READ-ONLY operation: Never mutates user profile.
+        """
         # 1. Resolve user profile
         user = self.find_user_by_id_or_persona(user_query)
         user_id = user["user_id"]
         
-        # Fetch user's interest profile and watch history
-        interest_profile = self.interest_profiles.get(user_id, {
-            "user_id": user_id,
-            "persona": user["persona"],
-            "interests": {}
-        })
+        # READ-ONLY: Get profile snapshot from single source of truth
+        interest_profile = self.profile_store.get_profile(user_id, persona=user["persona"])
         watch_history = self.user_watch_histories.get(user_id, [])
-        creator_affinities = self.user_creator_affinities.get(user_id, {})
+        creator_affinities = interest_profile.get("creator_affinities", {})
 
-        # 2. Candidate Generation
+        # 2. Candidate Generation (Read Only)
         candidates = self.candidate_generator.generate_candidates(interest_profile, watch_history, creator_affinities)
 
-        # 3. Rule-Based Scoring & Ranking
+        # 3. Rule-Based Scoring & Ranking (Read Only)
         ranked_candidates = self.scorer.rank(candidates, interest_profile, creator_affinities)
 
         # 4. Diversity Filtering (Re-ranking)
         diverse_candidates = self.diversity_filter.filter(ranked_candidates, limit=limit)
 
-        # 5. Format response and generate explanations
-        # Create a mapping of video_id to user interaction states
-        user_interactions = {}
-        for ev in watch_history:
-            vid = ev["video_id"]
-            user_interactions[vid] = {
-                "is_liked": ev.get("is_liked", False),
-                "is_saved": ev.get("is_saved", False),
-                "is_commented": ev.get("is_commented", False)
-            }
-
-        # 5. Format response and generate explanations
+        # Build production response payload
         feed = []
         for item in diverse_candidates:
             vid = item["video_id"]
             meta = item["metadata"]
             
-            # Generate explanations
             explanation = self.explainer.generate_explanation(item, interest_profile)
             semantic_explanation = self.explainer.generate_semantic_explanation(item, interest_profile)
 
-            # Retrieve user's historical interaction state
-            interaction = user_interactions.get(vid, {"is_liked": False, "is_saved": False, "is_commented": False})
-
             raw_final = float(item["final_score"])
-            # Calibrate score to 0.65 - 0.99 match range for UI percentage display
             calibrated_match_score = round(min(0.99, max(0.65, 0.58 + raw_final * 0.45)), 4)
 
-            # Build production response payload
             feed.append({
                 "video_id": vid,
                 "title": meta.get("caption") or f"Clip {vid}",
@@ -181,219 +202,77 @@ class RecommenderService:
                 "semantic_explanation": semantic_explanation,
                 "score_breakdown": item["score_breakdown"],
                 "retrieval_sources": item["retrieval_sources"],
-                "is_liked": interaction["is_liked"],
-                "is_saved": interaction["is_saved"],
-                "is_commented": interaction["is_commented"]
+                "is_liked": False,
+                "is_saved": False,
+                "is_commented": False
             })
 
         return feed
 
     def submit_feedback(self, user_id: str, video_id: str, engagement: Dict[str, Any]) -> Dict[str, Any]:
-        """Receives real-time feedback for a video, updates user history, interest profile, and creator affinity."""
+        """Receives real-time interaction feedback and delegates atomic update to UserInterestProfileStore."""
         user_id = str(user_id)
         video_id = str(video_id)
         
-        # 1. Resolve user profile
         user = self.find_user_by_id_or_persona(user_id)
         resolved_uid = user["user_id"]
         
-        # 2. Get video metadata
-        video_meta = self.candidate_generator.video_lookup.get(video_id)
+        video_meta = self.candidate_generator.video_lookup.get(video_id, {})
         if not video_meta:
-            return {"status": "error", "message": f"Video {video_id} not found"}
-            
-        category = video_meta.get("category", "Entertainment")
-        creator = video_meta.get("creator", "")
-        
-        # Extract engagement signals
-        watch_completion_rate = float(engagement.get("watch_completion_rate", 0.0))
-        replay_count = int(engagement.get("replay_count", 0))
+            # Fallback metadata dictionary
+            video_meta = {"video_id": video_id, "category": "Entertainment"}
+
+        # Construct explicit event_id for idempotency if not provided
         is_liked = bool(engagement.get("is_liked", False))
         is_saved = bool(engagement.get("is_saved", False))
-        is_shared = bool(engagement.get("is_shared", False))
-        is_commented = bool(engagement.get("is_commented", False))
-        is_final = bool(engagement.get("is_final", False))
+        w_comp = float(engagement.get("watch_completion_rate", 0.0))
         
-        # MSR-VTT Calibrated Event Weights (adapted for DAIV scenario)
-        WATCH_COMPLETE_WEIGHT = 6
-        SKIP_WEIGHT = -5
-        REPLAY_WEIGHT = 5
-        LIKE_WEIGHT = 3
-        SAVE_WEIGHT = 4
-        SHARE_WEIGHT = 5
-        COMMENT_WEIGHT = 4
-        
-        event_score = 0.0
-        if is_final:
-            if watch_completion_rate >= 0.85:
-                event_score += WATCH_COMPLETE_WEIGHT
-            elif watch_completion_rate < 0.2 and not (is_liked or is_saved or is_shared or is_commented):
-                event_score += SKIP_WEIGHT
-            event_score += replay_count * REPLAY_WEIGHT
-            
+        event_id = engagement.get("event_id")
+        if not event_id:
+            event_id = f"evt_{resolved_uid}_{video_id}_{is_liked}_{is_saved}_{round(w_comp, 1)}"
+
+        event_type = "feedback"
         if is_liked:
-            event_score += LIKE_WEIGHT
-        if is_saved:
-            event_score += SAVE_WEIGHT
-        if is_shared:
-            event_score += SHARE_WEIGHT
-        if is_commented:
-            event_score += COMMENT_WEIGHT
-            
-        # 3. Resolve previous event for delta calculation and update watch history
-        history = self.user_watch_histories.setdefault(resolved_uid, [])
-        prev_event = None
-        for ev in history:
-            if ev["video_id"] == video_id:
-                prev_event = ev
-                break
-                
-        # Idempotency check: Skip duplicate processing if exact same engagement score & interaction state was already recorded
-        if (prev_event and 
-            prev_event.get("engagement_score") == event_score and 
-            prev_event.get("is_liked") == is_liked and 
-            prev_event.get("is_saved") == is_saved and
-            prev_event.get("is_commented") == is_commented and
-            abs(prev_event.get("watch_completion_rate", 0.0) - watch_completion_rate) < 0.05):
-            
-            ts = time.strftime('%Y-%m-%d %H:%M:%S')
-            prof = self.interest_profiles.get(resolved_uid, {})
-            aff = self.user_creator_affinities.get(resolved_uid, {})
-            print(f"[DEBUG_LOG] [{ts}] Duplicate Feedback Event Ignored (Idempotent) | User ID: {resolved_uid} | Video ID: {video_id}")
-            return {
-                "status": "success",
-                "user_id": resolved_uid,
-                "interests": prof.get("interests", {}),
-                "creator_affinities": aff,
-                "added_event": prev_event
-            }
+            event_type = "like"
+        elif is_saved:
+            event_type = "save"
+        elif w_comp >= 0.85:
+            event_type = "watch_complete"
+        elif w_comp < 0.20 and engagement.get("is_final"):
+            event_type = "skip"
 
-        # Profile state before update (for logging audit)
-        profile = self.interest_profiles.setdefault(resolved_uid, {
-            "user_id": resolved_uid,
-            "persona": user["persona"],
-            "raw_scores": {},
-            "interests": {}
-        })
-        vector_before = dict(profile.get("interests", {}))
-                
-        if prev_event:
-            score_delta = event_score - prev_event["engagement_score"]
-            prev_event.update({
-                "watch_completion_rate": watch_completion_rate,
-                "watch_time_seconds": float(engagement.get("watch_time_seconds", 0.0)),
-                "replay_count": replay_count,
-                "is_liked": is_liked,
-                "is_saved": is_saved,
-                "is_shared": is_shared,
-                "is_commented": is_commented,
-                "engagement_score": event_score
-            })
-        else:
-            score_delta = event_score
-            new_event = {
-                "user_id": resolved_uid,
-                "video_id": video_id,
-                "category": category,
-                "watch_completion_rate": watch_completion_rate,
-                "watch_time_seconds": float(engagement.get("watch_time_seconds", 0.0)),
-                "replay_count": replay_count,
-                "is_liked": is_liked,
-                "is_saved": is_saved,
-                "is_shared": is_shared,
-                "is_commented": is_commented,
-                "engagement_score": event_score
-            }
-            history.append(new_event)
-        
-        # 4. Update Interest Profile raw score
-        raw_scores = profile.setdefault("raw_scores", {})
-        
-        family = video_meta.get("ritual_family")
-        ritual = video_meta.get("primary_ritual")
+        # Delegate event processing to UserInterestProfileStore (Single Source of Truth)
+        res = self.profile_store.process_event(
+            user_id=resolved_uid,
+            event_id=event_id,
+            event_type=event_type,
+            video_id=video_id,
+            engagement_payload=engagement,
+            video_meta=video_meta,
+            persona=user["persona"]
+        )
 
-        CANONICAL_CATEGORIES = {
-            "Abhishekam", "Milk / Panchamrutha / Water Abhishekam", "Aarti", "Flame Worship & Lamp Ritual",
-            "Festival Processions", "Sacred Chariot & Street Procession", "Pooja", "Devotional Ritual & Worship",
-            "Bhajan", "Devotional Hymns & Songs", "Meditation / Chanting", "Silent Reflection & Mantra Japa",
-            "Homa / Yajna", "Sacred Fire Altar Ritual", "Annadanam", "Sacred Food Service & Prasad",
-            "Kirtan / Nama Sankeerthana", "Pravachan / Spiritual Discourses", "Temple Darshan"
-        }
-
-        interacted_keys = set(filter(None, [category, family, ritual]))
-        
-        # Apply 0.95 decay factor to non-interacted categories on a new video event
-        if not prev_event:
-            for cat in raw_scores:
-                if cat not in interacted_keys:
-                    raw_scores[cat] = max(5.0, raw_scores[cat] * 0.95)
-
-        for key in interacted_keys:
-            if key in CANONICAL_CATEGORIES or not key.startswith("Any other"):
-                raw_scores[key] = max(0.0, raw_scores.get(key, 0.0) + score_delta)
-        
-        # Purge legacy non-canonical keys
-        for legacy_key in list(raw_scores.keys()):
-            if legacy_key.startswith("Any other") or legacy_key in ["Pooja & Aarti", "Temple Ritual", "Devotion", "Lifestyle & Culture", "Bhajan & Kirtan", "Archana & Mantras", "Entertainment"]:
-                del raw_scores[legacy_key]
-
-        # Ensure baseline persona categories maintain minimum baseline (10.0 pts each)
-        from src.users.personas import get_persona_preferred_categories
-        preferred_cats = get_persona_preferred_categories(user.get("persona", ""))
-        for pcat in preferred_cats:
-            raw_scores[pcat] = max(10.0, raw_scores.get(pcat, 10.0))
-
-        # L1 Softmax Normalization: Percentages sum to 100.0%
-        total_score = sum(raw_scores.values())
-        interests = profile.setdefault("interests", {})
-        interests.clear()
-        
-        if total_score > 0:
-            for key, score in raw_scores.items():
-                if score > 0:
-                    interests[key] = round((score / total_score) * 100.0, 1)
-
-        # Sort interests descending for UI display
-        profile["interests"] = dict(sorted(interests.items(), key=lambda x: x[1], reverse=True))
-            
-        # 5. Update Creator Affinity
-        affinities = self.user_creator_affinities.setdefault(resolved_uid, {})
-        if creator:
-            affinities[creator] = max(0.0, affinities.get(creator, 0.0) + score_delta)
-            
-        # 6. Persist updated watch history and interest profiles to disk
-        try:
-            with open(self.interest_profiles_path, "w", encoding="utf-8") as f:
-                json.dump(self.interest_profiles, f, indent=4)
-            
-            # Flatten user watch histories back into a list to save to watch_history.json
-            all_history_events = []
-            for uid, events in self.user_watch_histories.items():
-                all_history_events.extend(events)
-            with open(self.watch_history_path, "w", encoding="utf-8") as f:
-                json.dump(all_history_events, f, indent=4)
-        except Exception as e:
-            print(f"Error persisting updated profile state to disk: {e}")
-            
-        # Debug audit log as requested
-        vector_after = dict(profile.get("interests", {}))
-        prof_bytes = json.dumps(vector_after, sort_keys=True).encode("utf-8")
-        prof_hash = hashlib.md5(prof_bytes).hexdigest()[:8]
-        ts_now = time.strftime('%Y-%m-%d %H:%M:%S')
-
-        print(f"[DEBUG_LOG] [{ts_now}] Profile State Update Audit:")
-        print(f"   ├── Current User ID: {resolved_uid}")
-        print(f"   ├── Interest Vector Before Update: {vector_before}")
-        print(f"   ├── Feedback Event: video_id={video_id}, liked={is_liked}, saved={is_saved}, final={is_final}")
-        print(f"   ├── Applied Delta: {score_delta} (Event Score: {event_score})")
-        print(f"   ├── Interest Vector After Update: {vector_after}")
-        print(f"   ├── Profile Saved: {self.interest_profiles_path}")
-        print(f"   └── Profile Hash: {prof_hash}")
-            
+        updated_profile = res["profile"]
         return {
             "status": "success",
             "user_id": resolved_uid,
-            "interests": profile["interests"],
-            "creator_affinities": affinities,
-            "added_event": prev_event if prev_event else new_event
+            "version": updated_profile["version"],
+            "interests": updated_profile["interests"],
+            "category_interests": updated_profile.get("category_interests", {}),
+            "deity_interests": updated_profile.get("deity_interests", {}),
+            "ritual_interests": updated_profile.get("ritual_interests", {}),
+            "creator_affinities": updated_profile.get("creator_affinities", {}),
+            "last_event_id": updated_profile["last_event_id"]
         }
+            
+    def reset_user_profile(self, user_id: str) -> Dict[str, Any]:
+        """Resets interest vector, raw scores, watch history, and creator affinities to 0 for a specific user."""
+        user = self.find_user_by_id_or_persona(user_id)
+        resolved_uid = user["user_id"]
+        return self.profile_store.reset_profile(resolved_uid)
+
+    def reset_all_user_profiles(self) -> Dict[str, Any]:
+        """Resets all user profile vectors and watch histories across the system."""
+        for uid in list(self.profile_store.profiles.keys()):
+            self.profile_store.reset_profile(uid)
+        return {"status": "success", "message": "All user profiles reset"}

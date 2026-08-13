@@ -1,0 +1,26 @@
+{
+    "user_id": "rbmv_user_001",
+    "version_before_restart": 3,
+    "version_after_restart": 3,
+    "interests_before": {
+        "Aarti": 40.9,
+        "Pooja": 34.5,
+        "Abhishekam": 24.6
+    },
+    "interests_after": {
+        "Aarti": 40.9,
+        "Pooja": 34.5,
+        "Abhishekam": 24.6
+    },
+    "raw_scores_before": {
+        "Aarti": 41.5,
+        "Pooja": 35.0,
+        "Abhishekam": 25.0
+    },
+    "raw_scores_after": {
+        "Aarti": 41.5,
+        "Pooja": 35.0,
+        "Abhishekam": 25.0
+    },
+    "match_success": true
+}

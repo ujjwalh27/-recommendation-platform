@@ -167,26 +167,33 @@ class MockDataGenerator:
                 watch_history.append(event)
 
             # 3. Build Interest Profile
-            # Aggregate engagement score per category
+            # Start with persona baseline scores
+            from src.users.personas import get_persona_baseline_scores
+            baseline = get_persona_baseline_scores(persona)
+            cleaned_scores = dict(baseline)
+
+            # Aggregate engagement score per category from simulated watch history
             df_events = pd.DataFrame(user_events)
             cat_scores = df_events.groupby("category")["engagement_score"].sum().to_dict()
-
-            # Clean and store positive engagement scores per category on an independent fixed scale (100.0 capacity)
-            MAX_CAPACITY = 100.0
-            cleaned_scores = {}
-            normalized_profile = {}
-            
             for cat, score in cat_scores.items():
                 if score > 0:
-                    val = max(0.0, float(score))
-                    cleaned_scores[cat] = val
-                    normalized_profile[cat] = min(100.0, round((val / MAX_CAPACITY) * 100, 1))
+                    cleaned_scores[cat] = cleaned_scores.get(cat, 0.0) + float(score)
+
+            total_raw = sum(cleaned_scores.values())
+            normalized_profile = {}
+            if total_raw > 0:
+                for cat, score in cleaned_scores.items():
+                    if score > 0.05:
+                        normalized_profile[cat] = round((score / total_raw) * 100.0, 1)
+
+            sorted_interests = dict(sorted(normalized_profile.items(), key=lambda x: x[1], reverse=True))
 
             interest_profiles[user_id] = {
                 "user_id": user_id,
                 "persona": persona,
                 "raw_scores": cleaned_scores,
-                "interests": normalized_profile
+                "category_interests": sorted_interests,
+                "interests": sorted_interests
             }
 
         # Save files

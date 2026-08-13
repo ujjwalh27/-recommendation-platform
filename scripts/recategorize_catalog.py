@@ -66,10 +66,22 @@ HARDCODED_OVERRIDES = {
         'primary_deity': 'Lord Krishna',
     },
     '371898881752533663': {
+        'category': 'Aarti',
+        'subcategory': 'Flame Worship & Lamp Ritual',
+        'offering': ['Camphor & Flame', 'Flowers'],
+        'primary_deity': 'Lord Rama',
+    },
+    '660903314111984673': {
         'category': 'Bhajan',
         'subcategory': 'Devotional Hymns & Songs',
         'offering': ['Music & Hymns'],
         'primary_deity': 'Lord Rama',
+    },
+    '722898177735106847': {
+        'category': 'Abhishekam',
+        'subcategory': 'Milk / Panchamrutha / Water Abhishekam',
+        'offering': ['Milk', 'Water'],
+        'primary_deity': 'Lord Shiva',
     },
     '588493876342459140': {
         'category': 'Aarti',
@@ -106,6 +118,12 @@ HARDCODED_OVERRIDES = {
         'subcategory': 'Flame Worship & Lamp Ritual',
         'offering': ['Camphor & Flame', 'Flowers'],
         'primary_deity': 'Lord Venkateshwara',
+    },
+    '722898177735106867': {
+        'category': 'Aarti',
+        'subcategory': 'Flame Worship & Lamp Ritual',
+        'offering': ['Camphor & Flame', 'Ceremonial Torches'],
+        'primary_deity': 'Lord Shiva',
     },
 }
 

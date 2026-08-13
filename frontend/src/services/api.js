@@ -19,6 +19,7 @@ export async function submitFeedback(userId, videoId, engagement) {
         body: JSON.stringify({
             user_id: userId,
             video_id: videoId,
+            event_id: engagement.eventId || null,
             watch_completion_rate: engagement.watchCompletionRate,
             watch_time_seconds: engagement.watchTimeSeconds || 0.0,
             replay_count: engagement.replayCount || 0,

@@ -1,16 +1,16 @@
 {
   "model": "minicpm-v",
-  "created_at": "2026-08-05T11:31:00.843532Z",
+  "created_at": "2026-08-13T11:58:53.541763Z",
   "message": {
     "role": "assistant",
-    "content": "{\n  \"title\": \"Devotional Celebration at a Temple\",\n  \"summary\": \"The sequence of frames captures a vibrant devotional celebration involving floral decorations, traditional attire, and offerings. The audio suggests singing or chanting is part of the ceremony.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"Religious Ceremony\",\n  \"primary_topic\": \"A religious worship event at a temple shrine\",\n  \"secondary_topics\": [\"Celebration\", \"Offerings\"],\n  \"entities\": [],\n  \"people\": [\n    {\n      \"name\": \"Person in white tank top and red skirt\"\n    },\n    {\n      \"name\": \"Individual holding lit sparklers\"\n    }\n  ],\n  \"locations\": [\"Temple or shrine with floral decorations\"],\n  \"activities\": [\"Offering flowers, lighting lamps\", \"Singing or chanting\"],\n  \"objects\": [\n    {\n      \"description\": \"Floral garlands in various colors\",\n      \"quantity\": \"Multiple strands hanging from above\"\n    },\n    {\n      \"description\": \"Decorative fan with peacock feathers and gold accents\",\n      \"quantity\": \"One large decorative item\"\n    },\n    {\n      \"description\": \"Offerings on a table including sweets, flowers, and lit lamps\",\n      \"quantity\": \"Various items arranged for worship\"\n    }\n  ],\n  \"events\": [\"A religious ceremony involving offerings and prayers\"],\n  \"keywords\": [\n    \"worship\",\n    \"devotion\",\n    \"celebration\",\n    \"temple\",\n    \"offerings\"\n  ],\n  \"recommendation_keywords\": [\n    \"Religious Ceremony\",\n    \"Devotional Worship\",\n    \"Cultural Celebration\"\n  ],\n  \"language\": \"Urdu/Hindi\",\n  \"mood\": \"Spiritual and Reverent\",\n  \"emotion\": [\"Devotional\", \"Happy\"],\n  \"target_audience\": [\"Individuals interested in religious ceremonies, cultural celebrations, or spiritual practices\"],\n  \"reasoning\": \"The visual elements such as floral decorations, traditional attire, lit lamps, and offerings indicate a devotional celebration. The audio suggests singing or chanting activities typical of temple worship events.\"\n}"
+    "content": "{\n  \"title\": \"Devotional Ceremony at a Temple\",\n  \"summary\": \"The sequence of frames depicts an individual performing devotional rituals in front of a sacred object, likely within a temple or shrine. The person is seen engaging with the deity through offerings and prayers.\",\n  \"category\": \"Devotion\",\n  \"subcategory\": \"Religious Rituals\",\n  \"primary_topic\": \"Religious Worship\",\n  \"secondary_topics\": [\"Offerings\", \"Deity Veneration\"],\n  \"entities\": [],\n  \"people\": [\n    {\n      \"name\": \"Person performing rituals\"\n    }\n  ],\n  \"locations\": [\n    {\n      \"type\": \"Temple or Shrine\",\n      \"description\": \"The setting appears to be a temple with ornate decorations and religious artifacts.\"\n    }\n  ],\n  \"activities\": [\n    {\n      \"action\": \"Offering flowers and incense sticks\"\n    },\n    {\n      \"action\": \"Praying or chanting prayers\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Sacred Object\",\n      \"description\": \"A large, dark-colored object placed on a silver pedestal. It is likely considered sacred in the context of this ritual.\"\n    },\n    {\n      \"name\": \"Offerings\",\n      \"description\": \"Flowers and incense sticks are visible as part of the offerings being made during the ceremony.\"\n    }\n  ],\n  \"events\": [\n    {\n      \"type\": \"Religious Ceremony\"\n    }\n  ],\n  \"keywords\": [\"Devotional\", \"Rituals\", \"Temple\", \"Offerings\"],\n  \"recommendation_keywords\": [\"Religious Worship\", \"Deity Veneration\", \"Spirituality\"],\n  \"language\": \"Hindi\",\n  \"mood\": \"Calm and Spiritual\",\n  \"emotion\": \"Serious, Devotional\",\n  \"target_audience\": [\n    {\n      \"type\": \"Religious Followers\"\n    }\n  ],\n  \"reasoning\": \"The visual elements such as the sacred object, religious attire of the individual performing rituals, and offerings indicate a devotional ceremony. The audio content includes prayers or chants which supports this interpretation.\"\n}"
   },
   "done": true,
   "done_reason": "stop",
-  "total_duration": 53395162500,
-  "load_duration": 7789363250,
-  "prompt_eval_count": 2022,
-  "prompt_eval_duration": 24394254000,
-  "eval_count": 441,
-  "eval_duration": 20898099000
+  "total_duration": 46435707459,
+  "load_duration": 126679250,
+  "prompt_eval_count": 2109,
+  "prompt_eval_duration": 25142272000,
+  "eval_count": 450,
+  "eval_duration": 20813211000
 }

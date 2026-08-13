@@ -1,0 +1,176 @@
+{
+    "user_id": "rbmv_user_001",
+    "persona": "Devotional Practitioner",
+    "profile": {
+        "user_id": "rbmv_user_001",
+        "version": 1,
+        "persona": "Devotional Practitioner",
+        "raw_scores": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "deity_raw_scores": {},
+        "deity_interests": {},
+        "ritual_raw_scores": {},
+        "ritual_interests": {},
+        "temple_interests": {},
+        "creator_affinities": {},
+        "last_event_id": null,
+        "last_updated": "2026-08-13 16:12:35",
+        "metadata": {}
+    },
+    "feed_count": 10,
+    "top_candidates": [
+        {
+            "video_id": "video_ci_1786434064",
+            "category": "Aarti",
+            "score": 0.9213,
+            "score_breakdown": {
+                "interest": 0.967,
+                "creator_affinity": 1.0,
+                "similarity": 0.9324682950973511,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.04788285566199768
+            }
+        },
+        {
+            "video_id": "video_ci_1786431074",
+            "category": "Pooja",
+            "score": 0.8999,
+            "score_breakdown": {
+                "interest": 0.817,
+                "creator_affinity": 1.0,
+                "similarity": 0.9767335057258606,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.014511170511268734
+            }
+        },
+        {
+            "video_id": "video_ci_1786433093",
+            "category": "Aarti",
+            "score": 0.8981,
+            "score_breakdown": {
+                "interest": 0.817,
+                "creator_affinity": 1.0,
+                "similarity": 0.950653076171875,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.012273151406525185
+            }
+        },
+        {
+            "video_id": "video_ci_1786440557",
+            "category": "Pooja",
+            "score": 0.8969,
+            "score_breakdown": {
+                "interest": 0.817,
+                "creator_affinity": 1.0,
+                "similarity": 0.9325328469276428,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.015873779091559747
+            }
+        },
+        {
+            "video_id": "daiv_s2_44_iamshwetagopal___htt",
+            "category": "Aarti",
+            "score": 0.8569,
+            "score_breakdown": {
+                "interest": 0.967,
+                "creator_affinity": 0.0,
+                "similarity": 0.9559433460235596,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.8,
+                "freshness": 1.0,
+                "exploration": 0.07125586493268335
+            }
+        },
+        {
+            "video_id": "video_ci_1786433239",
+            "category": "Pooja",
+            "score": 0.8325,
+            "score_breakdown": {
+                "interest": 0.406,
+                "creator_affinity": 1.0,
+                "similarity": 0.9227467775344849,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.060711423597044456
+            }
+        },
+        {
+            "video_id": "video_ci_1786440913",
+            "category": "Abhishekam",
+            "score": 0.7606,
+            "score_breakdown": {
+                "interest": 0.347,
+                "creator_affinity": 1.0,
+                "similarity": 0.0,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.04558667644685003
+            }
+        },
+        {
+            "video_id": "video_ci_1786433351",
+            "category": "Bhajan",
+            "score": 0.733,
+            "score_breakdown": {
+                "interest": 0.167,
+                "creator_affinity": 1.0,
+                "similarity": 0.0,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.08004868424160068
+            }
+        },
+        {
+            "video_id": "video_ci_1786356358",
+            "category": "Abhishekam",
+            "score": 0.7602,
+            "score_breakdown": {
+                "interest": 0.347,
+                "creator_affinity": 1.0,
+                "similarity": 0.0,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.024631724288718227
+            }
+        },
+        {
+            "video_id": "video_ci_1786440388",
+            "category": "Any other devotional or temple-related activities",
+            "score": 0.7327,
+            "score_breakdown": {
+                "interest": 0.167,
+                "creator_affinity": 1.0,
+                "similarity": 0.0,
+                "collaborative_filtering": 0.0,
+                "popularity": 0.7769,
+                "freshness": 0.0,
+                "exploration": 0.06460725099255954
+            }
+        }
+    ]
+}

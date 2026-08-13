@@ -1,0 +1,217 @@
+[
+    {
+        "sequence_name": "Like_Sequence",
+        "version_initial": 1,
+        "version_final": 4,
+        "initial_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "final_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "step_history": [
+            {
+                "step": 1,
+                "event_type": "like",
+                "version": 2,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            },
+            {
+                "step": 2,
+                "event_type": "like",
+                "version": 3,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            },
+            {
+                "step": 3,
+                "event_type": "like",
+                "version": 4,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            }
+        ]
+    },
+    {
+        "sequence_name": "Positive_Combo_Like_Save",
+        "version_initial": 1,
+        "version_final": 3,
+        "initial_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "final_interests": {
+            "Aarti": 41.7,
+            "Pooja": 34.0,
+            "Abhishekam": 24.3
+        },
+        "step_history": [
+            {
+                "step": 1,
+                "event_type": "like",
+                "version": 2,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            },
+            {
+                "step": 2,
+                "event_type": "save",
+                "version": 3,
+                "category_interests": {
+                    "Aarti": 41.7,
+                    "Pooja": 34.0,
+                    "Abhishekam": 24.3
+                }
+            }
+        ]
+    },
+    {
+        "sequence_name": "Positive_Combo_Full_Stack",
+        "version_initial": 1,
+        "version_final": 5,
+        "initial_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "final_interests": {
+            "Aarti": 43.1,
+            "Pooja": 33.2,
+            "Abhishekam": 23.7
+        },
+        "step_history": [
+            {
+                "step": 1,
+                "event_type": "like",
+                "version": 2,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            },
+            {
+                "step": 2,
+                "event_type": "save",
+                "version": 3,
+                "category_interests": {
+                    "Aarti": 41.7,
+                    "Pooja": 34.0,
+                    "Abhishekam": 24.3
+                }
+            },
+            {
+                "step": 3,
+                "event_type": "share",
+                "version": 4,
+                "category_interests": {
+                    "Aarti": 42.6,
+                    "Pooja": 33.5,
+                    "Abhishekam": 23.9
+                }
+            },
+            {
+                "step": 4,
+                "event_type": "comment",
+                "version": 5,
+                "category_interests": {
+                    "Aarti": 43.1,
+                    "Pooja": 33.2,
+                    "Abhishekam": 23.7
+                }
+            }
+        ]
+    },
+    {
+        "sequence_name": "Negative_Combo_Like_Unlike",
+        "version_initial": 1,
+        "version_final": 3,
+        "initial_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "final_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "step_history": [
+            {
+                "step": 1,
+                "event_type": "like",
+                "version": 2,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            },
+            {
+                "step": 2,
+                "event_type": "like",
+                "version": 3,
+                "category_interests": {
+                    "Aarti": 40.0,
+                    "Pooja": 35.0,
+                    "Abhishekam": 25.0
+                }
+            }
+        ]
+    },
+    {
+        "sequence_name": "Mixed_Multi_Category",
+        "version_initial": 1,
+        "version_final": 3,
+        "initial_interests": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "final_interests": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "step_history": [
+            {
+                "step": 1,
+                "event_type": "like",
+                "version": 2,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            },
+            {
+                "step": 2,
+                "event_type": "save",
+                "version": 3,
+                "category_interests": {
+                    "Aarti": 40.9,
+                    "Pooja": 34.5,
+                    "Abhishekam": 24.6
+                }
+            }
+        ]
+    }
+]

@@ -1,13 +1,18 @@
 {
-  "transcript": "پل پل مجھے دو غائی جاتے ہیں جاقتے ہے جا تجید جید ہارو یہ اپنان پر آن برایڈ جاہتے ہو جایتے گا جا چیدی دو خارویی اپناان پروڈ",
+  "transcript": "TENLAY CHOOP RECCHI MA SHOOP I love all of the things that I'm in my head I love the way I'm with you SUNDAY AT NANANAN In our better hair SUNDAR AT TANAN In our good hair Don't you go to your good hair 감사합니다. 가슴 바랐라 바래라 빛 아까라 날아 헤라 넌가 날아가져 넌 맘에 날아 넌 바라가져 젊은 맘 바라라 젊이 랩 줄어라 씹으셔도 날아 바삭이 날아 날아 날아 날아 날아 날아 수고하셨습니다. She's my son, oh God, I'm all by the end of my life I can't go on the moon",
   "language": "en",
   "language_probability": 0.95,
   "confidence": 0.95,
   "segments": [
     {
       "start": 0.0,
-      "end": 0.0,
-      "text": "پل پل مجھے دو غائی جاتے ہیں جاقتے ہے جا تجید جید ہارو یہ اپنان پر آن برایڈ جاہتے ہو جایتے گا جا چیدی دو خارویی اپناان پروڈ"
+      "end": 45.76,
+      "text": "TENLAY CHOOP RECCHI MA SHOOP I love all of the things that I'm in my head I love the way I'm with you SUNDAY AT NANANAN In our better hair SUNDAR AT TANAN In our good hair Don't you go to your good hair 감사합니다. 가슴 바랐라 바래라 빛 아까라 날아 헤라 넌가 날아가져 넌 맘에 날아 넌 바라가져 젊은 맘 바라라 젊이 랩 줄어라 씹으셔도 날아 바삭이 날아 날아 날아 날아 날아 날아 수고하셨습니다. She's my son, oh God, I'm all by the end of my life"
+    },
+    {
+      "start": 45.76,
+      "end": 50.24,
+      "text": "I can't go on the moon"
     }
   ]
 }

@@ -1,0 +1,230 @@
+[
+    {
+        "interaction": "LIKE",
+        "event_type": "like",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 41.5,
+        "raw_delta": 1.5,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "creator_affinities_after": {
+            "@ai_intelligence": 1.5
+        }
+    },
+    {
+        "interaction": "UNLIKE",
+        "event_type": "like",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    },
+    {
+        "interaction": "SAVE",
+        "event_type": "save",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 41.5,
+        "raw_delta": 1.5,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "creator_affinities_after": {
+            "@ai_intelligence": 1.5
+        }
+    },
+    {
+        "interaction": "UNSAVE",
+        "event_type": "save",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    },
+    {
+        "interaction": "SHARE",
+        "event_type": "share",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 41.5,
+        "raw_delta": 1.5,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.9,
+            "Pooja": 34.5,
+            "Abhishekam": 24.6
+        },
+        "creator_affinities_after": {
+            "@ai_intelligence": 1.5
+        }
+    },
+    {
+        "interaction": "COMMENT",
+        "event_type": "comment",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 41.0,
+        "raw_delta": 1.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.6,
+            "Pooja": 34.7,
+            "Abhishekam": 24.8
+        },
+        "creator_affinities_after": {
+            "@ai_intelligence": 1.0
+        }
+    },
+    {
+        "interaction": "WATCH_START",
+        "event_type": "watch_start",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    },
+    {
+        "interaction": "WATCH_PROGRESS",
+        "event_type": "watch_progress",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    },
+    {
+        "interaction": "WATCH_COMPLETE",
+        "event_type": "watch_complete",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    },
+    {
+        "interaction": "SKIP",
+        "event_type": "skip",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    },
+    {
+        "interaction": "REPLAY",
+        "event_type": "replay",
+        "version_before": 1,
+        "version_after": 2,
+        "raw_score_before": 40.0,
+        "raw_score_after": 40.0,
+        "raw_delta": 0.0,
+        "category_interests_before": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "category_interests_after": {
+            "Aarti": 40.0,
+            "Pooja": 35.0,
+            "Abhishekam": 25.0
+        },
+        "creator_affinities_after": {}
+    }
+]

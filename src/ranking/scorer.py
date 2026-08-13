@@ -12,7 +12,7 @@ class RankingSignal:
 
 
 class InterestSignal(RankingSignal):
-    """Scores how well the video category, ritual family, and primary ritual match the user's interest profile."""
+    """Scores how well the video category, ritual family, primary ritual, and deity match the user's interest profile."""
 
     def calculate_score(self, candidate: Dict[str, Any], user_profile: Dict[str, Any], creator_affinities: Dict[str, float] = None) -> float:
         metadata = candidate.get("metadata", candidate)
@@ -22,20 +22,22 @@ class InterestSignal(RankingSignal):
         deity = metadata.get("primary_deity")
 
         interests = user_profile.get("interests", {})
-        
-        # Interest score stored as percentage (0.0 to 100.0)
+        deity_interests = user_profile.get("deity_interests", {})
+        ritual_interests = user_profile.get("ritual_interests", {})
+
         cat_score = interests.get(category, 0.0) if category else 0.0
-        family_score = interests.get(family, 0.0) if family else 0.0
-        ritual_score = interests.get(ritual, 0.0) if ritual else 0.0
+        family_score = ritual_interests.get(family, interests.get(family, 0.0)) if family else 0.0
+        ritual_score = ritual_interests.get(ritual, interests.get(ritual, 0.0)) if ritual else 0.0
+        deity_score = deity_interests.get(deity, 0.0) if deity else 0.0
 
         best_interest = max(cat_score, family_score, ritual_score)
 
-        # Deity & Ritual Family preferences bonus
+        # Deity & Ritual Family preferences bonus from persona or dynamic vector
         pref_deities = user_profile.get("preferred_deities", [])
         pref_families = user_profile.get("preferred_ritual_families", [])
 
-        deity_boost = 15.0 if deity and deity in pref_deities else 0.0
-        family_boost = 15.0 if family and family in pref_families else 0.0
+        deity_boost = 15.0 if deity and (deity in pref_deities or deity_score > 20.0) else (deity_score * 0.15)
+        family_boost = 15.0 if family and (family in pref_families or family_score > 20.0) else 0.0
 
         total_score = min(100.0, best_interest + deity_boost + family_boost)
         return round(min(1.0, max(0.0, total_score / 100.0)), 4)
